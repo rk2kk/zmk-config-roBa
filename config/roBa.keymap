@@ -27,7 +27,7 @@
         };
 
         muhennkann {
-            bindings = <&to_layer_0 INT_MUHENKAN>;
+            bindings = <&to_layer_0 LANG_ZENKAKUHANKAKU>;
             key-positions = <11 10>;
         };
 
