@@ -3,6 +3,9 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/mouse.h>
 
+#include "unicode.h"
+#include "keycode_japanese.h"
+
 #define MOUSE 4
 #define SCROLL 5
 #define NUM 6
@@ -43,7 +46,19 @@
 
         Escape {
             bindings = <&kp ESC>;
-            key-positions = <0 1>;
+            key-position = <0 1>;
+        };
+        combo_ng_on {
+            timeout-ms = <300>;
+            key-positions = <16 17>;
+            bindings = <&ng_on>;
+            layers = <0>;
+        };
+        combo_ng_off {
+            timeout-ms = <300>;
+            key-positions = <14 15>;
+            bindings = <&ng_off>;
+            layers = <0 1>;
         };
     };
 
@@ -53,6 +68,22 @@
             #binding-cells = <1>;
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
+        };
+　　　　　ng_on: ng_on {
+//            label = "ZM_ng_on";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LANGUAGE_1 &kp INTERNATIONAL_4 &to 1>
+                ;
+        };
+        ng_off: ng_off {
+//            label = "ZM_ng_off";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LANGUAGE_2 &kp INTERNATIONAL_5 &to 0>
+                ;
         };
     };
 
