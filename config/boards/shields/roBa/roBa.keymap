@@ -3,6 +3,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/mouse.h>
 
+#define HOST_OS 2
 #include "unicode.h"
 #include "keycode_japanese.h"
 
@@ -49,46 +50,44 @@
             key-position = <0 1>;
         };
 
-        combo_ng_on {
+        combo_ime_on {
             timeout-ms = <300>;
             key-positions = <16 17>;
-            bindings = <&ng_on>;
+            bindings = <&ime_on>;
             layers = <0>;
         };
 
-        combo_ng_off {
+        combo_ime_off {
             timeout-ms = <300>;
             key-positions = <14 15>;
-            bindings = <&ng_off>;
+            bindings = <&ime_off>;
             layers = <0 1>;
         };
     };
 
     macros {
+            ime_on: ime_on {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LANGUAGE_1 &kp INTERNATIONAL_4 &to 1>;
+            // label = "ZM_ime_on";
+        };
+
+        ime_off: ime_off {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LANGUAGE_2 &kp INTERNATIONAL_5 &to 0>;
+            // label = "ZM_ime_off";
+        };
+
         to_layer_0: to_layer_0 {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
-        };
-
-　　　　　ng_on: ng_on {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp LANGUAGE_1 &kp INTERNATIONAL_4 &to 1>
-                ;
-                label = "ZM_ng_on";
-        };
-
-        ng_off: ng_off {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp LANGUAGE_2 &kp INTERNATIONAL_5 &to 0>
-                ;
-             label = "ZM_ng_on";
-        };
+        };        
     };
 
     behaviors {
