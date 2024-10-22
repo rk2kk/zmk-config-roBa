@@ -1,13 +1,11 @@
+#define HOST_OS 2
+
+#include "unicode.h"
+#include "keycode_japanese.h"
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/mouse.h>
-
-
-#define HOST_OS 2
-#include "unicode.h"
-#include "keycode_japanese.h"
-
 
 #define MOUSE 4
 #define SCROLL 5
@@ -47,7 +45,6 @@
             key-positions = <24 25>;
         };
 
-
         combo_ime_on {
             timeout-ms = <300>;
             key-positions = <16 17>;
@@ -61,22 +58,27 @@
             bindings = <&ime_off>;
             layers = <0 1>;
         };
+
+        esc_combo {
+            bindings = <&kp ESCAPE>;
+            key-positions = <0 1>;
+        };
     };
 
     macros {
-            ime_on: ime_on {
+        ime_on: ime_on {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp LANGUAGE_1 &kp INTERNATIONAL_4 &to 1>;
+            bindings = <&macro_tap>, <&kp LANGUAGE_1 &kp INTERNATIONAL_4 &to 1>;
+
             // label = "ZM_ime_on";
         };
 
         ime_off: ime_off {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp LANGUAGE_2 &kp INTERNATIONAL_5 &to 0>;
+            bindings = <&macro_tap>, <&kp LANGUAGE_2 &kp INTERNATIONAL_5 &to 0>;
+
             // label = "ZM_ime_off";
         };
 
@@ -85,7 +87,7 @@
             #binding-cells = <1>;
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
-        };        
+        };
     };
 
     behaviors {
@@ -93,6 +95,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
             bindings = <&mo>, <&to_layer_0>;
+
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
