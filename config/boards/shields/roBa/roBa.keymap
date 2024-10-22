@@ -75,7 +75,7 @@
         };
 
         ime_off: ime_off {
-            compatible = "zmk,behavior-macro-one-param";
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
                 = <&macro_tap &kp LANGUAGE_2 &kp INTERNATIONAL_5 &to 0>;
