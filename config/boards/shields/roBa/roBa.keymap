@@ -71,7 +71,7 @@
             label = "TO_LAYER_0";
         };
 　　　　　  ime_on: ime_on {
-//            label = "ZM_ime_on";
+            label = "ZM_ime_on";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -79,7 +79,7 @@
                 ;
         };
         ime_off: ime_off {
-//            label = "ZM_ine_off";
+            label = "ZM_ine_off";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
