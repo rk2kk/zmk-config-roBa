@@ -70,16 +70,16 @@
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
-　　　　　ng_on: ng_on {
-//            label = "ZM_ng_on";
+　　　　　  ime_on: ime_on {
+//            label = "ZM_ime_on";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
                 = <&macro_tap &kp LANGUAGE_1 &kp INTERNATIONAL_4 &to 1>
                 ;
         };
-        ng_off: ng_off {
-//            label = "ZM_ng_off";
+        ime_off: ime_off {
+//            label = "ZM_ine_off";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
