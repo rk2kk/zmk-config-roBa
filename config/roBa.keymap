@@ -117,10 +117,10 @@
 
         FUNCTION {
             bindings = <
-&kp EXCLAMATION  &kp DOUBLE_QUOTES  &kp HASH  &kp DOLLAR  &kp PERCENT                     &kp AMPERSAND  &kp SQT    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
-&kp F1           &kp F2             &kp F3    &kp F4      &kp F5       &trans    &kp F11  &kp F6         &kp F7     &kp F8                &kp F9                 &kp F10
-&trans           &trans             &trans    &trans      &trans       &trans    &kp F12  &kp EQUAL      &kp CARET  &kp NON_US_BACKSLASH  &kp COLON              &kp UNDERSCORE
-&trans           &trans             &trans    &trans      &trans       &trans    &trans   &trans                                                                 &trans
+&kp JP_EXCL   &kp JP_DQT  &kp HASH  &kp JP_HASH  &JP_PRCNT                       &kp JP_AMPS  &kp JP_SQT  &kp JP_LPAR           &kp JP_RPAR   &trans
+&kp JP_MINUS  &JP_CARET   &JP_YEN   &kp F4       &kp F5       &trans    &kp F11  &kp trans    &kp trans   &kp trans             &trans        &trans
+&trans        &trans      &trans    &trans       &trans       &trans    &kp F12  &kp trans    &kp CARET   &kp NON_US_BACKSLASH  &kp COLON     &trans
+&trans        &trans      &trans    &trans       &trans       &trans    &trans   &trans                                                       &trans
             >;
         };
 
@@ -129,16 +129,16 @@
 &kp MINUS                   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS                                &kp MINUS        &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS
 &kp SLASH                   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK  &kp KP_NUMLOCK    &trans  &kp SLASH        &kp KP_NUMBER_4  &kp KP_N5        &kp KP_NUMBER_6  &kp ASTERISK
 &mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD    &kp EQUAL         &trans  &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD
-&trans                      &trans           &trans           &trans           &trans        &trans            &trans  &trans                                                              &kp EQUAL
+&trans                      &kp KP_NUMBER_0  &kp KP_NUMBER_0  &trans           &trans        &trans            &trans  &trans                                                              &kp EQUAL
             >;
         };
 
         ARROW {
             bindings = <
-&kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans                     &trans  &trans  &trans  &trans  &trans
-&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans          &trans                  &trans          &trans                   &trans   &trans    &trans  &trans                          &trans
+&kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans                     &trans  &trans   &JP_AT     &JP_LBKT  &trans
+&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans    &trans  &trans  &JP_SEM  &JP_COLON  &JP_RBKT  &trans
+&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans    &trans  &trans  &trans   &JP_SLASH  &JP_BSLH  &trans
+&trans          &trans                  &trans          &trans                   &trans   &trans    &trans  &trans                                &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
