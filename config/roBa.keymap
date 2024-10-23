@@ -117,10 +117,10 @@
 
         FUNCTION {
             bindings = <
-&kp JP_EXCL   &kp JP_DQT  &kp HASH  &kp JP_HASH  &JP_PRCNT                       &kp JP_AMPS  &kp JP_SQT  &kp JP_LPAR           &kp JP_RPAR   &trans
-&kp JP_MINUS  &JP_CARET   &JP_YEN   &kp F4       &kp F5       &trans    &kp F11  &kp trans    &kp trans   &kp trans             &trans        &trans
-&trans        &trans      &trans    &trans       &trans       &trans    &kp F12  &kp trans    &kp CARET   &kp NON_US_BACKSLASH  &kp COLON     &trans
-&trans        &trans      &trans    &trans       &trans       &trans    &trans   &trans                                                       &trans
+&kp JP_EXCL   &kp JP_DQT    &kp HASH    &kp JP_HASH  &kp JP_PRCNT                     &kp JP_AMPS  &kp JP_SQT  &kp JP_LPAR           &kp JP_RPAR   &trans
+&kp JP_MINUS  &kp JP_CARET  &kp JP_YEN  &kp F4       &kp F5        &trans    &kp F11  &kp trans    &kp trans   &kp trans             &trans        &trans
+&trans        &trans        &trans      &trans       &trans        &trans    &kp F12  &kp trans    &kp CARET   &kp NON_US_BACKSLASH  &kp COLON     &trans
+&trans        &trans        &trans      &trans       &trans        &trans    &trans   &trans                                                       &trans
             >;
         };
 
@@ -135,9 +135,9 @@
 
         ARROW {
             bindings = <
-&kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans                     &trans  &trans   &JP_AT     &JP_LBKT  &trans
-&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans    &trans  &trans  &JP_SEM  &JP_COLON  &JP_RBKT  &trans
-&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans    &trans  &trans  &trans   &JP_SLASH  &JP_BSLH  &trans
+&kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans                     &trans  &trans      &JP_AT     &JP_LBKT  &trans
+&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans    &trans  &trans  &kp JP_SEM  &JP_COLON  &JP_RBKT  &trans
+&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans    &trans  &trans  &trans      &JP_SLASH  &JP_BSLH  &trans
 &trans          &trans                  &trans          &trans                   &trans   &trans    &trans  &trans                                &trans
             >;
 
