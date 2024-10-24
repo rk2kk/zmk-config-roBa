@@ -117,10 +117,10 @@
 
         FUNCTION {
             bindings = <
-                        &kp JP_EXCL      &kp JP_DQT    &kp JP_HASH  &kp JP_DLLR  &kp JP_PRCNT                     &kp JP_AMPS  &kp JP_SQT  &kp JP_LPAR           &kp JP_RPAR  &trans
-                        &kp JP_MINUS     &kp JP_CARET  &kpJP_YEN    &trans       &trans        &trans    &kp F11  &kp F6       &kp F7      &kp F8                &kp F9       &kp F10
-                        &kp F1           &kp F2        &kp F3       &kp F4       &kp F5        &trans    &kp F12  &kp F6       &kp F7      &kp F8                &kp F9       &kp F10
-                        &trans           &trans        &trans       &trans       &trans        &trans    &trans   &trans                                                      &trans
+                        &kp JP_EXCL      &kp JP_DQT    &kp JP_HASH  &kp JP_DLLR  &kp JP_PRCNT                     &kp JP_AMPS  &kp JP_SQT  &kp JP_LPAR  &kp JP_RPAR  &trans
+                        &kp JP_MINUS     &kp JP_CARET  &kp JP_YEN    &trans      &trans        &trans    &kp F11  &trans       &trans      &trans       &trans       &trans
+                        &kp F1           &kp F2        &kp F3       &kp F4       &kp F5        &trans    &kp F12  &kp F6       &kp F7      &kp F8       &kp F9       &kp F10
+                        &trans           &trans        &trans       &trans       &trans        &trans    &trans   &trans                                             &trans
             >;
         };
 
