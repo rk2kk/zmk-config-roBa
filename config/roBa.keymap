@@ -84,10 +84,10 @@
 
         FUNCTION {
             bindings = <
-&kp EXCLAMATION  &kp DOUBLE_QUOTES  &kp HASH         &kp DOLLAR  &kp PERCENT                     &kp AMPERSAND  &kp SQT  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
-&kp MINUS        &kp LCTRL          &kp NON_US_BSLH  &trans      &trans       &trans    &kp F11  &trans         &trans   &trans                &trans                 &trans
-&kp F1           &kp F2             &kp F3           &kp F4      &kp F5       &trans    &kp F12  &kp F6         &kp F7   &kp F8                &kp F9                 &kp F10
-&trans           &trans             &trans           &trans      &trans       &trans    &trans   &trans                                                               &trans
+&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3     &kp NUMBER_4  &kp N5                     &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp N0
+&kp MINUS     &kp CARET     &kp NON_US_BSLH  &trans        &trans  &trans    &kp F11  &trans        &trans        &trans        &trans        &trans
+&kp F1        &kp F2        &kp F3           &kp F4        &kp F5  &trans    &kp F12  &kp F6        &kp F7        &kp F8        &kp F9        &kp F10
+&trans        &trans        &trans           &trans        &trans  &trans    &trans   &trans                                                  &trans
             >;
         };
 
