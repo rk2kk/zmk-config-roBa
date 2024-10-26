@@ -45,6 +45,11 @@
             bindings = <&kp ESCAPE>;
             key-positions = <0 1>;
         };
+
+        alt_tab {
+            bindings = <&kp LA(TAB)>;
+            key-positions = <23 24>;
+        };
     };
 
     macros {
