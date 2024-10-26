@@ -27,7 +27,7 @@
         };
 
         muhennkann {
-            bindings = <&kp GRAVE>;
+            bindings = <&kp LA(GRAVE)>;
             key-positions = <11 10>;
         };
 
