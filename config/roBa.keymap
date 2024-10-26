@@ -74,7 +74,7 @@
             bindings = <
 &mt ESCAPE Q      &kp W         &kp E         &kp R                        &kp T                                                                            &kp Y               &kp U  &lt 5 I    &kp O    &kp P
 &kp A             &kp S         &kp D         &kp F                        &kp G                   &lt_to_layer_0 7 MINUS           &lt_to_layer_0 7 MINUS  &lt_to_layer_0 5 H  &kp J  &kp K      &kp L    &kp SEMI
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                        &kp B                   &to_layer_0 LEFT_SHIFT           &kp DEL                 &kp N               &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                        &kp B                   &lt_to_layer_0 8 LS(MINUS)       &kp DEL                 &kp N               &kp M  &kp COMMA  &kp DOT  &kp SLASH
 &kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 6 INT_HENKAN  &lt_to_layer_0 2 SPACE  &lt_to_layer_0 3 INT_MUHENKAN    &kp BACKSPACE           &lt 1 ENTER                                    &kp RIGHT_SHIFT
             >;
 
