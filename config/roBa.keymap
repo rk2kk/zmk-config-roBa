@@ -150,7 +150,7 @@
             bindings = <
 &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp LS(N5)                    &kp LS(NUMBER_6)  &kp LS(NUMBER_7)  &kp LS(NUMBER_8)  &kp LS(NUMBER_9)  &kp LS(N0)
 &kp LS(MINUS)     &kp LS(EQUAL)     &kp LS(INT3)      &trans            &trans      &trans    &trans  &trans            &trans            &trans            &trans            &trans
-&trans            &trans            &trans            &trans            &trans      &trans    &trans  &trans            &trans            &trans            &trans            &trans
+&trans            &trans            &trans            &trans            &trans      &trans    &trans  &trans            &trans            &trans            &trans            &kp LS(INTERNATIONAL_1)
 &trans            &trans            &trans            &trans            &trans      &trans    &trans  &trans                                                                  &trans
             >;
         };
