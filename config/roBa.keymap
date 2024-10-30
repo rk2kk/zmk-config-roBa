@@ -27,7 +27,7 @@
         };
 
         muhennkann {
-            bindings = <&kp LA(GRAVE)>;
+            bindings = <&kp LANG_ZENKAKUHANKAKU>;
             key-positions = <11 10>;
         };
 
