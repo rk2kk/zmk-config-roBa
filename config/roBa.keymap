@@ -27,13 +27,13 @@
         };
 
         zenkaku-hankaku {
-            bindings = <&kp LA(GRAVE)>;
+            bindings = <&kp LANGUAGE_1>;
             key-positions = <11 10>;
         };
 
         double_quotation {
             bindings = <&kp DOUBLE_QUOTES>;
-            key-positions = <20 21 19>;
+            key-positions = <20 21>;
         };
 
         eq {
@@ -51,14 +51,9 @@
             key-positions = <8 9>;
         };
 
-        lang1 {
-            bindings = <&kp LANGUAGE_1>;
-            key-positions = <20 21>;
-        };
-
         lang2 {
             bindings = <&kp LANGUAGE_2>;
-            key-positions = <32 33>;
+            key-positions = <22 23>;
         };
     };
 
