@@ -46,11 +46,6 @@
             key-positions = <0 1>;
         };
 
-        test {
-            bindings = <&kp LS(CAPSLOCK)>;
-            key-positions = <8 9>;
-        };
-
         lang2 {
             bindings = <&kp LANGUAGE_2>;
             key-positions = <22 23>;
