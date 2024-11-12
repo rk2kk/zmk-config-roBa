@@ -27,7 +27,7 @@
         };
 
         zenkaku-hankaku {
-            bindings = <&kp LC(SPACE)>;
+            bindings = <&kp LANGUAGE_5>;
             key-positions = <11 10>;
         };
 
