@@ -4,6 +4,7 @@
 #include <dt-bindings/zmk/mouse.h>
 #include <behaviors/rgbled_widget.dtsi>  // led制御
 
+#define ZMK_MOUSE_DEFAULT_SCRL_VAL 100   //スクロール量
 
 #define MOUSE 4
 #define SCROLL 5
@@ -71,6 +72,14 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <225>;
+        };
+
+        scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+            // 追加: スクロールのタップ時間を設定 (20ms)
+            tap-ms = <20>;
         };
     };
 
