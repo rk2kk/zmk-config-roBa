@@ -54,6 +54,22 @@
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
+
+        hold_alt: hold_alt {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press>, <&kp LEFT_ALT>;
+
+            label = "HOLD_ALT";
+        };
+
+        release_alt: release_alt {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_release>, <&kp LEFT_ALT>;
+
+            label = "RELEASE_ALT";
+        };
     };
 
     behaviors {
@@ -97,7 +113,7 @@
             label = "ZENKAKUHANKAKU";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&kp INTERNATIONAL_2>, <&kp INTERNATIONAL_1>;
+            bindings = <&kp LANGUAGE_2>, <&kp LANGUAGE_1>;
         };
     };
 
