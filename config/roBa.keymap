@@ -67,21 +67,21 @@
 
         default_layer {
             bindings = <
-&kp Q             &kp W         &kp E         &kp R                        &kp T                                                          &kp Y        &kp U  &lt 5 I    &kp O    &kp P
-&kp A             &kp S         &kp D         &kp F                        &kp G        &kp LS(LG(S))                      &kp MINUS      &kp H        &kp J  &kp K      &kp L    &kp MINUS
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                        &kp B        &kp COLON                          &kp SEMICOLON  &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 6 INT_HENKAN  &lt 2 SPACE  &lt_to_layer_0 3 INT_MUHENKAN      &kp BACKSPACE  &lt 1 ENTER                             &kp DEL
+&kp Q             &kp W         &kp E         &kp R                        &lt 7 T                                                        &lt 7 Y      &kp U  &kp I      &kp O    &kp P
+&mt LCTRL A       &kp S         &kp D         &kp F                        &kp G        &kp LS(LG(S))                      &kp MINUS      &kp H        &kp J  &kp K      &kp L    &lt 6 MINUS
+&mt LEFT_SHIFT Z  &mt RCTRL X   &kp C         &kp V                        &lt 3 B      &kp COLON                          &kp SEMICOLON  &lt 3 N      &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 6 INT_HENKAN  &lt 2 SPACE  &lt_to_layer_0 3 INT_MUHENKAN      &kp BACKSPACE  &lt 1 ENTER                             &mt LEFT_SHIFT ESCAPE
             >;
 
             sensor-bindings = <&inc_dec_kp LC(K_SCROLL_DOWN) LC(PG_UP)>;
         };
 
-        FUNCTION {
+        Numpad+Symbols {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                       &kp F1  &kp F2  &kp F3  &kp F4  &kp F5
-&trans  &trans  &trans  &trans  &trans  &trans      &kp F13  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
-&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans  &trans  &trans  &trans  &kp F11
-&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans                          &kp F12
+&kp PLUS             &kp N7               &kp N8               &kp N9  &kp MINUS                         &kp F1  &kp F2  &kp F3  &kp F4  &kp F5
+&kp ASTERISK         &kp N4               &kp N5               &kp N6  &kp SLASH    &trans      &kp F13  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
+&lt 2 N0             &kp N1               &kp N2               &kp N3  &kp PERCENT  &trans      &trans   &trans  &trans  &trans  &trans  &kp F11
+&mt LCTRL BACKSPACE  &mt LEFT_WIN PERIOD  &mt LEFT_ALT PERIOD  &trans  &kp ENTER    &trans      &trans   &trans                          &kp F12
             >;
         };
 
@@ -129,6 +129,15 @@
 &trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans        &trans        &trans        &trans        &trans
 &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans      &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
 &trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans                                                  &bt BT_CLR_ALL
+            >;
+        };
+
+        layer_7 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
         };
     };
