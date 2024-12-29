@@ -16,29 +16,34 @@
     combos {
         compatible = "zmk,combos";
 
-        tab {
-            bindings = <&kp TAB>;
-            key-positions = <11 12>;
-        };
-
-        shift_tab {
-            bindings = <&kp LS(TAB)>;
-            key-positions = <12 13>;
-        };
-
-        muhennkann {
-            bindings = <&to_layer_0 INT_MUHENKAN>;
-            key-positions = <11 10>;
-        };
-
-        double_quotation {
-            bindings = <&kp DOUBLE_QUOTES>;
-            key-positions = <20 21>;
-        };
-
         eq {
             bindings = <&kp EQUAL>;
-            key-positions = <24 25>;
+            key-positions = <0 1>;
+            layers = <1>;
+        };
+
+        Escape {
+            bindings = <&kp ESCAPE>;
+            key-positions = <0 10>;
+        };
+
+        hat {
+            bindings = <&kp CARET>;
+            key-positions = <10 11>;
+            layers = <1>;
+        };
+
+        middle_click {
+            bindings = <&mkp MCLK>;
+            key-positions = <18 19>;
+            layers = <4>;
+        };
+
+        alt-tab {
+            bindings = <&kp TAB>;
+            key-positions = <26 0>;
+            timeout-ms = <9999999999>;
+            layers = <3>;
         };
     };
 
@@ -60,6 +65,32 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        td_right_click: td_right_click {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_RIGHT_CLICK";
+            #binding-cells = <0>;
+            bindings = <&mkp RCLK>, <&kp LC(W)>;
+
+            tapping-term-ms = <250>;
+        };
+
+        td_colon: td_colon {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_COLON";
+            #binding-cells = <0>;
+            bindings = <&kp COLON>, <&kp SEMICOLON>;
+
+            tapping-term-ms = <250>;
+        };
+
+        td_q_escape: td_q_escape {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_Q_ESCAPE";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&kp Q>, <&kp ESCAPE>;
+        };
     };
 
     keymap {
@@ -73,12 +104,12 @@
 &kp LCTRL         &kp LEFT_WIN      &kp LEFT_ALT  &lt_to_layer_0 7 INT_HENKAN  &lt 2 SPACE  &lt 1 TAB          &lt 1 BACKSPACE  &lt 2 ENTER                             &mt LEFT_SHIFT ESCAPE
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(K_SCROLL_DOWN) LC(PG_UP)>;
+            sensor-bindings = <&inc_dec_kp LC(K_SCROLL_DOWN) LC(K_SCROLL_UP)>;
         };
 
         Numpad+Symbols {
             bindings = <
-&kp PLUS             &kp N7               &kp N8               &kp N9  &kp MINUS                                  &kp AT_SIGN       &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp DOUBLE_QUOTES  &kp COLON
+&kp PLUS             &kp N7               &kp N8               &kp N9  &kp MINUS                                  &kp AT_SIGN       &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp DOUBLE_QUOTES  &td_colon
 &kp ASTERISK         &kp N4               &kp N5               &kp N6  &kp SLASH    &kp EQUAL      &kp SEMICOLON  &kp HASH          &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SINGLE_QUOTE   &kp TILDE
 &lt 2 N0             &kp N1               &kp N2               &kp N3  &kp PERCENT  &kp CARET      &trans         &kp AMPERSAND     &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp GRAVE          &kp PIPE
 &mt LCTRL BACKSPACE  &mt LEFT_WIN PERIOD  &mt LEFT_ALT PERIOD  &trans  &kp ENTER    &trans         &kp LESS_THAN  &kp GREATER_THAN                                                                  &kp DOLLAR
@@ -109,10 +140,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans     &trans     &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp LCLK  &mkp RCLK  &trans  &mo 7
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans     &trans     &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans     &trans           &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp LCLK  &td_right_click  &trans  &mo 7
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans     &trans           &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                      &trans
             >;
         };
 
