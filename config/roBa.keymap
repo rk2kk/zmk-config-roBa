@@ -63,12 +63,41 @@
             label = "HOLD_ALT";
         };
 
-        release_alt: release_alt {
+        release_alt_on_release: release_alt {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_release>, <&kp LEFT_ALT>;
+            bindings =
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
 
             label = "RELEASE_ALT";
+        };
+
+        lt_with_alt_ctrl_release: lt_with_alt_ctrl_release {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_press>,
+                <&macro_tap>,
+                <&macro_param_1to1 &mo MACRO_PLACEHOLDER>,
+                <&macro_release>,
+                <&kp LEFT_ALT &kp LCTRL &macro_param_1to1 &mo MACRO_PLACEHOLDER>,
+                <&macro_pause_for_release>;
+
+            label = "LT_WITH_ALT_CTRL_RELEASE";
+        };
+
+        ctrl_alt_tab: alt_tab {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_press>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_tap>,
+                <&kp TAB>;
+
+            label = "ALT_TAB";
         };
     };
 
@@ -149,10 +178,10 @@
 
         default_layer {
             bindings = <
-&kp Q             &kp W             &kp E         &kp R            &lt 7 T                                          &lt 7 Y      &kp U  &kp I                   &kp O                &lt 5 P
-&mt LCTRL A       &kp S             &kp D         &kp F            &kp G        &kp LS(LG(S))      &kp MINUS        &kp H        &kp J  &kp K                   &kp L                &lt 6 MINUS
-&mt LEFT_SHIFT Z  &mt LEFT_SHIFT X  &kp C         &kp V            &lt 3 B      &kp COLON          &kp SEMICOLON    &lt 3 N      &kp M  &mod_morph_exclamation  &mod_morph_question  &mod_morph_slash
-&kp LCTRL         &kp LEFT_WIN      &kp LEFT_ALT  &ZenkakuHankaku  &lt 2 SPACE  &lt 1 TAB          &lt 1 BACKSPACE  &lt 2 ENTER                                                      &mt LEFT_SHIFT ESCAPE
+&kp Q             &kp W             &kp E         &kp R            &lt 7 T                                                        &lt 7 Y      &kp U  &kp I                   &kp O                &lt 5 P
+&mt LCTRL A       &kp S             &kp D         &kp F            &kp G        &kp LS(LG(S))                    &kp MINUS        &kp H        &kp J  &kp K                   &kp L                &lt 6 MINUS
+&mt LEFT_SHIFT Z  &mt LEFT_SHIFT X  &kp C         &kp V            &kp B        &lt_with_alt_ctrl_release 3      &kp SEMICOLON    &lt 3 N      &kp M  &mod_morph_exclamation  &mod_morph_question  &mod_morph_slash
+&kp LCTRL         &kp LEFT_WIN      &kp LEFT_ALT  &ZenkakuHankaku  &lt 2 SPACE  &lt 1 TAB                        &lt 1 BACKSPACE  &lt 2 ENTER                                                      &mt LEFT_SHIFT ESCAPE
             >;
 
             sensor-bindings = <&inc_dec_kp LC(K_SCROLL_DOWN) LC(K_SCROLL_UP)>;
@@ -180,10 +209,10 @@
 
         MISC2 {
             bindings = <
-&kp TAB               &kp LC(LG(LEFT))        &kp LG(TAB)       &kp LG(LC(RIGHT))        &trans                       &trans             &kp LC(W)        &kp LS(LC(T))  &kp LC(T)          &kp TAB
-&kp TAB               &kp LG(LS(LEFT_ARROW))  &kp LG(UP_ARROW)  &kp LG(LS(RIGHT_ARROW))  &kp END  &trans      &trans  &kp K_VOLUME_UP    &kp LC(PAGE_UP)  &kp UP_ARROW   &kp LC(PAGE_DOWN)  &kp TAB
-&kp LA(LC(LG(DOWN)))  &kp LG(LEFT_ARROW)      &kp LG(DOWN)      &kp LG(LS(RIGHT_ARROW))  &trans   &trans      &trans  &kp K_VOLUME_DOWN  &kp LA(LEFT)     &kp DOWN       &kp LA(RIGHT)      &trans
-&trans                &trans                  &trans            &trans                   &trans   &trans      &trans  &trans                                                                &trans
+&ctrl_alt_tab LEFT_ALT  &kp LC(LG(LEFT))        &kp LG(TAB)       &kp LG(LC(RIGHT))        &trans                       &trans             &kp LC(W)        &kp LS(LC(T))  &kp LC(T)          &kp TAB
+&ctrl_alt_tab LCTRL     &kp LG(LS(LEFT_ARROW))  &kp LG(UP_ARROW)  &kp LG(LS(RIGHT_ARROW))  &kp END  &trans      &trans  &kp K_VOLUME_UP    &kp LC(PAGE_UP)  &kp UP_ARROW   &kp LC(PAGE_DOWN)  &kp TAB
+&kp LA(LC(LG(DOWN)))    &kp LG(LEFT_ARROW)      &kp LG(DOWN)      &kp LG(LS(RIGHT_ARROW))  &trans   &trans      &trans  &kp K_VOLUME_DOWN  &kp LA(LEFT)     &kp DOWN       &kp LA(RIGHT)      &trans
+&trans                  &trans                  &trans            &trans                   &trans   &trans      &trans  &trans                                                                &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
