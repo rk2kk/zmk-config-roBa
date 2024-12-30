@@ -143,13 +143,6 @@
             bindings = <&to 0 &td_ZenkakuHankaku>;
             label = "TD_ZENKAKUHANKKU_TO_LAYER_0";
         };
-
-        trans_to_layer_0: trans_layer0 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&trans &to 0>;
-            label = "TRANS_LAYER0";
-        };
     };
 
     behaviors {
@@ -253,7 +246,7 @@
 &kp LCTRL         &kp LEFT_WIN      &kp LEFT_ALT  &td_ZenkakuHankku_to_layer_0  &lt_to_layer_0 2 SPACE  &lt 1 TAB           &lt 1 BACKSPACE  &lt 2 ENTER                                                      &mt LEFT_SHIFT ESCAPE
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(K_SCROLL_DOWN) LC(K_SCROLL_UP)>;
+            sensor-bindings = <&inc_dec_kp C_AC_ZOOM_OUT C_AC_ZOOM_IN>;
         };
 
         Numpad_and_Symbols {
@@ -289,10 +282,10 @@
 
         Mouse {
             bindings = <
-&trans_to_layer_0  &trans_to_layer_0  &trans_to_layer_0  &trans_to_layer_0  &trans_to_layer_0                      &trans_to_layer_0  &trans_to_layer_0     &trans_to_layer_0           &trans_to_layer_0  &trans_to_layer_0
-&trans_to_layer_0  &trans_to_layer_0  &trans_to_layer_0  &trans_to_layer_0  &trans_to_layer_0  &trans_to_layer_0      &trans_to_layer_0  &trans_to_layer_0  &mkp LCLK  &td_right_click  &trans_to_layer_0  &mo 6
-&trans_to_layer_0  &trans_to_layer_0  &trans_to_layer_0  &trans_to_layer_0  &trans_to_layer_0  &trans_to_layer_0      &trans_to_layer_0  &trans_to_layer_0  &trans_to_layer_0     &trans_to_layer_0           &trans_to_layer_0  &trans_to_layer_0
-&trans_to_layer_0  &trans_to_layer_0  &trans_to_layer_0  &trans_to_layer_0  &trans_to_layer_0  &trans_to_layer_0      &trans_to_layer_0  &trans_to_layer_0                                      &trans_to_layer_0
+&trans_to_layer_0  &trans_to_layer_0  &trans_to_layer_0  &trans_to_layer_0  &trans_to_layer_0                                            &trans_to_layer_0  &trans_to_layer_0  &trans_to_layer_0  &trans_to_layer_0  &trans_to_layer_0
+&trans_to_layer_0  &trans_to_layer_0  &trans_to_layer_0  &trans_to_layer_0  &trans_to_layer_0  &trans_to_layer_0      &trans_to_layer_0  &trans_to_layer_0  &mkp LCLK          &td_right_click    &trans_to_layer_0  &mo 6
+&trans_to_layer_0  &trans_to_layer_0  &trans_to_layer_0  &trans_to_layer_0  &trans_to_layer_0  &trans_to_layer_0      &trans_to_layer_0  &trans_to_layer_0  &trans_to_layer_0  &trans_to_layer_0  &trans_to_layer_0  &trans_to_layer_0
+&trans_to_layer_0  &trans_to_layer_0  &trans_to_layer_0  &trans_to_layer_0  &trans_to_layer_0  &trans_to_layer_0      &trans_to_layer_0  &trans_to_layer_0                                                           &trans_to_layer_0
             >;
         };
 
