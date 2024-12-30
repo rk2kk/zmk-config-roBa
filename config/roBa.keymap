@@ -147,7 +147,7 @@
         kp_with_disable_mouse_layer: disable_mouse_layer {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&tog 4 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+            bindings = <&tog_off 4 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "DISABLE_MOUSE_LAYER";
         };
     };
