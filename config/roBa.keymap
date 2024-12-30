@@ -29,7 +29,7 @@
 
         Escape {
             bindings = <&kp ESCAPE>;
-            key-positions = <0 10>;
+            key-positions = <0 1>;
         };
 
         hat {
@@ -42,13 +42,6 @@
             bindings = <&mkp MCLK>;
             key-positions = <18 19>;
             layers = <4>;
-        };
-
-        alt-tab {
-            bindings = <&kp TAB>;
-            key-positions = <26 0>;
-            timeout-ms = <(-1)>;
-            layers = <3>;
         };
     };
 
