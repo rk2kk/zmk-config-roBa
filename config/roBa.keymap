@@ -225,6 +225,15 @@
             #binding-cells = <2>;
             tapping-term-ms = <250>;
         };
+
+        td_alt_f4: td_alt_f4 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_ALT_F4";
+            #binding-cells = <0>;
+            bindings = <&kp F4>, <&kp LA(F4)>;
+
+            tapping-term-ms = <250>;
+        };
     };
 
     keymap {
@@ -233,7 +242,7 @@
         default_layer {
             bindings = <
 &kp Q             &kp W             &kp E         &kp R                         &lt 7 T                                                      &lt 7 Y      &kp U  &kp I                   &kp O                &lt 5 P
-&mt LCTRL A       &kp S             &kp D         &kp F                         &kp G                   &kp LS(LG(S))       &kp MINUS        &kp H        &kp J  &kp K                   &kp L                &lt 6 MINUS
+&mt LCTRL A       &kp S             &kp D         &kp F                         &kp G                   &kp LS(LG(S))       &lm 3 LCTRL      &kp H        &kp J  &kp K                   &kp L                &lt 6 MINUS
 &mt LEFT_SHIFT Z  &mt LEFT_SHIFT X  &kp C         &kp V                         &lt 3 B                 &lm 3 LEFT_ALT      &lm 3 LEFT_ALT   &lt 3 N      &kp M  &mod_morph_exclamation  &mod_morph_question  &mod_morph_slash
 &kp LCTRL         &kp LEFT_WIN      &kp LEFT_ALT  &td_ZenkakuHankku_to_layer_0  &lt_to_layer_0 2 SPACE  &lt 1 TAB           &lt 1 BACKSPACE  &lt 2 ENTER                                                      &mt LEFT_SHIFT ESCAPE
             >;
@@ -254,19 +263,19 @@
 
         Functions_and_Controls {
             bindings = <
-&kp LS(F11)          &kp F1          &kp F2          &kp F3           &kp F4                                               &kp F6        &kp F7    &kp F8        &kp F11    &kp F12
-&kp LA(PRINTSCREEN)  &kp LS(LG(S))   &kp UP_ARROW    &none            &kp F5  &kp LC(LA(KP_NUMBER_0))      &kp UNDERSCORE  &kp F5        &kp HOME  &kp UP_ARROW  &kp END    &kp F9
-&kp LEFT_SHIFT       &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none   &kp EQUAL                    &kp LC(HOME)    &kp LC(LEFT)  &kp LEFT  &kp DOWN      &kp RIGHT  &kp LC(RIGHT)
-&kp LCTRL            &kp LEFT_WIN    &kp LEFT_ALT    &trans           &trans  &trans                       &kp DELETE      &trans                                           &kp PIPE
+&kp LS(F11)          &kp F1          &kp F2          &kp F3           &td_alt_f4                                               &kp F6        &kp F7    &kp F8        &kp F11    &kp F12
+&kp LA(PRINTSCREEN)  &kp LS(LG(S))   &kp UP_ARROW    &none            &kp F5      &kp LC(LA(KP_NUMBER_0))      &kp UNDERSCORE  &kp F5        &kp HOME  &kp UP_ARROW  &kp END    &kp F9
+&kp LEFT_SHIFT       &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none       &kp EQUAL                    &kp LC(HOME)    &kp LC(LEFT)  &kp LEFT  &kp DOWN      &kp RIGHT  &kp LC(RIGHT)
+&kp LCTRL            &kp LEFT_WIN    &kp LEFT_ALT    &trans           &trans      &trans                       &kp DELETE      &trans                                           &kp PIPE
             >;
         };
 
         Misc {
             bindings = <
-&kp TAB               &kp LC(LG(LEFT))        &kp LG(TAB)       &kp LG(LC(RIGHT))        &trans                       &trans             &kp LC(W)        &kp LS(LC(T))  &kp LC(T)          &kp TAB
-&ctrl_alt_tab LCTRL   &kp LG(LS(LEFT_ARROW))  &kp LG(UP_ARROW)  &kp LG(LS(RIGHT_ARROW))  &kp END  &trans      &trans  &kp K_VOLUME_UP    &kp LC(PAGE_UP)  &kp UP_ARROW   &kp LC(PAGE_DOWN)  &kp TAB
-&kp LA(LC(LG(DOWN)))  &kp LG(LEFT_ARROW)      &kp LG(DOWN)      &kp LG(LS(RIGHT_ARROW))  &trans   &trans      &trans  &kp K_VOLUME_DOWN  &kp LA(LEFT)     &kp DOWN       &kp LA(RIGHT)      &trans
-&trans                &trans                  &trans            &trans                   &trans   &trans      &trans  &trans                                                                &trans
+&kp TAB               &kp LC(LG(LEFT))        &kp LG(TAB)       &kp LG(LC(RIGHT))        &td_alt_f4                      &td_alt_f4         &kp LC(W)        &kp LS(LC(T))  &kp LC(T)          &kp TAB
+&trans                &kp LG(LS(LEFT_ARROW))  &kp LG(UP_ARROW)  &kp LG(LS(RIGHT_ARROW))  &trans      &trans      &trans  &kp K_VOLUME_UP    &kp LC(PAGE_UP)  &kp UP_ARROW   &kp LC(PAGE_DOWN)  &trans
+&kp LA(LC(LG(DOWN)))  &kp LG(LEFT_ARROW)      &kp LG(DOWN)      &kp LG(LS(RIGHT_ARROW))  &trans      &trans      &trans  &kp K_VOLUME_DOWN  &kp LA(LEFT)     &kp DOWN       &kp LA(RIGHT)      &trans
+&trans                &trans                  &trans            &trans                   &trans      &trans      &trans  &trans                                                                &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
@@ -274,10 +283,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans      &trans            &trans  &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans     &trans           &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp LCLK  &td_right_click  &trans  &mo 6
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans      &trans            &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                     &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans     &trans           &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                      &trans
             >;
         };
 
@@ -301,10 +310,10 @@
 
         Configuration {
             bindings = <
-&bootloader  &bt BT_SEL 0  &trans  &trans  &trans                           &trans  &trans  &trans      &trans       &bootloader
-&trans       &trans        &trans  &trans  &trans  &trans      &trans       &trans        &trans        &trans        &kp C_SLEEP   &trans
-&trans       &trans        &trans  &trans  &trans  &trans      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4        &bt BT_CLR
-&trans       &trans        &trans  &trans  &trans  &trans      &trans       &trans                                                  &bt BT_CLR_ALL
+&bootloader  &trans  &trans  &trans  &trans                            &trans        &trans        &trans        &trans        &bootloader
+&trans       &trans  &trans  &trans  &trans  &trans      &trans        &trans        &trans        &trans        &kp C_SLEEP   &trans
+&trans       &trans  &trans  &trans  &trans  &trans      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR
+&trans       &trans  &trans  &trans  &trans  &trans      &trans        &trans                                                  &bt BT_CLR_ALL
             >;
         };
     };
