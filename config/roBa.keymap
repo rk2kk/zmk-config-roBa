@@ -140,8 +140,7 @@
         td_ZenkakuHankku_to_layer_0: td_ZenkakuHankku_to_layer_0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 0>, <&macro_press>, <&td_ZenkakuHankaku>;
-
+            bindings = <&to 0 &td_ZenkakuHankaku>;
             label = "TD_ZENKAKUHANKKU_TO_LAYER_0";
         };
     };
