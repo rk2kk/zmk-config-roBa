@@ -199,10 +199,10 @@
 
         default_layer {
             bindings = <
-&kp Q             &kp W             &kp E         &kp R            &lt 7 T                                                        &lt 7 Y      &kp U  &kp I                   &kp O                &lt 5 P
-&mt LCTRL A       &kp S             &kp D         &kp F            &kp G                   &kp LS(LG(S))         &kp MINUS        &kp H        &kp J  &kp K                   &kp L                &lt 6 MINUS
-&mt LEFT_SHIFT Z  &mt LEFT_SHIFT X  &kp C         &kp V            &kp B                   &lt_with_alt 3 B      &kp SEMICOLON    &lt 3 N      &kp M  &mod_morph_exclamation  &mod_morph_question  &mod_morph_slash
-&kp LCTRL         &kp LEFT_WIN      &kp LEFT_ALT  &ZenkakuHankaku  &lt_to_layer_0 2 SPACE  &lt 1 TAB             &lt 1 BACKSPACE  &lt 2 ENTER                                                      &mt LEFT_SHIFT ESCAPE
+&kp Q             &kp W             &kp E         &kp R            &lt 7 T                                                                    &lt 7 Y      &kp U  &kp I                   &kp O                &lt 5 P
+&mt LCTRL A       &kp S             &kp D         &kp F            &kp G                   &kp LS(LG(S))         &kp MINUS                    &kp H        &kp J  &kp K                   &kp L                &lt 6 MINUS
+&mt LEFT_SHIFT Z  &mt LEFT_SHIFT X  &kp C         &kp V            &kp B                   &lt_with_alt 3 B      &lt_with_alt_ctrl_release 3  &lt 3 N      &kp M  &mod_morph_exclamation  &mod_morph_question  &mod_morph_slash
+&kp LCTRL         &kp LEFT_WIN      &kp LEFT_ALT  &ZenkakuHankaku  &lt_to_layer_0 2 SPACE  &lt 1 TAB             &lt 1 BACKSPACE              &lt 2 ENTER                                                      &mt LEFT_SHIFT ESCAPE
             >;
 
             sensor-bindings = <&inc_dec_kp LC(K_SCROLL_DOWN) LC(K_SCROLL_UP)>;
@@ -230,7 +230,7 @@
 
         Misc {
             bindings = <
-&kp TAB               &kp LC(LG(LEFT))        &kp LG(TAB)       &kp LG(LC(RIGHT))        &trans                       &trans             &kp LC(W)        &kp LS(LC(T))  &kp LC(T)          &kp TAB
+&kp TAB               &kp LC(LG(LEFT))        &kp LG(TAB)       &kp LG(LC(RIGHT))        &trans                       &trans             &kp LC(W)        &kp LS(LC(T))  &kp LC(T)          &ctrl_alt_tab LEFT_ALT
 &ctrl_alt_tab LCTRL   &kp LG(LS(LEFT_ARROW))  &kp LG(UP_ARROW)  &kp LG(LS(RIGHT_ARROW))  &kp END  &trans      &trans  &kp K_VOLUME_UP    &kp LC(PAGE_UP)  &kp UP_ARROW   &kp LC(PAGE_DOWN)  &kp TAB
 &kp LA(LC(LG(DOWN)))  &kp LG(LEFT_ARROW)      &kp LG(DOWN)      &kp LG(LS(RIGHT_ARROW))  &trans   &trans      &trans  &kp K_VOLUME_DOWN  &kp LA(LEFT)     &kp DOWN       &kp LA(RIGHT)      &trans
 &trans                &trans                  &trans            &trans                   &trans   &trans      &trans  &trans                                                                &trans
