@@ -147,7 +147,7 @@
         trans_to_layer_0: trans_layer0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 0 &trans>;
+            bindings = <&trans &to 0>;
             label = "TRANS_LAYER0";
         };
     };
