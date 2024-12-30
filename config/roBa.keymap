@@ -274,7 +274,9 @@
         lt_with_disable_mouse_layer: lt_with_disable_mouse_layer {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_WITH_DISABLE_MOUSE_LAYER";
-            bindings = <&mo_with_disable_mouse_layer>, <&kp>;
+            bindings =
+                <&mo_with_disable_mouse_layer>,
+                <&kp_with_disable_mouse_layer>;
 
             #binding-cells = <2>;
             tapping-term-ms = <250>;
@@ -288,7 +290,7 @@
             bindings = <
 &kp Q             &kp W             &kp E         &kp R                         &lt 7 T                                                                                                                 &lt 7 Y                               &kp U  &kp I                   &kp O                &lt 5 P
 &mt LCTRL A       &kp S             &kp D         &kp F                         &kp G                                 &kp LS(LG(S))                           &lm 3 LCTRL                               &kp H                                 &kp J  &kp K                   &kp L                &lt 6 MINUS
-&mt LEFT_SHIFT Z  &mt LEFT_SHIFT X  &kp C         &kp V                         &lt 3 B                               &lm 3 LEFT_ALT                          &lm 3 LEFT_ALT                            &lt 3 N                               &kp M  &mod_morph_exclamation  &mod_morph_question  &mod_morph_slash
+&mt LEFT_SHIFT Z  &mt LEFT_SHIFT X  &kp C         &kp V                         &lt_with_disable_mouse_layer 3 B      &lm 3 LEFT_ALT                          &lm 3 LEFT_ALT                            &lt_with_disable_mouse_layer 3 N      &kp M  &mod_morph_exclamation  &mod_morph_question  &mod_morph_slash
 &kp LCTRL         &kp LEFT_WIN      &kp LEFT_ALT  &td_ZenkakuHankku_to_layer_0  &lt_with_disable_mouse_layer 2 SPACE  &lt_with_disable_mouse_layer 1 TAB      &lt_with_disable_mouse_layer 1 BACKSPACE  &lt_with_disable_mouse_layer 2 ENTER                                                      &mt LEFT_SHIFT ESCAPE
             >;
 
