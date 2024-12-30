@@ -285,9 +285,7 @@
         mt_with_disable_mouse_layer: mt_with_disable_mouse_layer {
             compatible = "zmk,behavior-hold-tap";
             label = "MT_WITH_DISABLE_MOUSE_LAYER";
-            bindings =
-                <&kp_with_disable_mouse_layer>,
-                <&kp_with_disable_mouse_layer>;
+            bindings = <&kp>, <&kp_with_disable_mouse_layer>;
 
             #binding-cells = <2>;
             tapping-term-ms = <250>;
@@ -299,10 +297,10 @@
 
         Default {
             bindings = <
-&kp_with_disable_mouse_layer Q             &kp_with_disable_mouse_layer W             &kp_with_disable_mouse_layer E         &kp_with_disable_mouse_layer R  &lt_with_disable_mouse_layer 7 T                                                                                            &lt_with_disable_mouse_layer 7 Y      &kp_with_disable_mouse_layer U  &kp_with_disable_mouse_layer I  &kp_with_disable_mouse_layer O  &lt_with_disable_mouse_layer 5 P
-&mt_with_disable_mouse_layer LCTRL A       &kp_with_disable_mouse_layer S             &kp_with_disable_mouse_layer D         &kp_with_disable_mouse_layer F  &kp_with_disable_mouse_layer G        &kp_with_disable_mouse_layer LS(LG(S))      &lm 3 LCTRL                               &kp_with_disable_mouse_layer H        &kp_with_disable_mouse_layer J  &kp_with_disable_mouse_layer K  &kp_with_disable_mouse_layer L  &lt_with_disable_mouse_layer 6 MINUS
-&mt_with_disable_mouse_layer LEFT_SHIFT Z  &mt_with_disable_mouse_layer LEFT_SHIFT X  &kp_with_disable_mouse_layer C         &kp_with_disable_mouse_layer V  &lt_with_disable_mouse_layer 3 B      &lm 3 LEFT_ALT                              &lm 3 LEFT_ALT                            &lt_with_disable_mouse_layer 3 N      &kp_with_disable_mouse_layer M  &mod_morph_exclamation          &mod_morph_question             &mod_morph_slash
-&kp_with_disable_mouse_layer LCTRL         &kp_with_disable_mouse_layer LEFT_WIN      &kp_with_disable_mouse_layer LEFT_ALT  &td_ZenkakuHankku_to_layer_0    &lt_with_disable_mouse_layer 2 SPACE  &lt_with_disable_mouse_layer 1 TAB          &lt_with_disable_mouse_layer 1 BACKSPACE  &lt_with_disable_mouse_layer 2 ENTER                                                                                                  &mt_with_disable_mouse_layer LEFT_SHIFT ESCAPE
+&kp_with_disable_mouse_layer Q  &kp_with_disable_mouse_layer W         &kp_with_disable_mouse_layer E         &kp_with_disable_mouse_layer R  &lt_with_disable_mouse_layer 7 T                                                                                            &lt_with_disable_mouse_layer 7 Y      &kp_with_disable_mouse_layer U  &kp_with_disable_mouse_layer I  &kp_with_disable_mouse_layer O  &lt_with_disable_mouse_layer 5 P
+&mt LCTRL A                     &kp_with_disable_mouse_layer S         &kp_with_disable_mouse_layer D         &kp_with_disable_mouse_layer F  &kp_with_disable_mouse_layer G        &kp_with_disable_mouse_layer LS(LG(S))      &lm 3 LCTRL                               &kp_with_disable_mouse_layer H        &kp_with_disable_mouse_layer J  &kp_with_disable_mouse_layer K  &kp_with_disable_mouse_layer L  &lt_with_disable_mouse_layer 6 MINUS
+&mt LEFT_SHIFT Z                &mt LEFT_SHIFT X                       &kp_with_disable_mouse_layer C         &kp_with_disable_mouse_layer V  &lt_with_disable_mouse_layer 3 B      &lm 3 LEFT_ALT                              &lm 3 LEFT_ALT                            &lt_with_disable_mouse_layer 3 N      &kp_with_disable_mouse_layer M  &mod_morph_exclamation          &mod_morph_question             &mod_morph_slash
+&kp LCTRL                       &kp_with_disable_mouse_layer LEFT_WIN  &kp_with_disable_mouse_layer LEFT_ALT  &td_ZenkakuHankku_to_layer_0    &lt_with_disable_mouse_layer 2 SPACE  &lt_with_disable_mouse_layer 1 TAB          &lt_with_disable_mouse_layer 1 BACKSPACE  &lt_with_disable_mouse_layer 2 ENTER                                                                                                  &mt LEFT_SHIFT ESCAPE
             >;
 
             sensor-bindings = <&inc_dec_kp C_AC_ZOOM_OUT C_AC_ZOOM_IN>;
