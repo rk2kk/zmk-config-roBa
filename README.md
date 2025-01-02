@@ -8,7 +8,7 @@
 - [zmk-config](https://github.com/kumamuk-git/zmk-config-roBa)
 - [zmk-pmw3610-driver](https://github.com/kumamuk-git/zmk-pmw3610-driver)
 
-### XMK
+### ZMK
 - [GitHub](https://github.com/zmkfirmware/zmk)
 - [ドキュメント](https://zmk.dev/docs)
 - [zmk-pmw3610-driver](https://github.com/kumamuk-git/zmk-pmw3610-driver)
