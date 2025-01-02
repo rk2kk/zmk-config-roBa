@@ -1,4 +1,6 @@
-# roBa
+# zmk-config-roBa
+[kumamuk-git/zmk-config-roBa](https://github.com/kumamuk-git/zmk-config-roBa) のキーマップや設定値を自分用のカスタマイズ
+及び、[ローカルでビルドするための手順](https://github.com/kot149/zmk-config-roBa/blob/main/build_local.md) と[スクリプト](https://github.com/kot149/zmk-config-roBa/blob/main/build.sh) を加えたものです。
 
 ## リンク集
 
