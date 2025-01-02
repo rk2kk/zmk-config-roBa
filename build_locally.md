@@ -62,9 +62,9 @@ west build -s /workspaces/zmk/app -d build/reset -b seeeduino_xiao_ble -- -DZMK_
 
 2回目以降のビルドでは、`-b`以降のオプションを省略してビルドを高速化できる。
 ```sh
-# 左手用
-west build -s /workspaces/zmk/app -d build/right
 # 右手用
+west build -s /workspaces/zmk/app -d build/right
+# 左手用
 west build -s /workspaces/zmk/app -d build/left
 # リセット用
 west build -s /workspaces/zmk/app -d build/reset
