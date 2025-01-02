@@ -1,6 +1,18 @@
 # roBa ローカルビルド手順
 roBaのファームウェアをGitHub Actionsを使わずローカルPCでビルドするための手順です。
-ビルド時間の短縮に加え、ビルド結果のダウンロードの手間を省くことができます。
+
+コンテナや一部の中間ファイルを使いまわすことが可能になりビルド時間が短縮されることに加え、ビルド結果のダウンロード・解凍の手間を省くことができます。
+
+- [roBa ローカルビルド手順](#roba-ローカルビルド手順)
+	- [環境構築](#環境構築)
+		- [事前準備](#事前準備)
+		- [Dockerコンテナの用意](#dockerコンテナの用意)
+			- [zmk-configのvolume作成](#zmk-configのvolume作成)
+			- [ZMKのコンテナ作成](#zmkのコンテナ作成)
+		- [Westの初期化](#westの初期化)
+	- [ビルド](#ビルド)
+		- [ビルドスクリプト](#ビルドスクリプト)
+
 
 ## 環境構築
 [ZMK公式ドキュメント](https://zmk.dev/docs/development/local-toolchain/setup/container) に書かれている内容の通りだが、一応日本語で書き写しておく。
@@ -58,6 +70,7 @@ west build -s /workspaces/zmk/app -d build/left
 west build -s /workspaces/zmk/app -d build/reset
 ```
 
+### ビルドスクリプト
 このリポジトリの`build.sh`は上記3つのビルドを同時並行で行い、結果を`zmk-config-roBa/build`に保存するスクリプトである。
 以下のコマンドで実行できる。
 ```sh
