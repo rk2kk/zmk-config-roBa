@@ -1,4 +1,4 @@
-# roBA ローカルビルド手順
+# roBa ローカルビルド手順
 
 ## 環境構築
 [ZMK公式ドキュメント](https://zmk.dev/docs/development/local-toolchain/setup/container) に書かれている内容の通りだが、一応日本語で書き写しておく。
