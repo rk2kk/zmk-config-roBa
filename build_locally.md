@@ -52,9 +52,9 @@ west update
 ## ビルド
 以下のコマンドを実行
 ```sh
-# 左手用
-west build -s /workspaces/zmk/app -d build/right -b seeeduino_xiao_ble -- -DZMK_CONFIG=/workspaces/zmk-config/config -DSHIELD=roBa_R -DZMK_EXTRA_MODULES=/workspaces/zmk-config
 # 右手用
+west build -s /workspaces/zmk/app -d build/right -b seeeduino_xiao_ble -- -DZMK_CONFIG=/workspaces/zmk-config/config -DSHIELD=roBa_R -DZMK_EXTRA_MODULES=/workspaces/zmk-config
+# 左手用
 west build -s /workspaces/zmk/app -d build/left -b seeeduino_xiao_ble -- -DZMK_CONFIG=/workspaces/zmk-config/config -DSHIELD=roBa_L -DZMK_EXTRA_MODULES=/workspaces/zmk-config
 # リセット用
 west build -s /workspaces/zmk/app -d build/reset -b seeeduino_xiao_ble -- -DZMK_CONFIG=/workspaces/zmk-config/config -DSHIELD=settings_reset -DZMK_EXTRA_MODULES=/workspaces/zmk-config
