@@ -1,4 +1,6 @@
 # roBa ローカルビルド手順
+roBaのファームウェアをGitHub Actionsを使わずローカルPCでビルドするための手順です。
+ビルド時間の短縮に加え、ビルド結果のダウンロードの手間を省くことができます。
 
 ## 環境構築
 [ZMK公式ドキュメント](https://zmk.dev/docs/development/local-toolchain/setup/container) に書かれている内容の通りだが、一応日本語で書き写しておく。
