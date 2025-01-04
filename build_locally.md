@@ -5,7 +5,8 @@ roBaのファームウェアをGitHub Actionsを使わずローカルPCでビル
 
 - [roBa ローカルビルド手順](#roba-ローカルビルド手順)
 	- [環境構築](#環境構築)
-		- [事前準備](#事前準備)
+		- [zmk-config-roBaの準備](#zmk-config-robaの準備)
+		- [VSCodeとDockerのインストールする](#vscodeとdockerのインストールする)
 		- [Dockerコンテナの用意](#dockerコンテナの用意)
 			- [zmk-configのvolume作成](#zmk-configのvolume作成)
 			- [ZMKのコンテナ作成](#zmkのコンテナ作成)
@@ -15,9 +16,21 @@ roBaのファームウェアをGitHub Actionsを使わずローカルPCでビル
 
 
 ## 環境構築
-[ZMK公式ドキュメント](https://zmk.dev/docs/development/local-toolchain/setup/container) に書かれている内容の通りだが、一応必要な部分だけを日本語で書き写しておく。
 
-### 事前準備
+### zmk-config-roBaの準備
+zmk-config-roBaをクローンする。
+フォークしたリポジトリを使う場合は`kumamuk-git`の部分を書き換えること。
+```sh
+git clone https://github.com/kumamuk-git/zmk-config-roBa.git
+```
+
+`zmk-config-roBa`内で、zmk-pmw3610-driverをクローンする。
+```sh
+cd zmk-config-roBa
+git clone https://github.com/kumamuk-git/zmk-pmw3610-driver.git
+```
+
+### VSCodeとDockerのインストールする
 - Docker Desktopをインストールする
 - VSCodeをインストールする
 - VSCodeのRemote Containersエクステンションをインストールする
@@ -26,7 +39,7 @@ roBaのファームウェアをGitHub Actionsを使わずローカルPCでビル
 zmk-configのvolumeとZMKのコンテナを作成する。
 
 #### zmk-configのvolume作成
-以下のコマンドを実行する。`/absolute/path/to/zmk-config/`は各自のzmk-configへのパスに置き換えること。
+以下のコマンドを実行する。`/absolute/path/to/zmk-config/`は各自のクローンしたzmk-config-roBaへのパスに置き換えること。
 ```sh
 docker volume create --driver local -o o=bind -o type=none -o device="/absolute/path/to/zmk-config/" zmk-config
 ```
@@ -41,7 +54,12 @@ code zmk
 ZMKリポジトリ内にコンテナの設定が書かれているので、そのコンテナをVSCodeで開く。
 
 ### Westの初期化
-※以降のコマンドは全てコンテナ内で行うこと。
+※以降の操作は全てコンテナ内で行うこと。※
+
+`/workspaces/zmk/app/CMakeList.txt`の6行目の外部モジュールに`zmk-pmw3610-driver`を加える
+```cmake
+set(ZEPHYR_EXTRA_MODULES "${ZMK_EXTRA_MODULES};${CMAKE_CURRENT_SOURCE_DIR}/module;${CMAKE_CURRENT_SOURCE_DIR}/keymap-module;/workspaces/zmk-config/zmk-pmw3610-driver")
+```
 
 以下のコマンドを順に実行する。
 ```sh
