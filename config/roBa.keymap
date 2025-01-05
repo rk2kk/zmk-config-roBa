@@ -45,17 +45,6 @@
             key-positions = <18 19>;
             layers = <4>;
         };
-
-        toggle_pause {
-            bindings = <&kp C_PLAY_PAUSE>;
-            key-positions = <6 7>;
-            layers = <5>;
-        };
-
-        toggle_mute {
-            bindings = <&kp C_MUTE>;
-            key-positions = <18 19>;
-        };
     };
 
     macros {
@@ -404,10 +393,10 @@
 
         Media {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &kp C_PREVIOUS     &kp C_NEXT       &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &kp LS(LA(LC(M)))  &trans           &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                              &trans
+&trans  &trans  &trans  &trans  &trans                      &kp C_PREV         &kp C_PLAY_PAUSE   &kp C_NEXT       &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp C_VOLUME_DOWN  &kp C_MUTE         &kp C_VOLUME_UP  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans             &kp LS(LA(LC(M)))  &trans           &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                                         &trans
             >;
         };
 
