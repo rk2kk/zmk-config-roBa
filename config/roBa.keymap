@@ -337,7 +337,7 @@
 
         Misc {
             bindings = <
-&kp TAB               &kp LC(LG(LEFT))        &kp LG(TAB)       &kp LG(LC(RIGHT))        &td_alt_f4                      &td_alt_f4         &kp LC(W)                                 &kp LS(LC(T))                          &kp LC(T)          &kp LEFT_BRACE
+&kp TAB               &kp LC(LG(LEFT))        &kp LG(TAB)       &kp LG(LC(RIGHT))        &td_alt_f4                      &td_alt_f4         &kp LC(W)                                 &kp LS(LC(T))                          &kp LC(T)          &kp TAB
 &kp LS(TAB)           &kp LG(LS(LEFT_ARROW))  &kp LG(UP_ARROW)  &kp LG(LS(RIGHT_ARROW))  &trans      &trans      &trans  &kp K_VOLUME_UP    &kp_with_disable_mouse_layer LC(PAGE_UP)  &kp_with_disable_mouse_layer UP_ARROW  &kp LC(PAGE_DOWN)  &kp LS(TAB)
 &kp LA(LC(LG(DOWN)))  &kp LG(LEFT_ARROW)      &kp LG(DOWN)      &kp LG(LS(RIGHT_ARROW))  &trans      &trans      &trans  &kp K_VOLUME_DOWN  &kp LA(LEFT)                              &kp DOWN                               &kp LA(RIGHT)      &trans
 &trans                &trans                  &trans            &trans                   &trans      &trans      &trans  &trans                                                                                                                 &trans
