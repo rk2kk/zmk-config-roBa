@@ -47,7 +47,7 @@
         };
 
         toggle_pause {
-            bindings = <&kp K_PLAY_PAUSE>;
+            bindings = <&kp C_PLAY_PAUSE>;
             key-positions = <6 7>;
             layers = <5>;
         };
@@ -404,7 +404,7 @@
 
         Media {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &kp K_PREV         &kp C_NEXT       &trans  &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &kp C_PREVIOUS     &kp C_NEXT       &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &kp LS(LA(LC(M)))  &trans           &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                              &trans
