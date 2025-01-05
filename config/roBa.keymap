@@ -98,6 +98,26 @@
                 <&mo MACRO_PLACEHOLDER>;
         };
 
+        lm_with_disable_mouse_layer: lm_with_disable_mouse_layer {
+            compatible = "zmk,behavior-macro-two-param";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <2>;
+            bindings =
+                <&tog_off 4>,
+                <&macro_param_1to1>,
+                <&macro_press>,
+                <&mo MACRO_PLACEHOLDER &macro_param_2to1>,
+                <&macro_press>,
+                <&kp MACRO_PLACEHOLDER>,
+                <&macro_pause_for_release>,
+                <&macro_param_2to1>,
+                <&macro_release>,
+                <&kp MACRO_PLACEHOLDER &macro_param_1to1>,
+                <&macro_release>,
+                <&mo MACRO_PLACEHOLDER>;
+        };
+
         lm_alt: lm_alt {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
