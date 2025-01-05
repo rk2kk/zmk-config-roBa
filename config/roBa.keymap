@@ -291,11 +291,14 @@
         mt_with_disable_mouse_layer: mt_with_disable_mouse_layer {
             compatible = "zmk,behavior-hold-tap";
             label = "MT_WITH_DISABLE_MOUSE_LAYER";
-            bindings = <&kp>, <&kp_with_disable_mouse_layer>;
+            bindings =
+                <&kp_with_disable_mouse_layer>,
+                <&kp_with_disable_mouse_layer>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "balanced";
+            quick-tap-ms = <200>;
         };
 
         lt_mod_release: lt_mod_release {
