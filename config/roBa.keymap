@@ -204,7 +204,7 @@
         unAML: unAML {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 0>;
+            bindings = <&tog_off 4>;
             label = "UNAML";
         };
 
