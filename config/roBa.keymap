@@ -122,23 +122,22 @@
                 <&mo MACRO_PLACEHOLDER>;
         };
 
-        lm_alt: lm_alt {
-            compatible = "zmk,behavior-macro-two-param";
+        lm_3: lm_alt {
+            compatible = "zmk,behavior-macro-one-param";
             wait-ms = <0>;
             tap-ms = <0>;
-            #binding-cells = <2>;
+            #binding-cells = <1>;
             bindings =
-                <&macro_param_1to1>,
                 <&macro_press>,
-                <&mo MACRO_PLACEHOLDER &macro_param_2to1>,
+                <&mo 3 &macro_param_1to1>,
                 <&macro_press>,
                 <&kp MACRO_PLACEHOLDER>,
                 <&macro_pause_for_release>,
-                <&macro_param_2to1>,
+                <&macro_param_1to1>,
                 <&macro_release>,
-                <&kp MACRO_PLACEHOLDER &macro_param_1to1>,
+                <&kp MACRO_PLACEHOLDER>,
                 <&macro_release>,
-                <&mo MACRO_PLACEHOLDER>;
+                <&mo 3>;
         };
 
         td_ZenkakuHankku_to_layer_0: td_ZenkakuHankku_to_layer_0 {
@@ -290,7 +289,7 @@
         lt_with_alt: lt_with_alt {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_WITH_ALT";
-            bindings = <&lm_alt>, <&kp>;
+            bindings = <&lm_3>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -362,10 +361,10 @@
                 <&lm_with_disable_mouse_layer 3 LCTRL>;
         };
 
-        ltm_alt: ltm_alt {
+        ltm_3: ltm_3 {
             compatible = "zmk,behavior-hold-tap";
-            label = "LTM_ALT";
-            bindings = <&lm_alt>, <&kp>;
+            label = "LTM_3";
+            bindings = <&lm_3>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -381,7 +380,7 @@
             bindings = <
 &kp_with_disable_mouse_layer Q             &kp_with_disable_mouse_layer W             &kp_with_disable_mouse_layer E  &kp_with_disable_mouse_layer R  &lt_with_disable_mouse_layer 7 T                                                                                             &lt_with_disable_mouse_layer 7 Y      &kp_with_disable_mouse_layer U  &kp_with_disable_mouse_layer I  &kp_with_disable_mouse_layer O  &lt_with_disable_mouse_layer 5 P
 &mt_with_disable_mouse_layer LCTRL A       &kp_with_disable_mouse_layer S             &kp_with_disable_mouse_layer D  &kp_with_disable_mouse_layer F  &kp_with_disable_mouse_layer G        &kp_with_disable_mouse_layer LS(LG(S))      &lm_with_disable_mouse_layer 3 LCTRL       &kp_with_disable_mouse_layer H        &kp_with_disable_mouse_layer J  &kp_with_disable_mouse_layer K  &kp_with_disable_mouse_layer L  &lt_with_disable_mouse_layer 6 MINUS
-&mt_with_disable_mouse_layer LEFT_SHIFT Z  &mt_with_disable_mouse_layer LEFT_SHIFT X  &kp_with_disable_mouse_layer C  &kp_with_disable_mouse_layer V  &lt_with_disable_mouse_layer 3 B      &td_alt_ctrl_tab                            &ltm_alt 3 N                               &lt_with_disable_mouse_layer 3 N      &kp_with_disable_mouse_layer M  &mod_morph_exclamation          &mod_morph_question             &mod_morph_slash
+&mt_with_disable_mouse_layer LEFT_SHIFT Z  &mt_with_disable_mouse_layer LEFT_SHIFT X  &kp_with_disable_mouse_layer C  &kp_with_disable_mouse_layer V  &lt_with_disable_mouse_layer 3 B      &td_alt_ctrl_tab                            &ltm_3 LEFT_ALT N                          &lt_with_disable_mouse_layer 3 N      &kp_with_disable_mouse_layer M  &mod_morph_exclamation          &mod_morph_question             &mod_morph_slash
 &kp LCTRL                                  &kp LEFT_WIN                               &kp LEFT_ALT                    &td_ZenkakuHankku_to_layer_0    &lt_with_disable_mouse_layer 2 SPACE  &lt_with_disable_mouse_layer 1 TAB          &lt_with_disable_mouse_layer2 1 BACKSPACE  &lt_with_disable_mouse_layer 2 ENTER                                                                                                  &mt_with_disable_mouse_layer LEFT_SHIFT ESCAPE
             >;
 
