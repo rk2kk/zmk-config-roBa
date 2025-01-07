@@ -133,20 +133,34 @@
 
         mo_unAML: mo_unAML {
             compatible = "zmk,behavior-macro-one-param";
-            wait-ms = <20>;
-            tap-ms = <20>;
+            wait-ms = <0>;
+            tap-ms = <0>;
             #binding-cells = <1>;
             bindings =
                 <&unAML>,
                 <&macro_press>,
                 <&macro_param_1to1 &mo MACRO_PLACEHOLDER>,
                 <&macro_pause_for_release>,
-                <&macro_tap>,
-                <&kt_off LEFT_ALT>,
                 <&macro_release>,
                 <&macro_param_1to1 &mo MACRO_PLACEHOLDER>;
 
             label = "MO_UNAML";
+        };
+
+        mo_alt_off: mo_alt_off {
+            compatible = "zmk,behavior-macro-one-param";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <1>;
+            bindings =
+                <&macro_press>,
+                <&macro_param_1to1 &mo MACRO_PLACEHOLDER>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&macro_param_1to1 &mo MACRO_PLACEHOLDER>,
+                <&macro_tap>,
+                <&kt_off LEFT_ALT>;
+            label = "MO_ALT_OFF";
         };
 
         mo_with_enter_on_release: mo_with_enter_on_release {
@@ -206,6 +220,7 @@
             #binding-cells = <1>;
             display-name = "Key Toggle Off";
             toggle-mode = "off";
+            // reference: https://zmk.dev/docs/keymaps/behaviors/key-toggle
         };
 
         td_right_click: td_right_click {
@@ -340,7 +355,7 @@
             bindings = <
 &kp_unAML Q             &kp_unAML W             &kp_unAML E   &kp_unAML R              &lt_unAML 7 T                                                            &lt_unAML 7 Y      &kp_unAML U  &kp_unAML I             &kp_unAML O          &lt_unAML 5 P
 &mt_unAML LCTRL A       &kp_unAML S             &kp_unAML D   &kp_unAML F              &kp_unAML G        &kp_unAML LS(LG(S))       &lm_unAML 3 LCTRL           &kp_unAML H        &kp_unAML J  &kp_unAML K             &kp_unAML L          &lt_unAML 6 MINUS
-&mt_unAML LEFT_SHIFT Z  &mt_unAML LEFT_SHIFT X  &kp_unAML C   &kp_unAML V              &lt_unAML 3 B      &lm_unAML 3 LEFT_ALT      &lt_unAML 3 N               &lt_unAML 3 N      &kp_unAML M  &mod_morph_exclamation  &mod_morph_question  &mod_morph_slash
+&mt_unAML LEFT_SHIFT Z  &mt_unAML LEFT_SHIFT X  &kp_unAML C   &kp_unAML V              &lt_unAML 3 B      &mo_alt_off 3      &lt_unAML 3 N               &lt_unAML 3 N      &kp_unAML M  &mod_morph_exclamation  &mod_morph_question  &mod_morph_slash
 &kp LCTRL               &kp LEFT_WIN            &kp LEFT_ALT  &td_ZenkakuHankku_unAML  &lt_unAML 2 SPACE  &lt_unAML 1 TAB           &lt_unAML_weak 1 BACKSPACE  &lt_unAML 2 ENTER                                                            &mt_unAML LEFT_SHIFT ESCAPE
             >;
 
