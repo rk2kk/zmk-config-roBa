@@ -196,7 +196,7 @@
         alt_on_tab_to_5: alt_on_tab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kt_on LEFT_ALT &kp TAB &to 5>;
+            bindings = <&kt_on LEFT_ALT &kp TAB &sl 5>;
             label = "ALT_ON_TAB";
         };
     };
