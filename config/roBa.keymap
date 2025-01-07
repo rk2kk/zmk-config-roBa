@@ -19,6 +19,8 @@
     flavor = "balanced";
 };
 
+&sl { release-after-ms = <600>; };
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -201,27 +203,7 @@
             wait-ms = <0>;
             tap-ms = <0>;
             #binding-cells = <0>;
-            bindings =
-                <&kt_off LEFT_ALT>, <&kt_off LCTRL>,
-                <&kt_off LEFT_ALT>, <&kt_off LCTRL>,
-                <&kt_off LEFT_ALT>, <&kt_off LCTRL>,
-                <&kt_off LEFT_ALT>, <&kt_off LCTRL>,
-                <&kt_off LEFT_ALT>, <&kt_off LCTRL>,
-                <&kt_off LEFT_ALT>, <&kt_off LCTRL>,
-                <&kt_off LEFT_ALT>, <&kt_off LCTRL>,
-                <&kt_off LEFT_ALT>, <&kt_off LCTRL>,
-                <&kt_off LEFT_ALT>, <&kt_off LCTRL>,
-                <&kt_off LEFT_ALT>, <&kt_off LCTRL>,
-                <&kt_off LEFT_ALT>, <&kt_off LCTRL>,
-                <&kt_off LEFT_ALT>, <&kt_off LCTRL>,
-                <&kt_off LEFT_ALT>, <&kt_off LCTRL>,
-                <&kt_off LEFT_ALT>, <&kt_off LCTRL>,
-                <&kt_off LEFT_ALT>, <&kt_off LCTRL>,
-                <&kt_off LEFT_ALT>, <&kt_off LCTRL>,
-                <&kt_off LEFT_ALT>, <&kt_off LCTRL>,
-                <&kt_off LEFT_ALT>, <&kt_off LCTRL>,
-                <&kt_off LEFT_ALT>, <&kt_off LCTRL>,
-                <&kt_off LEFT_ALT>, <&kt_off LCTRL>;
+            bindings = <&kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL>;
             label = "DISABLE_ALT_CTRL";
         };
 
