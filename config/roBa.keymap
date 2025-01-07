@@ -304,7 +304,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_LTM_ALT_CTRL_N";
             #binding-cells = <0>;
-            bindings = <&ltm_3_unAML LEFT_ALT N>, <&ltm_3_unAML N LCTRL>;
+            bindings = <&ltm_3_unAML LEFT_ALT N>, <&ltm_3_unAML LCTRL N>;
         };
 
         ltm_3_unAML: ltm_3_unAML {
