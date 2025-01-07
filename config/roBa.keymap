@@ -19,7 +19,7 @@
     flavor = "balanced";
 };
 
-&sl { release-after-ms = <100>; };
+&sl { release-after-ms = <500>; };
 
 / {
     combos {
@@ -112,11 +112,11 @@
             label = "TD_ZENKAKUHANKKU_UNAML";
         };
 
-        kp_unAML: disable_mouse_layer {
+        kp_unAML: kp_unAML {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings = <&unAML &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
-            label = "DISABLE_MOUSE_LAYER";
+            label = "KP_UNAML";
         };
 
         mod_unAML: mod_unAML {
@@ -220,7 +220,8 @@
             wait-ms = <0>;
             tap-ms = <0>;
             #binding-cells = <0>;
-            bindings = <&kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL>;
+            bindings = <&kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL>,
+            <&to 0>;
             label = "DISABLE_ALT_CTRL";
         };
 
