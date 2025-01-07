@@ -102,11 +102,11 @@
                 <&mo 3>;
         };
 
-        td_ZenkakuHankku_unAML: td_ZenkakuHankku_to_layer_0 {
+        td_ZenkakuHankku_unAML: td_ZenkakuHankku_unAML {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 0 &td_ZenkakuHankaku>;
-            label = "TD_ZENKAKUHANKKU_TO_LAYER_0";
+            bindings = <&tog_off 4 &td_ZenkakuHankaku>;
+            label = "TD_ZENKAKUHANKKU_UNAML";
         };
 
         kp_unAML: disable_mouse_layer {
@@ -175,16 +175,6 @@
             #binding-cells = <1>;
             display-name = "Toggle Layer On";
             toggle-mode = "off";
-        };
-
-        lt_to_layer_0: lt_to_layer_0 {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP_TO_0";
-            bindings = <&mo>, <&to_layer_0>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "balanced";
         };
 
         td_right_click: td_right_click {
