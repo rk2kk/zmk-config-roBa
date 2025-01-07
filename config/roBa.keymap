@@ -413,7 +413,7 @@
             bindings = <
 &kp_unAML Q             &kp_unAML W             &kp_unAML E   &kp_unAML R              &lt_unAML 7 T                                                            &lt_unAML 7 Y      &kp_unAML U  &kp_unAML I             &kp_unAML O          &lt_unAML 5 P
 &mt_unAML LCTRL A       &kp_unAML S             &kp_unAML D   &kp_unAML F              &kp_unAML G        &kp_unAML LS(LG(S))       &lm_unAML 3 LCTRL           &kp_unAML H        &kp_unAML J  &kp_unAML K             &kp_unAML L          &lt_unAML 6 MINUS
-&mt_unAML LEFT_SHIFT Z  &mt_unAML LEFT_SHIFT X  &kp_unAML C   &kp_unAML V              &mo_unAML_disable_alt_ctrl 3 B      &lm_unAML 3 LEFT_ALT      &mo_alt_off 3               &mo_unAML_disable_alt_ctrl 3 N      &kp_unAML M  &mod_morph_exclamation  &mod_morph_question  &mod_morph_slash
+&mt_unAML LEFT_SHIFT Z  &mt_unAML LEFT_SHIFT X  &kp_unAML C   &kp_unAML V              &lt_unAML_disable_alt_ctrl 3 B      &lm_unAML 3 LEFT_ALT      &mo_alt_off 3               &lt_unAML_disable_alt_ctrl 3 N      &kp_unAML M  &mod_morph_exclamation  &mod_morph_question  &mod_morph_slash
 &kp LCTRL               &kp LEFT_WIN            &kp LEFT_ALT  &td_ZenkakuHankku_unAML  &lt_unAML 2 SPACE  &lt_unAML 1 TAB           &lt_unAML_weak 1 BACKSPACE  &lt_unAML 2 ENTER                                                            &mt_unAML LEFT_SHIFT ESCAPE
             >;
 
