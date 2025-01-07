@@ -90,6 +90,7 @@
             tap-ms = <0>;
             #binding-cells = <1>;
             bindings =
+                <&unAML>,
                 <&macro_press>,
                 <&mo 3 &macro_param_1to1>,
                 <&macro_press>,
@@ -264,6 +265,20 @@
             tapping-term-ms = <200>;
         };
 
+        td_ltm_alt_ctrl_n: td_ltm_alt_ctrl_n {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_LTM_ALT_CTRL_N";
+            #binding-cells = <0>;
+            bindings = <&ltm_3_unAML LEFT_ALT N>, <&ltm_3_unAML LCTRL N>;
+        };
+
+        td_ltm_alt_ctrl_b: td_ltm_alt_ctrl_b {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_LTM_ALT_CTRL_B";
+            #binding-cells = <0>;
+            bindings = <&ltm_3_unAML LEFT_ALT B>, <&ltm_3_unAML LCTRL B>;
+        };
+
         lt_unAML: lt_unAML {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_UNAML";
@@ -305,13 +320,6 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <200>;
-        };
-
-        td_ltm_alt_ctrl_n: td_ltm_alt_ctrl_n {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_LTM_ALT_CTRL_N";
-            #binding-cells = <0>;
-            bindings = <&ltm_3_unAML LEFT_ALT N>, <&ltm_3_unAML LCTRL N>;
         };
 
         ltm_3_unAML: ltm_3_unAML {
