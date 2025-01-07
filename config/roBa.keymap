@@ -9,12 +9,12 @@
 
 &mt {
     quick-tap-ms = <250>;
-    tapping-term-ms = <200>;
+    tapping-term-ms = <150>;
     flavor = "hold-preferred";
 };
 
 &lt {
-    tapping-term-ms = <200>;
+    tapping-term-ms = <150>;
     quick-tap-ms = <250>;
     flavor = "hold-preferred";
 };
@@ -281,7 +281,7 @@
             #binding-cells = <0>;
             bindings = <&mkp RCLK>, <&kp LC(W)>;
 
-            tapping-term-ms = <250>;
+            tapping-term-ms = <150>;
         };
 
         td_colon: td_colon {
@@ -290,14 +290,14 @@
             #binding-cells = <0>;
             bindings = <&kp COLON>, <&kp SEMICOLON>;
 
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
         };
 
         td_q_escape: td_q_escape {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_Q_ESCAPE";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             bindings = <&kp Q>, <&kp ESCAPE>;
         };
 
@@ -305,7 +305,7 @@
             compatible = "zmk,behavior-eager-tap-dance";
             label = "TD_ZENKAKUHANKAKU";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             bindings = <&kp LANGUAGE_2>, <&kp LANGUAGE_1>;
         };
 
@@ -342,7 +342,7 @@
             #binding-cells = <0>;
             bindings = <&kp F4>, <&kp LA(F4)>;
 
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
         };
 
         lt_unAML: lt_unAML {
@@ -351,7 +351,7 @@
             bindings = <&mo_unAML>, <&kp_unAML>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             quick-tap-ms = <200>;
             flavor = "hold-preferred";
         };
@@ -362,7 +362,7 @@
             bindings = <&mo_unAML_disable_alt_ctrl>, <&kp_unAML>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             quick-tap-ms = <200>;
             flavor = "hold-preferred";
         };
@@ -373,7 +373,7 @@
             bindings = <&mo_unAML>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             quick-tap-ms = <200>;
             flavor = "hold-preferred";
         };
@@ -384,7 +384,7 @@
             bindings = <&mod_unAML>, <&kp_unAML>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             flavor = "hold-preferred";
             quick-tap-ms = <200>;
         };
@@ -395,7 +395,7 @@
             bindings = <&lm_3_unAML>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             quick-tap-ms = <200>;
             flavor = "hold-preferred";
         };
