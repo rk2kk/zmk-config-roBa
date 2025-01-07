@@ -160,26 +160,7 @@
                 <&macro_release>,
                 <&macro_param_1to1 &mo MACRO_PLACEHOLDER>,
                 <&macro_tap>,
-                <&kt_off LEFT_ALT>,
-                <&kt_off LEFT_ALT>,
-                <&kt_off LEFT_ALT>,
-                <&kt_off LEFT_ALT>,
-                <&kt_off LEFT_ALT>,
-                <&kt_off LEFT_ALT>,
-                <&kt_off LEFT_ALT>,
-                <&kt_off LEFT_ALT>,
-                <&kt_off LEFT_ALT>,
-                <&kt_off LEFT_ALT>,
-                <&kt_off LEFT_ALT>,
-                <&kt_off LEFT_CTRL>,
-                <&kt_off LEFT_CTRL>,
-                <&kt_off LEFT_CTRL>,
-                <&kt_off LEFT_CTRL>,
-                <&kt_off LEFT_CTRL>,
-                <&kt_off LEFT_CTRL>,
-                <&kt_off LEFT_CTRL>,
-                <&kt_off LEFT_CTRL>,
-                <&kt_off LEFT_CTRL>;
+                <&kt_off LEFT_ALT &kt_off LEFT_ALT &kt_off LEFT_ALT &kt_off LEFT_ALT &kt_off LEFT_ALT &kt_off LEFT_ALT &kt_off LEFT_ALT &kt_off LEFT_ALT &kt_off LEFT_ALT &kt_off LEFT_ALT &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_CTRL &kt_off LEFT_CTRL &kt_off LEFT_CTRL &kt_off LEFT_CTRL &kt_off LEFT_CTRL &kt_off LEFT_CTRL &kt_off LEFT_CTRL &kt_off LEFT_CTRL>;
 
             label = "MO_ALT_OFF";
         };
@@ -213,11 +194,25 @@
             label = "KP_WITH_KT_ON";
         };
 
-        alt_on_tab_to_5: alt_on_tab {
+        disable_alt_ctrl: disable_alt_ctrl {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kt_on LEFT_ALT &kp TAB &sl 5>;
-            label = "ALT_ON_TAB";
+            bindings = <&none>;
+            label = "DISABLE_ALT_CTRL";
+        };
+
+        kp_with_sl: sl_5 {
+            compatible = "zmk,behavior-macro-two-param";
+            #binding-cells = <2>;
+            bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &macro_param_2to1 &sl MACRO_PLACEHOLDER>;
+            label = "SL_5";
+        };
+
+        tab_with_kt_on_and_sl: kt_on_kp_with_sl {
+            compatible = "zmk,behavior-macro-two-param";
+            #binding-cells = <2>;
+            bindings = <&macro_param_1to1 &kt_on MACRO_PLACEHOLDER &macro_param_2to2 &kp_with_sl TAB MACRO_PLACEHOLDER>;
+            label = "KT_ON_KP_WITH_SL";
         };
     };
 
@@ -413,8 +408,8 @@
 
         Misc {
             bindings = <
-&kp TAB               &kp LC(LG(LEFT))        &kp LG(TAB)       &kp LG(LC(RIGHT))        &td_alt_f4                      &td_alt_f4         &kp LC(W)              &kp LS(LC(T))       &kp LC(T)          &alt_on_tab_to_5
-&kp LS(TAB)           &kp LG(LS(LEFT_ARROW))  &kp LG(UP_ARROW)  &kp LG(LS(RIGHT_ARROW))  &trans      &trans      &trans  &kp K_VOLUME_UP    &kp_unAML LC(PAGE_UP)  &kp_unAML UP_ARROW  &kp LC(PAGE_DOWN)  &kp LS(TAB)
+&kp TAB               &kp LC(LG(LEFT))        &kp LG(TAB)       &kp LG(LC(RIGHT))        &td_alt_f4                      &td_alt_f4         &kp LC(W)              &kp LS(LC(T))       &kp LC(T)          &tab_with_kt_on_and_sl LEFT_ALT 5
+&kp LS(TAB)           &kp LG(LS(LEFT_ARROW))  &kp LG(UP_ARROW)  &kp LG(LS(RIGHT_ARROW))  &trans      &trans      &trans  &kp K_VOLUME_UP    &kp_unAML LC(PAGE_UP)  &kp_unAML UP_ARROW  &kp LC(PAGE_DOWN)  &tab_with_kt_on_and_sl LS(LCTRL) 6
 &kp LA(LC(LG(DOWN)))  &kp LG(LEFT_ARROW)      &kp LG(DOWN)      &kp LG(LS(RIGHT_ARROW))  &trans      &trans      &trans  &kp K_VOLUME_DOWN  &kp LA(LEFT)           &kp DOWN            &kp LA(RIGHT)      &trans
 &trans                &trans                  &trans            &trans                   &trans      &trans      &trans  &trans                                                                           &trans
             >;
@@ -433,8 +428,8 @@
 
         Media {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &kp C_PREV         &kp C_PLAY_PAUSE   &kp C_NEXT       &trans  &kp TAB
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp C_VOLUME_DOWN  &kp C_MUTE         &kp C_VOLUME_UP  &trans  &kp LS(TAB)
+&trans  &trans  &trans  &trans  &trans                      &kp C_PREV         &kp C_PLAY_PAUSE   &kp C_NEXT       &trans  &kp_with_sl TAB 5
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp C_VOLUME_DOWN  &kp C_MUTE         &kp C_VOLUME_UP  &trans  &kp_with_sl LS(TAB) 5
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans             &kp LS(LA(LC(M)))  &trans           &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                                         &trans
             >;
@@ -442,8 +437,8 @@
 
         Extra_Functions {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &kp F13  &kp F14  &kp F15  &kp F16  &kp LS(TAB)
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp F17  &kp F18  &kp F19  &kp F20  &kp TAB
+&trans  &trans  &trans  &trans  &trans                      &kp F13  &kp F14  &kp F15  &kp F16  &kp_with_sl LS(TAB) 6
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp F17  &kp F18  &kp F19  &kp F20  &kp_with_sl TAB 6
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp F21  &kp F22  &kp F23  &kp F24  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                              &trans
             >;
