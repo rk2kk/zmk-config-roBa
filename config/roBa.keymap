@@ -216,13 +216,6 @@
             bindings = <&macro_param_1to1 &kt_on MACRO_PLACEHOLDER &macro_param_2to2 &kp_with_sl TAB MACRO_PLACEHOLDER>;
             label = "KT_ON_KP_WITH_SL";
         };
-
-        shift_tab_kt_on_and_sl: shift_tab_kt_on_and_sl {
-            compatible = "zmk,behavior-macro-two-param";
-            #binding-cells = <2>;
-            bindings = <&macro_param_1to1 &kt_on MACRO_PLACEHOLDER &macro_param_2to2 &kp_with_sl LS(TAB) MACRO_PLACEHOLDER>;
-            label = "SHIFT_TAB_KT_ON_AND_SL";
-        };
     };
 
     behaviors {
