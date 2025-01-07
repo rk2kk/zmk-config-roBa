@@ -202,6 +202,20 @@
             toggle-mode = "off";
         };
 
+        kt_on: key_toggle_on_only {
+            compatible = "zmk,behavior-key-toggle";
+            #binding-cells = <1>;
+            display-name = "Key Toggle On";
+            toggle-mode = "on";
+        };
+
+        kt_off: key_toggle_off_only {
+            compatible = "zmk,behavior-key-toggle";
+            #binding-cells = <1>;
+            display-name = "Key Toggle Off";
+            toggle-mode = "off";
+        };
+
         td_right_click: td_right_click {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_RIGHT_CLICK";
