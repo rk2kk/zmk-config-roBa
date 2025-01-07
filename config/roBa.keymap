@@ -353,7 +353,7 @@
 &kp LCTRL                                  &kp LEFT_WIN                               &kp LEFT_ALT                    &td_ZenkakuHankku_to_layer_0    &lt_with_disable_mouse_layer 2 SPACE  &lt_with_disable_mouse_layer 1 TAB           &lt_with_disable_mouse_layer2 1 BACKSPACE  &lt_with_disable_mouse_layer 2 ENTER                                                                                                  &mt_with_disable_mouse_layer LEFT_SHIFT ESCAPE
             >;
 
-            sensor-bindings = <&inc_dec_kp C_AC_ZOOM_OUT C_AC_ZOOM_IN>;
+            sensor-bindings = <&inc_dec_kp K_SCROLL_UP C_AC_SCROLL_UP>;
         };
 
         Numpad_and_Symbols {
