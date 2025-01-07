@@ -71,7 +71,7 @@
             tap-ms = <0>;
             #binding-cells = <2>;
             bindings =
-                <&tog_off 4 &macro_param_1to1>,
+                <&unAML &macro_param_1to1>,
                 <&macro_press>,
                 <&mo MACRO_PLACEHOLDER &macro_param_2to1>,
                 <&macro_press>,
@@ -105,14 +105,14 @@
         td_ZenkakuHankku_unAML: td_ZenkakuHankku_unAML {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tog_off 4 &td_ZenkakuHankaku>;
+            bindings = <&unAML &td_ZenkakuHankaku>;
             label = "TD_ZENKAKUHANKKU_UNAML";
         };
 
         kp_unAML: disable_mouse_layer {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&tog_off 4 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+            bindings = <&unAML &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "DISABLE_MOUSE_LAYER";
         };
 
@@ -120,7 +120,7 @@
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings =
-                <&tog_off 4>,
+                <&unAML>,
                 <&macro_press>,
                 <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
                 <&macro_pause_for_release>,
@@ -136,7 +136,7 @@
             tap-ms = <0>;
             #binding-cells = <1>;
             bindings =
-                <&tog_off 4>,
+                <&unAML>,
                 <&macro_press>,
                 <&macro_param_1to1 &mo MACRO_PLACEHOLDER>,
                 <&macro_pause_for_release>,
@@ -159,6 +159,13 @@
                 <&macro_param_1to1 &mo MACRO_PLACEHOLDER>;
 
             label = "MO_WITH_ENTER_ON_RELEASE";
+        };
+
+        unAML: unAML {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&tog_off 4>;
+            label = "UNAML";
         };
     };
 
