@@ -261,7 +261,7 @@
             #binding-cells = <0>;
             bindings = <&mkp RCLK>, <&kp LC(W)>;
 
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
         };
 
         td_colon: td_colon {
@@ -270,14 +270,14 @@
             #binding-cells = <0>;
             bindings = <&kp COLON>, <&kp SEMICOLON>;
 
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
         };
 
         td_q_escape: td_q_escape {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_Q_ESCAPE";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
             bindings = <&kp Q>, <&kp ESCAPE>;
         };
 
@@ -288,7 +288,7 @@
 
             label = "TD_ZENKAKUHANKAKU";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
             bindings = <&kp LANGUAGE_2>, <&kp LANGUAGE_1>;
         };
 
@@ -325,7 +325,7 @@
             #binding-cells = <0>;
             bindings = <&kp F4>, <&kp LA(F4)>;
 
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
         };
 
         lt_unAML: lt_unAML {
