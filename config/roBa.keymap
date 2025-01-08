@@ -10,13 +10,13 @@
 &mt {
     quick-tap-ms = <250>;
     tapping-term-ms = <200>;
-    flavor = "hold-preferred";
+    flavor = "balanced";
 };
 
 &lt {
     tapping-term-ms = <200>;
     quick-tap-ms = <250>;
-    flavor = "hold-preferred";
+    flavor = "balanced";
 };
 
 &sl { release-after-ms = <500>; };
@@ -316,7 +316,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <200>;
-            flavor = "hold-preferred";
+            flavor = "balanced";
         };
 
         lt_unAML_disable_alt_ctrl: lt_unAML_disable_alt_ctrl {
@@ -327,7 +327,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <200>;
-            flavor = "hold-preferred";
+            flavor = "balanced";
         };
 
         lt_unAML_weak: lt_unAML_weak {
@@ -338,7 +338,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <200>;
-            flavor = "hold-preferred";
+            flavor = "balanced";
         };
 
         mt_unAML: mt_unAML {
@@ -348,7 +348,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            flavor = "hold-preferred";
+            flavor = "balanced";
             quick-tap-ms = <200>;
         };
     };
