@@ -387,6 +387,12 @@
             flavor = "balanced";
             quick-tap-ms = <200>;
         };
+
+        encoder_zoom: encoder_zoom {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&zoom_out>, <&zoom_in>;
+        };
     };
 
     keymap {
@@ -400,7 +406,7 @@
 &kp LCTRL               &kp LEFT_WIN            &kp LEFT_ALT  &td_ZenkakuHankku_unAML  &lt_unAML 2 SPACE               &lt_unAML 1 TAB          &lt_unAML_weak 1 BACKSPACE  &lt_unAML 2 ENTER                                                                         &mt_unAML LEFT_SHIFT ESCAPE
             >;
 
-            sensor-bindings = <&inc_dec_kp A B>;
+            sensor-bindings = <&encoder_zoom>;
         };
 
         Numpad_and_Symbols {
