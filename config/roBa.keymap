@@ -58,18 +58,6 @@
     };
 
     macros {
-        /**
-        * Temporarily switches to a layer (`&mo`) while a modifier is held.
-        * Analogous to QMK's `LM()`, using a parameterized macro.
-        *
-        * Params:
-        *  1. Layer to switch to
-        *  2. Modifier to press while layer is active
-        *
-        * Example:
-        *  `&lm NUM_LAYER LSHIFT`
-        */
-
         lm_unAML: lm_unAML {
             compatible = "zmk,behavior-macro-two-param";
             wait-ms = <0>;
