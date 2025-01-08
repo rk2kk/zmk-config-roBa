@@ -73,11 +73,12 @@
             tap-ms = <0>;
             #binding-cells = <2>;
             bindings =
-                <&unAML &macro_param_1to1>,
+                <&macro_param_1to1>,
                 <&macro_press>,
                 <&mo MACRO_PLACEHOLDER &macro_param_2to1>,
-                <&macro_press>,
                 <&kp MACRO_PLACEHOLDER>,
+                <&macro_tap>,
+                <&unAML>,
                 <&macro_pause_for_release>,
                 <&macro_param_2to1>,
                 <&macro_release>,
@@ -86,36 +87,17 @@
                 <&mo MACRO_PLACEHOLDER>;
         };
 
-        lm_3_unAML: lm_alt {
-            compatible = "zmk,behavior-macro-one-param";
-            wait-ms = <0>;
-            tap-ms = <0>;
-            #binding-cells = <1>;
-            bindings =
-                <&unAML>,
-                <&macro_press>,
-                <&mo 3 &macro_param_1to1>,
-                <&macro_press>,
-                <&kp MACRO_PLACEHOLDER>,
-                <&macro_pause_for_release>,
-                <&macro_param_1to1>,
-                <&macro_release>,
-                <&kp MACRO_PLACEHOLDER>,
-                <&macro_release>,
-                <&mo 3>;
-        };
-
         td_ZenkakuHankku_unAML: td_ZenkakuHankku_unAML {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&unAML &td_ZenkakuHankaku>;
+            bindings = <&td_ZenkakuHankaku &unAML>;
             label = "TD_ZENKAKUHANKKU_UNAML";
         };
 
         kp_unAML: kp_unAML {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&unAML &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+            bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &unAML>;
             label = "KP_UNAML";
         };
 
@@ -123,9 +105,10 @@
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings =
-                <&unAML>,
                 <&macro_press>,
                 <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_tap>,
+                <&unAML>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
                 <&macro_param_1to1 &kp MACRO_PLACEHOLDER>;
@@ -139,9 +122,10 @@
             tap-ms = <0>;
             #binding-cells = <1>;
             bindings =
-                <&unAML>,
                 <&macro_press>,
                 <&macro_param_1to1 &mo MACRO_PLACEHOLDER>,
+                <&macro_tap>,
+                <&unAML>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
                 <&macro_param_1to1 &mo MACRO_PLACEHOLDER>,
@@ -156,9 +140,10 @@
             tap-ms = <0>;
             #binding-cells = <1>;
             bindings =
-                <&unAML>,
                 <&macro_press>,
                 <&macro_param_1to1 &mo MACRO_PLACEHOLDER>,
+                <&macro_tap>,
+                <&unAML>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
                 <&macro_param_1to1 &mo MACRO_PLACEHOLDER>,
@@ -166,24 +151,6 @@
                 <&disable_alt_ctrl>;
 
             label = "MO_UNAML_DISABLE_ALT_CTRL";
-        };
-
-        mo_alt_off: mo_alt_off {
-            compatible = "zmk,behavior-macro-one-param";
-            wait-ms = <0>;
-            tap-ms = <0>;
-            #binding-cells = <1>;
-            bindings =
-                <&unAML>,
-                <&macro_press>,
-                <&macro_param_1to1 &mo MACRO_PLACEHOLDER>,
-                <&macro_pause_for_release>,
-                <&macro_release>,
-                <&macro_param_1to1 &mo MACRO_PLACEHOLDER>,
-                <&macro_tap>,
-                <&disable_alt_ctrl>;
-
-            label = "MO_ALT_OFF";
         };
 
         mo_with_enter_on_release: mo_with_enter_on_release {
@@ -297,8 +264,8 @@
         };
 
         td_ZenkakuHankaku: td_ZenkakuHankaku {
-            // compatible = "zmk,behavior-tap-dance";
-            compatible = "zmk,behavior-eager-tap-dance";
+            compatible = "zmk,behavior-tap-dance";
+            // compatible = "zmk,behavior-eager-tap-dance";
             label = "TD_ZENKAKUHANKAKU";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
@@ -384,17 +351,6 @@
             flavor = "hold-preferred";
             quick-tap-ms = <200>;
         };
-
-        ltm_3_unAML: ltm_3_unAML {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LTM_3_UNAML";
-            bindings = <&lm_3_unAML>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            quick-tap-ms = <200>;
-            flavor = "hold-preferred";
-        };
     };
 
     keymap {
@@ -404,7 +360,7 @@
             bindings = <
 &kp_unAML Q             &kp_unAML W             &kp_unAML E   &kp_unAML R              &lt_unAML 7 T                                                                         &lt_unAML 7 Y                   &kp_unAML U  &kp_unAML I             &kp_unAML O          &lt_unAML 5 P
 &mt_unAML LCTRL A       &kp_unAML S             &kp_unAML D   &kp_unAML F              &kp_unAML G                     &kp_unAML LS(LG(S))       &lm_unAML 3 LCTRL           &kp_unAML H                     &kp_unAML J  &kp_unAML K             &kp_unAML L          &lt_unAML 6 MINUS
-&mt_unAML LEFT_SHIFT Z  &mt_unAML LEFT_SHIFT X  &kp_unAML C   &kp_unAML V              &lt_unAML_disable_alt_ctrl 3 B  &lm_unAML 3 LEFT_ALT      &mo_alt_off 3               &lt_unAML_disable_alt_ctrl 3 N  &kp_unAML M  &mod_morph_exclamation  &mod_morph_question  &mod_morph_slash
+&mt_unAML LEFT_SHIFT Z  &mt_unAML LEFT_SHIFT X  &kp_unAML C   &kp_unAML V              &lt_unAML_disable_alt_ctrl 3 B  &none      &none               &lt_unAML_disable_alt_ctrl 3 N  &kp_unAML M  &mod_morph_exclamation  &mod_morph_question  &mod_morph_slash
 &kp LCTRL               &kp LEFT_WIN            &kp LEFT_ALT  &td_ZenkakuHankku_unAML  &lt_unAML 2 SPACE               &lt_unAML 1 TAB           &lt_unAML_weak 1 BACKSPACE  &lt_unAML 2 ENTER                                                                         &mt_unAML LEFT_SHIFT ESCAPE
             >;
 
