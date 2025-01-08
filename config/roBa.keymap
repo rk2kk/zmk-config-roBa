@@ -222,6 +222,20 @@
             bindings = <&macro_param_1to1 &kt_on MACRO_PLACEHOLDER &macro_param_2to2 &kp_with_sl TAB MACRO_PLACEHOLDER>;
             label = "KT_ON_KP_WITH_SL";
         };
+
+        zoom_in: zoom_in {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt_on LCTRL &msc SCRL_UP &kt_off LCTRL>;
+            label = "ZOOM_IN";
+        };
+
+        zoom_out: zoom_out {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt_on LCTRL &msc SCRL_DOWN &kt_off LCTRL>;
+            label = "ZOOM_OUT";
+        };
     };
 
     behaviors {
@@ -381,8 +395,8 @@
         Default {
             bindings = <
 &kp_unAML Q             &kp_unAML W             &kp_unAML E   &kp_unAML R              &lt_unAML 7 T                                                                        &lt_unAML 7 Y                   &kp_unAML U  &kp_unAML I             &kp_unAML O          &lt_unAML 5 P
-&mt_unAML LCTRL A       &kp_unAML S             &kp_unAML D   &kp_unAML F              &kp_unAML G                     &kp_unAML LS(LG(S))      &msc SCRL_UP                &kp_unAML H                     &kp_unAML J  &kp_unAML K             &kp_unAML L          &lt_unAML 6 MINUS
-&mt_unAML LEFT_SHIFT Z  &mt_unAML LEFT_SHIFT X  &kp_unAML C   &kp_unAML V              &lt_unAML_disable_alt_ctrl 3 B  &none                    &msc SCRL_DOWN              &lt_unAML_disable_alt_ctrl 3 N  &kp_unAML M  &mod_morph_exclamation  &mod_morph_question  &mod_morph_slash
+&mt_unAML LCTRL A       &kp_unAML S             &kp_unAML D   &kp_unAML F              &kp_unAML G                     &kp_unAML LS(LG(S))      &zoom_in                    &kp_unAML H                     &kp_unAML J  &kp_unAML K             &kp_unAML L          &lt_unAML 6 MINUS
+&mt_unAML LEFT_SHIFT Z  &mt_unAML LEFT_SHIFT X  &kp_unAML C   &kp_unAML V              &lt_unAML_disable_alt_ctrl 3 B  &none                    &zoom_out                   &lt_unAML_disable_alt_ctrl 3 N  &kp_unAML M  &mod_morph_exclamation  &mod_morph_question  &mod_morph_slash
 &kp LCTRL               &kp LEFT_WIN            &kp LEFT_ALT  &td_ZenkakuHankku_unAML  &lt_unAML 2 SPACE               &lt_unAML 1 TAB          &lt_unAML_weak 1 BACKSPACE  &lt_unAML 2 ENTER                                                                         &mt_unAML LEFT_SHIFT ESCAPE
             >;
 
