@@ -208,8 +208,6 @@
 
         tab_with_kt_on_and_sl: kt_on_kp_with_sl {
             compatible = "zmk,behavior-macro-two-param";
-            wait-ms = <0>;
-            tap-ms = <0>;
             #binding-cells = <2>;
             bindings = <&macro_param_1to1 &kt_on MACRO_PLACEHOLDER &macro_param_2to2 &kp_with_sl TAB MACRO_PLACEHOLDER>;
             label = "KT_ON_KP_WITH_SL";
@@ -423,8 +421,8 @@
 
         Misc {
             bindings = <
-&tab_with_kt_on_and_sl LEFT_ALT 5  &kp LC(LG(LEFT))        &kp LG(TAB)       &kp LG(LC(RIGHT))        &td_alt_f4                      &td_alt_f4         &kp LC(W)              &kp LS(LC(T))       &kp LC(T)          &kp_with_kt_on LEFT_ALT TAB
-&tab_with_kt_on_and_sl LCTRL 6     &kp LG(LS(LEFT_ARROW))  &kp LG(UP_ARROW)  &kp LG(LS(RIGHT_ARROW))  &trans      &trans      &trans  &kp K_VOLUME_UP    &kp_unAML LC(PAGE_UP)  &kp_unAML UP_ARROW  &kp LC(PAGE_DOWN)  &kp LS(TAB)
+&tab_with_kt_on_and_sl LEFT_ALT 5  &kp LC(LG(LEFT))        &kp LG(TAB)       &kp LG(LC(RIGHT))        &td_alt_f4                      &td_alt_f4         &kp LC(W)              &kp LS(LC(T))       &kp LC(T)          &tab_with_kt_on_and_sl LEFT_ALT 5
+&tab_with_kt_on_and_sl LCTRL 6     &kp LG(LS(LEFT_ARROW))  &kp LG(UP_ARROW)  &kp LG(LS(RIGHT_ARROW))  &trans      &trans      &trans  &kp K_VOLUME_UP    &kp_unAML LC(PAGE_UP)  &kp_unAML UP_ARROW  &kp LC(PAGE_DOWN)  &tab_with_kt_on_and_sl LCTRL 6
 &kp LA(LC(LG(DOWN)))               &kp LG(LEFT_ARROW)      &kp LG(DOWN)      &kp LG(LS(RIGHT_ARROW))  &trans      &trans      &trans  &kp K_VOLUME_DOWN  &kp LA(LEFT)           &kp DOWN            &kp LA(RIGHT)      &trans
 &trans                             &trans                  &trans            &trans                   &trans      &trans      &trans  &trans                                                                           &trans
             >;
