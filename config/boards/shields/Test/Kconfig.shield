@@ -1,5 +1,11 @@
-config SHIELD_ROBA_R
-    def_bool $(shields_list_contains,roBa_R)
+config SHIELD_ZMK_DONGLE
+    def_bool $(shields_list_contains,zmk_dongle)
 
-config SHIELD_ROBA_L
+config SHIELD_roBA_LEFT
     def_bool $(shields_list_contains,roBa_L)
+    
+config SHIELD_roBa_CENTRAL_R
+    def_bool $(shields_list_contains,roBa_central_R)
+
+config SHIELD_roBa_PERIPHERAL_R
+    def_bool $(shields_list_contains,roBa_peripheral_R)
