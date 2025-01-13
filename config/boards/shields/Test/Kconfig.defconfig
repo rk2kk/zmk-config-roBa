@@ -1,12 +1,27 @@
-if  SHIELD_ZMK_DONGLE || SHIELD_ROBA_CENTRAL_R
+if ZMK_DONGLE || SHIELD_ROBA_L || SHIELD_ROBA_R
 
-config ZMK_KEYBOARD_NAME
-    default "roBa"
+config ZMK_SPLIT
+    default y
+
+endif # ZMK_DONGLE || SHIELD_ROBA_L || SHIELD_ROBA_R
+
+
+if ZMK_DONGLE || SHIELD_ROBA_R
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
-endif
+if ZMK_SPLIT_ROLE_CENTRAL
+
+config ZMK_KEYBOARD_NAME
+    default "zmk"
+
+endif # ZMK_SPLIT_ROLE_CENTRAL
+
+endif # ZMK_DONGLE || SHIELD_ROBA_R
+
+
+if ZMK_DONGLE
 
 if ZMK_DISPLAY
 
@@ -19,8 +34,6 @@ config SSD1306
 choice ZMK_DISPLAY_WORK_QUEUE
     default ZMK_DISPLAY_WORK_QUEUE_DEDICATED
 endchoice
-
-endif
 
 if LVGL
 
@@ -37,11 +50,8 @@ choice LV_COLOR_DEPTH
     default LV_COLOR_DEPTH_1
 endchoice
 
-endif
+endif # LVGL
 
-if SHIELD_ZMK_DONGLE || SHIELD_ROBA_LEFT || SHIELD_ROBA_CENTRAL_R || SHIELD_ROBA_PERIPHERAL_R
+endif # ZMK_DISPLAY
 
-config ZMK_SPLIT
-    default y
-
-endif
+endif # ZMK_DONGLE
