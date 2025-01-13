@@ -20,7 +20,7 @@
 
 include:
   - board: seeeduino_xiao_ble
-    shield: roBa_R_dongle dongle_display
+    shield: roBa_R dongle_display
     artifact-name: zmk_dongle
 
   - board: seeeduino_xiao_ble
