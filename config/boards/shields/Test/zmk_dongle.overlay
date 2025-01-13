@@ -1,6 +1,6 @@
 #include "roBa.dtsi"
 
-    default_kscan: kscan_0 {
+    &kscan_0 {
         compatible = "zmk,kscan-gpio-matrix";
         diode-direction = "col2row";
         wakeup-source;
@@ -19,8 +19,8 @@
             , <&xiao_d 7 GPIO_ACTIVE_HIGH>
             ;
     };
-    
-/ {
+
+
     chosen {
         zmk,kscan = &mock_kscan;
         zmk,matrix-transform = &default_transform;
