@@ -1,5 +1,5 @@
 #include <dt-bindings/zmk/matrix_transform.h>
-#include <config/boards/shields/Test/roBa-layouts.dtsi>
+#include </tmp/zmk-config/config/boards/shields/Test/roBaroBa-layouts.dtsi>
 
 / {
     chosen {
