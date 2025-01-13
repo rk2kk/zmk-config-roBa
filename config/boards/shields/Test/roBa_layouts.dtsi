@@ -5,9 +5,6 @@
         compatible = "zmk,physical-layout";
         display-name = "default_layout";
 
-        kscan = <&kscan0>;
-        transform = <&matrix_transform0>;
-
         keys  //                     w   h    x    y     rot    rx    ry
             = <&key_physical_attrs 100 100    0   62       0     0     0>
             , <&key_physical_attrs 100 100  100   25       0     0     0>
