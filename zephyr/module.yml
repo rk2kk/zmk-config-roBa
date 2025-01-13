@@ -1,4 +1,4 @@
 build:
   settings:
     board_root: config
-    snippet_root: snippets
+    snippet_root: .
