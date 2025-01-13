@@ -18,6 +18,9 @@ manifest:
     - name: zmk-tri-state
       remote: urob
       revision: main
+    - name: zmk-config
+      remote: englmaxi
+      revision: master
     - name: zmk-pmw3610-driver  # <-- トラボドライバ
       remote: sayu-hub
       revision: main
