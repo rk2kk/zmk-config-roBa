@@ -32,7 +32,7 @@ include:
   - board: seeeduino_xiao_ble
     shield: roBa_R rgbled_adapter
     snippet: common-config
-    cmake-args: -ZMK_SPLIT_ROLE_CENTRAL=n
+    cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
     artifact-name: roBa_peripheral_R
 
   - board: seeeduino_xiao_ble
