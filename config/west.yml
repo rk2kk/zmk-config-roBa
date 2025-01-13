@@ -21,6 +21,6 @@ manifest:
       revision: main
     - name: zmk-dongle-display  # <-- dongle
       remote: englmaxi
-      revision: main
+      revision: master
   self:
     path: config
