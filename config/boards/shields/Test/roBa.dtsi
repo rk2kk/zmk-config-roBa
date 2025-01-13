@@ -1,5 +1,5 @@
 #include <dt-bindings/zmk/matrix_transform.h>
-#include "roBa-layouts.dtsi"
+#include <roBa-layouts.dtsi>
 
 / {
     chosen {
