@@ -1,4 +1,4 @@
-#include "rommana.dtsi"
+#include "roBa.dtsi"
 
 / {
     chosen {
