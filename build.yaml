@@ -21,12 +21,10 @@
 include:
   - board: seeeduino_xiao_ble
     shield: zmk_dongle dongle_display
-    snippet: studio-rpc-usb-uart
     artifact-name: zmk_dongle
 
   - board: seeeduino_xiao_ble
     shield: roBa_R rgbled_adapter
-    snippet: studio-rpc-usb-uart
     artifact-name: roBa_central_R
 
   - board: seeeduino_xiao_ble
