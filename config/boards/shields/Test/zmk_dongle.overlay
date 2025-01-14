@@ -1,4 +1,4 @@
-#include <dt-bindings/zmk/matrix_transform.h>
+#include "roBa.dtsi"
 
 / {
     chosen {
@@ -6,7 +6,7 @@
         zephyr,display = &oled;
     };
 
-    mock_kscan: kscan_ 0{
+    mock_kscan: kscan_ 1{
         compatible = "zmk,kscan-mock";
         columns = <0>;
         rows = <0>;
