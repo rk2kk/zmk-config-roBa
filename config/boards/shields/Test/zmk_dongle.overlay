@@ -1,10 +1,8 @@
 #include "roBa.dtsi"
 
-
-/{
+/ {
     chosen {
         zmk,kscan = &mock_kscan;
-        zmk,matrix-transform = &default_transform;
         zephyr,display = &oled;
     };
 
@@ -14,19 +12,17 @@
         rows = <0>;
         events = <0>;
     };
-}
-
+};
 
 &xiao_i2c {
     status = "okay";
     
-    
     oled: ssd1306@3c {
-        compatible = "sinowealth,sh1106";
+        compatible = "solomon,ssd1306fb";
         reg = <0x3c>;
         width = <128>;
         height = <64>;
-        segment-offset = <2>;
+        segment-offset = <0>;
         page-offset = <0>;
         display-offset = <0>;
         multiplex-ratio = <63>;
@@ -35,4 +31,4 @@
         inversion-on;
         prechargep = <0x22>;
     };
-}; 
+};  
