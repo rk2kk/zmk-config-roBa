@@ -6,7 +6,7 @@ manifest:
       url-base: https://github.com/sayu-hub
     - name: caksoylar  # <-- led
       url-base: https://github.com/caksoylar  
-    - name: englmaxi   # <-- dongle
+    - name: englmaxi
       url-base: https://github.com/englmaxi
   projects:
     - name: zmk
@@ -20,6 +20,9 @@ manifest:
       remote: caksoylar
       revision: main
     - name: zmk-dongle-display  # <-- dongle
+      remote: englmaxi
+      revision: main
+    - name: zmk-config
       remote: englmaxi
       revision: main
   self:
