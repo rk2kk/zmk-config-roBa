@@ -1,0 +1,82 @@
+
+#define AP(NAME, DISPLAY_NAME, SYM1, SYM2)                                          \
+    MASKED(NAME ## _sym1_masked, DISPLAY_NAME (Base 1), (MOD_RSFT|MOD_LSFT), SYM1)  \
+    MASKED(NAME ## _sym2_masked, DISPLAY_NAME (Base 2), (MOD_RSFT|MOD_LSFT), SYM2)  \
+    ZMK_MACRO(NAME,                                                                 \
+        bindings                                                                    \
+            = <& ## NAME ## _sym1_masked>                                           \
+            , <& ## NAME ## _sym2_masked>                                           \
+            , <&left_masked>;                                                       \
+        display-name = #DISPLAY_NAME;                                               \
+    )
+
+/ {
+    macros {
+        AP(par_macro,  Macro Par,  &kp DE_LPAR,  &kp DE_RPAR)
+        AP(bkt_macro,  Macro Bkt,  &kp DE_LBKT,  &kp DE_RBKT)
+        AP(sqt_macro,  Macro Sqt,  &kp DE_SQT,   &kp DE_SQT)
+        AP(dqt_macro,  Macro Dqt,  &kp DE_DQT,   &kp DE_DQT)
+        AP(dgrv_macro, Macro Grv,  &kp DE_GRAVE, &kp DE_GRAVE)
+        AP(brc_macro,  Macro Brc , &kp DE_LBRC,  &kp DE_RBRC)
+        AP(lgt_macro,  Macro GLT,  &kp DE_LT,    &kp DE_GT)
+
+        ZMK_MACRO(qu,
+            bindings
+                = <&kp Q>
+                , <&u_masked>;
+            display-name = "Macro Qu";
+        )
+
+        ZMK_MACRO(r_mods,
+            bindings
+                = <&macro_release>
+                , <&kp LGUI   &kp RGUI>
+                , <&kp LALT   &kp RALT>
+                , <&kp LCTRL  &kp RCTRL>
+                , <&kp LSHIFT &kp RSHIFT>;
+            display-name = "Release Mods";
+        )
+
+        ZMK_MACRO(sel_word_base,
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings
+                = <&kp LC(RIGHT)>
+                , <&kp LC(LEFT)>;
+            display-name = "Select Word (Base)";
+        )
+
+        ZMK_MACRO(sel_line_base,
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings
+                = <&kp HOME>
+                , <&kp LS(END)>;
+            display-name = "Select Line (Base)";
+        )
+
+        ZMK_MACRO(sel_line_next,
+            wait-ms = <1>;
+            tap-ms = <1>;
+            bindings
+                = <&kp LS(DOWN)>
+                , <&kp LS(HOME)>;
+            display-name = "Select Line (Next)";
+        )
+
+        ZMK_MACRO(include_macro,
+            wait-ms = <2>;
+            bindings
+                = <&kp I &kp N &kp C &kp L &kp U &kp D &kp E &kp SPACE>;
+            display-name = "Macro 'include '";
+        )
+
+        ZMK_MACRO1(bts,
+            bindings
+                = <&out OUT_BLE>
+                , <&macro_param_1to2>
+                , <&bt BT_SEL MACRO_PLACEHOLDER>;
+            display-name = "BT Select";
+        )
+    };
+};
