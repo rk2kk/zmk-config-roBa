@@ -1,0 +1,14 @@
+file_format: "1"
+id: roBa
+name: roBa
+type: shield
+url: https://github.com/rk2kk/zmk-config-roBa
+requires: 
+  - seeeduino_xiao_ble
+  - i2c_oled
+features:
+  - keys
+siblings:
+  - zmk_dongle
+  - roBa_L
+  - roBa_R
