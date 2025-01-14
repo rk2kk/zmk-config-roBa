@@ -4,26 +4,28 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: sayu-hub
       url-base: https://github.com/sayu-hub
-    - name: caksoylar  # <-- led
+    - name: caksoylar 
       url-base: https://github.com/caksoylar  
     - name: englmaxi
       url-base: https://github.com/englmaxi
+    - name: urob
+      url-base: https://github.com/urob
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: zmk-pmw3610-driver  # <-- トラボドライバ
+    - name: zmk-pmw3610-driver 
       remote: sayu-hub
       revision: main
-    - name: zmk-rgbled-widget   # <-- led
+    - name: zmk-rgbled-widget
       remote: caksoylar
       revision: main
-    - name: zmk-dongle-display  # <-- dongle
+    - name: zmk-dongle-display
       remote: englmaxi
       revision: main
-    - name: zmk-config
-      remote: englmaxi
+    - name: zmk-tri-state
+      remote: urob
       revision: main
   self:
     path: config
