@@ -227,7 +227,7 @@
             label = "ZOOM_OUT";
         };
 
-        lclick_sl5: AML_click {
+        macro_left_click: macro_left_click {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -238,7 +238,7 @@
                 <&mkp LCLK>,
                 <&macro_tap>,
                 <&tog_off 4 &sl 5>;
-            label = "AML_CLICK";
+            label = "MACRO_LEFT_CLICK";
         };
     };
 
@@ -456,7 +456,7 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans                           &trans  &trans     &trans           &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans           &trans  &trans  &mkp LCLK  &td_right_click  &trans  &mo 6
-&trans  &trans  &trans  &trans  &trans  &lclick_sl5      &trans  &trans  &trans     &trans           &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &macro_left_click      &trans  &trans  &trans     &trans           &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans           &trans  &trans                                      &trans
             >;
         };
@@ -465,7 +465,7 @@
             bindings = <
 &kp TAB      &trans  &trans  &trans  &trans                         &kp C_PREV         &kp C_PLAY_PAUSE   &kp C_NEXT       &trans  &kp TAB
 &kp LS(TAB)  &trans  &trans  &trans  &trans  &trans         &trans  &kp C_VOLUME_DOWN  &kp C_MUTE         &kp C_VOLUME_UP  &trans  &kp LS(TAB)
-&trans       &trans  &trans  &trans  &trans  &mkp LCLK      &trans  &trans             &kp LS(LA(LC(M)))  &trans           &trans  &trans
+&trans       &trans  &trans  &trans  &trans  &macro_left_click      &trans  &trans             &kp LS(LA(LC(M)))  &trans           &trans  &trans
 &trans       &trans  &trans  &trans  &trans  &trans         &trans  &trans                                                         &trans
             >;
         };
