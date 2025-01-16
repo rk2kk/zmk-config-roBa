@@ -1,7 +1,7 @@
 #include "roBa.dtsi"
 
 &physical_layout0 {
-    transform = <&default_transform>;
+    transform = <&roba_physical_layo>;
 };
 
 / {
