@@ -237,7 +237,7 @@
                 <&macro_release>,
                 <&mkp LCLK>,
                 <&macro_tap>,
-                <&tog_off 4 &sl 5>;
+                <&tog_off 4 &sl 4>;
 
             label = "MACRO_LEFT_CLICK";
         };
