@@ -244,7 +244,7 @@
                 <&macro_release>,
                 <&macro_param_1to1 &mkp MACRO_PLACEHOLDER>,
                 <&macro_tap>,
-                <&tog_off MOUSE &sl MOUSE>;
+                <&sl MOUSE>;
 
             label = "MKP_EXIT_AML";
         };
@@ -510,7 +510,7 @@
         Mouse {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans     &trans           &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp LCLK  &td_right_click  &trans  &mo 6
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp_exit_AML LCLK  &td_right_click  &trans  &mo 6
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans     &trans           &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                      &trans
             >;
