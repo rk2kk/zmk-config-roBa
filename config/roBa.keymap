@@ -81,15 +81,6 @@
                 <&mo MACRO_PLACEHOLDER>;
         };
 
-        td_ZenkakuHankku_unAML: td_ZenkakuHankku_unAML {
-            wait-ms = <0>;
-            tap-ms = <0>;
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&td_ZenkakuHankaku &unAML>;
-            label = "TD_ZENKAKUHANKKU_UNAML";
-        };
-
         kp_unAML: kp_unAML {
             compatible = "zmk,behavior-macro-one-param";
             wait-ms = <0>;
@@ -197,13 +188,13 @@
             label = "DISABLE_ALT_CTRL";
         };
 
-        kp_with_sl: sl_5 {
+        kp_with_sl: kp_with_sl {
             compatible = "zmk,behavior-macro-two-param";
             wait-ms = <0>;
             tap-ms = <0>;
             #binding-cells = <2>;
             bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &macro_param_2to1 &to MACRO_PLACEHOLDER>;
-            label = "SL_5";
+            label = "KP_WITH_SL";
         };
 
         tab_with_kt_on_and_sl: kt_on_kp_with_sl {
@@ -327,6 +318,15 @@
             #binding-cells = <0>;
             tapping-term-ms = <250>;
             bindings = <&kp LANGUAGE_2>, <&kp LANGUAGE_1>;
+        };
+
+        td_ZenkakuHankaku_unAML: td_ZenkakuHankaku_unAML {
+            wait-ms = <0>;
+            tap-ms = <0>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&td_ZenkakuHankaku &unAML>;
+            label = "TD_ZENKAKUHANKAKU_UNAML";
         };
 
         mod_morph_exclamation: mod_morph_exclamation {
