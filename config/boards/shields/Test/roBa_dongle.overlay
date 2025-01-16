@@ -1,13 +1,13 @@
 #include "roBa.dtsi"
 
-&physical_layout0 {
+&roba_physical_layout {
     transform = <&default_transform>;
 };
 
 / {
     chosen {
         zmk,kscan = &mock_kscan;
-        zmk,physical-layout = &physical_layout0;
+        zmk,physical-layout = &roba_physical_layout;
         zephyr,display = &oled;
     };
 
