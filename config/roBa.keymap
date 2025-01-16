@@ -343,6 +343,13 @@
             label = "TD_ZENKAKUHANKAKU_UNAML";
         };
 
+        alt_tab: alt_tab {
+            compatible = "zmk,behavior-macro-two-param";
+            #binding-cells = <2>;
+            bindings = <&macro_param_1to1 &sk MACRO_PLACEHOLDER &macro_param_2to1 &kp MACRO_PLACEHOLDER>;
+            label = "ALT_TAB";
+        };
+
         mod_morph_exclamation: mod_morph_exclamation {
             compatible = "zmk,behavior-mod-morph";
             label = "MOD_MORPH_EXCLAMATION";
@@ -454,10 +461,10 @@
 
         Default {
             bindings = <
-&mt_unAML LWIN Q               &kp_unAML W             &kp_unAML E   &kp_unAML R                    &lt_unAML 7 T                                                                           &lt_unAML 7 Y                   &kp_unAML U  &kp_unAML I             &kp_unAML O          &lt_unAML 5 P
-&mt_unAML LCTRL A              &kp_unAML S             &kp_unAML D   &kp_unAML F                    &kp_unAML G                     &kp_unAML LS(LG(S))      &zoom_in                       &kp_unAML H                     &kp_unAML J  &kp_unAML K             &kp_unAML L          &lt_unAML 6 MINUS
-&mt_unAML_on_tap LEFT_SHIFT Z  &mt_unAML LEFT_SHIFT X  &kp_unAML C   &kp_unAML V                    &lt_unAML_disable_alt_ctrl 3 B  &kp N                    &zoom_out                      &lt_unAML_disable_alt_ctrl 3 N  &kp_unAML M  &mod_morph_exclamation  &mod_morph_question  &mt_unAML LEFT_SHIFT SLASH
-&kp LCTRL                      &kp LEFT_WIN            &kp LEFT_ALT  &eager_tap_dance LANGUAGE_2 6  &lt_unAML 2 SPACE               &lt_unAML 1 TAB          &lt_unAML_on_hold 1 BACKSPACE  &lt_unAML 2 ENTER                                                                         &mt_unAML LEFT_SHIFT ESCAPE
+&mt_unAML LWIN Q               &kp_unAML W             &kp_unAML E   &kp_unAML R                    &lt_unAML 7 T                                                                             &lt_unAML 7 Y                   &kp_unAML U  &kp_unAML I             &kp_unAML O          &lt_unAML 5 P
+&mt_unAML LCTRL A              &kp_unAML S             &kp_unAML D   &kp_unAML F                    &kp_unAML G                     &kp_unAML LS(LG(S))        &zoom_in                       &kp_unAML H                     &kp_unAML J  &kp_unAML K             &kp_unAML L          &lt_unAML 6 MINUS
+&mt_unAML_on_tap LEFT_SHIFT Z  &mt_unAML LEFT_SHIFT X  &kp_unAML C   &kp_unAML V                    &lt_unAML_disable_alt_ctrl 3 B  &alt_tab LEFT_ALT TAB      &zoom_out                      &lt_unAML_disable_alt_ctrl 3 N  &kp_unAML M  &mod_morph_exclamation  &mod_morph_question  &mt_unAML LEFT_SHIFT SLASH
+&kp LCTRL                      &kp LEFT_WIN            &kp LEFT_ALT  &eager_tap_dance LANGUAGE_2 6  &lt_unAML 2 SPACE               &lt_unAML 1 TAB            &lt_unAML_on_hold 1 BACKSPACE  &lt_unAML 2 ENTER                                                                         &mt_unAML LEFT_SHIFT ESCAPE
             >;
 
             sensor-bindings = <&encoder_zoom>;
