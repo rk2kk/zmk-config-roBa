@@ -3,6 +3,7 @@
 / {
     chosen {
         zmk,kscan = &mock_kscan;
+        zmk,physical-layout = &roba_physical_layout;
         zephyr,display = &oled;
     };
 
@@ -13,6 +14,9 @@
         events = <0>;
     };
 };
+
+/delete-node/ &kscan0;   // only required if the dongle uses a 
+                                // different board than the peripherals
 
 
 
