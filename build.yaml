@@ -20,7 +20,7 @@
 
 include:
   - board: seeeduino_xiao_ble
-    shield: roBa_R_dongle dongle_display
+    shield: roBa_dongle dongle_display
     snippet: studio-rpc-usb-uart
     artifact-name: zmk_dongle
 
