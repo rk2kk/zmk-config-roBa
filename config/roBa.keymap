@@ -430,14 +430,6 @@
             bindings = <&zoom_out>, <&zoom_in>;
         };
 
-        td_lclick_macro: td_lclick_macro {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_LCLICK_MACRO";
-            #binding-cells = <0>;
-            tapping-term-ms = <250>;
-            bindings = <&none>, <&none>;
-        };
-
         sl_250: sl_250 {
             compatible = "zmk,behavior-sticky-key";
             label = "SL_250";
