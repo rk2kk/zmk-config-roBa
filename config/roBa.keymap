@@ -441,7 +441,7 @@
         sl_250: sl_250 {
             compatible = "zmk,behavior-sticky-key";
             label = "SL_250";
-            bindings = <&to>;
+            bindings = <&mo>;
             #binding-cells = <1>;
             release-after-ms = <250>;
         };
