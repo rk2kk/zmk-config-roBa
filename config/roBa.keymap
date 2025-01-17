@@ -22,6 +22,7 @@
 };
 
 &sk { release-after-ms = <500>; };
+
 &sl { release-after-ms = <1000>; };
 
 / {
@@ -244,7 +245,7 @@
                 <&macro_release>,
                 <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
                 <&macro_tap>,
-                <&exit_AML &macro_param_2to1 &sl MACRO_PLACEHOLDER>;
+                <&exit_AML &macro_param_2to1 &sl_250 MACRO_PLACEHOLDER>;
 
             label = "eager_tap_dance";
         };
@@ -328,12 +329,7 @@
         alt_tab: alt_tab {
             compatible = "zmk,behavior-macro-two-param";
             #binding-cells = <2>;
-            bindings = <
-                &macro_param_1to1 &kt_on MACRO_PLACEHOLDER
-                &macro_param_2to1 &kp MACRO_PLACEHOLDER
-                &macro_param_1to1 &sk MACRO_PLACEHOLDER
-                &macro_param_1to1 &kt_off MACRO_PLACEHOLDER
-            >;
+            bindings = <&macro_param_1to1 &kt_on MACRO_PLACEHOLDER &macro_param_2to1 &kp MACRO_PLACEHOLDER &macro_param_1to1 &sk MACRO_PLACEHOLDER &macro_param_1to1 &kt_off MACRO_PLACEHOLDER>;
             label = "ALT_TAB";
         };
 
@@ -441,6 +437,14 @@
             tapping-term-ms = <250>;
             bindings = <&none>, <&none>;
         };
+
+        sl_250: sl_250 {
+            compatible = "zmk,behavior-sticky-key";
+            label = "SL_250";
+            bindings = <&to>;
+            #binding-cells = <1>;
+            release-after-ms = <250>;
+        };
     };
 
     keymap {
@@ -448,10 +452,10 @@
 
         Default {
             bindings = <
-&mt_exit_AML LWIN Q               &kp_exit_AML W             &kp_exit_AML E   &kp_exit_AML R                    &lt_exit_AML 7 T                                                                             &lt_exit_AML 7 Y                   &kp_exit_AML U  &kp_exit_AML I             &kp_exit_AML O          &lt_exit_AML 5 P
-&mt_exit_AML LCTRL A              &kp_exit_AML S             &kp_exit_AML D   &kp_exit_AML F                    &kp_exit_AML G                     &kp_exit_AML LS(LG(S))        &zoom_in                       &kp_exit_AML H                     &kp_exit_AML J  &kp_exit_AML K             &kp_exit_AML L          &lt_exit_AML 6 MINUS
-&mt_exit_AML_on_tap LEFT_SHIFT Z  &mt_exit_AML LEFT_SHIFT X  &kp_exit_AML C   &kp_exit_AML V                    &lt_exit_AML_disable_alt_ctrl 3 B  &alt_tab LEFT_ALT TAB      &zoom_out                      &lt_exit_AML_disable_alt_ctrl 3 N  &kp_exit_AML M  &mod_morph_exclamation  &mod_morph_question  &mt_exit_AML LEFT_SHIFT SLASH
-&kp LCTRL                      &kp LEFT_WIN            &kp LEFT_ALT  &eager_tap_dance LANGUAGE_2 6  &lt_exit_AML 2 SPACE               &lt_exit_AML 1 TAB            &lt_exit_AML_on_hold 1 BACKSPACE  &lt_exit_AML 2 ENTER                                                                         &mt_exit_AML LEFT_SHIFT ESCAPE
+&mt_exit_AML LWIN Q               &kp_exit_AML W             &kp_exit_AML E  &kp_exit_AML R                 &lt_exit_AML 7 T                                                                                 &lt_exit_AML 7 Y                   &kp_exit_AML U  &kp_exit_AML I          &kp_exit_AML O       &lt_exit_AML 5 P
+&mt_exit_AML LCTRL A              &kp_exit_AML S             &kp_exit_AML D  &kp_exit_AML F                 &kp_exit_AML G                     &kp_exit_AML LS(LG(S))      &zoom_in                          &kp_exit_AML H                     &kp_exit_AML J  &kp_exit_AML K          &kp_exit_AML L       &lt_exit_AML 6 MINUS
+&mt_exit_AML_on_tap LEFT_SHIFT Z  &mt_exit_AML LEFT_SHIFT X  &kp_exit_AML C  &kp_exit_AML V                 &lt_exit_AML_disable_alt_ctrl 3 B  &alt_tab LEFT_ALT TAB       &zoom_out                         &lt_exit_AML_disable_alt_ctrl 3 N  &kp_exit_AML M  &mod_morph_exclamation  &mod_morph_question  &mt_exit_AML LEFT_SHIFT SLASH
+&kp LCTRL                         &kp LEFT_WIN               &kp LEFT_ALT    &eager_tap_dance LANGUAGE_2 6  &lt_exit_AML 2 SPACE               &lt_exit_AML 1 TAB          &lt_exit_AML_on_hold 1 BACKSPACE  &lt_exit_AML 2 ENTER                                                                            &mt_exit_AML LEFT_SHIFT ESCAPE
             >;
 
             sensor-bindings = <&encoder_zoom>;
@@ -459,10 +463,10 @@
 
         Numpad_and_Symbols {
             bindings = <
-&kp PLUS             &kp N7               &kp N8               &kp N9  &kp MINUS                                  &kp AT_SIGN       &kp LEFT_BRACE              &kp RIGHT_BRACE              &kp DOUBLE_QUOTES  &td_colon
+&kp PLUS             &kp N7               &kp N8               &kp N9  &kp MINUS                                  &kp AT_SIGN       &kp LEFT_BRACE                 &kp RIGHT_BRACE                 &kp DOUBLE_QUOTES  &td_colon
 &kp ASTERISK         &kp N4               &kp N5               &kp N6  &kp SLASH    &kp EQUAL      &kp SEMICOLON  &kp HASH          &kp_exit_AML LEFT_PARENTHESIS  &kp_exit_AML RIGHT_PARENTHESIS  &kp SINGLE_QUOTE   &kp TILDE
-&lt 2 N0             &kp N1               &kp N2               &kp N3  &kp PERCENT  &kp CARET      &trans         &kp AMPERSAND     &kp LEFT_BRACKET            &kp RIGHT_BRACKET            &kp GRAVE          &kp PIPE
-&mt LCTRL BACKSPACE  &mt LEFT_WIN PERIOD  &mt LEFT_ALT PERIOD  &trans  &kp ENTER    &trans         &kp LESS_THAN  &kp GREATER_THAN                                                                              &kp DOLLAR
+&lt 2 N0             &kp N1               &kp N2               &kp N3  &kp PERCENT  &kp CARET      &trans         &kp AMPERSAND     &kp LEFT_BRACKET               &kp RIGHT_BRACKET               &kp GRAVE          &kp PIPE
+&mt LCTRL BACKSPACE  &mt LEFT_WIN PERIOD  &mt LEFT_ALT PERIOD  &trans  &kp ENTER    &trans         &kp LESS_THAN  &kp GREATER_THAN                                                                                    &kp DOLLAR
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PLUS) LC(MINUS)>;
@@ -470,19 +474,19 @@
 
         Functions_and_Controls {
             bindings = <
-&kp LS(F11)          &kp F1          &kp F2          &kp F3           &td_alt_f4                                               &kp F6        &kp F7          &kp F8              &kp F11    &kp F12
+&kp LS(F11)          &kp F1          &kp F2          &kp F3           &td_alt_f4                                               &kp F6        &kp F7             &kp F8                 &kp F11    &kp F12
 &kp LA(PRINTSCREEN)  &kp LS(LG(S))   &kp UP_ARROW    &none            &kp F5      &kp LC(LA(KP_NUMBER_0))      &kp UNDERSCORE  &kp F5        &kp_exit_AML HOME  &kp_exit_AML UP_ARROW  &kp END    &kp F9
-&kp LEFT_SHIFT       &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none       &kp EQUAL                    &kp LC(HOME)    &kp LC(LEFT)  &kp LEFT        &kp DOWN            &kp RIGHT  &kp LC(RIGHT)
-&kp LCTRL            &kp LEFT_WIN    &kp LEFT_ALT    &trans           &trans      &trans                       &kp DELETE      &trans                                                       &kp PIPE
+&kp LEFT_SHIFT       &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none       &kp EQUAL                    &kp LC(HOME)    &kp LC(LEFT)  &kp LEFT           &kp DOWN               &kp RIGHT  &kp LC(RIGHT)
+&kp LCTRL            &kp LEFT_WIN    &kp LEFT_ALT    &trans           &trans      &trans                       &kp DELETE      &trans                                                             &kp PIPE
             >;
         };
 
         Misc {
             bindings = <
-&tab_with_kt_on_and_sl LEFT_ALT 5  &kp LC(LG(LEFT))        &kp LG(TAB)       &kp LG(LC(RIGHT))        &td_alt_f4                      &td_alt_f4         &kp LC(W)              &kp LS(LC(T))       &kp LC(T)          &tab_with_kt_on_and_sl LEFT_ALT 5
+&tab_with_kt_on_and_sl LEFT_ALT 5  &kp LC(LG(LEFT))        &kp LG(TAB)       &kp LG(LC(RIGHT))        &td_alt_f4                      &td_alt_f4         &kp LC(W)                 &kp LS(LC(T))          &kp LC(T)          &tab_with_kt_on_and_sl LEFT_ALT 5
 &tab_with_kt_on_and_sl LCTRL 6     &kp LG(LS(LEFT_ARROW))  &kp LG(UP_ARROW)  &kp LG(LS(RIGHT_ARROW))  &trans      &trans      &trans  &kp K_VOLUME_UP    &kp_exit_AML LC(PAGE_UP)  &kp_exit_AML UP_ARROW  &kp LC(PAGE_DOWN)  &tab_with_kt_on_and_sl LCTRL 6
-&kp LA(LC(LG(DOWN)))               &kp LG(LEFT_ARROW)      &kp LG(DOWN)      &kp LG(LS(RIGHT_ARROW))  &trans      &trans      &trans  &kp K_VOLUME_DOWN  &kp LA(LEFT)           &kp DOWN            &kp LA(RIGHT)      &trans
-&trans                             &trans                  &trans            &trans                   &trans      &trans      &trans  &trans                                                                           &trans
+&kp LA(LC(LG(DOWN)))               &kp LG(LEFT_ARROW)      &kp LG(DOWN)      &kp LG(LS(RIGHT_ARROW))  &trans      &trans      &trans  &kp K_VOLUME_DOWN  &kp LA(LEFT)              &kp DOWN               &kp LA(RIGHT)      &trans
+&trans                             &trans                  &trans            &trans                   &trans      &trans      &trans  &trans                                                                                 &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
@@ -490,10 +494,10 @@
 
         Mouse {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans     &trans           &trans  &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans              &trans           &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp_exit_AML LCLK  &td_right_click  &trans  &mo 6
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans     &trans           &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                      &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans              &trans           &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                               &trans
             >;
         };
 
