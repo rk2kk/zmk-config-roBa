@@ -21,7 +21,7 @@
     flavor = "balanced";
 };
 
-&sk { release-after-ms = <500>; };
+&sk { release-after-ms = <700>; };
 
 &sl { release-after-ms = <1000>; };
 
