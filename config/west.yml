@@ -24,8 +24,12 @@ manifest:
     - name: zmk-dongle-display
       remote: englmaxi
       revision: main
-    - name: zmk-tri-state
-      remote: urob
+    - name: zmk-split-peripheral-input-relay
+      remote: badjeff
       revision: main
+    - name: zmk-input-behavior-listener
+      remote: badjeff
+      revision: main
+
   self:
     path: config
