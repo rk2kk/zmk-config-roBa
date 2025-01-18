@@ -1,5 +1,9 @@
 #include "roBa.dtsi"
 
+&default_transform {
+    col-offset = <6>;
+};
+
 &roba_physical_layout {
     transform = <&default_transform>;
 };
