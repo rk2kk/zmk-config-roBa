@@ -8,13 +8,16 @@ manifest:
       url-base: https://github.com/englmaxi
     - name: badjeff
       url-base: https://github.com/badjeff
+    - name: rk2kk
+      url-base: https://github.com/kumamuk-git/
+
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
     - name: zmk-pmw3610-driver
-      remote: badjeff
+      remote: kumamuk-git
       revision: main
     - name: zmk-rgbled-widget
       remote: caksoylar
