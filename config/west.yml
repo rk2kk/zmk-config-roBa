@@ -8,9 +8,8 @@ manifest:
       url-base: https://github.com/englmaxi
     - name: badjeff
       url-base: https://github.com/badjeff
-    - name: rk2kk
-      url-base: https://github.com/kumamuk-git/
-
+    - name: kumamuk-git
+      url-base: https://github.com/kumamuk-git
   projects:
     - name: zmk
       remote: zmkfirmware
