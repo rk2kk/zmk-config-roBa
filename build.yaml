@@ -27,7 +27,7 @@ include:
 
   - board: seeeduino_xiao_ble
     shield: roBa_R rgbled_adapter
-    artifact-name: roBa_peripheral_R
+    artifact-name: roBa_R_peripheral
 
   - board: seeeduino_xiao_ble
     shield: roBa_L_central rgbled_adapter
