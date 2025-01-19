@@ -89,7 +89,7 @@
            x-input-code = <INPUT_REL_HWHEEL>;
            y-input-code = <INPUT_REL_WHEEL>;
            /* invent scrolling direction */
-           y-invert;*
+          /* y-invert;* */
            /* align to CCW 45 degree */
            rotate-deg = <180>;
            scale-multiplier = <1>;
