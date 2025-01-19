@@ -1,12 +1,5 @@
 #include "roBa.dtsi"
-
-&default_transform {
-    col-offset = <6>;
-};
-
-&roba_physical_layout {
-    transform = <&default_transform>;
-};
+#include "roBa_trackball.dtsi"
 
 &kscan0 {
         col-gpios
@@ -15,22 +8,12 @@
             , <&xiao_d 8 GPIO_ACTIVE_HIGH> 
             , <&xiao_d 7 GPIO_ACTIVE_HIGH> 
             , <&gpio0 10 GPIO_ACTIVE_HIGH>
+            , <&gpio0 9 GPIO_ACTIVE_HIGH>
             ;
 };
 
-/ {
-    chosen {
-        zmk,kscan = &mock_kscan;
-        zmk,physical-layout = &roba_physical_layout;
-        zephyr,display = &oled;
-    };
-
-    mock_kscan: kscan_1 {
-        compatible = "zmk,kscan-mock";
-        columns = <0>;
-        rows = <0>;
-        events = <0>;
-    };
+&left_encoder {
+    status = "okay";
 };
 
 
@@ -155,22 +138,3 @@
 
 
 
-&xiao_i2c {
-    status = "okay";
-    compatible = "nordic,nrf-spim";
-    
-    oled: ssd1306@3c {
-        compatible = "sinowealth,sh1106";
-        reg = <0x3c>;
-        width = <128>;
-        height = <64>;
-        segment-offset = <2>;
-        page-offset = <0>;
-        display-offset = <0>;
-        multiplex-ratio = <63>;
-        segment-remap;
-        com-invdir;
-        inversion-on;
-        prechargep = <0x22>;
-    };
-};

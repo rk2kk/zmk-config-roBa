@@ -1,6 +1,6 @@
 file_format: "1"
-id: roBa
-name: roBa
+id: roBa-mod
+name: roBa-mod
 type: shield
 url: https://github.com/rk2kk/zmk-config-roBa
 requires: 
@@ -11,5 +11,6 @@ features:
   - display
 siblings:
   - zmk_dongle
-  - roBa_L
-  - roBa_R
+  - roBa_L_central
+  - roBa_peripheral_L
+  - roBa_peripheral_R

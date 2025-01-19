@@ -1,27 +1,13 @@
-if SHIELD_ROBA_DONGLE || SHIELD_ROBA_L || SHIELD_ROBA_R
 
-config ZMK_SPLIT
-    default y
-
-endif # SHIELD_ROBA_DONGLE || SHIELD_ROBA_L || SHIELD_ROBA_R
-
-
-if SHIELD_ROBA_DONGLE || SHIELD_ROBA_R
-
-config ZMK_SPLIT_ROLE_CENTRAL
-    default y
-
-if ZMK_SPLIT_ROLE_CENTRAL
+if SHIELD_ODDBALL_CENTRAL_DONGLE || SHIELD_ROBA_L_CENTRAL
 
 config ZMK_KEYBOARD_NAME
     default "zmk"
 
-endif # ZMK_SPLIT_ROLE_CENTRAL
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
 
-endif # SHIELD_ROBA_DONGLE || SHIELD_ROBA_R
-
-
-if SHIELD_ROBA_DONGLE
+endif
 
 if ZMK_DISPLAY
 
@@ -34,6 +20,8 @@ config SSD1306
 choice ZMK_DISPLAY_WORK_QUEUE
     default ZMK_DISPLAY_WORK_QUEUE_DEDICATED
 endchoice
+
+endif
 
 if LVGL
 
@@ -50,8 +38,23 @@ choice LV_COLOR_DEPTH
     default LV_COLOR_DEPTH_1
 endchoice
 
-endif # LVGL
+endif
 
-endif # ZMK_DISPLAY
+if SHIELD_ROBA_DONGLE || SHIELD_ROBA_L_CENTRAL || SHIELD_ROBA_L_PERIPHERAL || SHIELD_ROBA_R
 
-endif # SHIELD_ROBA_DONGLE
+config ZMK_SPLIT
+    default y
+
+endif
+
+config MOUSE_LAYER_INDEX
+	int "Index of mouse layer"
+	default 4
+
+config SCROLL_LAYER_INDEX
+	int "Index of scroll layer"
+	default 5
+
+config MOUSE_LAYER_ACTIVE_MS
+	int "Amount of milliseconds the mouse layer will be active after using the trackball"
+	default 400

@@ -24,20 +24,19 @@ include:
     snippet: studio-rpc-usb-uart
     artifact-name: zmk_dongle
 
-  - board: seeeduino_xiao_ble
-    shield: roBa_R rgbled_adapter
-    snippet: studio-rpc-usb-uart
-    artifact-name: roBa_central_R
 
   - board: seeeduino_xiao_ble
     shield: roBa_R rgbled_adapter
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
     artifact-name: roBa_peripheral_R
 
   - board: seeeduino_xiao_ble
-    shield: roBa_L rgbled_adapter
+    shield: rroBa_L_central rgbled_adapter
     snippet: studio-rpc-usb-uart
+    artifact-name: roBa_L_central
+
+
+  - board: seeeduino_xiao_ble
+    shield: roBa_L_periphe rgbled_adapter
     artifact-name: roBa_peripheral_L
 
  # reset   
