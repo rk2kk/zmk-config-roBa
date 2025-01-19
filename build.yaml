@@ -30,14 +30,14 @@ include:
     artifact-name: roBa_peripheral_R
 
   - board: seeeduino_xiao_ble
-    shield: rroBa_L_central rgbled_adapter
+    shield: roBa_L_central rgbled_adapter
     snippet: studio-rpc-usb-uart
     artifact-name: roBa_L_central
 
 
   - board: seeeduino_xiao_ble
     shield: roBa_L_periphe rgbled_adapter
-    artifact-name: roBa_peripheral_L
+    artifact-name: roBa_L_peripheral
 
  # reset   
   - board: seeeduino_xiao_ble
