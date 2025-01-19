@@ -12,5 +12,5 @@ features:
 siblings:
   - zmk_dongle
   - roBa_L_central
-  - roBa_peripheral_L
-  - roBa_peripheral_R
+  - roBa_L_peripheral
+  - roBa_R_peripheral
