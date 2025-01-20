@@ -1,11 +1,21 @@
-name: Draw ZMK keymaps
+# Simple workflow for drawing the keymap and deploying static content to GitHub Pages
+name: Draw keymap
+
 on:
-  workflow_dispatch:
+  workflow_dispatch: # can be triggered manually
   push:
     paths:
-      - ".github/workflows/keymap_draser.yml"
+      - "config/*.keymap"
+      - "config/*.dtsi"
       - "keymap_drawer.config.yaml"
-      - "config/**"
+      # - 'boards/*/*/*.keymap'
+
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   draw:
@@ -13,13 +23,10 @@ jobs:
     permissions:
       contents: write
     with:
-      commit_message: "[Draw] ${{ github.event.head_commit.message }}"
-      amend_commit: false
-      install_branch: "main"
-      keymap_patterns: "config/*.keymap"
-      json_path: "config"
-      config_path: "keymap_drawer.config.yaml" # config file, ignored if not exists
-      output_folder: "keymap-drawer"
-      destination: "both"
-      parse_args: ""  # map of extra args to pass to `keymap parse`, e.g. "corne:'-l Def Lwr Rse' cradio:''"
-      draw_args: ""   # map of extra args to pass to `keymap draw`, e.g. "corne:'-k corne_rotated' cradio:'-k paroxysm'"
+      install_branch: "main" # branch to install keymap-drawer from
+      keymap_patterns: "config/roBa.keymap" # path to the keymaps to parse
+      config_path: "keymap-drawer/config.yaml" # config file, ignored if it doesn't exist
+      output_folder: "img" # path to save produced SVGs
+      # commit_message: "Draw: ${{ github.event.head_commit.message }}"
+      amend_commit: true # whether to amend the commit or create a new one
+      fail_on_error: true
