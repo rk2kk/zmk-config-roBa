@@ -428,13 +428,13 @@
 
         Default {
             bindings = <
-&mt_exit_AML LWIN Q               &kp_exit_AML W             &kp_exit_AML E  &kp_exit_AML R                 &lt_exit_AML 10 T                                                                                &lt_exit_AML 10 Y                  &kp_exit_AML U  &kp_exit_AML I          &kp_exit_AML O       &lt_exit_AML 8 P
-&mt_exit_AML LCTRL A              &kp_exit_AML S             &kp_exit_AML D  &kp_exit_AML F                 &kp_exit_AML G                     &kp_exit_AML LS(LG(S))      &zoom_in                          &kp_exit_AML H                     &kp_exit_AML J  &kp_exit_AML K          &kp_exit_AML L       &lt_exit_AML 9 MINUS
-&mt_exit_AML_on_tap LEFT_SHIFT Z  &mt_exit_AML LEFT_SHIFT X  &kp_exit_AML C  &kp_exit_AML V                 &lt_exit_AML_disable_alt_ctrl 4 B  &alt_tab LEFT_ALT TAB       &zoom_out                         &lt_exit_AML_disable_alt_ctrl 4 N  &kp_exit_AML M  &mod_morph_exclamation  &mod_morph_question  &mt_exit_AML LEFT_SHIFT SLASH
-&kp LCTRL                         &kp LEFT_WIN               &kp LEFT_ALT    &eager_tap_dance LANGUAGE_2 1  &lt_exit_AML 3 SPACE               &lt_exit_AML 2 TAB          &lt_exit_AML_on_hold 2 BACKSPACE  &lt_exit_AML 3 ENTER                                                                            &mt_exit_AML LEFT_SHIFT ESCAPE
+&mt_exit_AML LWIN Q               &kp_exit_AML W             &kp_exit_AML E  &kp_exit_AML R                 &lt_exit_AML 10 T                                                                               &lt_exit_AML 10 Y                  &kp_exit_AML U  &kp_exit_AML I          &kp_exit_AML O       &lt_exit_AML 8 P
+&mt_exit_AML LCTRL A              &kp_exit_AML S             &kp_exit_AML D  &kp_exit_AML F                 &kp_exit_AML G                     &kp C_MUTE                 &zoom_in                          &kp_exit_AML H                     &kp_exit_AML J  &kp_exit_AML K          &kp_exit_AML L       &lt_exit_AML 9 MINUS
+&mt_exit_AML_on_tap LEFT_SHIFT Z  &mt_exit_AML LEFT_SHIFT X  &kp_exit_AML C  &kp_exit_AML V                 &lt_exit_AML_disable_alt_ctrl 4 B  &alt_tab LEFT_ALT TAB      &zoom_out                         &lt_exit_AML_disable_alt_ctrl 4 N  &kp_exit_AML M  &mod_morph_exclamation  &mod_morph_question  &mt_exit_AML LEFT_SHIFT SLASH
+&kp LCTRL                         &kp LEFT_WIN               &kp LEFT_ALT    &eager_tap_dance LANGUAGE_2 1  &lt_exit_AML 3 SPACE               &lt_exit_AML 2 TAB         &lt_exit_AML_on_hold 2 BACKSPACE  &lt_exit_AML 3 ENTER                                                                            &mt_exit_AML LEFT_SHIFT ESCAPE
             >;
 
-            sensor-bindings = <&encoder_zoom>;
+            sensor-bindings = <&encoder_volume>;
         };
 
         Lang1 {
