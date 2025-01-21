@@ -391,6 +391,12 @@
             bindings = <&zoom_out>, <&zoom_in>;
         };
 
+        encoder_volume: encoder_volume {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&kp C_VOLUME_DOWN>, <&kp C_VOLUME_UP>;
+        };
+
         sl_250: sl_250 {
             compatible = "zmk,behavior-sticky-key";
             label = "SL_250";
