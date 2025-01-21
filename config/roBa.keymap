@@ -294,6 +294,13 @@
             label = "ALT_TAB";
         };
 
+        windows_sleep: windows_sleep {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(X) &kp U &kp S>;
+            label = "WINDOWS_SLEEP";
+        };
+
         mod_morph_exclamation: mod_morph_exclamation {
             compatible = "zmk,behavior-mod-morph";
             label = "MOD_MORPH_EXCLAMATION";
@@ -524,10 +531,10 @@
 
         Configuration {
             bindings = <
-&bootloader  &none  &none  &none  &none                           &none         &none         &none         &none         &bootloader
-&none        &none  &none  &none  &none  &none      &none         &none         &none         &none         &none         &none
-&none        &none  &none  &none  &none  &none      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &td_bt_clear
-&none        &none  &none  &none  &none  &none      &none         &none                                                   &td_bt_clear_all
+&bootloader  &none  &none  &none  &none                           &none         &none         &none         &none           &bootloader
+&none        &none  &none  &none  &none  &none      &none         &none         &none         &none         &windows_sleep  &none
+&none        &none  &none  &none  &none  &none      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &td_bt_clear
+&none        &none  &none  &none  &none  &none      &none         &none                                                     &td_bt_clear_all
             >;
         };
     };
