@@ -5,9 +5,6 @@
 #include <dt-bindings/zmk/pointing.h>
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
-#define MOUSE 5
-#define SCROLL 6
-#define NUM 6
 
 &mt {
     quick-tap-ms = <250>;
@@ -64,23 +61,13 @@
     };
 
     macros {
-        lm_exit_AML: lm_exit_AML {
-            compatible = "zmk,behavior-macro-two-param";
+        exit_AML: exit_AML {
+            compatible = "zmk,behavior-macro";
             wait-ms = <0>;
             tap-ms = <0>;
-            #binding-cells = <2>;
-            bindings =
-                <&macro_param_1to1>,
-                <&macro_press>,
-                <&mo MACRO_PLACEHOLDER &macro_param_2to1 &kp MACRO_PLACEHOLDER>,
-                <&macro_tap>,
-                <&exit_AML>,
-                <&macro_pause_for_release>,
-                <&macro_param_2to1>,
-                <&macro_release>,
-                <&kp MACRO_PLACEHOLDER &macro_param_1to1>,
-                <&macro_release>,
-                <&mo MACRO_PLACEHOLDER>;
+            #binding-cells = <0>;
+            bindings = <&tog_off 7>;
+            label = "exit_AML";
         };
 
         kp_exit_AML: kp_exit_AML {
@@ -107,6 +94,21 @@
                 <&macro_param_1to1 &kp MACRO_PLACEHOLDER>;
 
             label = "MOD_exit_AML";
+        };
+
+        mkp_exit_AML: mkp_exit_AML {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_press>,
+                <&macro_param_1to1 &mkp MACRO_PLACEHOLDER>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&macro_param_1to1 &mkp MACRO_PLACEHOLDER>,
+                <&macro_tap>,
+                <&sl 8>;
+
+            label = "MKP_EXIT_AML";
         };
 
         mo_exit_AML: mo_exit_AML {
@@ -146,30 +148,13 @@
             label = "MO_exit_AML_DISABLE_ALT_CTRL";
         };
 
-        mo_with_enter_on_release: mo_with_enter_on_release {
-            compatible = "zmk,behavior-macro-one-param";
-            wait-ms = <0>;
-            tap-ms = <0>;
-            #binding-cells = <1>;
-            bindings =
-                <&macro_press>,
-                <&macro_param_1to1 &mo MACRO_PLACEHOLDER>,
-                <&macro_pause_for_release>,
-                <&macro_tap>,
-                <&kp ENTER>,
-                <&macro_release>,
-                <&macro_param_1to1 &mo MACRO_PLACEHOLDER>;
-
-            label = "MO_WITH_ENTER_ON_RELEASE";
-        };
-
-        exit_AML: exit_AML {
+        disable_alt_ctrl: disable_alt_ctrl {
             compatible = "zmk,behavior-macro";
             wait-ms = <0>;
             tap-ms = <0>;
             #binding-cells = <0>;
-            bindings = <&tog_off 8>;
-            label = "exit_AML";
+            bindings = <&to 0 &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL>;
+            label = "DISABLE_ALT_CTRL";
         };
 
         kp_with_kt_on: kp_with_kt_on {
@@ -181,15 +166,6 @@
             label = "KP_WITH_KT_ON";
         };
 
-        disable_alt_ctrl: disable_alt_ctrl {
-            compatible = "zmk,behavior-macro";
-            wait-ms = <0>;
-            tap-ms = <0>;
-            #binding-cells = <0>;
-            bindings = <&to 0 &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL>;
-            label = "DISABLE_ALT_CTRL";
-        };
-
         kp_with_sl: kp_with_sl {
             compatible = "zmk,behavior-macro-two-param";
             wait-ms = <0>;
@@ -199,11 +175,11 @@
             label = "KP_WITH_SL";
         };
 
-        tab_with_kt_on_and_sl: kt_on_kp_with_sl {
+        tab_with_kt_on_and_sl: tab_with_kt_on_and_sl {
             compatible = "zmk,behavior-macro-two-param";
             #binding-cells = <2>;
             bindings = <&macro_param_1to1 &kt_on MACRO_PLACEHOLDER &macro_param_2to2 &kp_with_sl TAB MACRO_PLACEHOLDER>;
-            label = "KT_ON_KP_WITH_SL";
+            label = "TAB_WITH_KT_ON_AND_SL";
         };
 
         zoom_in: zoom_in {
@@ -218,21 +194,6 @@
             #binding-cells = <0>;
             bindings = <&kt_on LCTRL &msc SCRL_DOWN &kt_off LCTRL>;
             label = "ZOOM_OUT";
-        };
-
-        mkp_exit_AML: mkp_exit_AML {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            bindings =
-                <&macro_press>,
-                <&macro_param_1to1 &mkp MACRO_PLACEHOLDER>,
-                <&macro_pause_for_release>,
-                <&macro_release>,
-                <&macro_param_1to1 &mkp MACRO_PLACEHOLDER>,
-                <&macro_tap>,
-                <&sl 8>;
-
-            label = "MKP_EXIT_AML";
         };
 
         eager_tap_dance: eager_tap_dance {
