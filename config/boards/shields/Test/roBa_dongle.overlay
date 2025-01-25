@@ -68,7 +68,7 @@
   /*auto toggle mouse key layer */
   trackball_peripheral_auto_mouse_listener {
         compatible = "zmk,input-behavior-listener";
-        device = <&trackball>;
+        device = <&trackball1>;
         layers = <4>;
         rotate-deg = <315>;
 	    evt-type = <INPUT_EV_REL>;
