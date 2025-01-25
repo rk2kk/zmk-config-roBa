@@ -38,7 +38,7 @@
 / {
 	/* define virtual input, will be resurrected for emitting input event */
 	/* NOTE: set `device = <&pd1>` in `zmk,input-listener` */
-	trackball: virtual_input {
+	trackball1: virtual_input {
 		compatible = "zmk,virtual-input";
 	};
 };
@@ -82,7 +82,7 @@
    /* input config for mouse scroll mode on momentary mouse scoll layer */
    trackball_peripheral_scroll_listener {
           compatible = "zmk,input-behavior-listener";
-           device = <&trackball>;
+           device = <&trackball1>;
            layers = <5>;
            evt-type = <INPUT_EV_REL>;
            /* slienting x-axis with alt event code */
@@ -106,7 +106,7 @@
 
    trackball_peripheral_snipe_listener {
           compatible = "zmk,input-behavior-listener";
-          device = <&trackball>;
+          device = <&trackball1>;
           layers = <1 2 3>;
           evt-type = <INPUT_EV_REL>;
           x-input-code = <INPUT_REL_X>;
