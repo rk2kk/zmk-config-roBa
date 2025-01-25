@@ -66,14 +66,14 @@
 		relay-channel = <102>;
 
 		/* virtual input device on central, which used to emit input event as an agent device */
-		device = <&trackball>;
+		device = <&trackball1>;
 	};
 };
 
 /{
   trackball_listener { 
     compatible = "zmk,input-listener";
-    device = <&trackball>;
+    device = <&trackball1>;
   };
 };
 
