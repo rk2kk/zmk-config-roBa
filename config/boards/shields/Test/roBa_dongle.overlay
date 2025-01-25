@@ -95,7 +95,7 @@
    /* input config for mouse scroll mode on momentary mouse scoll layer */
    trackball_peripheral_scroll_listener {
           compatible = "zmk,input-behavior-listener";
-           device = <&trackball1>;
+           device = <&trackball0>;
            layers = <5>;
            evt-type = <INPUT_EV_REL>;
            /* slienting x-axis with alt event code */
