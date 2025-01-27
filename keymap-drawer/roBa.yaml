@@ -328,7 +328,7 @@ layers:
   - {t: ▽, type: trans}
   - '&mkp LCLK'
   - '&td_right_click'
-  - {t: ▽, type: trans}
+  - '&td_right_click'
   - Extra_Functions
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -490,7 +490,7 @@ combos:
 - p: [0, 1]
   k: ESCAPE
 - p: [10, 11]
-  k: ^
+  k: '&eager_tap_dance LANGUAGE_2 1'
   l: [Numpad_and_Symbols]
 - p: [18, 19]
   k: '&mkp MCLK'
@@ -499,3 +499,7 @@ combos:
   k: '&caps_word'
 - p: [33, 32]
   k: \
+- p: [12, 13]
+  k: Sft+TAB
+- p: [11, 12]
+  k: TAB
