@@ -23,6 +23,6 @@ include:
    keymap: roBa_R.keymap
  - board: seeeduino_xiao_ble
    shield: roBa_L
-   keymap: roBa.keymap
+   keymap: roBa_L.keymap
  - board: seeeduino_xiao_ble
    shield: settings_reset
