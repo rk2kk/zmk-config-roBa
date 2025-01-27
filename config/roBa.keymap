@@ -11,8 +11,16 @@
 &trackball {
     automouse-layer = <MOUSE>;
     scroll-layers = <9>;
-
     // snipe-layers = <3>;
+
+    arrows {
+        layers = <3>;
+        bindings =
+            <&kp RIGHT_ARROW>,
+            <&kp LEFT_ARROW>,
+            <&kp UP_ARROW>,
+            <&kp DOWN_ARROW>;
+    };
 
     alt_tab {
         layers = <4>;
@@ -40,15 +48,6 @@
             <&kp DOWN_ARROW>;
 
         // down
-    };
-
-    arrows {
-        layers = <3>;
-        bindings =
-            <&kp RIGHT_ARROW>,
-            <&kp LEFT_ARROW>,
-            <&kp UP_ARROW>,
-            <&kp DOWN_ARROW>;
     };
 };
 
