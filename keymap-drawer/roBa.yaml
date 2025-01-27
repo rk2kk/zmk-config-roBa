@@ -499,7 +499,5 @@ combos:
 - p: [18, 19]
   k: '&mkp MCLK'
   l: [Media]
-- p: [22, 33]
-  k: '&caps_word'
 - p: [33, 32]
   k: \
