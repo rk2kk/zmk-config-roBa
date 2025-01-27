@@ -5,6 +5,7 @@
 #include <dt-bindings/zmk/pointing.h>
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
+#define MOUSE 7
 
 &mt {
     quick-tap-ms = <250>;
@@ -25,6 +26,16 @@
 / {
     combos {
         compatible = "zmk,combos";
+
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <11 12>;
+        };
+
+        shift_tab {
+            bindings = <&kp LS(TAB)>;
+            key-positions = <12 13>;
+        };
 
         eq {
             bindings = <&kp EQUAL>;
@@ -57,16 +68,6 @@
         dot_slash_backslash {
             bindings = <&kp BACKSLASH>;
             key-positions = <33 32>;
-        };
-
-        shift_tab {
-            bindings = <&kp LS(TAB)>;
-            key-positions = <12 13>;
-        };
-
-        tab {
-            bindings = <&kp TAB>;
-            key-positions = <11 12>;
         };
     };
 
