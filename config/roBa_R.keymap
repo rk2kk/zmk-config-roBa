@@ -1,4 +1,4 @@
-#include "roBa.keymap"
+/include/ "roBa.keymap"
 
 #include "boards/shields/Test/roBa_R.overlay"
 &trackball {
