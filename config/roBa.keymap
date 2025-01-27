@@ -466,10 +466,10 @@
 
         Functions_and_Controls {
             bindings = <
-&kp LS(F11)          &kp F1          &kp UP_ARROW    &kp F3           &td_alt_f4                                               &kp F6        &kp F7             &kp F8                 &kp F11    &kp F12
-&kp LA(PRINTSCREEN)  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp F5      &kp LC(LA(KP_NUMBER_0))      &kp UNDERSCORE  &kp F5        &kp_exit_AML HOME  &kp_exit_AML UP_ARROW  &kp END    &kp F9
-&kp LEFT_SHIFT       &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none       &kp EQUAL                    &kp LC(HOME)    &kp LC(LEFT)  &kp LEFT           &kp DOWN               &kp RIGHT  &kp LC(RIGHT)
-&kp LCTRL            &kp LEFT_WIN    &kp LEFT_ALT    &trans           &trans      &trans                       &kp DELETE      &trans                                                             &kp PIPE
+&kp LS(ESC)     &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &td_alt_f4                                               &kp LG(LC(LEFT_ARROW))  &kp LG(UP_ARROW)             &kp LC(LG(RIGHT_ARROW))       &kp LEFT_BRACKET  &kp RIGHT_BRACKET
+&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END     &kp LC(LA(KP_NUMBER_0))      &kp UNDERSCORE  &kp LG(LEFT_ARROW)      &kp_exit_AML LG(DOWN_ARROW)  &kp_exit_AML LG(RIGHT_ARROW)  &kp SQT           &kp NUHS
+&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &none       &kp RIGHT_SHIFT              &kp LC(HOME)    &kp LS(LEFT)            &trans                       &kp LS(RIGHT_ARROW)           &trans            &kp INTERNATIONAL_1
+&kp LCTRL       &kp LEFT_WIN            &kp LEFT_ALT    &trans                   &trans      &trans                       &kp DELETE      &trans                                                                                               &kp RIGHT_SHIFT
             >;
         };
 
