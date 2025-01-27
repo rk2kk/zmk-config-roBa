@@ -18,26 +18,28 @@
         layers = <4>;
         bindings =
             <&tab_with_kt_on_and_sl LEFT_ALT 5>,
-            // right,
+            // right,,
             <&tab_with_kt_on_and_sl LEFT_ALT 5>,
-            // left,
+            // left,,
             <&kp UP_ARROW>,
-            // up,
+            // up,,
             <&kp DOWN_ARROW>;
- // down
+
+        // down
     };
 
     alt_tab2 {
         layers = <5>;
         bindings =
             <&kp TAB>,
-            // right,
+            // right,,
             <&kp LS(TAB)>,
-            // left,
+            // left,,
             <&kp UP_ARROW>,
-            // up,
+            // up,,
             <&kp DOWN_ARROW>;
- // down
+
+        // down
     };
 
     arrows {
@@ -345,6 +347,13 @@
             label = "WINDOWS_SLEEP";
         };
 
+        send_up: send_up {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp U &kp P &kp ENTER>;
+            label = "SEND_UP";
+        };
+
         mod_morph_exclamation: mod_morph_exclamation {
             compatible = "zmk,behavior-mod-morph";
             label = "MOD_MORPH_EXCLAMATION";
@@ -471,13 +480,6 @@
             #binding-cells = <0>;
             tapping-term-ms = <250>;
             bindings = <&none>, <&none>, <&bt BT_CLR_ALL>;
-        };
-
-        send_text_up: send_text_up {
-            compatible = "zmk,behavior-send-string";
-            label = "SEND_TEXT_UP";
-            #binding-cells = <0>;
-            text = "上";
         };
     };
 
