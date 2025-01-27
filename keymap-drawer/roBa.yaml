@@ -39,7 +39,7 @@ layers:
   - LEFT ALT
   - '&eager_tap_dance LANGUAGE_2 1'
   - {t: '&kp_exit_AML SPACE', h: '&mo_exit_AML 3'}
-  - {t: '&kp_exit_AML TAB', h: '&mo_exit_AML 2'}
+  - {t: '&kp_exit_AML INTERNATIONAL_4', h: '&mo_exit_AML 2'}
   - {t: BACKSPACE, h: '&mo_exit_AML 2'}
   - {t: '&kp_exit_AML ENTER', h: '&mo_exit_AML 3'}
   - {t: '&kp_exit_AML ESCAPE', h: '&mod_exit_AML LEFT_SHIFT'}
@@ -93,22 +93,22 @@ layers:
   - '8'
   - '9'
   - '-'
-  - '@'
-  - '{'
-  - '}'
-  - '"'
+  - '-'
+  - KP 7
+  - KP 8
+  - KP 9
   - '&td_colon'
   - '*'
   - '4'
   - '5'
   - '6'
   - /
-  - '='
-  - ;
-  - '#'
-  - '&kp_exit_AML LEFT_PARENTHESIS'
-  - '&kp_exit_AML RIGHT_PARENTHESIS'
-  - ''''
+  - KP NUM
+  - {t: ▽, type: trans}
+  - /
+  - '&kp_exit_AML KP_N4'
+  - '&kp_exit_AML KP_N5'
+  - KP 6
   - '~'
   - {t: '0', h: Functions_and_Controls}
   - '1'
@@ -117,24 +117,24 @@ layers:
   - '%'
   - ^
   - {t: ▽, type: trans}
-  - '&'
-  - '['
-  - ']'
-  - '`'
-  - '|'
+  - KP 0
+  - KP 1
+  - KP 2
+  - KP 3
+  - .
   - {t: BACKSPACE, h: LCTRL}
   - {t: ., h: LEFT WIN}
   - {t: ., h: LEFT ALT}
   - {t: ▽, type: trans}
   - ENTER
   - {t: ▽, type: trans}
-  - <
-  - '>'
-  - $
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Sft+-
   Functions_and_Controls:
   - Sft+F11
   - F1
-  - F2
+  - UP ARROW
   - F3
   - '&td_alt_f4'
   - F6
@@ -143,9 +143,9 @@ layers:
   - F11
   - F12
   - Alt+PRINTSCREEN
-  - Sft+Gui+S
-  - UP ARROW
-  - ''
+  - LEFT ARROW
+  - DOWN ARROW
+  - RIGHT ARROW
   - F5
   - Ctl+Alt+KP 0
   - _
