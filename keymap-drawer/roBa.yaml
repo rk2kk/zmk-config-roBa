@@ -1,0 +1,501 @@
+layers:
+  Default:
+  - {t: '&kp_exit_AML Q', h: '&mod_exit_AML LWIN'}
+  - '&kp_exit_AML W'
+  - '&kp_exit_AML E'
+  - '&kp_exit_AML R'
+  - {t: '&kp_exit_AML T', h: '&mo_exit_AML 10'}
+  - {t: '&kp_exit_AML Y', h: '&mo_exit_AML 10'}
+  - '&kp_exit_AML U'
+  - '&kp_exit_AML I'
+  - '&kp_exit_AML O'
+  - {t: '&kp_exit_AML P', h: '&mo_exit_AML 8'}
+  - {t: '&kp_exit_AML A', h: '&mod_exit_AML LCTRL'}
+  - '&kp_exit_AML S'
+  - '&kp_exit_AML D'
+  - '&kp_exit_AML F'
+  - '&kp_exit_AML G'
+  - MUTE
+  - '&zoom_in'
+  - '&kp_exit_AML H'
+  - '&kp_exit_AML J'
+  - '&kp_exit_AML K'
+  - '&kp_exit_AML L'
+  - {t: '&kp_exit_AML MINUS', h: '&mo_exit_AML 9'}
+  - {t: '&kp_exit_AML Z', h: LEFT SHIFT}
+  - {t: '&kp_exit_AML X', h: '&mod_exit_AML LEFT_SHIFT'}
+  - '&kp_exit_AML C'
+  - '&kp_exit_AML V'
+  - {t: '&kp_exit_AML B', h: '&mo_exit_AML_disable_alt_ctrl 4'}
+  - '&alt_tab LEFT_ALT TAB'
+  - '&zoom_out'
+  - {t: '&kp_exit_AML N', h: '&mo_exit_AML_disable_alt_ctrl 4'}
+  - '&kp_exit_AML M'
+  - {t: ',', s: '!'}
+  - {t: ., s: '?'}
+  - {t: '&kp_exit_AML SLASH', h: '&mod_exit_AML LEFT_SHIFT'}
+  - LCTRL
+  - LEFT WIN
+  - LEFT ALT
+  - '&eager_tap_dance LANGUAGE_2 1'
+  - {t: '&kp_exit_AML SPACE', h: '&mo_exit_AML 3'}
+  - {t: '&kp_exit_AML TAB', h: '&mo_exit_AML 2'}
+  - {t: BACKSPACE, h: '&mo_exit_AML 2'}
+  - {t: '&kp_exit_AML ENTER', h: '&mo_exit_AML 3'}
+  - {t: '&kp_exit_AML ESCAPE', h: '&mod_exit_AML LEFT_SHIFT'}
+  Lang1:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&eager_tap_dance LANG1 1'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  Numpad_and_Symbols:
+  - +
+  - '7'
+  - '8'
+  - '9'
+  - '-'
+  - '@'
+  - '{'
+  - '}'
+  - '"'
+  - '&td_colon'
+  - '*'
+  - '4'
+  - '5'
+  - '6'
+  - /
+  - '='
+  - ;
+  - '#'
+  - '&kp_exit_AML LEFT_PARENTHESIS'
+  - '&kp_exit_AML RIGHT_PARENTHESIS'
+  - ''''
+  - '~'
+  - {t: '0', h: Functions_and_Controls}
+  - '1'
+  - '2'
+  - '3'
+  - '%'
+  - ^
+  - {t: ▽, type: trans}
+  - '&'
+  - '['
+  - ']'
+  - '`'
+  - '|'
+  - {t: BACKSPACE, h: LCTRL}
+  - {t: ., h: LEFT WIN}
+  - {t: ., h: LEFT ALT}
+  - {t: ▽, type: trans}
+  - ENTER
+  - {t: ▽, type: trans}
+  - <
+  - '>'
+  - $
+  Functions_and_Controls:
+  - Sft+F11
+  - F1
+  - F2
+  - F3
+  - '&td_alt_f4'
+  - F6
+  - F7
+  - F8
+  - F11
+  - F12
+  - Alt+PRINTSCREEN
+  - Sft+Gui+S
+  - UP ARROW
+  - ''
+  - F5
+  - Ctl+Alt+KP 0
+  - _
+  - F5
+  - '&kp_exit_AML HOME'
+  - '&kp_exit_AML UP_ARROW'
+  - END
+  - F9
+  - {t: LEFT SHIFT, type: held}
+  - LEFT ARROW
+  - DOWN ARROW
+  - RIGHT ARROW
+  - ''
+  - '='
+  - Ctl+HOME
+  - Ctl+LEFT
+  - LEFT
+  - DOWN
+  - RIGHT
+  - Ctl+RIGHT
+  - LCTRL
+  - LEFT WIN
+  - LEFT ALT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - DELETE
+  - {t: ▽, type: trans}
+  - '|'
+  Misc:
+  - '&tab_with_kt_on_and_sl LEFT_ALT 5'
+  - Ctl+Gui+LEFT
+  - Gui+TAB
+  - Gui+Ctl+RIGHT
+  - '&td_alt_f4'
+  - '&td_alt_f4'
+  - Ctl+W
+  - Sft+Ctl+T
+  - Ctl+T
+  - '&tab_with_kt_on_and_sl LEFT_ALT 5'
+  - '&tab_with_kt_on_and_sl LCTRL 6'
+  - Gui+Sft+LEFT ARROW
+  - Gui+UP ARROW
+  - Gui+Sft+RIGHT ARROW
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - VOLUME UP
+  - '&kp_exit_AML LC(PAGE_UP)'
+  - '&kp_exit_AML UP_ARROW'
+  - Ctl+PAGE DOWN
+  - '&tab_with_kt_on_and_sl LCTRL 6'
+  - Alt+Ctl+Gui+DOWN
+  - Gui+LEFT ARROW
+  - Gui+DOWN
+  - Gui+Sft+RIGHT ARROW
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - VOLUME DOWN
+  - Alt+LEFT
+  - DOWN
+  - Alt+RIGHT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  Alt-Tab:
+  - TAB
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - TAB
+  - Sft+TAB
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Sft+TAB
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  Ctrl-Tab:
+  - Sft+TAB
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Sft+TAB
+  - TAB
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - TAB
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  Mouse:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&mkp LCLK'
+  - '&td_right_click'
+  - {t: ▽, type: trans}
+  - Extra_Functions
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  Media:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - PREV
+  - PLAY PAUSE
+  - NEXT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - VOLUME DOWN
+  - MUTE
+  - VOLUME UP
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Meh+M
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  Extra_Functions:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F13
+  - F14
+  - F15
+  - F16
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F17
+  - F18
+  - F19
+  - F20
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F21
+  - F22
+  - F23
+  - F24
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&eager_tap_dance LANGUAGE_1 9'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  Configuration:
+  - '&bootloader'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&bootloader'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&windows_sleep'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: BT, h: '0'}
+  - {t: BT, h: '1'}
+  - {t: BT, h: '2'}
+  - {t: BT, h: '3'}
+  - {t: BT, h: '4'}
+  - '&td_bt_clear'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&td_bt_clear_all'
+combos:
+- p: [0, 1]
+  k: '='
+  l: [Numpad_and_Symbols]
+- p: [0, 1]
+  k: ESCAPE
+- p: [10, 11]
+  k: ^
+  l: [Numpad_and_Symbols]
+- p: [18, 19]
+  k: '&mkp MCLK'
+  l: [Media]
+- p: [22, 33]
+  k: '&caps_word'
+- p: [33, 32]
+  k: \
