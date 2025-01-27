@@ -132,40 +132,40 @@ layers:
   - {t: ▽, type: trans}
   - Sft+-
   Functions_and_Controls:
-  - Sft+F11
-  - F1
+  - Sft+ESC
+  - Ctl+Sft+TAB
   - UP ARROW
-  - F3
+  - Ctl+TAB
   - '&td_alt_f4'
-  - F6
-  - F7
-  - F8
-  - F11
-  - F12
-  - Alt+PRINTSCREEN
+  - Gui+Ctl+LEFT ARROW
+  - Gui+UP ARROW
+  - Ctl+Gui+RIGHT ARROW
+  - '['
+  - ']'
+  - HOME
   - LEFT ARROW
   - DOWN ARROW
   - RIGHT ARROW
-  - F5
+  - END
   - Ctl+Alt+KP 0
   - _
-  - F5
-  - '&kp_exit_AML HOME'
-  - '&kp_exit_AML UP_ARROW'
-  - END
-  - F9
+  - Gui+LEFT ARROW
+  - '&kp_exit_AML LG(DOWN_ARROW)'
+  - '&kp_exit_AML LG(RIGHT_ARROW)'
+  - ''''
+  - '#'
   - {t: LEFT SHIFT, type: held}
-  - LEFT ARROW
-  - DOWN ARROW
-  - RIGHT ARROW
+  - Gui+Sft+LEFT ARROW
+  - {t: ▽, type: trans}
+  - Gui+Sft+RIGHT ARROW
   - ''
-  - '='
+  - RIGHT SHIFT
   - Ctl+HOME
-  - Ctl+LEFT
-  - LEFT
-  - DOWN
-  - RIGHT
-  - Ctl+RIGHT
+  - Sft+LEFT
+  - {t: ▽, type: trans}
+  - Sft+RIGHT ARROW
+  - {t: ▽, type: trans}
+  - INTERNATIONAL 1
   - LCTRL
   - LEFT WIN
   - LEFT ALT
@@ -174,7 +174,7 @@ layers:
   - {t: ▽, type: trans}
   - DELETE
   - {t: ▽, type: trans}
-  - '|'
+  - RIGHT SHIFT
   Misc:
   - '&tab_with_kt_on_and_sl LEFT_ALT 5'
   - Ctl+Gui+LEFT
