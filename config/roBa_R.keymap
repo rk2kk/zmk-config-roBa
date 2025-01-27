@@ -1,6 +1,5 @@
-#include "roBa.keymap"
-
 #include "boards/shields/Test/roBa_R.overlay"
+
 &trackball {
     automouse-layer = <MOUSE>;
     scroll-layers = <9>;
@@ -43,3 +42,5 @@
         // down
     };
 };
+
+#include "roBa.keymap"
