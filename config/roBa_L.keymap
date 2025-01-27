@@ -2,6 +2,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/pointing.h>
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 #define MOUSE 7
@@ -539,7 +540,7 @@
         Configuration {
             bindings = <
 &bootloader  &none  &none  &none  &none                           &none         &none         &none         &none           &bootloader
-&none        &none  &none  &none  &none  &none      &none         &none         &none         &none         &windows_sleep  &none
+&none        &none  &none  &none  &none  &kp A      &kp S         &none         &none         &none         &windows_sleep  &none
 &none        &none  &none  &none  &none  &none      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &td_bt_clear
 &none        &none  &none  &none  &none  &none      &none         &none                                                     &td_bt_clear_all
             >;
