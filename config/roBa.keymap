@@ -60,10 +60,7 @@
             layers = <8>;
         };
 
-        caps_word {
-            bindings = <&caps_word>;
-            key-positions = <22 33>;
-        };
+
 
         dot_slash_backslash {
             bindings = <&kp BACKSLASH>;
