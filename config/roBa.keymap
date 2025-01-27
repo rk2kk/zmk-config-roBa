@@ -37,8 +37,8 @@
             key-positions = <0 1>;
         };
 
-        hat {
-            bindings = <&kp CARET>;
+        zenkaku_hankaku {
+            bindings = <&eager_tap_dance LANGUAGE_2 1>;
             key-positions = <10 11>;
             layers = <2>;
         };
@@ -57,6 +57,16 @@
         dot_slash_backslash {
             bindings = <&kp BACKSLASH>;
             key-positions = <33 32>;
+        };
+
+        shift_tab {
+            bindings = <&kp LS(TAB)>;
+            key-positions = <12 13>;
+        };
+
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <11 12>;
         };
     };
 
@@ -504,10 +514,10 @@
 
         Mouse {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans     &trans           &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp LCLK  &td_right_click  &trans  &mo 9
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans     &trans           &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                      &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans     &trans           &trans           &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp LCLK  &td_right_click  &td_right_click  &mo 9
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans     &trans           &trans           &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                               &trans
             >;
         };
 
