@@ -484,6 +484,10 @@ layers:
   - ''
   - '&td_bt_clear_all'
 combos:
+- p: [11, 12]
+  k: TAB
+- p: [12, 13]
+  k: Sft+TAB
 - p: [0, 1]
   k: '='
   l: [Numpad_and_Symbols]
@@ -499,7 +503,3 @@ combos:
   k: '&caps_word'
 - p: [33, 32]
   k: \
-- p: [12, 13]
-  k: Sft+TAB
-- p: [11, 12]
-  k: TAB
