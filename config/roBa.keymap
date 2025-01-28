@@ -65,7 +65,7 @@
             wait-ms = <0>;
             tap-ms = <0>;
             #binding-cells = <0>;
-            bindings = <&tog_off 8>;
+            bindings = <&tog_off MOUSE>;
             label = "exit_AML";
         };
 
@@ -533,10 +533,10 @@
 
         Extra_Functions {
             bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3                   &bt BT_SEL 4                      &kp F13  &kp F14  &kp F15  &kp F16  &trans
-&trans        &trans        &trans        &trans                         &trans        &trans      &trans  &kp F17  &kp F18  &kp F19  &kp F20  &trans
-&trans        &kp N1        &kp N2        &kp N3                         &trans        &trans      &trans  &kp F21  &kp F22  &kp F23  &kp F24  &td_bt_clear
-&trans        &trans        &trans        &eager_tap_dance LANGUAGE_1 9  &trans        &trans      &trans  &trans                              &td_bt_clear_all
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3                   &bt BT_SEL 4                      &trans  &trans  &trans  &trans  &trans
+&trans        &trans        &trans        &trans                         &trans        &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans        &kp N1        &kp N2        &kp N3                         &trans        &trans      &trans  &trans  &trans  &trans  &trans  &td_bt_clear
+&trans        &trans        &trans        &eager_tap_dance LANGUAGE_1 9  &trans        &trans      &trans  &trans                          &td_bt_clear_all
             >;
         };
     };
