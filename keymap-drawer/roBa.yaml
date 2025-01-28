@@ -34,7 +34,7 @@ layers:
   - {t: ',', s: '!'}
   - {t: ., s: '?'}
   - {t: '&kp_exit_AML SLASH', h: '&mod_exit_AML LEFT_SHIFT'}
-  - LCTRL
+  - {t: '&kp_exit_AML LEFT_CONTROL', h: '&mo_exit_AML 5'}
   - LEFT WIN
   - LEFT ALT
   - {t: '&kp_exit_AML INTERNATIONAL_5', h: '&mo_exit_AML 10'}
