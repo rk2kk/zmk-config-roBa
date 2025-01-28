@@ -570,7 +570,7 @@
     };
 
     alt_tab {
-        layers = <ALTTAB>;
+        layers = <4>;
         bindings =
             <&tab_with_kt_on_and_sl LEFT_ALT 5>,
             // right,,,,,,,,,,,,,,,,,,
@@ -586,7 +586,7 @@
     };
 
     lcls_tab {
-        layers = <LCLSTAB>;
+        layers = <6;
         bindings =
             <&kp LC(TAB)>,
             // right,,,,,,,,,,,,,,,,,,
