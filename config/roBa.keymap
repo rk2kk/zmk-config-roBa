@@ -558,7 +558,7 @@
 
 &trackball {
     automouse-layer = <MOUSE>;
-    scroll-layers = <9>;
+    scroll-layers = <10>;
 
     // snipe-layers = <3>;
 
