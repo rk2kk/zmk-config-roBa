@@ -328,8 +328,8 @@ layers:
   - {t: ▽, type: trans}
   - '&mkp LCLK'
   - '&mkp MB3'
-  - '&td_right_click'
-  - Extra_Functions
+  - '&mkp MB2'
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -417,7 +417,7 @@ layers:
   - F18
   - F19
   - F20
-  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '1'
   - '2'
