@@ -7,7 +7,6 @@
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 #define MOUSE 7
-#define MEDIA 8
 
 &mt {
     quick-tap-ms = <250>;
@@ -61,7 +60,7 @@
             wait-ms = <0>;
             tap-ms = <0>;
             #binding-cells = <0>;
-            bindings = <&tog_off MOUSE>;
+            bindings = <&tog_off 8>;
             label = "exit_AML";
         };
 
@@ -270,14 +269,14 @@
         };
 
         td_ZenkakuHankaku: td_ZenkakuHankaku {
-            //compatible = "zmk,behavior-tap-dance";
+            compatible = "zmk,behavior-tap-dance";
 
-            compatible = "zmk,behavior-eager-tap-dance";
+            // compatible = "zmk,behavior-eager-tap-dance";
 
             label = "TD_ZENKAKUHANKAKU";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&kp LANGUAGE_1>, <&kp LANGUAGE_2>;
+            bindings = <&kp LANGUAGE_2>, <&kp LANGUAGE_1>;
         };
 
         td_ZenkakuHankaku_exit_AML: td_ZenkakuHankaku_exit_AML {
@@ -551,39 +550,33 @@
             <&kp LEFT_ARROW>,
             <&kp UP_ARROW>,
             <&kp DOWN_ARROW>;
-            
-            tick = <10>;
-    };
-
-    volume {
-        layers = <MEDIA>;
-        bindings =
-                <&none>,
-                <&none>,
-                <&kp C_VOLUME_UP>,
-                <&kp C_VOLUME_DOWN>;
-
     };
 
     alt_tab {
         layers = <4>;
         bindings =
             <&tab_with_kt_on_and_sl LEFT_ALT 5>,
+            // right,,,,,,,,,,,,,,,,,,
             <&tab_with_kt_on_and_sl LEFT_ALT 5>,
+            // left,,,,,,,,,,,,,,,,,,
             <&kp UP_ARROW>,
+            // up,,,,,,,,,,,,,,,,,,
             <&kp DOWN_ARROW>;
 
-            tick = <10>;   
+        // down
     };
 
-    LCLS_tab {
+    alt_tab2 {
         layers = <6>;
         bindings =
             <&kp LC(TAB)>,
+            // right,,,,,,,,,,,,,,,,,,
             <&kp LC(LS(TAB))>,
+            // left,,,,,,,,,,,,,,,,,,
             <&kp UP_ARROW>,
+            // up,,,,,,,,,,,,,,,,,,
             <&kp DOWN_ARROW>;
-            
-            tick = <80>;
-        };
+
+        // down
+    };
 };
