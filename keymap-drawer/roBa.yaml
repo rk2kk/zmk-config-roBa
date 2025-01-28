@@ -4,24 +4,24 @@ layers:
   - '&kp_exit_AML W'
   - '&kp_exit_AML E'
   - '&kp_exit_AML R'
-  - {t: '&kp_exit_AML T', h: '&mo_exit_AML 10'}
-  - {t: '&kp_exit_AML Y', h: '&mo_exit_AML 10'}
+  - {t: '&kp_exit_AML T', h: '&mo_exit_AML 11'}
+  - {t: '&kp_exit_AML Y', h: '&mo_exit_AML 11'}
   - '&kp_exit_AML U'
   - '&kp_exit_AML I'
   - '&kp_exit_AML O'
-  - {t: '&kp_exit_AML P', h: '&mo_exit_AML 8'}
+  - {t: '&kp_exit_AML P', h: '&mo_exit_AML 9'}
   - {t: '&kp_exit_AML A', h: '&mod_exit_AML LCTRL'}
   - '&kp_exit_AML S'
   - '&kp_exit_AML D'
   - '&kp_exit_AML F'
   - '&kp_exit_AML G'
-  - MUTE
-  - '&zoom_in'
+  - '&mkp MB3'
+  - {t: '&kp_exit_AML MINUS', h: '&mo_exit_AML 9'}
   - '&kp_exit_AML H'
   - '&kp_exit_AML J'
   - '&kp_exit_AML K'
   - '&kp_exit_AML L'
-  - {t: '&kp_exit_AML MINUS', h: '&mo_exit_AML 9'}
+  - {t: '&kp_exit_AML MINUS', h: '&mo_exit_AML 10'}
   - {t: '&kp_exit_AML Z', h: LEFT SHIFT}
   - {t: '&kp_exit_AML X', h: '&mod_exit_AML LEFT_SHIFT'}
   - '&kp_exit_AML C'
@@ -37,7 +37,7 @@ layers:
   - LCTRL
   - LEFT WIN
   - LEFT ALT
-  - '&eager_tap_dance LANGUAGE_2 1'
+  - {t: '&kp_exit_AML INTERNATIONAL_5', h: '&mo_exit_AML 10'}
   - {t: '&kp_exit_AML SPACE', h: '&mo_exit_AML 3'}
   - {t: '&kp_exit_AML INTERNATIONAL_4', h: '&mo_exit_AML 2'}
   - {t: BACKSPACE, h: '&mo_exit_AML 2'}
@@ -175,7 +175,7 @@ layers:
   - DELETE
   - {t: ▽, type: trans}
   - RIGHT SHIFT
-  Misc:
+  ARROW:
   - '&tab_with_kt_on_and_sl LEFT_ALT 5'
   - Ctl+Gui+LEFT
   - Gui+TAB
@@ -339,6 +339,50 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - '&mkp MB4'
+  - '&mkp MB5'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  FUNCTION_NUM_1:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -396,11 +440,11 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   Extra_Functions:
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: BT, h: '0'}
+  - {t: BT, h: '1'}
+  - {t: BT, h: '2'}
+  - {t: BT, h: '3'}
+  - {t: BT, h: '4'}
   - F13
   - F14
   - F15
@@ -419,9 +463,9 @@ layers:
   - F20
   - {type: held}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '1'
+  - '2'
+  - '3'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -433,7 +477,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&eager_tap_dance LANGUAGE_1 9'
+  - '&eager_tap_dance LANGUAGE_1 10'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
