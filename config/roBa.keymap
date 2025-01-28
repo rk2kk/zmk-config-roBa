@@ -60,7 +60,7 @@
             wait-ms = <0>;
             tap-ms = <0>;
             #binding-cells = <0>;
-            bindings = <&tog_off 8>;
+            bindings = <&tog_off MOUSE>>;
             label = "exit_AML";
         };
 
@@ -269,9 +269,9 @@
         };
 
         td_ZenkakuHankaku: td_ZenkakuHankaku {
-            compatible = "zmk,behavior-tap-dance";
+            //compatible = "zmk,behavior-tap-dance";
 
-            // compatible = "zmk,behavior-eager-tap-dance";
+            compatible = "zmk,behavior-eager-tap-dance";
 
             label = "TD_ZENKAKUHANKAKU";
             #binding-cells = <0>;
