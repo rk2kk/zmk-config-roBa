@@ -276,7 +276,7 @@
             label = "TD_ZENKAKUHANKAKU";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&kp LANGUAGE_2>, <&kp LANGUAGE_1>;
+            bindings = <&kp LANGUAGE_1>, <&kp LANGUAGE_2>;
         };
 
         td_ZenkakuHankaku_exit_AML: td_ZenkakuHankaku_exit_AML {
