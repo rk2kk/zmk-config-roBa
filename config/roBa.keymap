@@ -188,6 +188,19 @@
             label = "TAB_WITH_KT_ON_AND_SL";
         };
 
+        zoom_in: zoom_in {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt_on LCTRL &msc SCRL_UP &kt_off LCTRL>;
+            label = "ZOOM_IN";
+        };
+        zoom_out: zoom_out {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt_on LCTRL &msc SCRL_DOWN &kt_off LCTRL>;
+            label = "ZOOM_OUT";
+        };
+
         eager_tap_dance: eager_tap_dance {
             compatible = "zmk,behavior-macro-two-param";
             #binding-cells = <2>;
