@@ -3,6 +3,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/pointing.h>
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 #define MOUSE 7
@@ -48,7 +49,7 @@
         };
 
         zenkaku_hankaku {
-            bindings = <&eager_tap_dance LANGUAGE_2 1>;
+            bindings = <&td_ZenkakuHankaku>;
             key-positions = <10 11>;
             layers = <2>;
         };
@@ -187,20 +188,6 @@
             label = "TAB_WITH_KT_ON_AND_SL";
         };
 
-        zoom_in: zoom_in {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kt_on LCTRL &msc SCRL_UP &kt_off LCTRL>;
-            label = "ZOOM_IN";
-        };
-
-        zoom_out: zoom_out {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kt_on LCTRL &msc SCRL_DOWN &kt_off LCTRL>;
-            label = "ZOOM_OUT";
-        };
-
         eager_tap_dance: eager_tap_dance {
             compatible = "zmk,behavior-macro-two-param";
             #binding-cells = <2>;
@@ -221,8 +208,8 @@
             #binding-cells = <1>;
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
+        };
     };
-};
 
     behaviors {
         tog_on: toggle_layer_on {
@@ -459,7 +446,6 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
-
     };
 
     keymap {
@@ -468,7 +454,7 @@
         Default {
             bindings = <
 &mt_exit_AML LWIN Q               &kp_exit_AML W             &kp_exit_AML E  &kp_exit_AML R                   &lt_exit_AML 11 T                                                                                        &lt_exit_AML 11 Y                  &kp_exit_AML U  &kp_exit_AML I          &kp_exit_AML O       &lt_exit_AML 9 P
-&mt_exit_AML LCTRL A              &kp_exit_AML S             &kp_exit_AML D  &kp_exit_AML F                   &kp_exit_AML G                     &mkp MB3                            &lt 8 MINUS                       &kp_exit_AML H                     &kp_exit_AML J  &kp_exit_AML K          &kp_exit_AML L       &lt_exit_AML 10 MINUS
+&kp_exit_AML A                    &kp_exit_AML S             &kp_exit_AML D  &kp_exit_AML F                   &kp_exit_AML G                     &mkp MB3                            &lt 8 MINUS                       &kp_exit_AML H                     &kp_exit_AML J  &kp_exit_AML K          &kp_exit_AML L       &lt_exit_AML 10 MINUS
 &mt_exit_AML_on_tap LEFT_SHIFT Z  &mt_exit_AML LEFT_SHIFT X  &kp_exit_AML C  &kp_exit_AML V                   &lt_exit_AML_disable_alt_ctrl 4 B  &lt_exit_AML_on_hold 6 EQUAL        &kp DELETE                        &lt_exit_AML_disable_alt_ctrl 4 N  &kp_exit_AML M  &mod_morph_exclamation  &mod_morph_question  &mt_exit_AML LEFT_SHIFT SLASH
 &kp LEFT_CONTROL                  &kp LEFT_WIN               &kp LEFT_ALT    &lt_exit_AML 10 INTERNATIONAL_5  &lt_exit_AML 3 SPACE               &lt_exit_AML 2 INTERNATIONAL_4      &lt_exit_AML_on_hold 2 BACKSPACE  &lt_exit_AML 3 ENTER                                                                            &mt_exit_AML LEFT_SHIFT ESCAPE
             >;
@@ -600,11 +586,11 @@
         layers = <4>;
         bindings =
             <&tab_with_kt_on_and_sl LEFT_ALT 5>,
-            // right,,,,,,,,,,,
+            // right,,,,,,,,,,,,
             <&tab_with_kt_on_and_sl LEFT_ALT 5>,
-            // left,,,,,,,,,,,
+            // left,,,,,,,,,,,,
             <&kp UP_ARROW>,
-            // up,,,,,,,,,,,
+            // up,,,,,,,,,,,,
             <&kp DOWN_ARROW>;
 
         // down
@@ -614,11 +600,11 @@
         layers = <5>;
         bindings =
             <&kp TAB>,
-            // right,,,,,,,,,,,
+            // right,,,,,,,,,,,,
             <&kp LS(TAB)>,
-            // left,,,,,,,,,,,
+            // left,,,,,,,,,,,,
             <&kp UP_ARROW>,
-            // up,,,,,,,,,,,
+            // up,,,,,,,,,,,,
             <&kp DOWN_ARROW>;
 
         // down
