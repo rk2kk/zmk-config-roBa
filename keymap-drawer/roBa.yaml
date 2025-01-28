@@ -473,7 +473,7 @@ layers:
   - F22
   - F23
   - F24
-  - {t: ▽, type: trans}
+  - '&td_bt_clear'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -482,7 +482,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '&td_bt_clear_all'
   Configuration:
   - '&bootloader'
   - ''
