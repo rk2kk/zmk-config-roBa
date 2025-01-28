@@ -16,7 +16,7 @@ layers:
   - '&kp_exit_AML F'
   - '&kp_exit_AML G'
   - '&mkp MB3'
-  - {t: '&kp_exit_AML MINUS', h: '&mo_exit_AML 9'}
+  - {t: '&kp_exit_AML MINUS', h: '&mo_exit_AML 8'}
   - '&kp_exit_AML H'
   - '&kp_exit_AML J'
   - '&kp_exit_AML K'
