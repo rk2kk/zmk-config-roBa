@@ -40,7 +40,7 @@
         eq {
             bindings = <&kp EQUAL>;
             key-positions = <0 1>;
-            layers = <2>;
+            layers = <1>;
         };
 
         Escape {
@@ -51,7 +51,7 @@
         zenkaku_hankaku {
             bindings = <&td_ZenkakuHankaku>;
             key-positions = <10 11>;
-            layers = <2>;
+            layers = <1>;
         };
 
         middle_click {
@@ -72,7 +72,7 @@
             wait-ms = <0>;
             tap-ms = <0>;
             #binding-cells = <0>;
-            bindings = <&tog_off 7>;
+            bindings = <&tog_off 8>;
             label = "exit_AML";
         };
 
@@ -453,29 +453,20 @@
 
         Default {
             bindings = <
-&mt_exit_AML LWIN Q               &kp_exit_AML W             &kp_exit_AML E  &kp_exit_AML R                   &lt_exit_AML 11 T                                                                                        &lt_exit_AML 11 Y                  &kp_exit_AML U  &kp_exit_AML I          &kp_exit_AML O       &lt_exit_AML 9 P
-&kp_exit_AML A                    &kp_exit_AML S             &kp_exit_AML D  &kp_exit_AML F                   &kp_exit_AML G                     &mkp MB3                            &lt 8 MINUS                       &kp_exit_AML H                     &kp_exit_AML J  &kp_exit_AML K          &kp_exit_AML L       &lt_exit_AML 10 MINUS
-&mt_exit_AML_on_tap LEFT_SHIFT Z  &mt_exit_AML LEFT_SHIFT X  &kp_exit_AML C  &kp_exit_AML V                   &lt_exit_AML_disable_alt_ctrl 4 B  &lt_exit_AML_on_hold 6 EQUAL        &kp DELETE                        &lt_exit_AML_disable_alt_ctrl 4 N  &kp_exit_AML M  &mod_morph_exclamation  &mod_morph_question  &mt_exit_AML LEFT_SHIFT SLASH
-&kp LEFT_CONTROL                  &kp LEFT_WIN               &kp LEFT_ALT    &lt_exit_AML 10 INTERNATIONAL_5  &lt_exit_AML 3 SPACE               &lt_exit_AML 2 INTERNATIONAL_4      &lt_exit_AML_on_hold 2 BACKSPACE  &lt_exit_AML 3 ENTER                                                                            &mt_exit_AML LEFT_SHIFT ESCAPE
+&mt_exit_AML LWIN Q               &kp_exit_AML W             &kp_exit_AML E  &kp_exit_AML R                  &kp_exit_AML T                                                                                           &kp_exit_AML Y                     &kp_exit_AML U  &kp_exit_AML I          &kp_exit_AML O       &lt_exit_AML 9 P
+&kp_exit_AML A                    &kp_exit_AML S             &kp_exit_AML D  &kp_exit_AML F                  &kp_exit_AML G                     &mkp MB3                            &lt 6 MINUS                       &kp_exit_AML H                     &kp_exit_AML J  &kp_exit_AML K          &kp_exit_AML L       &lt_exit_AML 9 MINUS
+&mt_exit_AML_on_tap LEFT_SHIFT Z  &mt_exit_AML LEFT_SHIFT X  &kp_exit_AML C  &kp_exit_AML V                  &lt_exit_AML_disable_alt_ctrl 3 B  &lt_exit_AML_on_hold 5 EQUAL        &kp DELETE                        &lt_exit_AML_disable_alt_ctrl 3 N  &kp_exit_AML M  &mod_morph_exclamation  &mod_morph_question  &mt_exit_AML LEFT_SHIFT SLASH
+&kp LEFT_CONTROL                  &kp LEFT_WIN               &kp LEFT_ALT    &lt_exit_AML 9 INTERNATIONAL_5  &lt_exit_AML 2 SPACE               &lt_exit_AML 1 INTERNATIONAL_4      &lt_exit_AML_on_hold 1 BACKSPACE  &lt_exit_AML 2 ENTER                                                                            &mt_exit_AML LEFT_SHIFT ESCAPE
             >;
 
             sensor-bindings = <&scroll_up_down>;
-        };
-
-        Lang1 {
-            bindings = <
-&trans  &trans  &trans  &trans                    &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans                    &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans                    &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &eager_tap_dance LANG1 1  &trans  &trans      &trans  &trans                          &trans
-            >;
         };
 
         Numpad_and_Symbols {
             bindings = <
 &kp PLUS             &kp N7               &kp N8               &kp N9  &kp MINUS                            &kp MINUS  &kp KP_N7           &kp KP_N8           &kp KP_NUMBER_9  &td_colon
 &kp ASTERISK         &kp N4               &kp N5               &kp N6  &kp SLASH    &kp KP_NUM      &trans  &kp SLASH  &kp_exit_AML KP_N4  &kp_exit_AML KP_N5  &kp KP_N6        &kp TILDE
-&lt 3 N0             &kp N1               &kp N2               &kp N3  &kp PERCENT  &kp CARET       &trans  &kp KP_N0  &kp KP_N1           &kp KP_N2           &kp KP_N3        &kp PERIOD
+&lt 2 N0             &kp N1               &kp N2               &kp N3  &kp PERCENT  &kp CARET       &trans  &kp KP_N0  &kp KP_N1           &kp KP_N2           &kp KP_N3        &kp PERIOD
 &mt LCTRL BACKSPACE  &mt LEFT_WIN PERIOD  &mt LEFT_ALT PERIOD  &trans  &kp ENTER    &trans          &trans  &trans                                                              &kp LS(MINUS)
             >;
 
@@ -520,21 +511,21 @@
             >;
         };
 
-        Mouse {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans     &trans    &trans           &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp LCLK  &mkp MB3  &td_right_click  &mo 10
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans     &mkp MB4  &mkp MB5         &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                        &trans
-            >;
-        };
-
         FUNCTION_NUM_1 {
             bindings = <
 &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp LS(N5)                      &kp LS(NUMBER_6)  &kp LS(NUMBER_7)  &kp LS(NUMBER_8)  &kp LS(NUMBER_9)  &kp LS(N0)
 &kp LS(MINUS)     &kp LS(EQUAL)     &kp LS(INT3)      &trans            &trans      &trans      &trans  &trans            &trans            &trans            &trans            &trans
 &trans            &trans            &trans            &trans            &trans      &trans      &trans  &trans            &trans            &trans            &trans            &kp LS(INTERNATIONAL_1)
 &trans            &trans            &trans            &trans            &trans      &trans      &trans  &trans                                                                  &trans
+            >;
+        };
+
+        Mouse {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans     &trans    &trans           &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp LCLK  &mkp MB3  &td_right_click  &mo 9
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans     &mkp MB4  &mkp MB5         &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                        &trans
             >;
         };
 
@@ -549,19 +540,10 @@
 
         Extra_Functions {
             bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3                    &bt BT_SEL 4                      &kp F13  &kp F14  &kp F15  &kp F16  &trans
-&trans        &trans        &trans        &trans                          &trans        &trans      &trans  &kp F17  &kp F18  &kp F19  &kp F20  &trans
-&trans        &kp N1        &kp N2        &kp N3                          &trans        &trans      &trans  &kp F21  &kp F22  &kp F23  &kp F24  &td_bt_clear
-&trans        &trans        &trans        &eager_tap_dance LANGUAGE_1 10  &trans        &trans      &trans  &trans                              &td_bt_clear_all
-            >;
-        };
-
-        Configuration {
-            bindings = <
-&bootloader  &none  &none  &none  &none                           &none         &none         &none         &none           &bootloader
-&none        &none  &none  &none  &none  &none      &none         &none         &none         &none         &windows_sleep  &none
-&none        &none  &none  &none  &none  &none      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &td_bt_clear
-&none        &none  &none  &none  &none  &none      &none         &none                                                     &td_bt_clear_all
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3                   &bt BT_SEL 4                      &kp F13  &kp F14  &kp F15  &kp F16  &trans
+&trans        &trans        &trans        &trans                         &trans        &trans      &trans  &kp F17  &kp F18  &kp F19  &kp F20  &trans
+&trans        &kp N1        &kp N2        &kp N3                         &trans        &trans      &trans  &kp F21  &kp F22  &kp F23  &kp F24  &td_bt_clear
+&trans        &trans        &trans        &eager_tap_dance LANGUAGE_1 9  &trans        &trans      &trans  &trans                              &td_bt_clear_all
             >;
         };
     };
@@ -586,11 +568,11 @@
         layers = <4>;
         bindings =
             <&tab_with_kt_on_and_sl LEFT_ALT 5>,
-            // right,,,,,,,,,,,,
+            // right,,,,,,,,,,,,,
             <&tab_with_kt_on_and_sl LEFT_ALT 5>,
-            // left,,,,,,,,,,,,
+            // left,,,,,,,,,,,,,
             <&kp UP_ARROW>,
-            // up,,,,,,,,,,,,
+            // up,,,,,,,,,,,,,
             <&kp DOWN_ARROW>;
 
         // down
@@ -600,11 +582,11 @@
         layers = <5>;
         bindings =
             <&kp TAB>,
-            // right,,,,,,,,,,,,
+            // right,,,,,,,,,,,,,
             <&kp LS(TAB)>,
-            // left,,,,,,,,,,,,
+            // left,,,,,,,,,,,,,
             <&kp UP_ARROW>,
-            // up,,,,,,,,,,,,
+            // up,,,,,,,,,,,,,
             <&kp DOWN_ARROW>;
 
         // down
