@@ -104,7 +104,7 @@ layers:
   - RIGHT ARROW
   - END
   - Ctl+Alt+KP 0
-  - _
+  - {t: '&to_layer_0 MINUS', h: Numpad_and_Symbols}
   - Gui+LEFT ARROW
   - '&kp_exit_AML LG(DOWN_ARROW)'
   - '&kp_exit_AML LG(RIGHT_ARROW)'
