@@ -577,7 +577,7 @@
     };
 
     LCLS_tab {
-        layers = <6;
+        layers = <6>;
         bindings =
             <&kp LC(TAB)>,
             <&kp LC(LS(TAB))>,
