@@ -43,7 +43,7 @@
         };
 
         zenkaku_hankaku {
-            bindings = <&td_ZenkakuHankaku>;
+            bindings = <&td_ZenkakuHankaku_exit_AML>;
             key-positions = <10 11>;
             layers = <1>;
         };
@@ -556,11 +556,11 @@
         layers = <4>;
         bindings =
             <&tab_with_kt_on_and_sl LEFT_ALT 5>,
-            // right,,,,,,,,,,,,,,,,,
+            // right,,,,,,,,,,,,,,,,,,
             <&tab_with_kt_on_and_sl LEFT_ALT 5>,
-            // left,,,,,,,,,,,,,,,,,
+            // left,,,,,,,,,,,,,,,,,,
             <&kp UP_ARROW>,
-            // up,,,,,,,,,,,,,,,,,
+            // up,,,,,,,,,,,,,,,,,,
             <&kp DOWN_ARROW>;
 
         // down
@@ -570,11 +570,11 @@
         layers = <6>;
         bindings =
             <&kp LC(TAB)>,
-            // right,,,,,,,,,,,,,,,,,
+            // right,,,,,,,,,,,,,,,,,,
             <&kp LC(LS(TAB))>,
-            // left,,,,,,,,,,,,,,,,,
+            // left,,,,,,,,,,,,,,,,,,
             <&kp UP_ARROW>,
-            // up,,,,,,,,,,,,,,,,,
+            // up,,,,,,,,,,,,,,,,,,
             <&kp DOWN_ARROW>;
 
         // down
