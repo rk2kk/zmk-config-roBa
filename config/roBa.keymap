@@ -551,8 +551,8 @@
             <&kp LEFT_ARROW>,
             <&kp UP_ARROW>,
             <&kp DOWN_ARROW>;
-
-       tick = <10>;
+            
+            tick = <10>;
     };
 
     volume {
@@ -573,7 +573,7 @@
             <&kp UP_ARROW>,
             <&kp DOWN_ARROW>;
 
-　　　　　  tick = <10>;   
+            tick = <10>;   
     };
 
     LCLS_tab {
@@ -583,7 +583,7 @@
             <&kp LC(LS(TAB))>,
             <&kp UP_ARROW>,
             <&kp DOWN_ARROW>;
-　　　　　　　tick = <80>;
-    
-    };
+            
+            tick = <80>;
+        };
 };
