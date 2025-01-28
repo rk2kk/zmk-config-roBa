@@ -10,7 +10,7 @@ layers:
   - '&kp_exit_AML I'
   - '&kp_exit_AML O'
   - {t: '&kp_exit_AML P', h: '&mo_exit_AML 9'}
-  - {t: '&kp_exit_AML A', h: '&mod_exit_AML LCTRL'}
+  - '&kp_exit_AML A'
   - '&kp_exit_AML S'
   - '&kp_exit_AML D'
   - '&kp_exit_AML F'
@@ -538,7 +538,7 @@ combos:
 - p: [0, 1]
   k: ESCAPE
 - p: [10, 11]
-  k: '&eager_tap_dance LANGUAGE_2 1'
+  k: '&td_ZenkakuHankaku'
   l: [Numpad_and_Symbols]
 - p: [18, 19]
   k: '&mkp MCLK'
