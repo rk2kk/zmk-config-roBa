@@ -27,12 +27,12 @@ layers:
   - '&kp_exit_AML C'
   - '&kp_exit_AML V'
   - {t: '&kp_exit_AML B', h: '&mo_exit_AML_disable_alt_ctrl 3'}
-  - {t: '=', h: '&mo_exit_AML 5'}
+  - {t: '=', h: '&mo_exit_AML 6'}
   - DELETE
   - {t: '&kp_exit_AML N', h: '&mo_exit_AML_disable_alt_ctrl 3'}
   - '&kp_exit_AML M'
-  - {t: ',', s: '!'}
-  - {t: ., s: '?'}
+  - ','
+  - .
   - {t: '&kp_exit_AML SLASH', h: '&mod_exit_AML LEFT_SHIFT'}
   - LEFT CONTROL
   - LEFT WIN
