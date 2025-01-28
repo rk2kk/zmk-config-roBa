@@ -511,10 +511,10 @@
 
         Mouse {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans     &trans           &trans           &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp LCLK  &td_right_click  &td_right_click  &mo 10
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans     &mkp MB4         &mkp MB5         &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                               &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans     &trans    &trans           &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp LCLK  &mkp MB3  &td_right_click  &mo 10
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans     &mkp MB4  &mkp MB5         &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                        &trans
             >;
         };
 
@@ -575,11 +575,11 @@
         layers = <4>;
         bindings =
             <&tab_with_kt_on_and_sl LEFT_ALT 5>,
-            // right,,,,,,,
+            // right,,,,,,,,
             <&tab_with_kt_on_and_sl LEFT_ALT 5>,
-            // left,,,,,,,
+            // left,,,,,,,,
             <&kp UP_ARROW>,
-            // up,,,,,,,
+            // up,,,,,,,,
             <&kp DOWN_ARROW>;
 
         // down
@@ -589,11 +589,11 @@
         layers = <5>;
         bindings =
             <&kp TAB>,
-            // right,,,,,,,
+            // right,,,,,,,,
             <&kp LS(TAB)>,
-            // left,,,,,,,
+            // left,,,,,,,,
             <&kp UP_ARROW>,
-            // up,,,,,,,
+            // up,,,,,,,,
             <&kp DOWN_ARROW>;
 
         // down
