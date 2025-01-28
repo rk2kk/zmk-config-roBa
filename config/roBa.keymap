@@ -551,12 +551,12 @@
 
 &trackball {
     automouse-layer = <MOUSE>;
-    scroll-layers = <10>;
+    scroll-layers = <9>;
 
     // snipe-layers = <3>;
 
     arrows {
-        layers = <3>;
+        layers = <2>;
         bindings =
             <&kp RIGHT_ARROW>,
             <&kp LEFT_ARROW>,
@@ -579,11 +579,11 @@
     };
 
     alt_tab2 {
-        layers = <5>;
+        layers = <6>;
         bindings =
-            <&kp TAB>,
+            <&kp LC(TAB)>,
             // right,,,,,,,,,,,,,,,,
-            <&kp LS(TAB)>,
+            <&kp LC(LS(TAB))>,
             // left,,,,,,,,,,,,,,,,
             <&kp UP_ARROW>,
             // up,,,,,,,,,,,,,,,,
