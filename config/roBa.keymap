@@ -8,8 +8,8 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 #define MOUSE 7
 #define MEDIA 8
-#define　ALT_TAB 4
-#define　LCLS_TAB 6
+#define　ALTTAB 4
+#define　LCLSTAB 6
 
 &mt {
     quick-tap-ms = <250>;
@@ -570,7 +570,7 @@
     };
 
     alt_tab {
-        layers = <ALT_TAB>;
+        layers = <ALTTAB>;
         bindings =
             <&tab_with_kt_on_and_sl LEFT_ALT 5>,
             // right,,,,,,,,,,,,,,,,,,
@@ -586,7 +586,7 @@
     };
 
     lcls_tab {
-        layers = <LCLS_TAB>;
+        layers = <LCLSTAB>;
         bindings =
             <&kp LC(TAB)>,
             // right,,,,,,,,,,,,,,,,,,
