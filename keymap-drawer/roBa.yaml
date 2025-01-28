@@ -447,7 +447,7 @@ combos:
 - p: [0, 1]
   k: ESCAPE
 - p: [10, 11]
-  k: '&td_ZenkakuHankaku'
+  k: '&td_ZenkakuHankaku_exit_AML'
   l: [Numpad_and_Symbols]
 - p: [33, 32]
   k: \
