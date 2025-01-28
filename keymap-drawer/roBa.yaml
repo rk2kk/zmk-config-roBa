@@ -4,8 +4,8 @@ layers:
   - '&kp_exit_AML W'
   - '&kp_exit_AML E'
   - '&kp_exit_AML R'
-  - {t: '&kp_exit_AML T', h: '&mo_exit_AML 11'}
-  - {t: '&kp_exit_AML Y', h: '&mo_exit_AML 11'}
+  - '&kp_exit_AML T'
+  - '&kp_exit_AML Y'
   - '&kp_exit_AML U'
   - '&kp_exit_AML I'
   - '&kp_exit_AML O'
@@ -21,15 +21,15 @@ layers:
   - '&kp_exit_AML J'
   - '&kp_exit_AML K'
   - '&kp_exit_AML L'
-  - {t: '&kp_exit_AML MINUS', h: '&mo_exit_AML 10'}
+  - {t: '&kp_exit_AML MINUS', h: '&mo_exit_AML 9'}
   - {t: '&kp_exit_AML Z', h: LEFT SHIFT}
   - {t: '&kp_exit_AML X', h: '&mod_exit_AML LEFT_SHIFT'}
   - '&kp_exit_AML C'
   - '&kp_exit_AML V'
-  - {t: '&kp_exit_AML B', h: '&mo_exit_AML_disable_alt_ctrl 4'}
-  - {t: '=', h: '&mo_exit_AML 6'}
+  - {t: '&kp_exit_AML B', h: '&mo_exit_AML_disable_alt_ctrl 3'}
+  - {t: '=', h: '&mo_exit_AML 5'}
   - DELETE
-  - {t: '&kp_exit_AML N', h: '&mo_exit_AML_disable_alt_ctrl 4'}
+  - {t: '&kp_exit_AML N', h: '&mo_exit_AML_disable_alt_ctrl 3'}
   - '&kp_exit_AML M'
   - {t: ',', s: '!'}
   - {t: ., s: '?'}
@@ -37,56 +37,12 @@ layers:
   - LEFT CONTROL
   - LEFT WIN
   - LEFT ALT
-  - {t: '&kp_exit_AML INTERNATIONAL_5', h: '&mo_exit_AML 10'}
-  - {t: '&kp_exit_AML SPACE', h: '&mo_exit_AML 3'}
-  - {t: '&kp_exit_AML INTERNATIONAL_4', h: '&mo_exit_AML 2'}
-  - {t: BACKSPACE, h: '&mo_exit_AML 2'}
-  - {t: '&kp_exit_AML ENTER', h: '&mo_exit_AML 3'}
+  - {t: '&kp_exit_AML INTERNATIONAL_5', h: '&mo_exit_AML 9'}
+  - {t: '&kp_exit_AML SPACE', h: '&mo_exit_AML 2'}
+  - {t: '&kp_exit_AML INTERNATIONAL_4', h: '&mo_exit_AML 1'}
+  - {t: BACKSPACE, h: '&mo_exit_AML 1'}
+  - {t: '&kp_exit_AML ENTER', h: '&mo_exit_AML 2'}
   - {t: '&kp_exit_AML ESCAPE', h: '&mod_exit_AML LEFT_SHIFT'}
-  Lang1:
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '&eager_tap_dance LANG1 1'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   Numpad_and_Symbols:
   - +
   - '7'
@@ -307,50 +263,6 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  Mouse:
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '&mkp LCLK'
-  - '&mkp MB3'
-  - '&td_right_click'
-  - Extra_Functions
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '&mkp MB4'
-  - '&mkp MB5'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   FUNCTION_NUM_1:
   - Sft+1
   - Sft+2
@@ -386,6 +298,50 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Sft+INTERNATIONAL 1
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  Mouse:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&mkp LCLK'
+  - '&mkp MB3'
+  - '&td_right_click'
+  - Extra_Functions
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&mkp MB4'
+  - '&mkp MB5'
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -477,55 +433,11 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&eager_tap_dance LANGUAGE_1 10'
+  - '&eager_tap_dance LANGUAGE_1 9'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&td_bt_clear_all'
-  Configuration:
-  - '&bootloader'
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - '&bootloader'
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - '&windows_sleep'
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - {t: BT, h: '0'}
-  - {t: BT, h: '1'}
-  - {t: BT, h: '2'}
-  - {t: BT, h: '3'}
-  - {t: BT, h: '4'}
-  - '&td_bt_clear'
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
   - '&td_bt_clear_all'
 combos:
 - p: [11, 12]
@@ -542,6 +454,6 @@ combos:
   l: [Numpad_and_Symbols]
 - p: [18, 19]
   k: '&mkp MCLK'
-  l: [Media]
+  l: [Extra_Functions]
 - p: [33, 32]
   k: \
