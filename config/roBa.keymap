@@ -8,8 +8,6 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 #define MOUSE 7
 #define MEDIA 8
-#define　ALTTAB 4
-#define　LCLSTAB 6
 
 &mt {
     quick-tap-ms = <250>;
