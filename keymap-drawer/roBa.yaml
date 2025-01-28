@@ -327,7 +327,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '&mkp LCLK'
-  - '&td_right_click'
+  - '&mkp MB3'
   - '&td_right_click'
   - Extra_Functions
   - {t: ▽, type: trans}
