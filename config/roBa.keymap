@@ -194,6 +194,7 @@
             bindings = <&kt_on LCTRL &msc SCRL_UP &kt_off LCTRL>;
             label = "ZOOM_IN";
         };
+
         zoom_out: zoom_out {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -297,20 +298,6 @@
             #binding-cells = <0>;
             bindings = <&td_ZenkakuHankaku &exit_AML>;
             label = "TD_ZENKAKUHANKAKU_exit_AML";
-        };
-
-        alt_tab: alt_tab {
-            compatible = "zmk,behavior-macro-two-param";
-            #binding-cells = <2>;
-            bindings = <&macro_param_1to1 &kt_on MACRO_PLACEHOLDER &macro_param_2to1 &kp MACRO_PLACEHOLDER &macro_param_1to1 &sk MACRO_PLACEHOLDER &macro_param_1to1 &kt_off MACRO_PLACEHOLDER>;
-            label = "ALT_TAB";
-        };
-
-        windows_sleep: windows_sleep {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LG(X) &kp U &kp S>;
-            label = "WINDOWS_SLEEP";
         };
 
         mod_morph_exclamation: mod_morph_exclamation {
@@ -488,10 +475,10 @@
 
         Functions_and_Controls {
             bindings = <
-&kp LS(ESC)     &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &td_alt_f4                                               &kp LG(LC(LEFT_ARROW))  &kp LG(UP_ARROW)             &kp LC(LG(RIGHT_ARROW))       &kp LEFT_BRACKET  &kp RIGHT_BRACKET
-&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END     &kp LC(LA(KP_NUMBER_0))      &kp UNDERSCORE  &kp LG(LEFT_ARROW)      &kp_exit_AML LG(DOWN_ARROW)  &kp_exit_AML LG(RIGHT_ARROW)  &kp SQT           &kp NUHS
-&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &none       &kp RIGHT_SHIFT              &kp LC(HOME)    &kp LS(LEFT)            &trans                       &kp LS(RIGHT_ARROW)           &trans            &kp INTERNATIONAL_1
-&kp LCTRL       &kp LEFT_WIN            &kp LEFT_ALT    &trans                   &trans      &trans                       &kp DELETE      &trans                                                                                               &kp RIGHT_SHIFT
+&kp LS(ESC)     &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &td_alt_f4                                                       &kp LG(LC(LEFT_ARROW))  &kp LG(UP_ARROW)             &kp LC(LG(RIGHT_ARROW))       &kp LEFT_BRACKET  &kp RIGHT_BRACKET
+&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END     &kp LC(LA(KP_NUMBER_0))      &lt_to_layer_0 1 MINUS  &kp LG(LEFT_ARROW)      &kp_exit_AML LG(DOWN_ARROW)  &kp_exit_AML LG(RIGHT_ARROW)  &kp SQT           &kp NUHS
+&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &none       &kp RIGHT_SHIFT              &kp LC(HOME)            &kp LS(LEFT)            &trans                       &kp LS(RIGHT_ARROW)           &trans            &kp INTERNATIONAL_1
+&kp LCTRL       &kp LEFT_WIN            &kp LEFT_ALT    &trans                   &trans      &trans                       &kp DELETE              &trans                                                                                               &kp RIGHT_SHIFT
             >;
         };
 
@@ -581,11 +568,11 @@
         layers = <4>;
         bindings =
             <&tab_with_kt_on_and_sl LEFT_ALT 5>,
-            // right,,,,,,,,,,,,,
+            // right,,,,,,,,,,,,,,
             <&tab_with_kt_on_and_sl LEFT_ALT 5>,
-            // left,,,,,,,,,,,,,
+            // left,,,,,,,,,,,,,,
             <&kp UP_ARROW>,
-            // up,,,,,,,,,,,,,
+            // up,,,,,,,,,,,,,,
             <&kp DOWN_ARROW>;
 
         // down
@@ -595,11 +582,11 @@
         layers = <5>;
         bindings =
             <&kp TAB>,
-            // right,,,,,,,,,,,,,
+            // right,,,,,,,,,,,,,,
             <&kp LS(TAB)>,
-            // left,,,,,,,,,,,,,
+            // left,,,,,,,,,,,,,,
             <&kp UP_ARROW>,
-            // up,,,,,,,,,,,,,
+            // up,,,,,,,,,,,,,,
             <&kp DOWN_ARROW>;
 
         // down
