@@ -569,25 +569,19 @@
         layers = <4>;
         bindings =
             <&tab_with_kt_on_and_sl LEFT_ALT 5>,
-            // right,,,,,,,,,,,,,,,,,,
             <&tab_with_kt_on_and_sl LEFT_ALT 5>,
-            // left,,,,,,,,,,,,,,,,,,
             <&kp UP_ARROW>,
-            // up,,,,,,,,,,,,,,,,,,
             <&kp DOWN_ARROW>;
 
-　　　　　 tick = <10>;      
+　　　　　  tick = <10>;   
     };
 
-    lcls_tab {
+    LCLS_tab {
         layers = <6;
         bindings =
             <&kp LC(TAB)>,
-            // right,,,,,,,,,,,,,,,,,,
             <&kp LC(LS(TAB))>,
-            // left,,,,,,,,,,,,,,,,,,
             <&kp UP_ARROW>,
-            // up,,,,,,,,,,,,,,,,,,
             <&kp DOWN_ARROW>;
 　　　　　　　tick = <80>;
     
