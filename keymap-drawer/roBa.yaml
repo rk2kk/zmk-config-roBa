@@ -27,7 +27,7 @@ layers:
   - '&kp_exit_AML C'
   - '&kp_exit_AML V'
   - {t: '&kp_exit_AML B', h: '&mo_exit_AML_disable_alt_ctrl 4'}
-  - '&alt_tab LEFT_ALT EQUAL'
+  - {t: '=', h: '&mo_exit_AML 6'}
   - '&zoom_out'
   - {t: '&kp_exit_AML N', h: '&mo_exit_AML_disable_alt_ctrl 4'}
   - '&kp_exit_AML M'

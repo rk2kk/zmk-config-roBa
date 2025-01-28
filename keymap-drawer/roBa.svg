@@ -301,9 +301,8 @@ path.combo {
 </g>
 <g transform="translate(309, 168)" class="key keypos-27">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-1.2em" style="font-size: 88%">&amp;alt_tab</tspan><tspan x="0" dy="1.2em" style="font-size: 88%">LEFT_ALT</tspan><tspan x="0" dy="1.2em" style="font-size: 88%">EQUAL</tspan>
-</text>
+<text x="0" y="0" class="key tap">=</text>
+<text x="0" y="24" class="key hold"><tspan style="font-size: 64%">&amp;mo_exit_A…</tspan></text>
 </g>
 <g transform="translate(448, 168)" class="key keypos-28">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
