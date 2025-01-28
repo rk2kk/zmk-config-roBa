@@ -26,7 +26,7 @@ layers:
   - {t: '&kp_exit_AML X', h: '&mod_exit_AML LEFT_SHIFT'}
   - '&kp_exit_AML C'
   - '&kp_exit_AML V'
-  - {t: '&kp_exit_AML B', h: '&mo_exit_AML_disable_alt_ctrl 3'}
+  - {t: '&kp_exit_AML B', h: '&mo_exit_AML_disable_alt_ctrl 4'}
   - {t: '=', h: '&mo_exit_AML 6'}
   - DELETE
   - {t: '&kp_exit_AML N', h: '&mo_exit_AML_disable_alt_ctrl 3'}
@@ -445,15 +445,9 @@ combos:
 - p: [12, 13]
   k: Sft+TAB
 - p: [0, 1]
-  k: '='
-  l: [Numpad_and_Symbols]
-- p: [0, 1]
   k: ESCAPE
 - p: [10, 11]
   k: '&td_ZenkakuHankaku'
   l: [Numpad_and_Symbols]
-- p: [18, 19]
-  k: '&mkp MCLK'
-  l: [Extra_Functions]
 - p: [33, 32]
   k: \

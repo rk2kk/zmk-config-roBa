@@ -620,17 +620,13 @@ path.combo {
 </g>
 <g class="combo combopos-2">
 <rect rx="6" ry="6" x="42" y="39" width="28" height="26" class="combo"/>
-<text x="56" y="52" class="combo tap">=</text>
-</g>
-<g class="combo combopos-3">
-<rect rx="6" ry="6" x="42" y="39" width="28" height="26" class="combo"/>
 <text x="56" y="52" class="combo tap">ESCAPE</text>
 </g>
-<g class="combo combopos-4">
+<g class="combo combopos-3">
 <rect rx="6" ry="6" x="42" y="95" width="28" height="26" class="combo"/>
 <text x="56" y="108" class="combo tap"><tspan style="font-size: 64%">&amp;td_Zenkak…</tspan></text>
 </g>
-<g class="combo combopos-5">
+<g class="combo combopos-4">
 <rect rx="6" ry="6" x="687" y="152" width="28" height="26" class="combo"/>
 <text x="701" y="165" class="combo tap">\</text>
 </g>
@@ -2292,12 +2288,6 @@ path.combo {
 <text x="56" y="52" class="combo tap">ESCAPE</text>
 </g>
 <g class="combo combopos-3">
-<rect rx="6" ry="6" x="574" y="75" width="28" height="26" class="combo"/>
-<text x="588" y="88" class="combo tap">
-<tspan x="588" dy="-0.6em">&amp;mkp</tspan><tspan x="588" dy="1.2em">MCLK</tspan>
-</text>
-</g>
-<g class="combo combopos-4">
 <rect rx="6" ry="6" x="687" y="152" width="28" height="26" class="combo"/>
 <text x="701" y="165" class="combo tap">\</text>
 </g>
