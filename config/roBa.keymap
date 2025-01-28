@@ -7,6 +7,7 @@
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 #define MOUSE 7
+#define MEDIA 8
 
 &mt {
     quick-tap-ms = <250>;
@@ -550,10 +551,24 @@
             <&kp LEFT_ARROW>,
             <&kp UP_ARROW>,
             <&kp DOWN_ARROW>;
+        wait-ms = <0>;
+        tap-ms = <0>;
+    };
+
+    volume {
+        layers = <MEDIA>;
+        bindings =
+                <&none>,
+                <&none>,
+                <&kp C_VOLUME_UP>,
+                <&kp C_VOLUME_DOWN>;
+
+        wait-ms = <5>;
+        tap-ms = <5>;
     };
 
     alt_tab {
-        layers = <4>;
+        layers = <alt_tab>;
         bindings =
             <&tab_with_kt_on_and_sl LEFT_ALT 5>,
             // right,,,,,,,,,,,,,,,,,,
@@ -562,7 +577,9 @@
             <&kp UP_ARROW>,
             // up,,,,,,,,,,,,,,,,,,
             <&kp DOWN_ARROW>;
-
+　　　　　 tick = <10>;
+       　 wait-ms = <0>;
+        　tap-ms = <0>;
         // down
     };
 
@@ -576,7 +593,7 @@
             <&kp UP_ARROW>,
             // up,,,,,,,,,,,,,,,,,,
             <&kp DOWN_ARROW>;
-
+　　　　　　　tick = <80>;
         // down
     };
 };
