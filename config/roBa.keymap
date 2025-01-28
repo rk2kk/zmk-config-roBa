@@ -37,12 +37,6 @@
             key-positions = <12 13>;
         };
 
-        eq {
-            bindings = <&kp EQUAL>;
-            key-positions = <0 1>;
-            layers = <1>;
-        };
-
         Escape {
             bindings = <&kp ESCAPE>;
             key-positions = <0 1>;
@@ -52,12 +46,6 @@
             bindings = <&td_ZenkakuHankaku>;
             key-positions = <10 11>;
             layers = <1>;
-        };
-
-        middle_click {
-            bindings = <&mkp MCLK>;
-            key-positions = <18 19>;
-            layers = <9>;
         };
 
         dot_slash_backslash {
@@ -455,7 +443,7 @@
             bindings = <
 &mt_exit_AML LWIN Q               &kp_exit_AML W             &kp_exit_AML E  &kp_exit_AML R                  &kp_exit_AML T                                                                                           &kp_exit_AML Y                     &kp_exit_AML U  &kp_exit_AML I  &kp_exit_AML O  &lt_exit_AML 9 P
 &kp_exit_AML A                    &kp_exit_AML S             &kp_exit_AML D  &kp_exit_AML F                  &kp_exit_AML G                     &mkp MB3                            &lt 6 MINUS                       &kp_exit_AML H                     &kp_exit_AML J  &kp_exit_AML K  &kp_exit_AML L  &lt_exit_AML 9 MINUS
-&mt_exit_AML_on_tap LEFT_SHIFT Z  &mt_exit_AML LEFT_SHIFT X  &kp_exit_AML C  &kp_exit_AML V                  &lt_exit_AML_disable_alt_ctrl 3 B  &lt_exit_AML_on_hold 6 EQUAL        &kp DELETE                        &lt_exit_AML_disable_alt_ctrl 3 N  &kp_exit_AML M  &kp COMMA       &kp DOT         &mt_exit_AML LEFT_SHIFT SLASH
+&mt_exit_AML_on_tap LEFT_SHIFT Z  &mt_exit_AML LEFT_SHIFT X  &kp_exit_AML C  &kp_exit_AML V                  &lt_exit_AML_disable_alt_ctrl 4 B  &lt_exit_AML_on_hold 6 EQUAL        &kp DELETE                        &lt_exit_AML_disable_alt_ctrl 3 N  &kp_exit_AML M  &kp COMMA       &kp DOT         &mt_exit_AML LEFT_SHIFT SLASH
 &kp LEFT_CONTROL                  &kp LEFT_WIN               &kp LEFT_ALT    &lt_exit_AML 9 INTERNATIONAL_5  &lt_exit_AML 2 SPACE               &lt_exit_AML 1 INTERNATIONAL_4      &lt_exit_AML_on_hold 1 BACKSPACE  &lt_exit_AML 2 ENTER                                                               &mt_exit_AML LEFT_SHIFT ESCAPE
             >;
 
@@ -568,11 +556,11 @@
         layers = <4>;
         bindings =
             <&tab_with_kt_on_and_sl LEFT_ALT 5>,
-            // right,,,,,,,,,,,,,,,,
+            // right,,,,,,,,,,,,,,,,,
             <&tab_with_kt_on_and_sl LEFT_ALT 5>,
-            // left,,,,,,,,,,,,,,,,
+            // left,,,,,,,,,,,,,,,,,
             <&kp UP_ARROW>,
-            // up,,,,,,,,,,,,,,,,
+            // up,,,,,,,,,,,,,,,,,
             <&kp DOWN_ARROW>;
 
         // down
@@ -582,11 +570,11 @@
         layers = <6>;
         bindings =
             <&kp LC(TAB)>,
-            // right,,,,,,,,,,,,,,,,
+            // right,,,,,,,,,,,,,,,,,
             <&kp LC(LS(TAB))>,
-            // left,,,,,,,,,,,,,,,,
+            // left,,,,,,,,,,,,,,,,,
             <&kp UP_ARROW>,
-            // up,,,,,,,,,,,,,,,,
+            // up,,,,,,,,,,,,,,,,,
             <&kp DOWN_ARROW>;
 
         // down
