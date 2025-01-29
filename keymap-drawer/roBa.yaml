@@ -9,7 +9,7 @@ layers:
   - U
   - I
   - O
-  - '&kp_exit_AML P'
+  - P
   - A
   - S
   - D
@@ -21,28 +21,28 @@ layers:
   - J
   - K
   - L
-  - {t: '&kp_exit_AML MINUS', h: '&mo_exit_AML 9'}
+  - {t: '&to_layer_0 MINUS', h: Extra_Functions}
   - {t: Z, h: LEFT SHIFT}
   - X
   - C
   - V
-  - {t: '&kp_exit_AML B', h: '&mo_exit_AML_disable_alt_ctrl 4'}
-  - {t: '=', h: '&mo_exit_AML 6'}
+  - {t: '&to_layer_0 B', h: Alt-Tab}
+  - {t: '&to_layer_0 EQUAL', h: FUNCTION_NUM_1}
   - DELETE
-  - {t: '&kp_exit_AML N', h: '&mo_exit_AML_disable_alt_ctrl 3'}
+  - N
   - M
   - ','
   - .
-  - {t: '&kp_exit_AML SLASH', h: '&mod_exit_AML LEFT_SHIFT'}
+  - ':'
   - LEFT CONTROL
   - LEFT WIN
   - LEFT ALT
-  - {t: '&kp_exit_AML INTERNATIONAL_5', h: '&mo_exit_AML 9'}
-  - {t: '&kp_exit_AML SPACE', h: '&mo_exit_AML 2'}
-  - {t: '&kp_exit_AML INTERNATIONAL_4', h: '&mo_exit_AML 1'}
+  - {t: '&to_layer_0 INTERNATIONAL_5', h: Extra_Functions}
+  - {t: '&to_layer_0 SPACE', h: Functions_and_Controls}
+  - {t: '&to_layer_0 INTERNATIONAL_4', h: Numpad_and_Symbols}
   - BACKSPACE
   - {t: '&kp_exit_AML ENTER', h: '&mo_exit_AML 2'}
-  - {t: '&kp_exit_AML ESCAPE', h: '&mod_exit_AML LEFT_SHIFT'}
+  - {t: /, h: LEFT SHIFT}
   Numpad_and_Symbols:
   - +
   - '7'
@@ -83,7 +83,7 @@ layers:
   - {t: ., h: LEFT ALT}
   - {t: ▽, type: trans}
   - ENTER
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Sft+-
@@ -110,7 +110,7 @@ layers:
   - '&kp_exit_AML LG(RIGHT_ARROW)'
   - ''''
   - '#'
-  - {t: LEFT SHIFT, type: held}
+  - LEFT SHIFT
   - Gui+Sft+LEFT ARROW
   - {t: ▽, type: trans}
   - Gui+Sft+RIGHT ARROW
@@ -126,7 +126,7 @@ layers:
   - LEFT WIN
   - LEFT ALT
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - DELETE
   - {t: ▽, type: trans}
@@ -202,7 +202,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -417,7 +417,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - '1'
   - '2'
