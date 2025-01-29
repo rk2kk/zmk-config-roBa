@@ -329,7 +329,7 @@ layers:
   - '&mkp LCLK'
   - '&mkp MB3'
   - '&mkp MB2'
-  - {t: ▽, type: trans}
+  - Media
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -341,7 +341,7 @@ layers:
   - {t: ▽, type: trans}
   - '&mkp MB4'
   - '&mkp MB5'
-  - {t: ▽, type: trans}
+  - Media
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -373,7 +373,7 @@ layers:
   - MUTE
   - VOLUME UP
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
