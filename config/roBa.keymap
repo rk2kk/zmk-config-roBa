@@ -3,7 +3,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
-
+#include <dt-bindings/zmk/pointing.h>
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 #define MOUSE 7
@@ -61,12 +61,12 @@
     };
 
     macros {
-               exit_AML: exit_AML {
+        exit_AML: exit_AML {
             compatible = "zmk,behavior-macro";
             wait-ms = <0>;
             tap-ms = <0>;
             #binding-cells = <0>;
-            bindings = <&tog_off MOUSE>;
+            bindings = <&tog_off 7>;
             label = "exit_AML";
         };
 
@@ -437,6 +437,7 @@
             tapping-term-ms = <250>;
             bindings = <&none>, <&none>, <&bt BT_CLR_ALL>;
         };
+
         to_layer_0: to_layer_0 {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
@@ -446,7 +447,7 @@
     };
 
     behaviors {
-tog_on: toggle_layer_on {
+        tog_on: toggle_layer_on {
             compatible = "zmk,behavior-toggle-layer";
             #binding-cells = <1>;
             display-name = "Toggle Layer On";
@@ -694,10 +695,10 @@ tog_on: toggle_layer_on {
 
         Default {
             bindings = <
-&mt_exit_AML LWIN Q               &kp_exit_AML W             &kp_exit_AML E  &kp_exit_AML R                  &kp_exit_AML T                                                                                           &kp_exit_AML Y                     &kp_exit_AML U  &kp_exit_AML I  &kp_exit_AML O  &lt_exit_AML 9 P
-&kp A                             &kp S                      &kp_exit_AML D  &kp_exit_AML F                  &kp_exit_AML G                     &mkp MB3                            &lt_to_layer_0 6 MINUS            &kp_exit_AML H                     &kp_exit_AML J  &kp K           &kp L           &lt_exit_AML 9 MINUS
-&mt_exit_AML_on_tap LEFT_SHIFT Z  &mt_exit_AML LEFT_SHIFT X  &kp_exit_AML C  &kp_exit_AML V                  &lt_exit_AML_disable_alt_ctrl 4 B  &lt_exit_AML_on_hold 6 EQUAL        &kp DELETE                        &lt_exit_AML_disable_alt_ctrl 3 N  &kp_exit_AML M  &kp COMMA       &kp DOT         &mt_exit_AML LEFT_SHIFT SLASH
-&kp LEFT_CONTROL                  &kp LEFT_WIN               &kp LEFT_ALT    &lt_exit_AML 9 INTERNATIONAL_5  &lt_exit_AML 2 SPACE               &lt_exit_AML 1 INTERNATIONAL_4      &lt_exit_AML_on_hold 1 BACKSPACE  &lt_exit_AML 2 ENTER                                                               &mt_exit_AML LEFT_SHIFT ESCAPE
+&mt_exit_AML LWIN Q               &kp_exit_AML W  &kp_exit_AML E  &kp_exit_AML R                  &kp_exit_AML T                                                                                           &kp_exit_AML Y                     &kp_exit_AML U  &kp_exit_AML I  &kp_exit_AML O  &lt_exit_AML 9 P
+&kp_exit_AML A                    &kp_exit_AML S  &kp_exit_AML D  &kp_exit_AML F                  &kp_exit_AML G                     &mkp MB3                            &lt_exit_AML 6 MINUS              &kp_exit_AML H                     &kp_exit_AML J  &kp K           &kp L           &lt_exit_AML 9 MINUS
+&mt_exit_AML_on_tap LEFT_SHIFT Z  &kp_exit_AML X  &kp_exit_AML C  &kp_exit_AML V                  &lt_exit_AML_disable_alt_ctrl 4 B  &lt_exit_AML_on_hold 6 EQUAL        &kp DELETE                        &lt_exit_AML_disable_alt_ctrl 3 N  &kp_exit_AML M  &kp COMMA       &kp DOT         &mt_exit_AML LEFT_SHIFT SLASH
+&kp LEFT_CONTROL                  &kp LEFT_WIN    &kp LEFT_ALT    &lt_exit_AML 9 INTERNATIONAL_5  &lt_exit_AML 2 SPACE               &lt_exit_AML 1 INTERNATIONAL_4      &lt_exit_AML_on_hold 1 BACKSPACE  &lt_exit_AML 2 ENTER                                                               &mt_exit_AML LEFT_SHIFT ESCAPE
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -793,6 +794,7 @@ tog_on: toggle_layer_on {
 &trackball {
     automouse-layer = <MOUSE>;
     scroll-layers = <9>;
+
     // snipe-layers = <3>;
 
     arrows {
@@ -808,11 +810,7 @@ tog_on: toggle_layer_on {
 
     volume {
         layers = <MEDIA>;
-        bindings =
-                <&none>,
-                <&none>,
-                <&kp C_VOLUME_UP>,
-                <&kp C_VOLUME_DOWN>;
+        bindings = <&none>, <&none>, <&kp C_VOLUME_UP>, <&kp C_VOLUME_DOWN>;
     };
 
     alt_tab {
