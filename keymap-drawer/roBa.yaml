@@ -447,8 +447,7 @@ combos:
 - p: [0, 1]
   k: ESCAPE
 - p: [10, 11]
-  k: LANGUAGE 1
-  l: [Numpad_and_Symbols]
+  k: '&td_ZenkakuHankaku'
 - p: [33, 32]
   k: \
 - p: [22, 23]

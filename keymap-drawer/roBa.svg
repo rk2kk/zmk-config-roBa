@@ -399,10 +399,14 @@ path.combo {
 <text x="56" y="52" class="combo tap">ESCAPE</text>
 </g>
 <g class="combo combopos-3">
+<rect rx="6" ry="6" x="42" y="95" width="28" height="26" class="combo"/>
+<text x="56" y="108" class="combo tap"><tspan style="font-size: 64%">&amp;td_Zenkak…</tspan></text>
+</g>
+<g class="combo combopos-4">
 <rect rx="6" ry="6" x="687" y="152" width="28" height="26" class="combo"/>
 <text x="701" y="165" class="combo tap">\</text>
 </g>
-<g class="combo combopos-4">
+<g class="combo combopos-5">
 <rect rx="6" ry="6" x="42" y="151" width="28" height="26" class="combo"/>
 <text x="56" y="164" class="combo tap">
 <tspan x="56" dy="-0.6em" style="font-size: 88%">LANGUAGE</tspan><tspan x="56" dy="1.2em" style="font-size: 88%">2</tspan>
@@ -626,9 +630,7 @@ path.combo {
 </g>
 <g class="combo combopos-3">
 <rect rx="6" ry="6" x="42" y="95" width="28" height="26" class="combo"/>
-<text x="56" y="108" class="combo tap">
-<tspan x="56" dy="-0.6em" style="font-size: 88%">LANGUAGE</tspan><tspan x="56" dy="1.2em" style="font-size: 88%">1</tspan>
-</text>
+<text x="56" y="108" class="combo tap"><tspan style="font-size: 64%">&amp;td_Zenkak…</tspan></text>
 </g>
 <g class="combo combopos-4">
 <rect rx="6" ry="6" x="687" y="152" width="28" height="26" class="combo"/>
@@ -879,10 +881,14 @@ path.combo {
 <text x="56" y="52" class="combo tap">ESCAPE</text>
 </g>
 <g class="combo combopos-3">
+<rect rx="6" ry="6" x="42" y="95" width="28" height="26" class="combo"/>
+<text x="56" y="108" class="combo tap"><tspan style="font-size: 64%">&amp;td_Zenkak…</tspan></text>
+</g>
+<g class="combo combopos-4">
 <rect rx="6" ry="6" x="687" y="152" width="28" height="26" class="combo"/>
 <text x="701" y="165" class="combo tap">\</text>
 </g>
-<g class="combo combopos-4">
+<g class="combo combopos-5">
 <rect rx="6" ry="6" x="42" y="151" width="28" height="26" class="combo"/>
 <text x="56" y="164" class="combo tap">
 <tspan x="56" dy="-0.6em" style="font-size: 88%">LANGUAGE</tspan><tspan x="56" dy="1.2em" style="font-size: 88%">2</tspan>
@@ -1120,10 +1126,14 @@ path.combo {
 <text x="56" y="52" class="combo tap">ESCAPE</text>
 </g>
 <g class="combo combopos-3">
+<rect rx="6" ry="6" x="42" y="95" width="28" height="26" class="combo"/>
+<text x="56" y="108" class="combo tap"><tspan style="font-size: 64%">&amp;td_Zenkak…</tspan></text>
+</g>
+<g class="combo combopos-4">
 <rect rx="6" ry="6" x="687" y="152" width="28" height="26" class="combo"/>
 <text x="701" y="165" class="combo tap">\</text>
 </g>
-<g class="combo combopos-4">
+<g class="combo combopos-5">
 <rect rx="6" ry="6" x="42" y="151" width="28" height="26" class="combo"/>
 <text x="56" y="164" class="combo tap">
 <tspan x="56" dy="-0.6em" style="font-size: 88%">LANGUAGE</tspan><tspan x="56" dy="1.2em" style="font-size: 88%">2</tspan>
@@ -1319,10 +1329,14 @@ path.combo {
 <text x="56" y="52" class="combo tap">ESCAPE</text>
 </g>
 <g class="combo combopos-3">
+<rect rx="6" ry="6" x="42" y="95" width="28" height="26" class="combo"/>
+<text x="56" y="108" class="combo tap"><tspan style="font-size: 64%">&amp;td_Zenkak…</tspan></text>
+</g>
+<g class="combo combopos-4">
 <rect rx="6" ry="6" x="687" y="152" width="28" height="26" class="combo"/>
 <text x="701" y="165" class="combo tap">\</text>
 </g>
-<g class="combo combopos-4">
+<g class="combo combopos-5">
 <rect rx="6" ry="6" x="42" y="151" width="28" height="26" class="combo"/>
 <text x="56" y="164" class="combo tap">
 <tspan x="56" dy="-0.6em" style="font-size: 88%">LANGUAGE</tspan><tspan x="56" dy="1.2em" style="font-size: 88%">2</tspan>
@@ -1518,10 +1532,14 @@ path.combo {
 <text x="56" y="52" class="combo tap">ESCAPE</text>
 </g>
 <g class="combo combopos-3">
+<rect rx="6" ry="6" x="42" y="95" width="28" height="26" class="combo"/>
+<text x="56" y="108" class="combo tap"><tspan style="font-size: 64%">&amp;td_Zenkak…</tspan></text>
+</g>
+<g class="combo combopos-4">
 <rect rx="6" ry="6" x="687" y="152" width="28" height="26" class="combo"/>
 <text x="701" y="165" class="combo tap">\</text>
 </g>
-<g class="combo combopos-4">
+<g class="combo combopos-5">
 <rect rx="6" ry="6" x="42" y="151" width="28" height="26" class="combo"/>
 <text x="56" y="164" class="combo tap">
 <tspan x="56" dy="-0.6em" style="font-size: 88%">LANGUAGE</tspan><tspan x="56" dy="1.2em" style="font-size: 88%">2</tspan>
@@ -1721,10 +1739,14 @@ path.combo {
 <text x="56" y="52" class="combo tap">ESCAPE</text>
 </g>
 <g class="combo combopos-3">
+<rect rx="6" ry="6" x="42" y="95" width="28" height="26" class="combo"/>
+<text x="56" y="108" class="combo tap"><tspan style="font-size: 64%">&amp;td_Zenkak…</tspan></text>
+</g>
+<g class="combo combopos-4">
 <rect rx="6" ry="6" x="687" y="152" width="28" height="26" class="combo"/>
 <text x="701" y="165" class="combo tap">\</text>
 </g>
-<g class="combo combopos-4">
+<g class="combo combopos-5">
 <rect rx="6" ry="6" x="42" y="151" width="28" height="26" class="combo"/>
 <text x="56" y="164" class="combo tap">
 <tspan x="56" dy="-0.6em" style="font-size: 88%">LANGUAGE</tspan><tspan x="56" dy="1.2em" style="font-size: 88%">2</tspan>
@@ -1932,10 +1954,14 @@ path.combo {
 <text x="56" y="52" class="combo tap">ESCAPE</text>
 </g>
 <g class="combo combopos-3">
+<rect rx="6" ry="6" x="42" y="95" width="28" height="26" class="combo"/>
+<text x="56" y="108" class="combo tap"><tspan style="font-size: 64%">&amp;td_Zenkak…</tspan></text>
+</g>
+<g class="combo combopos-4">
 <rect rx="6" ry="6" x="687" y="152" width="28" height="26" class="combo"/>
 <text x="701" y="165" class="combo tap">\</text>
 </g>
-<g class="combo combopos-4">
+<g class="combo combopos-5">
 <rect rx="6" ry="6" x="42" y="151" width="28" height="26" class="combo"/>
 <text x="56" y="164" class="combo tap">
 <tspan x="56" dy="-0.6em" style="font-size: 88%">LANGUAGE</tspan><tspan x="56" dy="1.2em" style="font-size: 88%">2</tspan>
@@ -2136,10 +2162,14 @@ path.combo {
 <text x="56" y="52" class="combo tap">ESCAPE</text>
 </g>
 <g class="combo combopos-3">
+<rect rx="6" ry="6" x="42" y="95" width="28" height="26" class="combo"/>
+<text x="56" y="108" class="combo tap"><tspan style="font-size: 64%">&amp;td_Zenkak…</tspan></text>
+</g>
+<g class="combo combopos-4">
 <rect rx="6" ry="6" x="687" y="152" width="28" height="26" class="combo"/>
 <text x="701" y="165" class="combo tap">\</text>
 </g>
-<g class="combo combopos-4">
+<g class="combo combopos-5">
 <rect rx="6" ry="6" x="42" y="151" width="28" height="26" class="combo"/>
 <text x="56" y="164" class="combo tap">
 <tspan x="56" dy="-0.6em" style="font-size: 88%">LANGUAGE</tspan><tspan x="56" dy="1.2em" style="font-size: 88%">2</tspan>
@@ -2342,10 +2372,14 @@ path.combo {
 <text x="56" y="52" class="combo tap">ESCAPE</text>
 </g>
 <g class="combo combopos-3">
+<rect rx="6" ry="6" x="42" y="95" width="28" height="26" class="combo"/>
+<text x="56" y="108" class="combo tap"><tspan style="font-size: 64%">&amp;td_Zenkak…</tspan></text>
+</g>
+<g class="combo combopos-4">
 <rect rx="6" ry="6" x="687" y="152" width="28" height="26" class="combo"/>
 <text x="701" y="165" class="combo tap">\</text>
 </g>
-<g class="combo combopos-4">
+<g class="combo combopos-5">
 <rect rx="6" ry="6" x="42" y="151" width="28" height="26" class="combo"/>
 <text x="56" y="164" class="combo tap">
 <tspan x="56" dy="-0.6em" style="font-size: 88%">LANGUAGE</tspan><tspan x="56" dy="1.2em" style="font-size: 88%">2</tspan>
