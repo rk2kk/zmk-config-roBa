@@ -150,8 +150,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - VOLUME UP
-  - '&kp_exit_AML LC(PAGE_UP)'
-  - '&kp_exit_AML UP_ARROW'
+  - Ctl+PAGE UP
+  - UP ARROW
   - Ctl+PAGE DOWN
   - '&tab_with_kt_on_and_sl LCTRL 6'
   - Alt+Ctl+Gui+DOWN
