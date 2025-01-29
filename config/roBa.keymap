@@ -765,8 +765,8 @@
         Mouse {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans     &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp LCLK  &mkp MB3  &mkp MB2  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans     &mkp MB4  &mkp MB5  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp LCLK  &mkp MB3  &mkp MB2  &mo 8
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans     &mkp MB4  &mkp MB5  &mo 8
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                 &trans
             >;
         };
