@@ -811,7 +811,17 @@
         bindings = <&none>, <&none>, <&kp C_VOLUME_UP>, <&kp C_VOLUME_DOWN>;
     };
 
-    alt_tab {
+       ctrl_alt_tab {
+        layers = <4>;
+        bindings =
+            <&tab_with_kt_on_and_sl LEFT_ALT 5>,
+            <&tab_with_kt_on_and_sl LEFT_ALT 5>,
+            <&tab_with_kt_on_and_sl LCTRL 6>,
+            <&tab_with_kt_on_and_sl LCTRL 6>;
+
+        tick = <10>;
+    };
+alt_tab {
         layers = <4>;
         bindings =
             <&tab_with_kt_on_and_sl LEFT_ALT 4>,
@@ -832,4 +842,5 @@
 
         tick = <80>;
     };
+
 };
