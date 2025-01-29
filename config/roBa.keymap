@@ -693,10 +693,10 @@
 
         Default {
             bindings = <
-&kp Q             &kp W         &kp E         &kp R                             &kp T                                                                                 &kp Y                   &kp U  &kp I      &kp O    &kp P
-&kp A             &kp S         &kp D         &kp F                             &kp G                   &mkp MB3                              &lt_to_layer_0 6 MINUS  &kp H                   &kp J  &kp K      &kp L    &lt_to_layer_0 9 MINUS
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                             &lt_to_layer_0 4 B      &lt_to_layer_0 6 EQUAL                &kp DELETE              &kp N                   &kp M  &kp COMMA  &kp DOT  &kp COLON
-&kp LEFT_CONTROL  &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 9 INTERNATIONAL_5  &lt_to_layer_0 2 SPACE  &lt_to_layer_0 1 INTERNATIONAL_4      &kp BACKSPACE           &lt_to_layer_0 2 ENTER                             &mt LEFT_SHIFT SLASH
+&mt_exit_AML LWIN Q               &kp_exit_AML W  &kp_exit_AML E  &kp_exit_AML R                  &kp_exit_AML T                                                                                           &kp_exit_AML Y                     &kp_exit_AML U  &kp_exit_AML I  &kp_exit_AML O  &lt_exit_AML 9 P
+&kp_exit_AML A                    &kp_exit_AML S  &kp_exit_AML D  &kp_exit_AML F                  &kp_exit_AML G                     &mkp MB3                            &lt_exit_AML 6 MINUS              &kp_exit_AML H                     &kp_exit_AML J  &kp K           &kp L           &lt_exit_AML 9 MINUS
+&mt_exit_AML_on_tap LEFT_SHIFT Z  &kp_exit_AML X  &kp_exit_AML C  &kp_exit_AML V                  &lt_exit_AML_disable_alt_ctrl 4 B  &lt_exit_AML_on_hold 6 EQUAL        &kp DELETE                        &lt_exit_AML_disable_alt_ctrl 3 N  &kp_exit_AML M  &kp COMMA       &kp DOT         &mt_exit_AML LEFT_SHIFT SLASH
+&kp LEFT_CONTROL                  &kp LEFT_WIN    &kp LEFT_ALT    &lt_exit_AML 9 INTERNATIONAL_5  &lt_exit_AML 2 SPACE               &lt_exit_AML 1 INTERNATIONAL_4      &lt_exit_AML_on_hold 1 BACKSPACE  &lt_exit_AML 2 ENTER                                                               &mt_exit_AML LEFT_SHIFT ESCAPE
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -704,10 +704,10 @@
 
         Numpad_and_Symbols {
             bindings = <
-&kp PLUS             &kp N7               &kp N8               &kp N9  &kp MINUS                            &kp MINUS  &kp KP_N7  &kp KP_N8  &kp KP_NUMBER_9  &td_colon
-&kp ASTERISK         &kp N4               &kp N5               &kp N6  &kp SLASH    &kp KP_NUM      &trans  &kp SLASH  &kp KP_N4  &kp KP_N5  &kp KP_N6        &kp TILDE
-&lt 2 N0             &kp N1               &kp N2               &kp N3  &kp PERCENT  &kp CARET       &trans  &kp KP_N0  &kp KP_N1  &kp KP_N2  &kp KP_N3        &kp PERIOD
-&mt LCTRL BACKSPACE  &mt LEFT_WIN PERIOD  &mt LEFT_ALT PERIOD  &trans  &kp ENTER    &trans          &trans  &trans                                            &kp LS(MINUS)
+&kp PLUS             &kp N7               &kp N8               &kp N9  &kp MINUS                            &kp MINUS  &kp KP_N7           &kp KP_N8           &kp KP_NUMBER_9  &td_colon
+&kp ASTERISK         &kp N4               &kp N5               &kp N6  &kp SLASH    &kp KP_NUM      &trans  &kp SLASH  &kp_exit_AML KP_N4  &kp_exit_AML KP_N5  &kp KP_N6        &kp TILDE
+&lt 2 N0             &kp N1               &kp N2               &kp N3  &kp PERCENT  &kp CARET       &trans  &kp KP_N0  &kp KP_N1           &kp KP_N2           &kp KP_N3        &kp PERIOD
+&mt LCTRL BACKSPACE  &mt LEFT_WIN PERIOD  &mt LEFT_ALT PERIOD  &trans  &kp ENTER    &trans          &trans  &trans                                                              &kp LS(MINUS)
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PLUS) LC(MINUS)>;
@@ -715,17 +715,17 @@
 
         Functions_and_Controls {
             bindings = <
-&kp LS(ESC)     &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &td_alt_f4                                                       &kp LG(LC(LEFT_ARROW))  &kp LG(UP_ARROW)    &kp LC(LG(RIGHT_ARROW))       &kp LEFT_BRACKET  &kp RIGHT_BRACKET
-&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END     &kp LC(LA(KP_NUMBER_0))      &lt_to_layer_0 1 MINUS  &kp LG(LEFT_ARROW)      &kp LG(DOWN_ARROW)  &kp_exit_AML LG(RIGHT_ARROW)  &kp SQT           &kp NUHS
-&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &none       &kp RIGHT_SHIFT              &kp LC(HOME)            &kp LS(LEFT)            &trans              &kp LS(RIGHT_ARROW)           &trans            &kp INTERNATIONAL_1
-&kp LCTRL       &kp LEFT_WIN            &kp LEFT_ALT    &trans                   &trans      &trans                       &kp DELETE              &trans                                                                                      &kp RIGHT_SHIFT
+&kp LS(ESC)     &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &td_alt_f4                                                       &kp LG(LC(LEFT_ARROW))  &kp LG(UP_ARROW)             &kp LC(LG(RIGHT_ARROW))       &kp LEFT_BRACKET  &kp RIGHT_BRACKET
+&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END     &kp LC(LA(KP_NUMBER_0))      &lt_to_layer_0 1 MINUS  &kp LG(LEFT_ARROW)      &kp_exit_AML LG(DOWN_ARROW)  &kp_exit_AML LG(RIGHT_ARROW)  &kp SQT           &kp NUHS
+&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &none       &kp RIGHT_SHIFT              &kp LC(HOME)            &kp LS(LEFT)            &trans                       &kp LS(RIGHT_ARROW)           &trans            &kp INTERNATIONAL_1
+&kp LCTRL       &kp LEFT_WIN            &kp LEFT_ALT    &trans                   &trans      &trans                       &kp DELETE              &trans                                                                                               &kp RIGHT_SHIFT
             >;
         };
 
         ARROW {
             bindings = <
 &tab_with_kt_on_and_sl LEFT_ALT 5  &kp LC(LG(LEFT))        &kp LG(TAB)       &kp LG(LC(RIGHT))        &td_alt_f4                      &td_alt_f4         &kp LC(W)                 &kp LS(LC(T))          &kp LC(T)          &tab_with_kt_on_and_sl LEFT_ALT 5
-&tab_with_kt_on_and_sl LCTRL 6     &kp LG(LS(LEFT_ARROW))  &kp LG(UP_ARROW)  &kp LG(LS(RIGHT_ARROW))  &trans      &trans      &trans  &kp K_VOLUME_UP    &kp LC(PAGE_UP)  &kp UP_ARROW  &kp LC(PAGE_DOWN)  &tab_with_kt_on_and_sl LCTRL 6
+&tab_with_kt_on_and_sl LCTRL 6     &kp LG(LS(LEFT_ARROW))  &kp LG(UP_ARROW)  &kp LG(LS(RIGHT_ARROW))  &trans      &trans      &trans  &kp K_VOLUME_UP    &kp_exit_AML LC(PAGE_UP)  &kp_exit_AML UP_ARROW  &kp LC(PAGE_DOWN)  &tab_with_kt_on_and_sl LCTRL 6
 &kp LA(LC(LG(DOWN)))               &kp LG(LEFT_ARROW)      &kp LG(DOWN)      &kp LG(LS(RIGHT_ARROW))  &trans      &trans      &trans  &kp K_VOLUME_DOWN  &kp LA(LEFT)              &kp DOWN               &kp LA(RIGHT)      &trans
 &trans                             &trans                  &trans            &trans                   &trans      &trans      &trans  &trans                                                                                 &trans
             >;
