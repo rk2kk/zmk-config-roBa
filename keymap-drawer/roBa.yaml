@@ -40,7 +40,7 @@ layers:
   - {t: '&kp_exit_AML INTERNATIONAL_5', h: '&mo_exit_AML 9'}
   - {t: '&kp_exit_AML SPACE', h: '&mo_exit_AML 2'}
   - {t: '&kp_exit_AML INTERNATIONAL_4', h: '&mo_exit_AML 1'}
-  - {t: BACKSPACE, h: '&mo_exit_AML 1'}
+  - BACKSPACE
   - {t: '&kp_exit_AML ENTER', h: '&mo_exit_AML 2'}
   - {t: '&kp_exit_AML ESCAPE', h: '&mod_exit_AML LEFT_SHIFT'}
   Numpad_and_Symbols:
