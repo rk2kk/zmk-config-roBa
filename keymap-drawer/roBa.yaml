@@ -1,36 +1,36 @@
 layers:
   Default:
-  - {t: '&kp_exit_AML Q', h: '&mod_exit_AML LWIN'}
-  - '&kp_exit_AML W'
-  - '&kp_exit_AML E'
-  - '&kp_exit_AML R'
-  - '&kp_exit_AML T'
-  - '&kp_exit_AML Y'
-  - '&kp_exit_AML U'
-  - '&kp_exit_AML I'
-  - '&kp_exit_AML O'
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
   - {t: '&kp_exit_AML P', h: '&mo_exit_AML 9'}
-  - '&kp_exit_AML A'
-  - '&kp_exit_AML S'
-  - '&kp_exit_AML D'
-  - '&kp_exit_AML F'
-  - '&kp_exit_AML G'
+  - A
+  - S
+  - D
+  - F
+  - G
   - '&mkp MB3'
-  - {t: '&kp_exit_AML MINUS', h: '&mo_exit_AML 6'}
-  - '&kp_exit_AML H'
-  - '&kp_exit_AML J'
+  - 6 MINUS
+  - H
+  - J
   - K
   - L
   - {t: '&kp_exit_AML MINUS', h: '&mo_exit_AML 9'}
   - {t: '&kp_exit_AML Z', h: LEFT SHIFT}
-  - '&kp_exit_AML X'
+  - X
   - '&kp_exit_AML C'
   - '&kp_exit_AML V'
   - {t: '&kp_exit_AML B', h: '&mo_exit_AML_disable_alt_ctrl 4'}
   - {t: '=', h: '&mo_exit_AML 6'}
   - DELETE
   - {t: '&kp_exit_AML N', h: '&mo_exit_AML_disable_alt_ctrl 3'}
-  - '&kp_exit_AML M'
+  - M
   - ','
   - .
   - {t: '&kp_exit_AML SLASH', h: '&mod_exit_AML LEFT_SHIFT'}
