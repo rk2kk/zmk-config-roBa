@@ -41,7 +41,7 @@ layers:
   - {t: '&to_layer_0 SPACE', h: Functions_and_Controls}
   - {t: '&to_layer_0 INTERNATIONAL_4', h: Numpad_and_Symbols}
   - BACKSPACE
-  - {t: '&kp_exit_AML ENTER', h: '&mo_exit_AML 2'}
+  - {t: '&to_layer_0 ENTER', h: Functions_and_Controls}
   - {t: /, h: LEFT SHIFT}
   Numpad_and_Symbols:
   - +
@@ -62,8 +62,8 @@ layers:
   - KP NUM
   - {t: ▽, type: trans}
   - /
-  - '&kp_exit_AML KP_N4'
-  - '&kp_exit_AML KP_N5'
+  - KP 4
+  - KP 5
   - KP 6
   - '~'
   - {t: '0', h: Functions_and_Controls}
@@ -106,7 +106,7 @@ layers:
   - Ctl+Alt+KP 0
   - {t: '&to_layer_0 MINUS', h: Numpad_and_Symbols}
   - Gui+LEFT ARROW
-  - '&kp_exit_AML LG(DOWN_ARROW)'
+  - Gui+DOWN ARROW
   - '&kp_exit_AML LG(RIGHT_ARROW)'
   - ''''
   - '#'
