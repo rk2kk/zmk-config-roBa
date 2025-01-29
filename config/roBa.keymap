@@ -555,6 +555,8 @@
             <&kp LEFT_ARROW>,
             <&kp UP_ARROW>,
             <&kp DOWN_ARROW>;
+        tick = <10>;
+
     };
 
     alt_tab {
@@ -567,8 +569,8 @@
             <&kp UP_ARROW>,
             // up,,,,,,,,,,,,,,,,,,,
             <&kp DOWN_ARROW>;
-
-        // down
+      　　  // down
+        tick = <10>;
     };
 
     alt_tab2 {
@@ -581,7 +583,7 @@
             <&kp UP_ARROW>,
             // up,,,,,,,,,,,,,,,,,,,
             <&kp DOWN_ARROW>;
-
         // down
+        tick = <80>;
     };
 };
