@@ -10,20 +10,20 @@ layers:
   - '&kp_exit_AML I'
   - '&kp_exit_AML O'
   - {t: '&kp_exit_AML P', h: '&mo_exit_AML 9'}
-  - A
-  - S
+  - '&kp_exit_AML A'
+  - '&kp_exit_AML S'
   - '&kp_exit_AML D'
   - '&kp_exit_AML F'
   - '&kp_exit_AML G'
   - '&mkp MB3'
-  - {t: '&to_layer_0 MINUS', h: FUNCTION_NUM_1}
+  - {t: '&kp_exit_AML MINUS', h: '&mo_exit_AML 6'}
   - '&kp_exit_AML H'
   - '&kp_exit_AML J'
   - K
   - L
   - {t: '&kp_exit_AML MINUS', h: '&mo_exit_AML 9'}
   - {t: '&kp_exit_AML Z', h: LEFT SHIFT}
-  - {t: '&kp_exit_AML X', h: '&mod_exit_AML LEFT_SHIFT'}
+  - '&kp_exit_AML X'
   - '&kp_exit_AML C'
   - '&kp_exit_AML V'
   - {t: '&kp_exit_AML B', h: '&mo_exit_AML_disable_alt_ctrl 4'}
@@ -280,7 +280,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
