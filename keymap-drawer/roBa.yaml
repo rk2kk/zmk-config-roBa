@@ -9,23 +9,23 @@ layers:
   - U
   - I
   - O
-  - {t: '&kp_exit_AML P', h: '&mo_exit_AML 9'}
+  - '&kp_exit_AML P'
   - A
   - S
   - D
   - F
   - G
   - '&mkp MB3'
-  - 6 MINUS
+  - {t: '&to_layer_0 MINUS', h: FUNCTION_NUM_1}
   - H
   - J
   - K
   - L
   - {t: '&kp_exit_AML MINUS', h: '&mo_exit_AML 9'}
-  - {t: '&kp_exit_AML Z', h: LEFT SHIFT}
+  - {t: Z, h: LEFT SHIFT}
   - X
-  - '&kp_exit_AML C'
-  - '&kp_exit_AML V'
+  - C
+  - V
   - {t: '&kp_exit_AML B', h: '&mo_exit_AML_disable_alt_ctrl 4'}
   - {t: '=', h: '&mo_exit_AML 6'}
   - DELETE
@@ -280,7 +280,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
