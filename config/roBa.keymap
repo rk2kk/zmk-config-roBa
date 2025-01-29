@@ -44,9 +44,8 @@
         };
 
         zenkaku {
-            bindings = <&kp LANGUAGE_1>;
+            bindings = <&td_ZenkakuHankaku>;
             key-positions = <10 11>;
-            layers = <1>;
         };
 
         dot_slash_backslash {
