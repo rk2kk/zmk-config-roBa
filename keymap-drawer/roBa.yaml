@@ -1,48 +1,48 @@
 layers:
   Default:
-  - Q
-  - W
-  - E
-  - R
-  - T
-  - Y
-  - U
-  - I
-  - O
-  - P
-  - A
-  - S
-  - D
-  - F
-  - G
+  - {t: '&kp_exit_AML Q', h: '&mod_exit_AML LWIN'}
+  - '&kp_exit_AML W'
+  - '&kp_exit_AML E'
+  - '&kp_exit_AML R'
+  - '&kp_exit_AML T'
+  - '&kp_exit_AML Y'
+  - '&kp_exit_AML U'
+  - '&kp_exit_AML I'
+  - '&kp_exit_AML O'
+  - {t: '&kp_exit_AML P', h: '&mo_exit_AML 9'}
+  - '&kp_exit_AML A'
+  - '&kp_exit_AML S'
+  - '&kp_exit_AML D'
+  - '&kp_exit_AML F'
+  - '&kp_exit_AML G'
   - '&mkp MB3'
-  - {t: '&to_layer_0 MINUS', h: FUNCTION_NUM_1}
-  - H
-  - J
+  - {t: '&kp_exit_AML MINUS', h: '&mo_exit_AML 6'}
+  - '&kp_exit_AML H'
+  - '&kp_exit_AML J'
   - K
   - L
-  - {t: '&to_layer_0 MINUS', h: Extra_Functions}
-  - {t: Z, h: LEFT SHIFT}
-  - X
-  - C
-  - V
-  - {t: '&to_layer_0 B', h: Alt-Tab}
-  - {t: '&to_layer_0 EQUAL', h: FUNCTION_NUM_1}
+  - {t: '&kp_exit_AML MINUS', h: '&mo_exit_AML 9'}
+  - {t: '&kp_exit_AML Z', h: LEFT SHIFT}
+  - '&kp_exit_AML X'
+  - '&kp_exit_AML C'
+  - '&kp_exit_AML V'
+  - {t: '&kp_exit_AML B', h: '&mo_exit_AML_disable_alt_ctrl 4'}
+  - {t: '=', h: '&mo_exit_AML 6'}
   - DELETE
-  - N
-  - M
+  - {t: '&kp_exit_AML N', h: '&mo_exit_AML_disable_alt_ctrl 3'}
+  - '&kp_exit_AML M'
   - ','
   - .
-  - ':'
+  - {t: '&kp_exit_AML SLASH', h: '&mod_exit_AML LEFT_SHIFT'}
   - LEFT CONTROL
   - LEFT WIN
   - LEFT ALT
-  - {t: '&to_layer_0 INTERNATIONAL_5', h: Extra_Functions}
-  - {t: '&to_layer_0 SPACE', h: Functions_and_Controls}
-  - {t: '&to_layer_0 INTERNATIONAL_4', h: Numpad_and_Symbols}
-  - BACKSPACE
-  - {t: '&to_layer_0 ENTER', h: Functions_and_Controls}
-  - {t: /, h: LEFT SHIFT}
+  - {t: '&kp_exit_AML INTERNATIONAL_5', h: '&mo_exit_AML 9'}
+  - {t: '&kp_exit_AML SPACE', h: '&mo_exit_AML 2'}
+  - {t: '&kp_exit_AML INTERNATIONAL_4', h: '&mo_exit_AML 1'}
+  - {t: BACKSPACE, h: '&mo_exit_AML 1'}
+  - {t: '&kp_exit_AML ENTER', h: '&mo_exit_AML 2'}
+  - {t: '&kp_exit_AML ESCAPE', h: '&mod_exit_AML LEFT_SHIFT'}
   Numpad_and_Symbols:
   - +
   - '7'
@@ -62,8 +62,8 @@ layers:
   - KP NUM
   - {t: ▽, type: trans}
   - /
-  - KP 4
-  - KP 5
+  - '&kp_exit_AML KP_N4'
+  - '&kp_exit_AML KP_N5'
   - KP 6
   - '~'
   - {t: '0', h: Functions_and_Controls}
@@ -83,7 +83,7 @@ layers:
   - {t: ., h: LEFT ALT}
   - {t: ▽, type: trans}
   - ENTER
-  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Sft+-
@@ -106,11 +106,11 @@ layers:
   - Ctl+Alt+KP 0
   - {t: '&to_layer_0 MINUS', h: Numpad_and_Symbols}
   - Gui+LEFT ARROW
-  - Gui+DOWN ARROW
+  - '&kp_exit_AML LG(DOWN_ARROW)'
   - '&kp_exit_AML LG(RIGHT_ARROW)'
   - ''''
   - '#'
-  - LEFT SHIFT
+  - {t: LEFT SHIFT, type: held}
   - Gui+Sft+LEFT ARROW
   - {t: ▽, type: trans}
   - Gui+Sft+RIGHT ARROW
@@ -126,7 +126,7 @@ layers:
   - LEFT WIN
   - LEFT ALT
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - DELETE
   - {t: ▽, type: trans}
@@ -150,8 +150,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - VOLUME UP
-  - Ctl+PAGE UP
-  - UP ARROW
+  - '&kp_exit_AML LC(PAGE_UP)'
+  - '&kp_exit_AML UP_ARROW'
   - Ctl+PAGE DOWN
   - '&tab_with_kt_on_and_sl LCTRL 6'
   - Alt+Ctl+Gui+DOWN
@@ -202,7 +202,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -280,7 +280,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -417,7 +417,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '1'
   - '2'
