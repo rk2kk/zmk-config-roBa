@@ -10,8 +10,8 @@ layers:
   - '&kp_exit_AML I'
   - '&kp_exit_AML O'
   - {t: '&kp_exit_AML P', h: '&mo_exit_AML 9'}
-  - '&kp_exit_AML A'
-  - '&kp_exit_AML S'
+  - A
+  - S
   - '&kp_exit_AML D'
   - '&kp_exit_AML F'
   - '&kp_exit_AML G'
@@ -19,8 +19,8 @@ layers:
   - {t: '&to_layer_0 MINUS', h: FUNCTION_NUM_1}
   - '&kp_exit_AML H'
   - '&kp_exit_AML J'
-  - '&kp_exit_AML K'
-  - '&kp_exit_AML L'
+  - K
+  - L
   - {t: '&kp_exit_AML MINUS', h: '&mo_exit_AML 9'}
   - {t: '&kp_exit_AML Z', h: LEFT SHIFT}
   - {t: '&kp_exit_AML X', h: '&mod_exit_AML LEFT_SHIFT'}
