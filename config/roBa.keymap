@@ -545,7 +545,6 @@
 &trackball {
     automouse-layer = <MOUSE>;
     scroll-layers = <9>;
-
     // snipe-layers = <3>;
 
     arrows {
@@ -555,33 +554,38 @@
             <&kp LEFT_ARROW>,
             <&kp UP_ARROW>,
             <&kp DOWN_ARROW>;
+
+        tick = <10>;
+    };
+
+    volume {
+        layers = <MEDIA>;
+        bindings =
+                <&none>,
+                <&none>,
+                <&kp C_VOLUME_UP>,
+                <&kp C_VOLUME_DOWN>;
     };
 
     alt_tab {
         layers = <4>;
         bindings =
             <&tab_with_kt_on_and_sl LEFT_ALT 5>,
-            // right,,,,,,,,,,,,,,,,,,,,,
             <&tab_with_kt_on_and_sl LEFT_ALT 5>,
-            // left,,,,,,,,,,,,,,,,,,,,,
             <&kp UP_ARROW>,
-            // up,,,,,,,,,,,,,,,,,,,,,
             <&kp DOWN_ARROW>;
 
-        　　  // down
+        tick = <10>;
     };
 
     alt_tab2 {
         layers = <6>;
         bindings =
-            <&kp LC(TAB)>,
-            // right,,,,,,,,,,,,,,,,,,,,,
-            <&kp LC(LS(TAB))>,
-            // left,,,,,,,,,,,,,,,,,,,,,
+            <&kp TAB>,
+            <&kp LS(TAB)>,
             <&kp UP_ARROW>,
-            // up,,,,,,,,,,,,,,,,,,,,,
             <&kp DOWN_ARROW>;
 
-        // down
+        tick = <80>;
     };
 };
