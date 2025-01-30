@@ -578,7 +578,7 @@
 
     alt_tab {
         layers = <ALTTAB>;
-        bindings = <&kp LA(TAB)>, <&kp LA(LS(TAB))>, <&none>, <&none>;
+        bindings = <&alt_tab LEFT_ALT TAB)>, <&alt_tab LEFT_ALT (LS(TAB))>, <&none>, <&none>;
 
         tick = <80>;
     };
