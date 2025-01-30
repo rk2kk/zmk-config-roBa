@@ -4,7 +4,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <dt-bindings/zmk/pointing.h>
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 #define ARROW 3
@@ -568,12 +567,7 @@
 
     arrows {
         layers = <ARROW>;
-        bindings =
-            <&kp RIGHT_ARROW>,
-            <&kp LEFT_ARROW>,
-            <&kp UP_ARROW>,
-            <&kp DOWN_ARROW>;
-
+        bindings = <&kp RIGHT_ARROW>, <&kp LEFT_ARROW>, <&kp UP_ARROW>, <&kp DOWN_ARROW>;
         tick = <10>;
     };
 
@@ -584,7 +578,7 @@
 
     alt_tab {
         layers = <ALTTAB>;
-        bindings = <&kp LA(TAB)>, <&kp LA(LS(TAB))>, <&kp UP_ARROW>, <&kp DOWN_ARROW>;
+        bindings = <&kp LA(TAB)>, <&kp LA(LS(TAB))>, <&none>, <&none>;
 
         tick = <80>;
     };
