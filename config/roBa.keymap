@@ -7,12 +7,12 @@
 
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
+#define ARROW 3
 #define MOUSE 4
 #define SCROLL 5
 #define FN 6
-#define CTRLALTTAB 7
-#define ALTTAB 8
-#define CTRLTAB 9
+#define ALTTAB 7
+#define CTRLTAB 8
 
 &mt {
     quick-tap-ms = <250>;
@@ -561,7 +561,7 @@
     // snipe-layers = <3>;
 
     arrows {
-        layers = <3>;
+        layers = <ARROW>;
         bindings =
             <&kp RIGHT_ARROW>,
             <&kp LEFT_ARROW>,
