@@ -584,14 +584,14 @@
 
     alt_tab {
         layers = <ALTTAB>;
-        bindings = <&kp TAB>, <&kp LS(TAB)>, <&kp UP_ARROW>, <&kp DOWN_ARROW>;
+        bindings = <&kp LA(TAB)>, <&kp LA(LS(TAB))>, <&kp UP_ARROW>, <&kp DOWN_ARROW>;
 
         tick = <80>;
     };
 
     ctrl_tab {
         layers = <CTRLTAB>;
-        bindings = <&kp UP_ARROW>, <&kp DOWN_ARROW>, <&kp LS(TAB)>, <&kp TAB>;
+        bindings = <&kp LC(TAB)>, <&kp LC(LS(TAB))>, <&none>, <&none>;
 
         tick = <80>;
     };
