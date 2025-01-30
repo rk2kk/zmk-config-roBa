@@ -583,10 +583,10 @@
     ctrl_alt_tab {
         layers = <CTRLALTTAB>;
         bindings =
-            <&tab_with_kt_on_and_sl LEFT_ALT 5>,
-            <&tab_with_kt_on_and_sl LEFT_ALT 5>,
-            <&tab_with_kt_on_and_sl LCTRL 6>,
-            <&tab_with_kt_on_and_sl LCTRL 6>;
+            <TAB LEFT_ALT 5>,
+            <TAB LEFT_ALT　LEFT_SHIFT 5>,
+            <TAB LCTRL 6>,
+            <TAB LCTRL LEFT_SHIFT　6>;
 
         tick = <10>;
     };
