@@ -1,0 +1,44 @@
+#include "roBa_L.keymap"
+
+#include "boards/shields/Test/roBa_R.overlay"
+
+&trackball {
+    automouse-layer = <MOUSE>;
+    scroll-layers = <SCROLL>;
+
+    // snipe-layers = <3>;
+
+    arrows {
+        layers = <ARROW>;
+        bindings =
+            <&kp RIGHT_ARROW>,
+            <&kp LEFT_ARROW>,
+            <&kp UP_ARROW>,
+            <&kp DOWN_ARROW>;
+
+        tick = <10>;
+    };
+
+    volume {
+        layers = <FN>;
+        bindings = <&none>, <&none>, <&kp C_VOLUME_UP>, <&kp C_VOLUME_DOWN>;
+    };
+
+    alt_tab {
+        layers = <ALTTAB>;
+        bindings =
+            <&tab_with_kt_on_and_sl LEFT_ALT 8>,
+            <&tab_with_kt_on_and_sl LEFT_ALT 8>,
+            <&none>,
+            <&none>;
+
+        tick = <80>;
+    };
+
+    ctrl_tab {
+        layers = <CTRLTAB>;
+        bindings = <&kp LC(TAB)>, <&kp LC(LS(TAB))>, <&none>, <&none>;
+
+        tick = <80>;
+    };
+};
