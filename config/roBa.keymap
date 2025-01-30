@@ -585,8 +585,8 @@
     alt_tab {
         layers = <ALTTAB>;
         bindings =
-            <&alt_tab LEFT_ALT TAB)>,
-            <&alt_tab LEFT_ALT (LS(TAB))>,
+            < <&tab_with_kt_on_and_sl LEFT_ALT 8>,
+            <&tab_with_kt_on_and_sl LEFT_ALT 8>,
             <&none>,
             <&none>;
 
