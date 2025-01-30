@@ -580,16 +580,6 @@
                 <&kp C_VOLUME_DOWN>;
     };
 
-    ctrl_alt_tab {
-        layers = <CTRLALTTAB>;
-        bindings =
-            <TAB LEFT_ALT 5>,
-            <TAB LEFT_ALT　LEFT_SHIFT 5>,
-            <TAB LCTRL 6>,
-            <TAB LCTRL LEFT_SHIFT　6>;
-
-        tick = <10>;
-    };
 
     alt_tab {
         layers = <ALTTAB>;
