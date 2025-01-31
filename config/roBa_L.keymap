@@ -72,6 +72,14 @@
             label = "TO_LAYER_0";
         };
 
+ to_layer_0_kt_off: to_layer_0_kt_off {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER &kt_off MACRO_PLACEHOLDER>;
+            label = "TO_LAYER_0";
+        };
+
+
         exit_AML: exit_AML {
             compatible = "zmk,behavior-macro";
             wait-ms = <0>;
@@ -478,7 +486,7 @@
             bindings = <
 &mt ESCAPE Q      &kp W         &kp E         &kp R                             &kp T                                                                                 &kp Y        &kp U  &kp I      &kp O    &kp P
 &kp A             &kp S         &kp D         &kp F                             &kp G                   &mkp MB3                              &lt_to_layer_0 6 MINUS  &kp H        &kp J  &kp K      &kp L    &lt_to_layer_0 5 SEMICOLON
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                             &lt_to_layer_0 8 B      &lt_to_layer_0 7 LS(MINUS)            &kp DEL                 &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                             &lt_to_layer_0 8 B      &lt_to_layer_0_kt_off 7 LS(MINUS)            &kp DEL                 &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
 &kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 5 INTERNATIONAL_5  &lt_to_layer_0 3 SPACE  &lt_to_layer_0 2 INTERNATIONAL_4      &kp BACKSPACE           &lt 1 ENTER                             &kp RIGHT_SHIFT
             >;
 
