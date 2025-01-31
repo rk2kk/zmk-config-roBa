@@ -19,11 +19,7 @@
     flavor = "balanced";
 };
 
-&lt {
-    tapping-term-ms = <200>;
-    quick-tap-ms = <250>;
-    flavor = "balanced";
-};
+
 
 &sk { release-after-ms = <700>; };
 
