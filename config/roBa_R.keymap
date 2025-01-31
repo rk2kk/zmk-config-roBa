@@ -1,5 +1,4 @@
 #include "roBa_L.keymap"
-
 #include "boards/shields/Test/roBa_R.overlay"
 
 &trackball {
@@ -22,7 +21,7 @@
     };
 
     volume {
-        layers = <FN>;
+        layers = <VOLUME>;
         bindings = <&none>, <&none>, <&kp C_VOLUME_UP>, <&kp C_VOLUME_DOWN>;
     };
 
