@@ -245,7 +245,7 @@
             tapping-term-ms = <150>;
         };
 
-        to_layer_0_kt_off: to_layer_0_kt_off {
+        lt_to_layer_0_kt_off: lt_to_layer_0_kt_off {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_1";
             bindings = <&mo>, <&to_layer_0>;
