@@ -70,7 +70,7 @@
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER &kt_off MACRO_PLACEHOLDER>;
-            label = "TO_LAYER_0";
+            label = "TO_LAYER_0_KT_OFF";
         };
 
         exit_AML: exit_AML {
@@ -247,7 +247,7 @@
 
         lt_to_layer_0_kt_off: lt_to_layer_0_kt_off {
             compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP_TO_1";
+            label = "LAYER_TAP_TO_0_KT_OFF";
             bindings = <&mo>, <&to_layer_0>;
 
             #binding-cells = <2>;
