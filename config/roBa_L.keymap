@@ -116,7 +116,7 @@
                 <&macro_release>,
                 <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
                 <&macro_tap>,
-                <&exit_AML &macro_param_2to1 &sl_250 MACRO_PLACEHOLDER>;
+                <&macro_param_2to1 &sl_250 MACRO_PLACEHOLDER>;
 
             label = "eager_tap_dance";
         };
