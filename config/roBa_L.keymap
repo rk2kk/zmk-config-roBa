@@ -150,6 +150,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
+            display-name = "Lt-to-layer-0";
         };
 
         lt_to_layer_1: lt_to_layer_1 {
@@ -159,6 +160,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <150>;
+            display-name = "Lt-to-layer-fast";
         };
 
         lt_to_layer_0_disable_alt_ctrl: lt_to_layer_0_disable_alt_ctrl {
@@ -168,6 +170,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <150>;
+            display-name = "Lt-to-layer-0-alt-tab";
         };
 
         scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
