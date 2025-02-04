@@ -160,17 +160,17 @@
             tap-ms = <20>;
         };
 
-        tog_on: toggle_layer_on {
-            compatible = "zmk,behavior-toggle-layer";
+        kt_on: key_toggle_on_only {
+            compatible = "zmk,behavior-key-toggle";
             #binding-cells = <1>;
-            display-name = "Toggle Layer On";
+            display-name = "Key Toggle On";
             toggle-mode = "on";
         };
 
-        tog_off: toggle_layer_off {
-            compatible = "zmk,behavior-toggle-layer";
+        kt_off: key_toggle_off_only {
+            compatible = "zmk,behavior-key-toggle";
             #binding-cells = <1>;
-            display-name = "Toggle Layer Off";
+            display-name = "Key Toggle Off";
             toggle-mode = "off";
         };
 
