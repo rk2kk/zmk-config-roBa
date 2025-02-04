@@ -66,7 +66,7 @@
             label = "TO_LAYER_0";
         };
 
-        to_layer_0_disable_alt_ctrl: lt_to_layer_0_disable_alt_ctrl {
+        to_layer_0_disable_alt_ctrl: to_layer_0_disable_alt_ctrl {
             compatible = "zmk,behavior-macro-two-param";
             wait-ms = <0>;
             tap-ms = <0>;
