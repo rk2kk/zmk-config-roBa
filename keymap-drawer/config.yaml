@@ -1,2 +1,3 @@
+parse_config:
 raw_binding_map:
-    '&lt_to_layer_0': 'lt'
+    '&lt_to_layer_0': ''
