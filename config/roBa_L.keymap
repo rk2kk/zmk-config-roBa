@@ -92,6 +92,15 @@
             label = "DISABLE_ALT_CTRL";
         };
 
+        tab_with_kt_on_and_sl: tab_with_kt_on_and_sl {
+            compatible = "zmk,behavior-macro-two-param";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <2>;
+            bindings = <&macro_param_1to1 &kt_on MACRO_PLACEHOLDER &macro_param_2to2 &kp_with_sl TAB MACRO_PLACEHOLDER>;
+            label = "TAB_WITH_KT_ON_AND_SL";
+        };
+
         zoom_in: zoom_in {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
