@@ -58,7 +58,7 @@
         };
 
         alt-tab {
-            bindings = <&mo 8>;
+            bindings = <&lt_to_layer_0_disable_alt_ctrl 8 EQUAL>;
             key-positions = <38 39>;
         };
 
