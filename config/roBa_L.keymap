@@ -58,12 +58,12 @@
         };
 
         alt-tab {
-            bindings = <&lt_to_layer_0_disable_alt_ctrl 8 EQUAL>;
+            bindings = <&lt_to_layer_0_disable_alt_ctrl 7 EQUAL>;
             key-positions = <38 39>;
         };
 
         ctrl-tab {
-            bindings = <&mo 7>;
+            bindings = <&mo 8>;
             key-positions = <38 37>;
         };
     };
