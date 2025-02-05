@@ -56,6 +56,16 @@
             bindings = <&kp ESCAPE>;
             key-positions = <0 1>;
         };
+
+        alt-tab {
+            bindings = <&mo 8>;
+            key-positions = <38 39>;
+        };
+
+        ctrl-tab {
+            bindings = <&mo 7>;
+            key-positions = <38 37>;
+        };
     };
 
     macros {
@@ -79,8 +89,9 @@
                 <&macro_release>,
                 <&macro_param_1to1 &mo MACRO_PLACEHOLDER>,
                 <&macro_tap>,
-                <&disable_alt_ctrl>; 
-                label = "TO_LAYER_0_DISABLE_ALT_CTRL";
+                <&disable_alt_ctrl>;
+
+            label = "TO_LAYER_0_DISABLE_ALT_CTRL";
         };
 
         disable_alt_ctrl: disable_alt_ctrl {
@@ -92,7 +103,6 @@
             label = "DISABLE_ALT_CTRL";
         };
 
-
         kp_with_sl: kp_with_sl {
             compatible = "zmk,behavior-macro-two-param";
             wait-ms = <0>;
@@ -101,7 +111,6 @@
             bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &macro_param_2to1 &to MACRO_PLACEHOLDER>;
             label = "KP_WITH_SL";
         };
-
 
         tab_with_kt_on_and_sl: tab_with_kt_on_and_sl {
             compatible = "zmk,behavior-macro-two-param";
@@ -318,10 +327,10 @@
 
         default_layer {
             bindings = <
-&mt ESCAPE Q      &kp W         &kp E         &kp R                             &kp T                                                                                  &kp Y        &kp U  &kp I      &kp O    &kp P
-&kp A             &kp S         &kp D         &kp F                             &kp G                   &mkp MB3                               &lt_to_layer_0 6 MINUS  &kp H        &kp J  &kp K      &kp L    &lt_to_layer_0 5 SEMICOLON
+&mt ESCAPE Q      &kp W         &kp E         &kp R                             &kp T                                                                                        &kp Y        &kp U  &kp I      &kp O    &kp P
+&kp A             &kp S         &kp D         &kp F                             &kp G                   &mkp MB3                                     &lt_to_layer_0 6 MINUS  &kp H        &kp J  &kp K      &kp L    &lt_to_layer_0 5 SEMICOLON
 &mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                             &lt_to_layer_0 8 B      &lt_to_layer_0_disable_alt_ctrl 7 EQUAL      &kp DEL                 &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 5 INTERNATIONAL_5  &lt_to_layer_1 3 SPACE  &lt_to_layer_0 2 INTERNATIONAL_4       &kp BACKSPACE           &lt 1 ENTER                             &kp RIGHT_SHIFT
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 5 INTERNATIONAL_5  &lt_to_layer_1 3 SPACE  &lt_to_layer_0 2 INTERNATIONAL_4             &kp BACKSPACE           &lt 1 ENTER                             &kp RIGHT_SHIFT
             >;
 
             sensor-bindings = <&scroll_up_down>;
