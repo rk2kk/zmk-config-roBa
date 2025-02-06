@@ -6,7 +6,7 @@ on:
     paths:
       - "config/roBa_L.keymap"
       - "config/*.dtsi"
-      - "keymap_drawer.config.yaml"
+      - "keymap_drawer/config.yaml"
       # - 'boards/*/*/*.keymap'
 
 jobs:
