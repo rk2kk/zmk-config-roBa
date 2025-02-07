@@ -103,22 +103,30 @@
             label = "DISABLE_ALT_CTRL";
         };
 
-        kp_with_sl: kp_with_sl {
+        kp_to: kp_to {
             compatible = "zmk,behavior-macro-two-param";
             wait-ms = <0>;
             tap-ms = <0>;
             #binding-cells = <2>;
             bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &macro_param_2to1 &to MACRO_PLACEHOLDER>;
-            label = "KP_WITH_SL";
+            label = "kp_to"";
         };
 
-        tab_with_kt_on_and_sl: tab_with_kt_on_and_sl {
+        tab_kt_on_to: tab_kt_on_to{
             compatible = "zmk,behavior-macro-two-param";
             wait-ms = <0>;
             tap-ms = <0>;
             #binding-cells = <2>;
-            bindings = <&macro_param_1to1 &kt_on MACRO_PLACEHOLDER &macro_param_2to2 &kp_with_sl TAB MACRO_PLACEHOLDER>;
-            label = "TAB_WITH_KT_ON_AND_SL";
+            bindings = <&macro_param_1to1 &kt_on MACRO_PLACEHOLDER &macro_param_2to2 &kp_to TAB MACRO_PLACEHOLDER>;
+            label = "tab_kt_on_to";
+        };
+        shift_tab_kt_on_to: shift_tab_kt_on_to {
+            compatible = "zmk,behavior-macro-two-param";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <2>;
+            bindings = <&macro_param_1to1 &kt_on MACRO_PLACEHOLDER &macro_param_2to2 &kp_to LS(TAB) MACRO_PLACEHOLDER>;
+            label = "shift_tab_kt_on_to";
         };
 
         zoom_in: zoom_in {
