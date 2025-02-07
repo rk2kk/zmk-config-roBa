@@ -184,9 +184,28 @@ parse_config:
     LEFT_CONTROL: $$mdi:apple-keyboard-control$$
     LC(A): 'tmux prefix'
 raw_binding_map:
-    '&lt_to_layer_0 6 MINUS': {h: 'FUNCTION', t: '-'}
-    '&lt_to_layer_0 8 B': {h: 'ALT_TAB', t: 'B'}
-    '&lt_to_layer_0_disable_alt_ctrl 7 EQUAL': {h: 'FUNCTION_NUM', t: '='}
-    '&lt_to_layer_0 5 INTERNATIONAL_5': {h: 'SCROLL', t: 'Mu-henkan'}
-    '&lt_to_layer_1 3 SPACE': {h: 'ARROW', t: 'SPACE'}
-    '&lt_to_layer_0 2 INTERNATIONAL_4': {h: 'NUM', t: 'Henkan'}
+    '&lt_to_layer_0 6 MINUS': 
+      tap:     '-'
+      hold:    "FUNCTION"
+      type:    sym_by_sym
+    '&lt_to_layer_0 8 B': 
+      tap:     'b'
+      hold:    "ALT_TAB"
+      type:    sym_by_sym
+    '&lt_to_layer_0_disable_alt_ctrl 7 EQUAL':
+      tap:     '='
+      hold:    "FUNCTION_NUM"
+      type:    sym_by_sym
+    '&lt_to_layer_0 5 INTERNATIONAL_5':
+      tap:     "Mu-henkan"
+      hold:    "SCROLL"
+      type:    sym_by_sym
+    '&lt_to_layer_1 3 SPACE':
+      tap:     'SPACE'
+      hold:    "ARROW"
+      type:    sym_by_sym
+    '&lt_to_layer_0 2 INTERNATIONAL_4':
+      tap:     "Henkan"
+      hold:    "NUM"
+      type:    sym_by_sym
+
