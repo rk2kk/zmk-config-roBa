@@ -109,7 +109,7 @@
             tap-ms = <0>;
             #binding-cells = <2>;
             bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &macro_param_2to1 &to MACRO_PLACEHOLDER>;
-            label = "kp_to"";
+            label = "kp_to";
         };
 
         tab_kt_on_to: tab_kt_on_to{
