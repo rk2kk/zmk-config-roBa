@@ -35,6 +35,7 @@
             <&shift_tab_kt_on_to LCTRL CTRL_TAB_TB>,
             <&tab_kt_on_to LCTRL CTRL_TAB_TB>;
 
+
         tick = <80>;
     };
 
