@@ -28,10 +28,10 @@
     alt_tab {
         layers = <ALTTAB>;
         bindings =
-            <&tab_kt_on_to LEFT_ALT ALT_TAB_TB>,
-            <&shift_tab_kt_on_to LEFT_ALT ALT_TAB_TB>,
-            <&shift_tab_kt_on_to LCTRL CTRL_TAB_TB>,
-            <&tab_kt_on_to LCTRL CTRL_TAB_TB>;
+            <&tab_kt_on_to LEFT_ALT ALTTAB>,
+            <&shift_tab_kt_on_to LEFT_ALT ALTTAB>,
+            <&shift_tab_kt_on_to LCTRL CTRLTAB>,
+            <&tab_kt_on_to LCTRL CTRLTAB>;
 
 
         tick = <80>;
