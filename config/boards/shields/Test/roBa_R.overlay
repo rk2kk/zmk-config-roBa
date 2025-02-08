@@ -29,7 +29,6 @@
 &pd0 {
   status = "okay";
     irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-	cpi = <1200>;
 };
 
 / {
@@ -45,7 +44,4 @@
 		relay-channel = <102>;
 	};
 };
-
-
-&xiao_serial { status = "disabled"; };
 
