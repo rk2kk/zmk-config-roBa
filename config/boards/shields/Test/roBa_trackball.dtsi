@@ -31,13 +31,12 @@
 &spi1 {
 	compatible = "nordic,nrf-spim";
 	status = "disabled"; // <<< disabled in main .dtsi, okay in .overlay
-	trackball: trackball@0 {
+	pd0: pd@0 {
 		compatible = "pixart,pmw3610";
 		status = "disabled";
 		label = "TRACKBALL0";
-		reg = <0>;
-		        spi-max-frequency = <2000000>;
-                irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        reg = <0>;
+		spi-max-frequency = <4000000>;
 	};
 };
 
