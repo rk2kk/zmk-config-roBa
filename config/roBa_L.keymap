@@ -14,10 +14,15 @@
 #define CTRLTAB 8
 
 &mt {
-    quick-tap-ms = <250>;
-    tapping-term-ms = <200>;
-    flavor = "balanced";
+    flavor = "hold-preferred";
+    quick-tap-ms = <0>;
 };
+
+&lt {
+    flavor = "hold-preferred";
+    quick-tap-ms = <0>;
+};
+
 
 &sk { release-after-ms = <700>; };
 
