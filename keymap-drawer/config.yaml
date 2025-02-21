@@ -184,7 +184,7 @@ parse_config:
     LEFT_CONTROL: $$mdi:apple-keyboard-control$$
     LC(A): 'tmux prefix'
 raw_binding_map:
-    &lt_to_layer_0_disable_alt_ctrl 7 EQUAL:
+    lt_to_layer_0_disable_alt_ctrl 7 EQUAL:
       tap:     "="
       hold:    "FUNCTION_NUM"
       type:    sym_sub_text
