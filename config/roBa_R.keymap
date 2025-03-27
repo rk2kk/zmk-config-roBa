@@ -8,7 +8,7 @@
     // snipe-layers = <3>;
 
     arrows {
-        layers = <YAJIRUSHI,NUM>;
+        layers = <YAJIRUSHI>, <NUM>;
         bindings =
             <&kp RIGHT_ARROW>,
             <&kp LEFT_ARROW>,
