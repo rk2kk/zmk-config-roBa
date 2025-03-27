@@ -376,7 +376,7 @@
             bindings = <
 &kp ESCAPE  &kp LC(LS(TAB))  &kp UP_ARROW    &kp LC(TAB)      &trans                         &kp LC(LG(LEFT_ARROW))  &kp LG(UP_ARROW)    &kp LC(LG(RIGHT_ARROW))  &kp LEFT_BRACKET     &kp RIGHT_BRACKET
 &kp HOME    &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END    &trans      &trans  &kp LG(LEFT_ARROW)      &kp LG(DOWN_ARROW)  &kp LG(RIGHT_ARROW)      &kp SQT              &kp NUHS
-&kp LC(Z)   &kp LC(X)        &kp LC(C)       &kp LS(V)        &kp LC(B)  &trans      &trans  &kp LS(LG(LEFT_ARROW))  &none               &kp LS(LG(RIGHT_ARROW))  &kp LS(RIGHT_ARROW)  &kp INT1
+&kp LC(Z)   &kp LC(X)        &kp LC(C)       &kp LC(V)        &kp LC(B)  &trans      &trans  &kp LS(LG(LEFT_ARROW))  &none               &kp LS(LG(RIGHT_ARROW))  &kp LS(RIGHT_ARROW)  &kp INT1
 &trans      &trans           &trans          &trans           &trans     &trans      &trans  &trans                                                                                    &kp RIGHT_SHIFT
             >;
         };
