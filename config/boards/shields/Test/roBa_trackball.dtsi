@@ -23,11 +23,9 @@
     };
 };
 
-// release gpio1 12 & 13 from xiao_ble-pinctrl.dtsi
-// for &trackball { irq-gpios }
-&uart0 {
-	status = "disabled";
-};
+
+&xiao_serial { status = "disabled"; };
+
 &spi1 {
 	compatible = "nordic,nrf-spim";
 	status = "disabled"; // <<< disabled in main .dtsi, okay in .overlay
