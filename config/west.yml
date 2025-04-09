@@ -10,8 +10,8 @@ manifest:
       url-base: https://github.com/badjeff
     - name: kot149
       url-base: https://github.com/kot149
-     - name: ssbb
-      url-base: https://github.com/ssbb  
+    - name: ssbb
+      url-base: https://github.com/ssbb
   projects:
     - name: zmk
       remote: zmkfirmware
