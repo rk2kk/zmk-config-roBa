@@ -29,8 +29,5 @@ manifest:
     - name: zmk-listeners
       remote: ssbb
       revision: v1
-   - name: zmk-input-behavior-listener
-      remote: badjeff
-      revision: main
   self:
     path: config
