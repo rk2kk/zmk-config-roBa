@@ -36,9 +36,7 @@
 
 
 / {
-	/* define virtual input, will be resurrected for emitting input event */
-	/* NOTE: set `device = <&pd1>` in `zmk,input-listener` */
-	pd1: virtual_input {
+	trackball1: virtual_input {
 		compatible = "zmk,virtual-input";
 	};
 };
@@ -47,20 +45,14 @@
 	/* for central side, define (relay-channel)-to-(virtual-input) mapping */
 	input_relay_config_102 {
 		compatible = "zmk,split-peripheral-input-relay";
-		
-		/* channel id, used to filter incoming annotated input event from split peripheral */
-		/* NOTE: should matching relay-channel on peripheral overlay */
-		relay-channel = <102>;
-
-		/* virtual input device on central, which used to emit input event as an agent device */
-		device = <&trackball>;
+		device = <&trackball1>;
 	};
 };
 
 /{
   trackball_listener { 
     compatible = "zmk,input-listener";
-    device = <&trackball>;
+    device = <&trackball1>;
   };
 };
 
