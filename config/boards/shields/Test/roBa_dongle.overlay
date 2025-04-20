@@ -51,7 +51,7 @@
 
 
 / {
-	trackball0: virtual_input {
+	pd1: virtual_input {
 		compatible = "zmk,virtual-input";
 	};
 };
@@ -60,14 +60,14 @@
 	/* for central side, define (relay-channel)-to-(virtual-input) mapping */
 	input_relay_config_102 {
 		compatible = "zmk,split-peripheral-input-relay";
-		device = <&trackball0>;
+		device = <&pd1>;
 	};
 };
 
 /{
   trackball_listener { 
     compatible = "zmk,input-listener";
-    device = <&trackball0>;
+    device = <&pd1>;
   };
 };
 
