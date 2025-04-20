@@ -73,8 +73,6 @@
 &xiao_i2c {
     status = "okay";
     compatible = "nordic,nrf-spim";
-    pinctrl-0 = <&i2c0_default>;
-    pinctrl-1 = <&i2c0_sleep>;
     
     oled: ssd1306@3c {
         compatible = "sinowealth,sh1106";
