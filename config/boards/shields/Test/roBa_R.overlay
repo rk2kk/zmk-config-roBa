@@ -23,7 +23,7 @@
 	pinctrl-names = "default", "sleep";
   cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
 
-&trackball{
+trackball{
   status = "okay";
     irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 	  evt-type = <INPUT_EV_REL>;
