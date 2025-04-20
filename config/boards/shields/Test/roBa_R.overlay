@@ -22,8 +22,6 @@
 	pinctrl-1 = <&spi1_sleep>;
 	pinctrl-names = "default", "sleep";
   cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
-};
-
 
 &trackball{
   status = "okay";
@@ -33,8 +31,9 @@
 	  y-input-code = <INPUT_REL_Y>;
 };
 
+
 {
-	trackball1: virtual_input {
+	trackball: virtual_input {
 		compatible = "zmk,virtual-input";
 	};
 
