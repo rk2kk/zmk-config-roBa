@@ -24,7 +24,8 @@
   cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
 };
 
-&trackball1{
+
+&trackball0{
   status = "okay";
     irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 	  evt-type = <INPUT_EV_REL>;
@@ -35,7 +36,7 @@
 / {
 	input_relay_config_102 {
 		compatible = "zmk,split-peripheral-input-relay";
-		device = <&trackball1>;
+		device = <&trackball0>;
 		relay-channel = <102>;
 	};
 };
