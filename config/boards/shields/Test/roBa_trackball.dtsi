@@ -31,10 +31,11 @@
 &spi1 {
     	compatible = "nordic,nrf-spim";
 	    status = "disabled"; // <<< disabled in main .dtsi, okay in .overlay
-	    trackball0: trackball@0 {
+	    pd0: pd@0 {
                             compatible = "pixart,pmw3610";
                             reg = <0>;
                             spi-max-frequency = <2000000>; 
+                           label = "TRACKBALL0";
     };
 };
 
