@@ -34,7 +34,7 @@
 
 
 / {
-	trackball: virtual_input {
+	pd1: virtual_input {
 		compatible = "zmk,virtual-input";
 	};
 };
@@ -43,14 +43,14 @@
 	input_relay_config_102 {
 		compatible = "zmk,split-peripheral-input-relay";
 		relay-channel = <102>;
-		device = <&trackball>;
+		device = <&pd1>;
 	};
 };
 
 /{
   trackball_listener { 
     compatible = "zmk,input-listener";
-    device = <&trackball>;
+    device = <&pd1>;
   };
 };
 
