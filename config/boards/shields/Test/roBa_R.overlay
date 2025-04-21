@@ -16,26 +16,55 @@
 };
 
 
-&spi1 {
-  status = "okay";
-  pinctrl-0 = <&spi1_default>;
-	pinctrl-1 = <&spi1_sleep>;
-	pinctrl-names = "default", "sleep";
-  cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
+&spi0 {
+    status = "okay";
+    cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
+    pinctrl-0 = <&spi0_default>;
+    pinctrl-1 = <&spi0_sleep>;
+    pinctrl-names = "default", "sleep";
+    compatible = "nordic,nrf-spim";
+
+    trackball: pd@0 {
+        status = "disabled";
+        compatible = "pixart,pmw3610";
+        reg = <0>;
+        spi-max-frequency = <2000000>;
+        irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    };
 };
 
-&pd0 {
-  status = "okay";
-    irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-	  evt-type = <INPUT_EV_REL>;
-	  x-input-code = <INPUT_REL_X>;
-	  y-input-code = <INPUT_REL_Y>;
-};
-
+/*input-split*/
 / {
-input_relay_config_102 {
-		compatible = "zmk,split-peripheral-input-relay";
-		device = <&pd0>;
-		relay-channel = <102>;
-	};
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        trackball_split: trackball_split@0 {
+            compatible = "zmk,input-split";
+            reg = <0>;
+        };
+    };
+
+    trackball_listener: trackball_listener {
+        compatible = "zmk,input-listener";
+        status = "disabled";
+        device = <&trackball_split>;
+    };
 };
+
+/*
+&trackball {
+    status = "okay";
+	irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+	cpi = <600>;
+	evt-type = <INPUT_EV_REL>;
+	x-input-code = <INPUT_REL_X>;
+	y-input-code = <INPUT_REL_Y>;
+};
+*/
+
+
+&trackball_split {
+    device = <&trackball>;
+};
+&xiao_serial { status = "disabled"; };
