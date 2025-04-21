@@ -77,12 +77,7 @@
     };
 };
 
-/{
-  trackball_listener { 
-    compatible = "zmk,input-listener";
-    device = <&pd1>;
-  };
-};
+
 
 &pinctrl {
     i2c0_default: i2c0_default {
