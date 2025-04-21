@@ -42,7 +42,7 @@
     };
 };
 
-/*
+
 &trackball {
     status = "okay";
 	irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
@@ -51,7 +51,7 @@
 	x-input-code = <INPUT_REL_X>;
 	y-input-code = <INPUT_REL_Y>;
 };
-*/
+
 &trackball_split {
     device = <&trackball>;
 };
