@@ -20,8 +20,8 @@
 
 
 &spi0 {
-    status = "disabled";
-    cs-gpios =  <&xiao_d 0 GPIO_ACTIVE_LOW>;
+    status = "okay";
+    cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
     pinctrl-0 = <&spi0_default>;
     pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
