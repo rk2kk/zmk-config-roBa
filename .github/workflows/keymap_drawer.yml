@@ -22,7 +22,3 @@ jobs:
       destination: "both"
       parse_args: ""  # map of extra args to pass to `keymap parse`, e.g. "corne:'-l Def Lwr Rse' cradio:''"
       draw_args: "roBa:'-j config/roBa.json'"
-          if [ "${{ steps.draw.outcome }}" == "failure" ]; then
-            echo "The draw step failed for some keymaps, please check the logs of that step above!"
-            exit 1
-          fi
