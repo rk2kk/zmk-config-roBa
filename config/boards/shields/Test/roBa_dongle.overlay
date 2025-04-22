@@ -5,16 +5,6 @@
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <dt-bindings/zmk/input_transform.h>
 
-
-
-&default_transform {
-    col-offset = <6>;
-};
-
-&roba_physical_layout {
-    transform = <&default_transform>;
-};
-
 &kscan0 {
         col-gpios
             = <&xiao_d 10 GPIO_ACTIVE_HIGH>
