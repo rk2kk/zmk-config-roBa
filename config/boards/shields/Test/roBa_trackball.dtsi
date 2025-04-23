@@ -54,6 +54,9 @@
     };
 };
 
+&trackball_split {
+    device = <&trackball>;
+};
 &xiao_serial { status = "disabled"; };
 
 
