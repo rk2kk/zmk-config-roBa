@@ -53,9 +53,7 @@
     };
 };
 
-&trackball_split {
-    device = <&trackball>;
-};
+
 
 / {
     split_inputs {
@@ -63,6 +61,7 @@
         #size-cells = <0>;
 
         trackball_split: trackball_split@0 {
+            device = <&trackball>;
             compatible = "zmk,input-split";
             reg = <0>;
         };
@@ -74,7 +73,6 @@
         device = <&trackball_split>;
     };
 };
-
 
 &xiao_serial { status = "disabled"; };
 
