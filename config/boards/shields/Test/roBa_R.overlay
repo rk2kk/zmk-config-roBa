@@ -21,20 +21,17 @@
 
 &spi0 {
     status = "okay";
-    cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
-    pinctrl-0 = <&spi0_default>;
-    pinctrl-1 = <&spi0_sleep>;
-    pinctrl-names = "default", "sleep";
-    compatible = "nordic,nrf-spim";
-
-    trackball: pd@0 {
-        status = "disabled";
-        compatible = "pixart,pmw3610";
-        reg = <0>;
-        spi-max-frequency = <2000000>;
-        irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-    };
 };
+
+&trackball {
+    status = "okay";
+	irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+	cpi = <600>;
+	evt-type = <INPUT_EV_REL>;
+	x-input-code = <INPUT_REL_X>;
+	y-input-code = <INPUT_REL_Y>;
+};
+
 
 /*input-split*/
 / {
@@ -54,17 +51,5 @@
         device = <&trackball_split>;
     };
 };
-
-
-&trackball {
-    status = "okay";
-	irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-	cpi = <600>;
-	evt-type = <INPUT_EV_REL>;
-	x-input-code = <INPUT_REL_X>;
-	y-input-code = <INPUT_REL_Y>;
-};
-
-
 
 &xiao_serial { status = "disabled"; };
