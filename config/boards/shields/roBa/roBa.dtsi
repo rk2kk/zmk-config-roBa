@@ -85,9 +85,6 @@
                 ;
     };
 
-    kscan0: kscan {
-    diode-direction = "col2row";
-  };
 
     left_encoder: encoder_left {
         compatible = "alps,ec11";
