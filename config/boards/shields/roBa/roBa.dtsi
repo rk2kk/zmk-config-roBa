@@ -5,7 +5,6 @@
 
 / {
     chosen {
-        
         zmk,physical-layout = &roba_physical_layout;
         };
     

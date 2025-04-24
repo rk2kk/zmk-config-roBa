@@ -6,16 +6,13 @@
 #include <dt-bindings/zmk/input_transform.h>
 
 
-
-
 / {
     chosen {
         zmk,kscan = &mock_kscan;
-        zmk,physical-layout = &roba_physical_layout;
         zephyr,display = &oled;
     };
 
-    mock_kscan: kscan_1 {
+    mock_kscan: kscan_0 {
         compatible = "zmk,kscan-mock";
         columns = <0>;
         rows = <0>;
