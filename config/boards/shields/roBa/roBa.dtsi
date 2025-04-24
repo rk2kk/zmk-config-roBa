@@ -79,7 +79,7 @@
         diode-direction = "col2row";
   };
 
-    };
+
 
 
     left_encoder: encoder_left {
