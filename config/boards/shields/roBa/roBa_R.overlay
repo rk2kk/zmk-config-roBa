@@ -1,8 +1,7 @@
 #include "roBa.dtsi"
 #include "roBa_trackball.dtsi"
-#include <dt-bindings/zmk/bt.h>
-#include <input/processors.dtsi>
-#include <dt-bindings/zmk/input_transform.h>
+
+
 
 &default_transform {
     col-offset = <6>;
