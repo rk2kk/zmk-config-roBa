@@ -68,10 +68,17 @@
     };
 
     trackball_listener: trackball_listener {
-        compatible = "zmk,input-listener";
-        status = "disabled";
-        device = <&trackball_split>;
+    compatible = "zmk,input-listener";
+    status = "disabled";
+    device = <&trackball_split>;
+    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_XY_SWAP)>, <&zip_xy_scaler 1 4>;
+
+    scroll {
+      layers = <5>;
+      input-processors = <&zip_xy_scaler 1 12>;
+      process-next;
     };
+  };
 };
 
 &xiao_serial { status = "disabled"; };
