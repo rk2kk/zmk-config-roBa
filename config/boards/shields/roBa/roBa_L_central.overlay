@@ -13,16 +13,6 @@
      transform = <&default_transform>;
  };
 
-&kscan0 {
-        col-gpios
-            = <&xiao_d 10 GPIO_ACTIVE_HIGH>
-            , <&xiao_d 9 GPIO_ACTIVE_HIGH> 
-            , <&xiao_d 8 GPIO_ACTIVE_HIGH> 
-            , <&xiao_d 7 GPIO_ACTIVE_HIGH> 
-            , <&gpio0 10 GPIO_ACTIVE_HIGH>
-            , <&gpio0 9 GPIO_ACTIVE_HIGH>
-            ;
-};
 
 &left_encoder {
     status = "okay";
@@ -31,13 +21,7 @@
 
 &trackball_listener {
     status = "okay";
-    input-processors = <&zip_temp_layer 3 700>;
-
-    scroll {
-        layers = <5>;
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 16>, <&zip_xy_to_scroll_mapper>;
-    };
-};
+   };
 
 &xiao_serial { status = "disabled"; };
 
