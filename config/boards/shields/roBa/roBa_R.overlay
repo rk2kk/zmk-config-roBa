@@ -30,6 +30,9 @@
     status = "okay";
 };
 
+&trackball { 
+    status = "okay";
+};
 
 &trackball_split { 
     status = "okay";
