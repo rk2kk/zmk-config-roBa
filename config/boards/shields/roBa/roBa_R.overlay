@@ -30,34 +30,7 @@
     status = "okay";
 };
 
-&trackball {
-    status = "okay";
-	irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-	cpi = <600>;
-	evt-type = <INPUT_EV_REL>;
-	x-input-code = <INPUT_REL_X>;
-	y-input-code = <INPUT_REL_Y>;
-    force-awake;
+
+&trackball_split { 
+	device = <&trackball>;
 };
-
-
-/*input-split*/
-/ {
-    split_inputs {
-        #address-cells = <1>;
-        #size-cells = <0>;
-
-        trackball_split: trackball_split@0 {
-            compatible = "zmk,input-split";
-            reg = <0>;
-        };
-    };
-
-    trackball_listener: trackball_listener {
-        compatible = "zmk,input-listener";
-        status = "disabled";
-        device = <&trackball_split>;
-    };
-};
-
-&xiao_serial { status = "disabled"; };
