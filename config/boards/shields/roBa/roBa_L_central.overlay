@@ -1,14 +1,13 @@
 #include "roBa.dtsi"
 #include "roBa_trackball.dtsi"
 
-
-
 &default_transform {
      col-offset = <6>;
  };
  
 &kscan0 {
   compatible = "zmk,kscan-gpio-matrix";
+  
      row-gpios
         = <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
         , <&xiao_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
@@ -25,10 +24,6 @@
         , <&gpio0 9 GPIO_ACTIVE_HIGH>
         ;
 };
-
- &roba_physical_layout {
-     transform = <&default_transform>;
- };
 
 
 &left_encoder {
