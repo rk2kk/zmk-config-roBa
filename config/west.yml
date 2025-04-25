@@ -2,16 +2,14 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: badjeff
+      url-base: https://github.com/badjeff
     - name: caksoylar 
       url-base: https://github.com/caksoylar  
     - name: englmaxi
       url-base: https://github.com/englmaxi
-    - name: badjeff
-      url-base: https://github.com/badjeff
     - name: kot149
       url-base: https://github.com/kot149
-    - name: ssbb
-      url-base: https://github.com/ssbb
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -26,8 +24,5 @@ manifest:
     - name: zmk-dongle-display
       remote: englmaxi
       revision: main
-    - name: zmk-listeners
-      remote: ssbb
-      revision: v1
   self:
     path: config
