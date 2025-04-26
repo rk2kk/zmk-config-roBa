@@ -1,6 +1,10 @@
 #include "roBa.dtsi"
 #include "roBa_trackball.dtsi"
 
+&default_layout {
+    transform = <&default_transform>;
+};
+
 / {
     chosen {
         zmk,kscan = &mock_kscan;
