@@ -1,6 +1,11 @@
-config SHIELD_ROBA_DONGLE
-    def_bool $(shields_list_contains,roBa_dongle)
+config SHIELD_ROBA_DONGLE_DISPLAY
+    def_bool $(shields_list_contains,roBa_dongle_display)
 
+config SHIELD_ROBA_DONGLE_XIAO
+    def_bool $(shields_list_contains,roBa_dongle_xiao)
+
+config SHIELD_ROBA_DONGLE_RAYTAC
+    def_bool $(shields_list_contains,roBa_dongle_raytac)
 
  config SHIELD_ROBA_L_CENTRAL
     def_bool $(shields_list_contains,roBa_L_central)   

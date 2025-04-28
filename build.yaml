@@ -22,8 +22,17 @@ include:
   - board: seeeduino_xiao_ble
     shield: roBa_dongle dongle_display
     snippet: studio-rpc-usb-uart
-    artifact-name: zmk_dongle
+    artifact-name: zmk_dongle_xiao
 
+  - board: seeeduino_xiao_ble
+    shield: roBa_dongle_xiao 
+    snippet: studio-rpc-usb-uart
+    artifact-name: zmk_dongle_xiao
+
+  - board: raytac_mdbt50q_rx
+    shield: roBa_dongle_raytac
+    snippet: studio-rpc-usb-uart
+    artifact-name: zmk_dongle_raytac
 
   - board: seeeduino_xiao_ble
     shield: roBa_R rgbled_adapter
