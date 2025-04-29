@@ -42,12 +42,14 @@ include:
     shield: roBa_L_central rgbled_adapter
     snippet: studio-rpc-usb-uart
     artifact-name: roBa_L_central
-
-
+    
   - board: seeeduino_xiao_ble
     shield: roBa_L_peripheral rgbled_adapter
     artifact-name: roBa_L_peripheral
 
  # reset   
   - board: seeeduino_xiao_ble
+    shield: settings_reset
+
+  - board: raytac_mdbt50q_rx
     shield: settings_reset

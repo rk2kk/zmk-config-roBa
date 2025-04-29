@@ -42,3 +42,5 @@
 &trackball_listener {
     status = "okay";  
     };
+
+&xiao_serial { status = "disabled"; };
