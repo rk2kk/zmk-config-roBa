@@ -10,8 +10,13 @@ manifest:
       url-base: https://github.com/englmaxi
     - name: kot149
       url-base: https://github.com/kot149
+      #dongle
     - name: rschenk
       url-base: https://github.com/rschenk
+    - name: venator
+      url-base: https://github.com/venator/
+    - name: rk2kk
+      url-base: https://github.com/rk2kk
 
       
   projects:
@@ -29,7 +34,7 @@ manifest:
       remote: englmaxi
       revision: main
     - name: zmk-component-raytac-dongle
-      remote: rschenk
+      remote: venator
       revision: main
   self:
     path: config
