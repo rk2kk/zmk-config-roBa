@@ -9,6 +9,7 @@
 / {
     chosen {
         zmk,kscan = &mock_kscan;
+        zmk,physical-layout = &default_layout;
     };
 
     mock_kscan: mock_kscan_0 {
