@@ -12,8 +12,7 @@ manifest:
       url-base: https://github.com/kot149
     - name: rschenk
       url-base: https://github.com/rschenk
-    - name: rk2kk
-      url-base: https://github.com/rk2kk
+
       
   projects:
     - name: zmk
@@ -30,7 +29,7 @@ manifest:
       remote: englmaxi
       revision: main
     - name: zmk-component-raytac-dongle
-      remote: rk2kk
+      remote: rschenk
       revision: main
   self:
     path: config
