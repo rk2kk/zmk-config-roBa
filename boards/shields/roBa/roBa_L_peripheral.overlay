@@ -1,5 +1,11 @@
 #include "roBa.dtsi"
 
+/ {
+  chosen {
+    zmk,kscan = &kscan0;
+  };
+};
+
 &kscan0 {
   compatible = "zmk,kscan-gpio-matrix";
      row-gpios
