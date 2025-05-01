@@ -1,10 +1,10 @@
 Choose a pattern below
 1. zmk_dongle-xiao┳roBa-L_peripheral
-                  ┗roBa_R_peripheral
+                  ┗roBa_R_peripheral  
 2. zmk_dongle_raytac┳roBa-L_peripheral
-                  　┗roBa_R_peripheral
+                  　┗roBa_R_peripheral  
 3. zmk_dongle_display┳roBa-L_peripheral
-                  　　┗roBa_R_periphera
+                  　　┗roBa_R_periphera  
 4. roBa_L_central━roBa_L_peripheral
 
 
