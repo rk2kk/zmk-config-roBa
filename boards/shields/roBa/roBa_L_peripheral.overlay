@@ -1,7 +1,9 @@
 #include "roBa.dtsi"
 
 / {
-  &kscan = <&kscan0>;
+    chosen {
+        &kscan = <&kscan0>;
+    };
 };
 
 &kscan0 {
