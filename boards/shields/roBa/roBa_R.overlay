@@ -3,7 +3,7 @@
 
 / {
     chosen {
-        &kscan = <&kscan0>;
+        zmk,kscan = &kscan0;
     };
 };
 
