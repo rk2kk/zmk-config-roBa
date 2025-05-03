@@ -17,8 +17,9 @@
         columns = <0>;
         rows = <0>;
         events = <0>;
-    };　
-　　zephyr_udc0: usbd {
+    };
+    
+    zephyr_udc0: usbd {
       status = "okay";
       };
 };
