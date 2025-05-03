@@ -2,9 +2,9 @@
 #include "roBa_trackball.dtsi"
 
 / {
-  chosen {
-    zmk,kscan = &kscan0;
-  };
+    chosen {
+        zmk,kscan = &kscan0;
+    };
 };
 
 &default_transform {
