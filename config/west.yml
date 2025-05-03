@@ -34,7 +34,7 @@ manifest:
       remote: englmaxi
       revision: main
     - name: zmk-component-raytac-dongle
-      remote: venator
+      remote: rk2kk
       revision: main
   self:
     path: config
