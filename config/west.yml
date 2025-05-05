@@ -25,8 +25,8 @@ manifest:
       revision: main
       import: app/west.yml
     - name: zmk-pmw3610-driver
-      remote: badjeff
-      revision: main
+      remote: kot149
+      revision: feature/scroll-acceleration
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: main
