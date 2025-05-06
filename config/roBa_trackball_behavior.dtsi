@@ -1,4 +1,18 @@
 #include <input/processors.dtsi>
+#define DEFAULT 0
+#define NUMPAD_AND_ARROWS 1
+#define FUNCTIONS_AND_SYMBOLS 2
+#define MISC 3
+#define ALT_TAB 4
+#define CTRL_TAB 5
+#define CTRL_ALT_TAB_TB 6
+#define ALT_TAB_TB 7
+#define CTRL_TAB_TB 8
+#define MOUSE 9
+#define MEDIA 10
+#define EXTRA_FINCTIONS 11
+#define CONFIGURATION 12
+
 / {
     /omit-if-no-ref/ zip_temp_layer: zip_temp_layer {
         compatible = "zmk,input-processor-temp-layer";
