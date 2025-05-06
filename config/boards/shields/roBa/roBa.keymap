@@ -244,7 +244,7 @@
         MISC {
             bindings = <
 &to_kp 5 TAB          &kp LC(LG(LEFT))        &kp LG(TAB)       &kp LG(LC(RIGHT))        &kp F4                                                             &kp F4      &trans                    &trans                 &trans             &to_kp 5 TAB
-&to_kp 6 TAB          &kp LG(LS(LEFT_ARROW))  &kp LG(UP_ARROW)  &kp LG(LS(RIGHT_ARROW))  &kp F5            &trans               &kp C_VOLUME_UP             &kp F5      &kp_exit_AML LC(PAGE_UP)  &kp UP_ARROW           &kp LC(PAGE_DOWN)  &to_kp 6 TAB
+&to_kp 6 TAB          &kp LG(LS(LEFT_ARROW))  &kp LG(UP_ARROW)  &kp LG(LS(RIGHT_ARROW))  &kp F5            &trans               &kp C_VOLUME_UP             &kp F5      &kp LC(PAGE_UP)  &kp UP_ARROW           &kp LC(PAGE_DOWN)  &to_kp 6 TAB
 &kp LA(LC(LG(DOWN)))  &kp LG(LEFT_ARROW)      &kp LG(DOWN)      &kp LG(RIGHT_ARROW)      &trans            &trans               &kp C_VOLUME_DOWN           &kp K_MUTE  &kp LA(LEFT)              &kp DOWN               &kp LA(RIGHT)      &trans
 &trans                &trans                  &trans            &trans                   &trans            &trans               &kp DELETE                  &trans                                                                          &trans
             >;
