@@ -212,6 +212,21 @@
                 bindings = <&kp C_VOLUME_DOWN>, <&kp C_VOLUME_UP>;
             };
 
+            td_bt_clear: td_bt_clear {
+                compatible = "zmk,behavior-tap-dance";
+                #binding-cells = <0>;
+                bindings = <&none>, <&none>, <&bt BT_CLR>;
+
+                tapping-term-ms = <250>;
+            };
+
+            td_bt_clear_all: td_bt_clear_all {
+                compatible = "zmk,behavior-tap-dance";
+                #binding-cells = <0>;
+                tapping-term-ms = <250>;
+                bindings = <&none>, <&none>, <&bt BT_CLR_ALL>;
+            };
+
     };
 
     keymap {
