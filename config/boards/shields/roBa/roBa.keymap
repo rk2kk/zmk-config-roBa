@@ -200,11 +200,18 @@
 
 
             scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-            tap-ms = <20>;
+                compatible = "zmk,behavior-sensor-rotate";
+                #sensor-binding-cells = <0>;
+                bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+                tap-ms = <20>;
             };
+
+            encoder_volume: encoder_volume {
+                compatible = "zmk,behavior-sensor-rotate";
+                #sensor-binding-cells = <0>;
+                bindings = <&kp C_VOLUME_DOWN>, <&kp C_VOLUME_UP>;
+            };
+
     };
 
     keymap {
