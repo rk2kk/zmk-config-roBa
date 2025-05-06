@@ -207,7 +207,7 @@
 &kp MINUS                   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp LS(SEMI)                               &kp MINUS        &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp LS(SEMI)
 &kp SLASH                   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp LS(SQT)   &kp KP_NUMLOCK      &trans   &kp SLASH        &kp KP_NUMBER_4  &kp KP_N5        &kp KP_NUMBER_6  &kp LS(SQT)
 &mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD    &kp LS(MINUS)       &trans   &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD
-&trans                      &trans           &trans           &trans           &trans        &trans              &kp del  &trans                                                              &kp LEFT_SHIFT
+&trans                      &trans           &trans           &trans           &trans        &trans              &kp DEL  &trans                                                              &kp LEFT_SHIFT
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PLUS) LC(MINUS)>;
