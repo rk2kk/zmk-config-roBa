@@ -1,5 +1,5 @@
 #include <input/processors.dtsi>
-#include  "./boards/shields/roBa/roBa_trackball.dtsi"
+#include  "roBa_trackball.dtsi"
 
 #define DEFAULT 0
 #define NUMPAD_AND_ARROWS 1
