@@ -7,9 +7,6 @@
 #include "roBa_trackball_behavior.dtsi"
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
-#define MOUSE 4
-#define SCROLL 5
-#define NUM 6
 
 #define DEFAULT 0
 #define NUMPAD_AND_ARROWS 1
