@@ -389,7 +389,7 @@
             bindings = <
 &bt BT_SEL 1  &bt BT_SEL 2          &bt BT_SEL 3  &bt BT_SEL 4     &trans                      &trans  &trans    &trans    &trans    &bt BT_SEL 0
 &trans        &kp LA(LEFT_BRACKET)  &trans        &kp LS(LA(TAB))  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&trans        &kp NUMBER_1          &kp NUMBER_2  &kp NUMBER_3     &trans  &trans      &trans  &trans  &trans    &mkp MB4  &mkp MB5  &bt BT_CLR
+&trans        &kp NUMBER_1          &kp NUMBER_2  &kp NUMBER_3     &trans  &trans      &trans  &trans  &trans    &mkp MB4  &mkp MB5  &td_bt_clear
 &trans        &trans                &trans        &trans           &trans  &trans      &trans  &trans                                &td_bt_clear_all
             >;
         };
