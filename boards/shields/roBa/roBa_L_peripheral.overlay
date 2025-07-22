@@ -4,17 +4,8 @@
 / {
     chosen {
         zmk,kscan = &kscan0;
-    };
-
-    peripheral_hog: peripheral_hog {
-        compatible = "zmk,hog";
-    };
-
-    trackball_listener: trackball_listener {
-        compatible = "zmk,trackball-listener";
-        report-target = <&peripheral_hog>;
-    };
-};
+    }
+;};
 
 &kscan0 {
     compatible = "zmk,kscan-gpio-matrix";
