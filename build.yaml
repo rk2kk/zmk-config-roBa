@@ -32,7 +32,7 @@ include:
   - board: raytac_mdbt50q_cx_40
     shield: roBa_dongle_raytac
     snippet: studio-rpc-usb-uart
-    artifact-name: zmk_dongle_raytac
+    # artifact-name: zmk_dongle_raytac
 
   - board: seeeduino_xiao_ble
     shield: roBa_R rgbled_adapter
