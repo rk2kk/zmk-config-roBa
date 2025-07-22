@@ -98,13 +98,14 @@
         sensors = <&left_encoder &right_encoder>;
         triggers-per-rotation = <24>;
     };
+};
 
-    &spi0 {
+&spi0 {
     status = "disabled";
 
-    trackball: trackball@0 {
+    trackball: trackball@0 {j
         status = "disabled";
         reg = <0>;
     };
-    };
 };
+
