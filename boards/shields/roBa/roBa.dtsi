@@ -79,6 +79,12 @@
         diode-direction = "col2row";
     };
 
+    trackball_listener: trackball_listener {
+        compatible = "zmk,input-listener";
+        status = "disabled";
+    };
+
+
     left_encoder: encoder_left {
         status = "disabled";
     };
@@ -91,5 +97,14 @@
         compatible = "zmk,keymap-sensors";
         sensors = <&left_encoder &right_encoder>;
         triggers-per-rotation = <24>;
+    };
+
+    &spi0 {
+    status = "disabled";
+
+    trackball: trackball@0 {
+        status = "disabled";
+        reg = <0>;
+    };
     };
 };
