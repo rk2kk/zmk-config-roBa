@@ -12,8 +12,8 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 
-#include "roBa_trackball_behavior.dtsi"
-#include "roBa_layer.dtsi"
+#include "../roBa_trackball_behavior.dtsi"
+#include "../roBa_layer.dtsi"
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 
