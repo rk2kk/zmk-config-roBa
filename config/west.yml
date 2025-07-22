@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: badjeff
       url-base: https://github.com/badjeff
+    - name: ssbb
+      url-base: https://github.com/ssbb
     - name: caksoylar 
       url-base: https://github.com/caksoylar  
     - name: englmaxi
@@ -20,16 +22,36 @@ manifest:
 
       
   projects:
+    # https://github.com/zmkfirmware/zmk
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
+    # https://github.com/badjeff/zmk-pmw3610-driver   
     - name: zmk-pmw3610-driver
-      remote: kot149
-      revision: feature/scroll-acceleration
+      remote: badjeff
+      revision: main
+      path: modules/zmk-pmw3610-driver-badjeff
+    # https://github.com/ssbb/zmk-listeners
+    - name: zmk-listeners
+      remote: ssbb
+      revision: v1
+      path: modules/zmk-listeners
+    # https://github.com/caksoylar/zmk-rgbled-widget
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: main
+      path: modules/zmk-rgbled-widget
+    # https://github.com/kot149/zmk-mouse-gesture
+    - name: zmk-mouse-gesture
+      remote: kot149
+      revision: v1
+      path: modules/zmk-mouse-gesture
+    # https://github.com/kot149/zmk-layout-shift
+    - name: zmk-layout-shift
+      remote: kot149
+      revision: v1
+      path: modules/zmk-layout-shift
     - name: zmk-dongle-display
       remote: englmaxi
       revision: main
