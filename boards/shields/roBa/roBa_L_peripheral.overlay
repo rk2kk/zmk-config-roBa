@@ -24,6 +24,11 @@
         ;
 };
 
+&trackball_listener{
+        compatible = "zmk,trackball-listener";
+        report-target = <&peripheral_hog>;
+};
+
 &left_encoder {
         compatible = "alps,ec11";
         a-gpios = <&xiao_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
