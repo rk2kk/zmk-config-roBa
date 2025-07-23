@@ -62,7 +62,8 @@ manifest:
       remote: venator
       revision: main
     - name: zmk-input-processor-keybind
-      remote: zettaface
+      # remote: zettaface
+      remote: rk2kk
       # remote: te9no
       revision: main
   self:
