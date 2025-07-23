@@ -16,10 +16,11 @@ manifest:
     - name: rschenk
       url-base: https://github.com/rschenk
     - name: venator
-      url-base: https://github.com/venator/
+      url-base: https://github.com/venator
     - name: rk2kk
       url-base: https://github.com/rk2kk
-
+    - name: te9no
+      url-base: https://github.com/te9no
       
   projects:
     # https://github.com/zmkfirmware/zmk
@@ -57,6 +58,9 @@ manifest:
       revision: main
     - name: zmk-component-raytac-dongle
       remote: venator
+      revision: main
+    - name: zmk-input-processor-keybind
+      remote: te9no
       revision: main
   self:
     path: config
