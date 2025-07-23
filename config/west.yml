@@ -63,9 +63,9 @@ manifest:
       revision: main
     - name: zmk-input-processor-keybind
       # remote: zettaface
-      remote: rk2kk
-      # remote: te9no
+      # remote: rk2kk
+      remote: te9no
       revision: main
-      path: modules/zmk-input-processor-keybind
+      path: zmk-input-processor-keybind
   self:
     path: config
