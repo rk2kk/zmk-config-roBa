@@ -66,5 +66,6 @@ manifest:
       remote: rk2kk
       # remote: te9no
       revision: main
+      path: modules/zmk-input-processor-keybind
   self:
     path: config
