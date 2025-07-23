@@ -18,7 +18,7 @@
 
 #include <mouse-gesture.dtsi>
 
-#include <input/processors/zmk-input-processor-keybind.dtsi>
+#include <input/processors/zmk-input-processor-keybind.h>
 
 
 #define DEFAULT 0
