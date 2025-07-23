@@ -18,19 +18,18 @@
 
 #include <mouse-gesture.dtsi>
 
+#include <input/processors/zmk-input-processor-keybind.dtsi>
+
+
 #define DEFAULT 0
-#define NUMPAD_AND_ARROWS 1
-#define FUNCTIONS_AND_SYMBOLS 2
-#define MISC 3
-#define ALT_TAB 4
-#define CTRL_TAB 5
-#define CTRL_ALT_TAB_TB 6
-#define ALT_TAB_TB 7
-#define CTRL_TAB_TB 8
-#define MOUSE 9
-#define MEDIA 10
-#define EXTRA_FINCTIONS 11
-#define CONFIGURATION 12
+#define FUNCTION_NUM 1
+#define NUM 2
+#define MOUSE 3
+#define ARROW 4
+#define SCROLL 5
+#define VOLUME 6
+#define ALTTAB 7
+#define CTRLTAB 8
 
 
 
@@ -133,10 +132,49 @@
     // };
 };
 
+&zip_keybind_keys {
+    track_remainders;
+
+    arrows {
+        layers = <YAJIRUSHI>, <NUM>;
+        bindings =
+            <&kp RIGHT_ARROW>,
+            <&kp LEFT_ARROW>,
+            <&kp UP_ARROW>,
+            <&kp DOWN_ARROW>;
+
+        tick = <30>;
+        wait-ms = <5>;
+        tap-ms = <5>;
+        // mode = <1>
+        // threshold = <10>
+        // max_threshold = <200>
+        // max_pending_activations = <10> 
+    };
+
+    volume {
+        bindings = <&none>, <&none>, <&kp C_VOLUME_UP>, <&kp C_VOLUME_DOWN>;
+    };
+
+    alt_tab {
+        bindings =
+            <&tab_kt_on_to LEFT_ALT ALTTAB>,
+            <&shift_tab_kt_on_to LEFT_ALT ALTTAB>,
+            <&shift_tab_kt_on_to LCTRL CTRLTAB>,
+            <&tab_kt_on_to LCTRL CTRLTAB>;
+        tick = <80>;
+    };
+
+    ctrl_tab {
+        bindings = <&kp LC(TAB)>, <&kp LC(LS(TAB))>, <&none>, <&none>;
+        tick = <80>;
+    };
+};
+
 &trackball_listener {
     compatible = "zmk,input-listener";
 
-    input-processors = <&zip_mouse_gesture>;
+    input-processors = <&zip_mouse_gesture　&input-processor-keybind>;
 
     auto-mouse-layer {
         layers = <DEFAULT MOUSE>;
@@ -150,7 +188,26 @@
             <&zip_xy_scaler 2 3>,
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
             <&zip_xy_to_scroll_mapper>;
+        process-next;
+    };
 
+ arrows {
+        layers = <YAJIRUSHI>, <NUM>;
+        process-next;
+    };
+
+volume {
+        layers = <VOLUME>;
+         process-next;
+    };       
+
+ alt_tab {
+        layers = <ALTTAB>;
+        process-next;
+    };
+
+ctrl_tab {
+        layers = <CTRLTAB>;
         process-next;
     };
 
@@ -759,29 +816,63 @@
     keymap {
         compatible = "zmk,keymap";
 
-   DEFAULT {
+        home_layer {
             bindings = <
-&mt LWIN  Q       &kp W             &kp E         &kp R                               &lt 12 T                                                                                     &lt 12 Y                 &kp U  &kp I      &kp O    &lt 11 P
-&mt LCTRL A       &kp S             &kp D         &kp F                               &kp G                    &kp LEFT_SHIFT                          &lt 6 MINUS                 &kp H                    &kp J  &kp K      &kp L    &lt 12 MINUS //layer 5
-&mt LEFT_SHIFT Z  &mt LC(X) X       &mt LC(C) C   &mt LC(V) V                         &kp B                    &mt LCTRL ESCAPE                        &kp DEL                     &kp N                    &kp M  &kp COMMA  &kp DOT  &lt 4 SLASH
-&kp LCTRL         &kp LEFT_WIN      &kp LEFT_ALT  &lt_exit_alttab 1 INTERNATIONAL_5   &lt_exit_alttab 3 SPACE  &lt_exit_alttab 4 INTERNATIONAL_4       &lt_exit_alttab 4 BACKSPACE &lt_exit_alttab 2 ENTER                            &kp RIGHT_SHIFT
+&mt ESCAPE Q      &kp W         &kp E         &kp R                  &kp T                                                                             &kp Y        &kp U  &kp I      &kp O    &kp P
+&kp A             &kp S         &kp D         &kp F                  &kp G        &mkp MB3                                     &lt_to_layer_0 6 MINUS  &kp H        &kp J  &kp K      &kp L    &lt_to_layer_0 5 SEMICOLON
+&mt LEFT_SHIFT Z  &mt LC(X) X   &mt LC(C) C   &mt LC(V) V            &kp B        &lt_to_layer_0_disable_alt_ctrl 7 EQUAL      &kp DEL                 &kp N        &kp M  &kp COMMA  &kp DOT  &lt 4 SLASH
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 5 INTERNATIONAL_5  &lt 4 SPACE  &lt 2 INTERNATIONAL_4                        &kp BACKSPACE           &lt 1 ENTER                             &kp RIGHT_SHIFT
             >;
-        
+
             sensor-bindings = <&scroll_up_down>;
         };
 
-        NUMPAD_AND_ARROWS {
+        FUNCTION_NUM {
             bindings = <
-&kp MINUS                   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp LS(SEMI)                               &kp MINUS        &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp LS(SEMI)
-&kp SLASH                   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp LS(SQT)   &kp KP_NUMLOCK      &trans   &kp SLASH        &kp KP_NUMBER_4  &kp KP_N5        &kp KP_NUMBER_6  &kp LS(SQT)
-&mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD    &kp LS(MINUS)       &trans   &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD
-&trans                      &trans           &trans           &trans           &trans        &trans              &kp DEL  &trans                                                              &kp LEFT_SHIFT
+&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5                      &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp N0
+&kp MINUS     &kp EQUAL     &kp INT3      &trans        &trans  &trans      &trans  &trans        &trans        &trans        &trans        &trans
+&trans        &trans        &trans        &trans        &trans  &trans      &trans  &trans        &trans        &trans        &trans        &trans
+&trans        &trans        &trans        &trans        &trans  &trans      &trans  &trans                                                  &trans
             >;
-
-            sensor-bindings = <&inc_dec_kp LC(PLUS) LC(MINUS)>;
         };
 
-        FUNCTIONS_AND_SYMBOLS {
+        NUM {
+            bindings = <
+&kp MINUS                   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp LS(SEMI)                              &kp MINUS        &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp LS(SEMI)
+&kp SLASH                   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp LS(SQT)   &kp KP_NUMLOCK      &trans  &kp SLASH        &kp KP_NUMBER_4  &kp KP_N5        &kp KP_NUMBER_6  &kp LS(SQT)
+&mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD    &kp LS(MINUS)       &trans  &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD
+&trans                      &trans           &trans           &trans           &trans        &trans              &trans  &trans                                                              &kp LEFT_SHIFT
+            >;
+        };
+
+        MOUSE {
+            bindings = <
+&trans          &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
+&trans          &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
+&kp LEFT_SHIFT  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &mkp MB4  &mkp MB5  &trans
+&trans          &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
+            >;
+        };
+
+        ARROW {
+            bindings = <
+&kp ESCAPE  &kp LC(LS(TAB))  &kp UP_ARROW    &kp LC(TAB)      &trans                         &kp LC(LG(LEFT_ARROW))  &kp LG(UP_ARROW)    &kp LC(LG(RIGHT_ARROW))  &kp LEFT_BRACKET     &kp RIGHT_BRACKET
+&kp HOME    &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END    &trans      &trans  &kp LG(LEFT_ARROW)      &kp LG(DOWN_ARROW)  &kp LG(RIGHT_ARROW)      &kp SQT              &kp NUHS
+&kp LC(Z)   &kp LC(X)        &kp LC(C)       &kp LC(V)        &kp LC(B)  &trans      &trans  &kp LS(LG(LEFT_ARROW))  &none               &kp LS(LG(RIGHT_ARROW))  &kp LS(RIGHT_ARROW)  &kp INT1
+&trans      &trans           &trans          &trans           &trans     &trans      &trans  &trans                                                                                    &kp RIGHT_SHIFT
+            >;
+        };
+
+        SCROLL {
+            bindings = <
+&bt BT_SEL 1  &bt BT_SEL 2          &bt BT_SEL 3  &bt BT_SEL 4     &trans                      &trans  &trans    &trans    &trans    &bt BT_SEL 0
+&trans        &kp LA(LEFT_BRACKET)  &trans        &kp LS(LA(TAB))  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
+&trans        &kp NUMBER_1          &kp NUMBER_2  &kp NUMBER_3     &trans  &trans      &trans  &trans  &trans    &mkp MB4  &mkp MB5  &td_bt_clear
+&trans        &trans                &trans        &trans           &trans  &trans      &trans  &trans                                &td_bt_clear_all
+            >;
+        };
+
+        Function {
             bindings = <
 &kp F1     &kp F2     &kp F3     &kp F4     &kp F5                         &kp F6   &kp F7   &kp F8  &kp F9  &kp F10
 &kp LC(A)  &kp LC(S)  &kp LC(D)  &kp LC(F)  &kp LC(G)  &trans      &trans  &kp F11  &kp F12  &trans  &trans  &trans
@@ -790,61 +881,25 @@
             >;
         };
 
-        MISC {
+        FUNCTION_NUM_1 {
             bindings = <
-&to_kp 5 TAB          &kp LC(LG(LEFT))        &kp LG(TAB)       &kp LG(LC(RIGHT))        &kp F4                                                             &kp F4      &trans                    &trans                 &trans             &to_kp 5 TAB
-&to_kp 6 TAB          &kp LG(LS(LEFT_ARROW))  &kp LG(UP_ARROW)  &kp LG(LS(RIGHT_ARROW))  &kp F5            &trans               &kp C_VOLUME_UP             &kp F5      &kp LC(PAGE_UP)  &kp UP_ARROW           &kp LC(PAGE_DOWN)  &to_kp 6 TAB
-&kp LA(LC(LG(DOWN)))  &kp LG(LEFT_ARROW)      &kp LG(DOWN)      &kp LG(RIGHT_ARROW)      &trans            &trans               &kp C_VOLUME_DOWN           &kp K_MUTE  &kp LA(LEFT)              &kp DOWN               &kp LA(RIGHT)      &trans
-&trans                &trans                  &trans            &trans                   &trans            &trans               &kp DELETE                  &trans                                                                          &trans
-            >;
-
-            sensor-bindings = <&encoder_volume>;
-        };
-
-        ALT_TAB {
-            bindings = <
-&kp TAB      &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &kp TAB
-&kp LS(TAB)  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &kp LS(TAB)
-&trans       &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans       &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+&kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp LS(N5)                      &kp LS(NUMBER_6)  &kp LS(NUMBER_7)  &kp LS(NUMBER_8)  &kp LS(NUMBER_9)  &kp LS(N0)
+&kp LS(MINUS)     &kp LS(EQUAL)     &kp LS(INT3)      &trans            &trans      &trans      &trans  &trans            &trans            &trans            &trans            &trans
+&trans            &trans            &trans            &trans            &trans      &trans      &trans  &trans            &trans            &trans            &trans            &kp LS(INTERNATIONAL_1)
+&trans            &trans            &trans            &trans            &trans      &trans      &trans  &trans                                                                  &trans
             >;
         };
 
-        CTRL_TAB {
+        alt_tab {
             bindings = <
-&kp LS(TAB)  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &kp LS(TAB)
-&kp TAB      &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &kp TAB
-&kp LS(TAB)  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &kp LS(TAB)
-&trans       &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+&kp TAB  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &kp TAB
+&trans   &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &kp LA(TAB)
+&trans   &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans   &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
         };
-
-        CTRL_ALT_TAB_TB {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
-            >;
-        };
-
-        ALT_TAB_TB {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
-            >;
-        };
-
-        CTRL_TAB_TB {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
-            >;
-        };
+<<<<<<< HEAD
+=======
 
         MOUSE {
             bindings = <
@@ -873,6 +928,8 @@
 &none         &none         &none         &none         &none         &none       &none         &none                                                     &td_bt_clear_all
             >;
         };
+>>>>>>> f68d0d2f387c4aa6323c244872527c1b10cdcbff
     };
+};
 
 };
