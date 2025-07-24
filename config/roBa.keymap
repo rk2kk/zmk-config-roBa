@@ -152,7 +152,7 @@
 
      arrows {
         input-processors = <&zip_arrows>;
-        layers = <ARROW>, <NUM>, <ALTTAB>;;
+        layers = <ARROW>, <NUM>, <ALTTAB>;
         process-next;
     };
 
