@@ -134,7 +134,7 @@
     track_remainders;
 
     arrows {
-        layers = <YAJIRUSHI>, <NUM>;
+        layers = <ARROW>, <NUM>;
         bindings =
             <&kp RIGHT_ARROW>,
             <&kp LEFT_ARROW>,
@@ -172,7 +172,7 @@
 &trackball_listener {
     compatible = "zmk,input-listener";
 
-    input-processors = <&zip_mouse_gesture　&input-processor-keybind>;
+    input-processors = <&zip_mouse_gesture &input-processor-keybind>;
 
     auto-mouse-layer {
         layers = <DEFAULT MOUSE>;
@@ -190,7 +190,7 @@
     };
 
  arrows {
-        layers = <YAJIRUSHI>, <NUM>;
+        layers = <ARROW>, <NUM>;
         process-next;
     };
 
