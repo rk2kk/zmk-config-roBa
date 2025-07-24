@@ -133,7 +133,7 @@
 &zip_keybind_keys {
     track_remainders;
 
-    arrows {
+    zip_arrows {
         layers = <ARROW>, <NUM>;
         bindings =
             <&kp RIGHT_ARROW>,
@@ -150,11 +150,11 @@
         // max_pending_activations = <10> 
     };
 
-    volume {
+    zip_volume {
         bindings = <&none>, <&none>, <&kp C_VOLUME_UP>, <&kp C_VOLUME_DOWN>;
     };
 
-    alt_tab {
+    zip_alt_tab {
         bindings =
             <&tab_kt_on_to LEFT_ALT ALTTAB>,
             <&shift_tab_kt_on_to LEFT_ALT ALTTAB>,
@@ -163,7 +163,7 @@
         tick = <80>;
     };
 
-    ctrl_tab {
+    zip_ctrl_tab {
         bindings = <&kp LC(TAB)>, <&kp LC(LS(TAB))>, <&none>, <&none>;
         tick = <80>;
     };
@@ -189,25 +189,25 @@
     };
 
  arrows {
-        input-processors = <&input-processor-keybind>;
+        input-processors = <&azip_rrows>;
         layers = <ARROW>, <NUM>;
         process-next;
     };
 
 volume {
-        input-processors = <&input-processor-keybind>;
+        input-processors = <&zip_input-processor-keybind>;
         layers = <VOLUME>;
          process-next;
     };       
 
  alt_tab {
-        input-processors = <&input-processor-keybind>;
+        input-processors = <&zip_input-processor-keybind>;
         layers = <ALTTAB>;
         process-next;
     };
 
 ctrl_tab {
-        input-processors = <&input-processor-keybind>;
+        input-processors = <&zip_input-processor-keybind>;
         layers = <CTRLTAB>;
         process-next;
     };
