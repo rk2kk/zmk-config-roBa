@@ -450,7 +450,7 @@ ctrl_tab {
                 <&macro_release>,
                 <&macro_param_1to1 &mo MACRO_PLACEHOLDER>,
                 <&macro_tap>,
-                <&tog_off ALT_TAB &tog_off CTRL_TAB>;
+                <&tog_off ALTTAB &tog_off CTRLTAB>;
         };
 
         /omit-if-no-ref/
