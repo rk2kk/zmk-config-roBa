@@ -852,7 +852,9 @@ ctrl_tab {
 &trans          &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
 &kp LEFT_SHIFT  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &mkp MB4  &mkp MB5  &mouse_gesture
 &trans          &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &tran
+>;
         };
+
 
         ARROW {
             bindings = <
