@@ -390,8 +390,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -533,46 +533,15 @@ combos:
   k: TAB
 - p: [12, 13]
   k: Sft+TAB
-- p: [11, 10]
-  k: LANGUAGE 1
+- p: [10, 11]
+  k: '&td_ZenkakuHankaku'
 - p: [20, 21]
   k: '"'
 - p: [24, 25]
   k: Sft+-
 - p: [0, 1]
   k: ESCAPE
-- p: [22, 23]
-  k: LANGUAGE 2
-- p: [10, 11]
-  k: Ctl+A
-  l: [home]
-- p: [1, 2]
-  k: Ctl+W
-  l: [home]
-- p: [2, 3]
-  k: Ctl+R
-  l: [home]
-- p: [3, 4]
-  k: Ctl+T
-  l: [home]
-- p: [23, 22]
-  k: Ctl+Z
-  l: [home]
-- p: [23, 24]
-  k: Ctl+X
-  l: [home]
-- p: [24, 25]
-  k: Ctl+C
-  l: [home]
-- p: [25, 26]
-  k: Ctl+V
-  l: [home]
-- p: [29, 30]
-  k: Ctl+N
-  l: [home]
-- p: [11, 12]
-  k: Ctl+S
-  l: [home]
+- p: [38, 37]
+  k: alt_tab
 - p: [13, 14]
-  k: Ctl+F
-  l: [home]
+  k: '4'
