@@ -180,7 +180,7 @@
     };
 
     scroller {
-        layers = <FUNCTIONS_AND_SYMBOLS MISC EXTRA_FINCTIONS MEDIA>;
+        layers = <SCROLL>;
         input-processors =
             <&zip_xy_scaler 2 3>,
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
