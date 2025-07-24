@@ -1,0 +1,3 @@
+[submodule "modules/zmk-input-processor-keybind"]
+	path = modules/zmk-input-processor-keybind
+	url = https://github.com/te9no/zmk-input-processor-keybind
