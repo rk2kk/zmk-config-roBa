@@ -898,9 +898,7 @@ ctrl_tab {
 &trans   &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans   &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
-        };
-<<<<<<< HEAD
-=======
+       };
 
         MOUSE {
             bindings = <
@@ -929,7 +927,6 @@ ctrl_tab {
 &none         &none         &none         &none         &none         &none       &none         &none                                                     &td_bt_clear_all
             >;
         };
->>>>>>> f68d0d2f387c4aa6323c244872527c1b10cdcbff
     };
 };
 
