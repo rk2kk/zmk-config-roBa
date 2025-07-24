@@ -165,7 +165,8 @@
     alt_tab {
         input-processors = <&zip_alt_tab>;
         layers = <ALTTAB>;
-        process-next;    
+        process-next; 
+    };   
 
     ctrl_tab {
         input-processors = <&zip_ctrl_tab>;
