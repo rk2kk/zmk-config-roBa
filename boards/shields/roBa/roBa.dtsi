@@ -86,7 +86,6 @@
 
     zip_keybind_keys: zip_keybind_keys {
         compatible = "zmk,input-processor-keybind";
-        #binding-cells = <0>;
     };
 
 
