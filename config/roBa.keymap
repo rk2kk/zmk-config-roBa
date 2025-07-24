@@ -255,7 +255,7 @@
         // };
     };
 
-    combos {
+combos {
         compatible = "zmk,combos";
 
         tab {
@@ -268,9 +268,9 @@
             key-positions = <12 13>;
         };
 
-        zenkaku-hankaku {
-            bindings = <&kp LANGUAGE_1>;
-            key-positions = <11 10>;
+        zenkaku {
+            bindings = <&td_ZenkakuHankaku>;
+            key-positions = <10 11>;
         };
 
         double_quotation {
@@ -288,89 +288,17 @@
             key-positions = <0 1>;
         };
 
-        lang2 {
-            bindings = <&kp LANGUAGE_2>;
-            key-positions = <22 23>;
+        ctrl-tab {
+            bindings = <&mo 8>;
+            key-positions = <38 37>;
         };
 
-         Ctrl_A {
-            bindings = <&kp LC(A)>;
-            key-positions = <10 11>;
-            layers = <0>;
-            require-prior-idle-ms = <400>;
-        };
-
-        Ctrl_W {
-            bindings = <&kp LC(W)>;
-            key-positions = <1 2>;
-            layers = <0>;
-            require-prior-idle-ms = <400>;
-        };
-
-        Ctrl_R {
-            bindings = <&kp LC(R)>;
-            key-positions = <2 3>;
-            layers = <0>;
-            require-prior-idle-ms = <400>;
-        };
-
-        Ctrl_T {
-            bindings = <&kp LC(T)>;
-            key-positions = <3 4>;
-            layers = <0>;
-            require-prior-idle-ms = <400>;
-        };
-
-        Ctrl_Z {
-            bindings = <&kp LC(Z)>;
-            key-positions = <23 22>;
-            layers = <0>;
-            require-prior-idle-ms = <400>;
-        };
-
-        Ctrl_X {
-            bindings = <&kp LC(X)>;
-            key-positions = <23 24>;
-            layers = <0>;
-            require-prior-idle-ms = <400>;
-        };
-
-        Ctrl_C {
-            bindings = <&kp LC(C)>;
-            key-positions = <24 25>;
-            layers = <0>;
-            require-prior-idle-ms = <400>;
-        };
-
-        Ctrl_V {
-            bindings = <&kp LC(V)>;
-            key-positions = <25 26>;
-            layers = <0>;
-            require-prior-idle-ms = <400>;
-        };
-
-        Ctrl_N {
-            bindings = <&kp LC(N)>;
-            key-positions = <29 30>;
-            layers = <0>;
-            require-prior-idle-ms = <400>;
-        };
-
-        Ctrl_S {
-            bindings = <&kp LC(S)>;
-            key-positions = <11 12>;
-            layers = <0>;
-            require-prior-idle-ms = <400>;
-        };
-
-        Ctrl_F {
-            bindings = <&kp LC(F)>;
+        mouse {
+            bindings = <&mo 4>;
             key-positions = <13 14>;
-            layers = <0>;
-            require-prior-idle-ms = <400>;
         };
     };
-
+    
     macros {
          /omit-if-no-ref/
 
