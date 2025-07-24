@@ -61,9 +61,3 @@
     input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_XY_SWAP)>, <&zip_xy_scaler 1 4>;
     };
   };
-
-  /zip_keybind_keys {
-    compatible = "zmk,input-processor-keybind";
-    #input-processor-cells = <0>;
-    bindings = <&some_binding>;
-};
