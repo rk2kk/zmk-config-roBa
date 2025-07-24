@@ -189,7 +189,7 @@
     };
 
  arrows {
-        input-processors = <&azip_rrows>;
+        input-processors = <&zip_arrows>;
         layers = <ARROW>, <NUM>;
         process-next;
     };
