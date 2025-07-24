@@ -195,19 +195,19 @@
     };
 
 volume {
-        input-processors = <&zip_input-processor-keybind>;
+        input-processors = <&zip_volume>;
         layers = <VOLUME>;
          process-next;
     };       
 
  alt_tab {
-        input-processors = <&zip_input-processor-keybind>;
+        input-processors = <&zip_alt_tab>;
         layers = <ALTTAB>;
         process-next;
     };
 
 ctrl_tab {
-        input-processors = <&zip_input-processor-keybind>;
+        input-processors = <&zip_ctrl_tab>;
         layers = <CTRLTAB>;
         process-next;
     };
