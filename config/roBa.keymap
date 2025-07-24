@@ -130,44 +130,6 @@
     // };
 };
 
-&zip_keybind_keys {
-    track_remainders;
-
-    zip_arrows {
-        layers = <ARROW>, <NUM>;
-        bindings =
-            <&kp RIGHT_ARROW>,
-            <&kp LEFT_ARROW>,
-            <&kp UP_ARROW>,
-            <&kp DOWN_ARROW>;
-
-        tick = <30>;
-        wait-ms = <5>;
-        tap-ms = <5>;
-        // mode = <1>
-        // threshold = <10>
-        // max_threshold = <200>
-        // max_pending_activations = <10> 
-    };
-
-    zip_volume {
-        bindings = <&none>, <&none>, <&kp C_VOLUME_UP>, <&kp C_VOLUME_DOWN>;
-    };
-
-    zip_alt_tab {
-        bindings =
-            <&tab_kt_on_to LEFT_ALT ALTTAB>,
-            <&shift_tab_kt_on_to LEFT_ALT ALTTAB>,
-            <&shift_tab_kt_on_to LCTRL CTRLTAB>,
-            <&tab_kt_on_to LCTRL CTRLTAB>;
-        tick = <80>;
-    };
-
-    zip_ctrl_tab {
-        bindings = <&kp LC(TAB)>, <&kp LC(LS(TAB))>, <&none>, <&none>;
-        tick = <80>;
-    };
-};
 
 &trackball_listener {
     compatible = "zmk,input-listener";
@@ -188,25 +150,25 @@
         process-next;
     };
 
- arrows {
+     arrows {
         input-processors = <&zip_arrows>;
         layers = <ARROW>, <NUM>;
         process-next;
     };
 
-volume {
+    volume {
         input-processors = <&zip_volume>;
         layers = <VOLUME>;
          process-next;
     };       
 
- alt_tab {
+    alt_tab {
         input-processors = <&zip_alt_tab>;
         layers = <ALTTAB>;
         process-next;
     };
 
-ctrl_tab {
+    ctrl_tab {
         input-processors = <&zip_ctrl_tab>;
         layers = <CTRLTAB>;
         process-next;
@@ -223,7 +185,57 @@ ctrl_tab {
             codes = <INPUT_REL_HWHEEL>;
             track-remainders;
         };
+
+        zip_arrows: zip_arrows {
+        compatible = "zmk,input-processor-keybind";
+        #input-processor-cells = <0>;
+        track_remainders;
+        bindings = <&kp RIGHT>,
+                   <&kp LEFT>,
+                   <&kp UP>,
+                   <&kp DOWN>;
+        tick = <40>;
+        wait-ms = <0>;
+        tap-ms = <10>;
+        };
+
+        zip_volume: zip_volume {
+        compatible = "zmk,input-processor-keybind";
+        #input-processor-cells = <0>;
+        track_remainders;
+        bindings =  <&none>, <&none>, <&kp C_VOLUME_UP>, <&kp C_VOLUME_DOWN>;
+        tick = <40>;
+        wait-ms = <0>;
+        tap-ms = <10>;
+        };
+
+
+        zip_alt_tab: zip_alt_tab {
+        compatible = "zmk,input-processor-keybind";
+        #input-processor-cells = <0>;
+        track_remainders;
+        bindings =
+            <&tab_kt_on_to LEFT_ALT ALTTAB>,
+            <&shift_tab_kt_on_to LEFT_ALT ALTTAB>,
+            <&shift_tab_kt_on_to LCTRL CTRLTAB>,
+            <&tab_kt_on_to LCTRL CTRLTAB>;
+        tick = <80>;
+        wait-ms = <0>;
+        tap-ms = <10>;
+        };
+         
+        zip_ctrl_tab: zip_ctrl_tab {
+        compatible = "zmk,input-processor-keybind";
+        #input-processor-cells = <0>;
+        track_remainders;
+        bindings = <&kp LC(TAB)>, <&kp LC(LS(TAB))>, <&none>, <&none>;
+        tick = <80>;
+        wait-ms = <0>;
+        tap-ms = <10>;
+        };
+
     };
+
 
     layer_listeners {
        // compatible = "zmk,layer-listeners";
