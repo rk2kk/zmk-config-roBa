@@ -238,15 +238,15 @@
     layer_listeners {
         compatible = "zmk,layer-listeners";
 
-        release_alt {
-        layers = <ALTTAB>;
-           bindings = <&kt_off LEFT_ALT>;
-        };
+         // release_alt {
+         //　layers = <ALTTAB>;
+         //    bindings = <&kt_off LEFT_ALT>;
+         // };
 
-        release_ctrl {
-            layers = <CTRLTAB>;
-            bindings = <&kt_off LCTRL>;
-       };
+         // release_ctrl {
+         //     layers = <CTRLTAB>;
+         //     bindings = <&kt_off LCTRL>;
+         //};
 
         // AML_indicator {
         //     layers = <MOUSE>;
