@@ -248,7 +248,7 @@
 
          release_alt {
             　layers = <ALT_TAB>;
-              bindings = <&kt_on none &kt_off LEFT_ALT>;
+              bindings = <&kt_on &none &kt_off LEFT_ALT>;
          };
 
          // release_ctrl {
