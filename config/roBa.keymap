@@ -248,7 +248,7 @@
 
          release_alt {
             　layers = <ALT_TAB>;
-              bindings = <&bt on-release &tog_off LEFT_ALT >;
+              bindings = <&bt on-release &kt_off LC(AL) >;
          };
 
          // release_ctrl {
