@@ -248,7 +248,7 @@
 
         release_alt {
             layers = <ALT_TAB>;
-            bindings = <&bt on-release &alt_clear>;
+            bindings = <&alt_clear>;
         };
 
          // release_ctrl {
