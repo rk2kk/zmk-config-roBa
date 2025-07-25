@@ -144,7 +144,9 @@
     scroller {
         layers = <SCROLL>;
         input-processors =
+            <&zip_report_rate_limit 15>,
             <&zip_xy_scaler 1 7>,
+            <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
             <&zip_xy_to_scroll_mapper>;
         process-next;
     };
@@ -214,8 +216,8 @@
         track_remainders;
         bindings = <&tab_kt_on_to LEFT_ALT ALTTAB>,
                    <&shift_tab_kt_on_to LEFT_ALT ALTTAB>,
-                   <&kp LA(LS(TAB))>,
-                   <&kp UP>,<&kp DOWN>;
+                   <&kp UP>,
+                   <&kp DOWN>;
         tick = <80>;
         wait-ms = <0>;
         tap-ms = <10>;
@@ -574,24 +576,7 @@ combos {
             bindings = <&macro_param_1to1 &kt_on MACRO_PLACEHOLDER &macro_param_2to1 &kp MACRO_PLACEHOLDER &macro_param_1to1 &sk MACRO_PLACEHOLDER &macro_param_1to1 &kt_off MACRO_PLACEHOLDER>;
         };
 
-        /omit-if-no-ref/
-
-        windows_sleep: windows_sleep {
-            compatible = "zmk,behavior-macro";
-            wait-ms = <200>;
-            tap-ms = <100>;
-            #binding-cells = <0>;
-            bindings = <&kp LG(X) &kp U &kp S>;
-        };
-
-        /omit-if-no-ref/
-
-        screensot_save: screensot_save {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LS(F11)>;
-            label = "SCREENSOT_SAVE";
-        };
+  
 
         mkp_with_mod: mkp_with_mod {
             compatible = "zmk,behavior-macro-two-param";
@@ -608,56 +593,7 @@ combos {
             label = "MKP_WITH_MOD";
         };
 
-        /omit-if-no-ref/
 
-        screenshot_copy: screenshot_copy {
-            compatible = "zmk,behavior-mod-morph";
-            bindings = <&kp LA(PRINTSCREEN)>, <&kp LA(PRINTSCREEN)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_LALT)>;
-            keep-mods = <(MOD_LALT)>;
-        };
-
-        /omit-if-no-ref/
-
-        mod_morph_exclamation: mod_morph_exclamation {
-            compatible = "zmk,behavior-mod-morph";
-            bindings = <&kp COMMA>, <&kp EXCL>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
-        };
-
-        /omit-if-no-ref/
-
-        mod_morph_question: mod_morph_question {
-            compatible = "zmk,behavior-mod-morph";
-            bindings = <&kp PERIOD>, <&kp QUESTION>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
-        };
-
-        /omit-if-no-ref/
-
-        mod_morph_slash: mod_morph_slash {
-            compatible = "zmk,behavior-mod-morph";
-            bindings = <&kp SLASH>, <&kp BACKSLASH>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
-        };
-
-        /omit-if-no-ref/
-
-        td_alt_f4: td_alt_f4 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings = <&kp F4>, <&kp LA(F4)>;
-
-            tapping-term-ms = <250>;
-        };
 
         /omit-if-no-ref/
 
@@ -763,15 +699,6 @@ combos {
             bindings = <&none>, <&none>, <&bt BT_CLR_ALL>;
         };
 
-        /omit-if-no-ref/
-
-        td_copy_paste: td_copy_paste {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings = <&kp_exit_AML LC(C)>, <&kp_exit_AML LC(V)>;
-
-            tapping-term-ms = <250>;
-        };
 
          lt_to_0: lt_to_0 {
                 compatible = "zmk,behavior-hold-tap";
@@ -790,8 +717,7 @@ combos {
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
             tap-ms = <20>;
         };
-
-        
+ 
 
     };
 
