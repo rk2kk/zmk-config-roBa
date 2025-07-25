@@ -144,7 +144,7 @@
     scroller {
         layers = <SCROLL>;
         input-processors =
-            <&zip_xy_scaler 1 6>,
+            <&zip_xy_scaler 1 7>,
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
             <&zip_xy_to_scroll_mapper>;
         process-next;
@@ -153,25 +153,21 @@
      arrows {
         input-processors = <&zip_arrows>;
         layers = <ARROW>, <NUM>;
-        process-next;
     };
 
     volume {
         input-processors = <&zip_volume>;
         layers = <VOLUME>;
-         process-next;
     };   
 
     alt_tab {
         input-processors = <&zip_alt_tab>;
         layers = <ALTTAB>;
-        process-next; 
     };   
 
     ctrl_tab {
         input-processors = <&zip_ctrl_tab>;
         layers = <CTRLTAB>;
-        process-next;
     };
 
 };
@@ -781,7 +777,7 @@ combos {
         home_layer {
             bindings = <
 &mt ESCAPE Q      &kp W         &kp E         &kp R                  &kp T                                                                          &kp Y        &kp U      &kp I      &kp O    &kp P
-&kp A             &kp S         &kp D         &kp F                  &kp G        &mkp MB3                                     &lt_to_0 6 MINUS     &kp H        &kp J      &kp K      &kp L    &lt_to_0 5 SEMICOLON
+&kp A             &kp S         &kp D         &kp F                  &kp G        &mkp MB3                                     &lt 6 MINUS          &kp H        &kp J      &kp K      &kp L    &lt 5 SEMICOLON
 &mt LEFT_SHIFT Z  &mt LC(X) X   &mt LC(C) C   &mt LC(V) V            &kp B        &lt_exit_alttab 7 EQUAL                      &kp DEL              &kp N        &kp M      &kp COMMA  &kp DOT  &lt 4 SLASH
 &kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 5 INTERNATIONAL_5  &lt 4 SPACE  &lt 2 INTERNATIONAL_4                        &kp BACKSPACE        &lt 1 ENTER                                 &kp RIGHT_SHIFT
             >;
