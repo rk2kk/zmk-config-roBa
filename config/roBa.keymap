@@ -175,7 +175,7 @@
     };
 
     arrows-prevent-mouse-move {
-            layers = <ARROW>, <NUM>,<VOLUME><ALTTAB>,<CTRLTAB>;
+            layers = <ARROW>, <NUM>,<VOLUME>,<ALTTAB>,<CTRLTAB>;
             input-processors = <&zip_xy_scaler 0 1>;
         };
 
