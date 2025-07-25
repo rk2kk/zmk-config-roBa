@@ -213,7 +213,10 @@
         compatible = "zmk,input-processor-keybind";
         #input-processor-cells = <0>;
         track_remainders;
-        bindings = <&kp LA(TAB)>, <&kp LA(LS(TAB))>, <&kp UP>,<&kp DOWN>;
+        bindings = <&tab_kt_on_to LEFT_ALT ALTTAB>,
+                   <&shift_tab_kt_on_to LEFT_ALT ALTTAB>,
+                   <&kp LA(LS(TAB))>,
+                   <&kp UP>,<&kp DOWN>;
         tick = <80>;
         wait-ms = <0>;
         tap-ms = <10>;
@@ -454,6 +457,15 @@ combos {
                 <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
                 <&macro_tap>,
                 <&exit_AML &macro_param_2to1 &sl_250 MACRO_PLACEHOLDER>;
+        };
+
+            tab_kt_on_to: tab_kt_on_to {
+            compatible = "zmk,behavior-macro-two-param";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <2>;
+            bindings = <&macro_param_1to1 &kt_on MACRO_PLACEHOLDER &macro_param_2to2 &kp_to TAB MACRO_PLACEHOLDER>;
+            label = "tab_kt_on_to";
         };
             
     };
