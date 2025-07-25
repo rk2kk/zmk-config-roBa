@@ -27,8 +27,8 @@
 #define ARROW 4
 #define SCROLL 5
 #define VOLUME 6
-#define ALTTAB 7
-#define CTRLTAB 8
+#define ALT_TAB 7
+#define CTRL_TAB 8
 
 
 
@@ -165,18 +165,18 @@
 
     alt_tab {
         input-processors = <&zip_alt_tab>;
-        layers = <ALTTAB>;
+        layers = <ALT_TAB>;
         process-next;
     };   
 
     ctrl_tab {
         input-processors = <&zip_ctrl_tab>;
-        layers = <CTRLTAB>;
+        layers = <CTRL_TAB>;
         process-next;
     };
 
     arrows-prevent-mouse-move {
-            layers = <ARROW>, <NUM>,<VOLUME>,<ALTTAB>,<CTRLTAB>;
+            layers = <ARROW>, <NUM>,<VOLUME>,<ALT_TAB>,<CTRL_TAB>;
             input-processors = <&zip_xy_scaler 0 1>;
         };
 
@@ -220,8 +220,8 @@
         compatible = "zmk,input-processor-keybind";
         #input-processor-cells = <0>;
         track_remainders;
-        bindings = <&tab_kt_on_to LEFT_ALT TAB>,
-                   <&shift_tab_kt_on_to LEFT_ALT TAB>,
+        bindings = <&tab_kt_on_to LEFT_ALT LA(TAB)>,
+                   <&shift_tab_kt_on_to LEFT_ALT LA(TAB)>,
                    <&kp UP>,
                    <&kp DOWN>;
         tick = <80>;
@@ -246,7 +246,7 @@
         compatible = "zmk,layer-listeners";
 
          // release_alt {
-         //　layers = <ALTTAB>;
+         //　layers = <ALT_TAB>;
          //    bindings = <&kt_off LEFT_ALT>;
          // };
 
