@@ -1,6 +1,5 @@
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 1000
-
 // #define ZMK_POINTING_DEFAULT_MOVE_VAL 700
+
 
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
@@ -144,7 +143,7 @@
     scroller {
         layers = <SCROLL>;
         input-processors =
-            <&zip_xy_scaler 1 10>,
+            <&zip_xy_scaler 4 1>,
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
             <&zip_xy_to_scroll_mapper>;
         process-next;

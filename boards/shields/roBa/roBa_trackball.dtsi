@@ -34,7 +34,6 @@
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         evt-type = <INPUT_EV_REL>;
-        cpi = <700>;
 	    x-input-code = <INPUT_REL_X>;
 	    y-input-code = <INPUT_REL_Y>;
         force-awake;
@@ -59,7 +58,7 @@
     compatible = "zmk,input-listener";
     status = "disabled";
     device = <&trackball_split>;
-    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>, <&zip_xy_scaler 1 8>,
+    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>,
                        <&zip_keybind_keys>;
     };
   };
