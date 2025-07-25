@@ -248,7 +248,7 @@
 
         release_alt {
             layers = <ALT_TAB>;
-            bindings = <&bt on-release &none>;
+            bindings = <&bt on-release &alt_clear>;
         };
 
          // release_ctrl {
@@ -467,7 +467,7 @@ combos {
                 <&exit_AML &macro_param_2to1 &sl_250 MACRO_PLACEHOLDER>;
         };
 
-            tab_kt_on_to: tab_kt_on_to {
+        tab_kt_on_to: tab_kt_on_to {
             compatible = "zmk,behavior-macro-two-param";
             wait-ms = <0>;
             tap-ms = <0>;
@@ -476,13 +476,19 @@ combos {
             label = "tab_kt_on_to";
         };
 
-            shift_tab_kt_on_to: shift_tab_kt_on_to {
+        shift_tab_kt_on_to: shift_tab_kt_on_to {
             compatible = "zmk,behavior-macro-two-param";
             wait-ms = <0>;
             tap-ms = <0>;
             #binding-cells = <2>;
             bindings = <&macro_param_1to1 &kt_on MACRO_PLACEHOLDER &macro_param_2to2 &kp_to LS(TAB) MACRO_PLACEHOLDER>;
             label = "shift_tab_kt_on_to";
+        };
+
+        alt_clear: alt_clear_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LALT &kp LALT>;
         };
             
     };
