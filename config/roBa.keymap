@@ -145,7 +145,7 @@
     scroller {
         layers = <SCROLL>;
         input-processors =
-            <&zip_xy_scaler 4 1>,
+            <&zip_xy_scaler 1 8>,
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
             <&zip_xy_to_scroll_mapper>;
         process-next;
@@ -220,8 +220,8 @@
         compatible = "zmk,input-processor-keybind";
         #input-processor-cells = <0>;
         track_remainders;
-        bindings = <&tab_kt_on_to LEFT_ALT ALTTAB>,
-                   <&shift_tab_kt_on_to LEFT_ALT ALTTAB>,
+        bindings = <&tab_kt_on_to LEFT_ALT TAB>,
+                   <&shift_tab_kt_on_to LEFT_ALT TAB>,
                    <&kp UP>,
                    <&kp DOWN>;
         tick = <80>;
