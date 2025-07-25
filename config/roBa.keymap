@@ -395,7 +395,7 @@ combos {
                 <&macro_release>,
                 <&macro_param_1to1 &mo MACRO_PLACEHOLDER>,
                 <&macro_tap>,
-                <&tog_off ALTTAB &tog_off CTRLTAB>;
+                <&kt_off_off LEFT_ALT &kt_off_off LCTRL>;
         };
 
         /omit-if-no-ref/
