@@ -248,7 +248,7 @@
 
         release_alt {
             layers = <ALT_TAB>;
-            bindings = <&bt on-release &kt_off LALT>;
+            bindings = <&bt on-release &kt_off 0xE2>; //0xE2 ALT
         };
 
          // release_ctrl {
