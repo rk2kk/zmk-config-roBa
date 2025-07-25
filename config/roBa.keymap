@@ -467,6 +467,15 @@ combos {
             bindings = <&macro_param_1to1 &kt_on MACRO_PLACEHOLDER &macro_param_2to2 &kp_to TAB MACRO_PLACEHOLDER>;
             label = "tab_kt_on_to";
         };
+
+            shift_tab_kt_on_to: shift_tab_kt_on_to {
+            compatible = "zmk,behavior-macro-two-param";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <2>;
+            bindings = <&macro_param_1to1 &kt_on MACRO_PLACEHOLDER &macro_param_2to2 &kp_to LS(TAB) MACRO_PLACEHOLDER>;
+            label = "shift_tab_kt_on_to";
+        };
             
     };
 
