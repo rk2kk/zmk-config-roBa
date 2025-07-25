@@ -246,10 +246,10 @@
     layer_listeners {
         compatible = "zmk,layer-listeners";
 
-         release_alt {
-            　layers = <ALT_TAB>;
-              bindings = <&bt on-release &kt_off LC(AL) >;
-         };
+        release_alt {
+            layers = <ALT_TAB>;
+            bindings = <&bt on-release &kt_off LC(AL)>;
+        };
 
          // release_ctrl {
          //     layers = <CTRLTAB>;
