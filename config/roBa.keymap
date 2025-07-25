@@ -57,6 +57,7 @@
 &zip_temp_layer {
     require-prior-idle-ms = <200>;
     excluded-positions = <
+         9 // P
         18 // J
         19 // K
         20 // L
@@ -64,7 +65,7 @@
         22 // Z
         31 // .
         32 // ,
-        // 33 // /
+        33 // /
         34 // Ctrl
         42
     >;
@@ -175,8 +176,8 @@
         process-next;
     };
 
-    arrows-prevent-mouse-move {
-            layers = <ARROW>, <NUM>,<VOLUME>,<ALT_TAB>,<CTRL_TAB>;
+    prevent-mouse-move {
+            layers = <ARROW>,<NUM>,<VOLUME>,<ALT_TAB>,<CTRL_TAB>;
             input-processors = <&zip_xy_scaler 0 1>;
         };
 
@@ -220,8 +221,8 @@
         compatible = "zmk,input-processor-keybind";
         #input-processor-cells = <0>;
         track_remainders;
-        bindings = <&tab_kt_on_to LEFT_ALT LA(TAB)>,
-                   <&shift_tab_kt_on_to LEFT_ALT LA(TAB)>,
+        bindings = <&tab_kt_on_to LEFT_ALT ALTTAB>,
+                   <&shift_tab_kt_on_to LEFT_ALT TAB>,
                    <&kp UP>,
                    <&kp DOWN>;
         tick = <80>;
