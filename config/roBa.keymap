@@ -222,7 +222,7 @@
         #input-processor-cells = <0>;
         track_remainders;
         bindings = <&tab_kt_on_to LEFT_ALT ALTTAB>,
-                   <&shift_tab_kt_on_to LEFT_ALT TAB>,
+                   <&shift_tab_kt_on_to LEFT_ALT ALTTAB>,
                    <&kp UP>,
                    <&kp DOWN>;
         tick = <80>;
