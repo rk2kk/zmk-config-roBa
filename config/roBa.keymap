@@ -65,7 +65,7 @@
 };
 
 &zip_mouse_gesture {
-    stroke-size = <150>;
+    stroke-size = <100>;
     movement-threshold = <10>;
 
     // enable-eager-mode;
