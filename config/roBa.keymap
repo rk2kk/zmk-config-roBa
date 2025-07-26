@@ -389,14 +389,16 @@ combos {
             tap-ms = <0>;
             #binding-cells = <1>;
             bindings =
-                <&macro_press>,
+                <&macLEFT_ALT
+                <&macro_press>,ro_press>,
                 <&macro_param_1to1 &mo MACRO_PLACEHOLDER>,
                 <&macro_tap>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
                 <&macro_param_1to1 &mo MACRO_PLACEHOLDER>,
                 <&macro_tap>,
-                <&kt_off LEFT_ALT>,<&kt_off LCTRL>;
+                <&kt_off LEFT_ALT
+                <&macro_press>,>,<&kt_off LCTRL>;
         };
 
         /omit-if-no-ref/
