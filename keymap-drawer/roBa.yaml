@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: roBa}
 layers:
   home:
-  - {t: Q, h: ESCAPE}
+  - {t: Q, h: LWIN}
   - W
   - E
   - R
@@ -11,39 +11,39 @@ layers:
   - I
   - O
   - P
-  - A
+  - {t: A, h: LCTRL}
   - S
   - D
   - F
   - G
   - '&mkp MB3'
-  - {t: '-', h: '&mo_to_0 6'}
+  - {t: '&kp_exit_AML MINUS', h: '&mo_exit_AML 6'}
   - H
   - J
   - K
   - L
-  - {t: ;, h: '&mo_to_0 5'}
-  - {t: Z, h: LEFT SHIFT}
+  - {t: '&kp_exit_AML SEMICOLON', h: '&mo_exit_AML 5'}
+  - {t: '&kp_exit_AML Z', h: LEFT SHIFT}
   - {t: X, h: Ctl+X}
   - {t: C, h: Ctl+C}
   - {t: V, h: Ctl+V}
-  - B
+  - {t: B, h: '&mo_exit_alttab 8'}
   - {t: '=', h: '&mo_exit_alttab 7'}
   - DEL
   - N
   - M
   - ','
   - .
-  - {t: /, h: '4'}
+  - {t: '&kp_exit_AML SLASH', h: '&mo_exit_AML 4'}
   - LCTRL
   - LEFT WIN
   - LEFT ALT
   - {t: INTERNATIONAL 5, h: '5'}
-  - {t: SPACE, h: '4'}
-  - {t: INTERNATIONAL 4, h: '2'}
+  - {t: '&kp_exit_AML SPACE', h: '&mo_exit_AML 4'}
+  - {t: '&kp_exit_AML INTERNATIONAL_4', h: '&mo_exit_AML 2'}
   - BACKSPACE
-  - {t: ENTER, h: '1'}
-  - RIGHT SHIFT
+  - {t: '&kp_exit_AML ENTER', h: '&mo_exit_AML 1'}
+  - '&kp_exit_AML RIGHT_SHIFT'
   '1':
   - '1'
   - '2'
@@ -86,7 +86,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   '2':
   - '-'
@@ -128,7 +128,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - LEFT SHIFT
@@ -190,8 +190,8 @@ layers:
   - HOME
   - LEFT ARROW
   - DOWN ARROW
-  - RIGHT ARROW
-  - END
+  - {t: RIGHT ARROW, type: held}
+  - {t: END, type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Gui+LEFT ARROW
@@ -210,7 +210,7 @@ layers:
   - ''
   - Sft+Gui+RIGHT ARROW
   - Sft+RIGHT ARROW
-  - {t: INT1, type: held}
+  - INT1
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
