@@ -28,12 +28,12 @@
 #define CTRL_TAB 8
 
 &mt {
-    flavor = "hold-preferred";
+    flavor = "tap-preferred";
     quick-tap-ms = <0>;
 };
 
 &lt {
-    flavor = "hold-preferred";
+    flavor = "tap-preferred";
     quick-tap-ms = <0>;
 };
 
