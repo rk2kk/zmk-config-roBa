@@ -5,6 +5,7 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <behaviors/rgbled_widget.dtsi>
+#include <input/processors/report_rate_limit.dtsi>
 
 
 
@@ -124,7 +125,8 @@
 
 &trackball_listener {
     compatible = "zmk,input-listener";
-    input-processors = <&zip_mouse_gesture>;
+    input-processors = <&zip_mouse_gesture  &zip_report_rate_limit 15>;
+
 
     auto-mouse-layer {
         layers = <DEFAULT MOUSE>;
@@ -175,7 +177,7 @@
 };
 
 / {
-    input_processors {
+    input_processors 
         wheel_x_scaler: wheel_x_scaler {
             compatible = "zmk,input-processor-scaler";
             #input-processor-cells = <2>;

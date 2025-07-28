@@ -63,9 +63,12 @@ manifest:
       revision: main
     - name: zmk-input-processor-keybind
       remote: zettaface
-      # remote: rk2kk
-      # remote: te9no
       revision: main
       path:  modules/zmk-input-processor-keybind-zettaface
+    # https://github.com/badjeff/zmk-input-processor-report-rate-limit
+    - name: zmk-input-processor-report-rate-limit
+      remote: badjeff
+      revision: main
+      path: modules/zmk-input-processor-report-rate-limit
   self:
     path: config
