@@ -177,7 +177,7 @@
 };
 
 / {
-    input_processors 
+    input_processors  {
         wheel_x_scaler: wheel_x_scaler {
             compatible = "zmk,input-processor-scaler";
             #input-processor-cells = <2>;
