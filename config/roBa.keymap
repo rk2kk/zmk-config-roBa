@@ -28,13 +28,15 @@
 #define CTRL_TAB 8
 
 &mt {
-    flavor = "tap-preferred";
-    quick-tap-ms = <0>;
+    tapping-term-ms = <200>;
+    quick-tap-ms = <250>;
+    flavor = "balanced";
 };
 
 &lt {
-    flavor = "tap-preferred";
-    quick-tap-ms = <0>;
+    tapping-term-ms = <200>;
+    quick-tap-ms = <250>;
+    flavor = "balanced";
 };
 
 &sk { release-after-ms = <700>; };
