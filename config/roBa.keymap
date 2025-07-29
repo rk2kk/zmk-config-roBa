@@ -1,4 +1,5 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
+
 // #define ZMK_POINTING_DEFAULT_MOVE_VAL 700
 
 #include <input/processors.dtsi>
@@ -6,9 +7,6 @@
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <behaviors/rgbled_widget.dtsi>
 #include <input/processors/report_rate_limit.dtsi>
-
-
-
 #include <layout_shift_kp_override.dtsi>
 #include <mouse-gesture.dtsi>
 #include <behaviors.dtsi>
@@ -127,7 +125,6 @@
     compatible = "zmk,input-listener";
     input-processors = <&zip_mouse_gesture  &zip_report_rate_limit 15>;
 
-
     auto-mouse-layer {
         layers = <DEFAULT MOUSE>;
         input-processors = <&zip_temp_layer MOUSE 10000>;
@@ -177,7 +174,7 @@
 };
 
 / {
-    input_processors  {
+    input_processors {
         wheel_x_scaler: wheel_x_scaler {
             compatible = "zmk,input-processor-scaler";
             #input-processor-cells = <2>;
@@ -386,7 +383,8 @@
                 <&macro_release>,
                 <&macro_param_1to1 &mo MACRO_PLACEHOLDER>,
                 <&macro_tap>,
-                <&kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL>; //遅延対策
+                <&kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL>;
+ //遅延対策
         };
 
         /omit-if-no-ref/
@@ -748,10 +746,10 @@
 
         MOUSE {
             bindings = <
-&trans          &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &mouse_gesture
-&trans          &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&kp LEFT_SHIFT  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &mkp MB4  &mkp MB5  &mouse_gesture
-&trans          &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans          &trans    &trans    &mouse_gesture
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1        &mkp MB3  &mkp MB2  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mo_exit_AML 0  &mkp MB4  &mkp MB5  &mouse_gesture
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                      &trans
             >;
         };
 
@@ -766,10 +764,10 @@
 
         SCROLL {
             bindings = <
-&bt BT_SEL 1  &bt BT_SEL 2          &bt BT_SEL 3  &bt BT_SEL 4     &trans                      &trans            &trans    &trans    &trans    &bt BT_SEL 0
-&trans        &kp LA(LEFT_BRACKET)  &trans        &kp LS(LA(TAB))  &trans  &trans      &trans  &trans            &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&trans        &kp NUMBER_1          &kp NUMBER_2  &kp NUMBER_3     &trans  &trans      &trans  &trans            &trans    &mkp MB4  &mkp MB5  &td_bt_clear
-&trans        &trans                &trans        &trans           &trans  &trans      &trans  &trans                                          &td_bt_clear_all
+&bt BT_SEL 1  &bt BT_SEL 2          &bt BT_SEL 3  &bt BT_SEL 4     &trans                      &trans  &trans    &trans    &trans    &bt BT_SEL 0
+&trans        &kp LA(LEFT_BRACKET)  &trans        &kp LS(LA(TAB))  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
+&trans        &kp NUMBER_1          &kp NUMBER_2  &kp NUMBER_3     &trans  &trans      &trans  &trans  &trans    &mkp MB4  &mkp MB5  &td_bt_clear
+&trans        &trans                &trans        &trans           &trans  &trans      &trans  &trans                                &td_bt_clear_all
             >;
         };
 
