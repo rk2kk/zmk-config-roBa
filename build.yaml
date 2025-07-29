@@ -19,20 +19,20 @@
 ---
 
 include:
-  - board: seeeduino_xiao_ble
-    shield: roBa_dongle_display dongle_display
-    snippet: studio-rpc-usb-uart
-    artifact-name: zmk_dongle_display
+#  - board: seeeduino_xiao_ble
+#    shield: roBa_dongle_display dongle_display
+#    snippet: studio-rpc-usb-uart
+#    artifact-name: zmk_dongle_display
 
-  - board: seeeduino_xiao_ble
-    shield: roBa_dongle_xiao
-    snippet: studio-rpc-usb-uart
-    artifact-name: zmk_dongle_xiao
+#  - board: seeeduino_xiao_ble
+#    shield: roBa_dongle_xiao
+#    snippet: studio-rpc-usb-uart
+#    artifact-name: zmk_dongle_xiao
 
-  - board: raytac_mdbt50q_rx
-    shield: roBa_dongle_raytac
-    # snippet: studio-rpc-usb-uart
-    artifact-name: zmk_dongle_raytac
+#  - board: raytac_mdbt50q_rx
+#    shield: roBa_dongle_raytac
+#    # snippet: studio-rpc-usb-uart
+#    artifact-name: zmk_dongle_raytac
 
   - board: seeeduino_xiao_ble
     shield: roBa_R rgbled_adapter
@@ -43,13 +43,13 @@ include:
     snippet: studio-rpc-usb-uart
     artifact-name: roBa_L_central
     
-  - board: seeeduino_xiao_ble
-    shield: roBa_L_peripheral rgbled_adapter
-    artifact-name: roBa_L_peripheral
+#  - board: seeeduino_xiao_ble
+#    shield: roBa_L_peripheral rgbled_adapter
+#    artifact-name: roBa_L_peripheral
 
  # reset   
   - board: seeeduino_xiao_ble
     shield: settings_reset
 
-  - board: raytac_mdbt50q_rx
-    shield: settings_reset
+#  - board: raytac_mdbt50q_rx
+#    shield: settings_reset
