@@ -48,7 +48,7 @@
 &zip_temp_layer {
     require-prior-idle-ms = <200>;
     excluded-positions = <
-         9 // P
+      //   9 // P
         18 // J
         19 // K
         20 // L
@@ -112,10 +112,10 @@
     //     gesture = <GESTURE_RIGHT>;
     //     bindings = <&kp RIGHT>;
     // };
-    // up {
-    //     gesture = <GESTURE_UP>;
-    //     bindings = <&kp UP>;
-    // };
+     up {
+        gesture = <GESTURE_UP>;
+        bindings = <&kp LA(UP)>;
+        };
     // down {
     //     gesture = <GESTURE_DOWN>;
     //     bindings = <&kp DOWN>;
@@ -716,6 +716,8 @@
     keymap {
         compatible = "zmk,keymap";
 
+
+
         home_layer {
             bindings = <
 &mt LWIN Q                        &kp W         &kp E         &kp R                  &kp T                                                                           &kp Y                 &kp U  &kp I      &kp O    &kp P
@@ -747,7 +749,7 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans          &trans    &trans    &mouse_gesture
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans          &trans    &trans    &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1        &mkp MB3  &mkp MB2  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mo_exit_AML 0  &mkp MB4  &mkp MB5  &mouse_gesture
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                      &trans
