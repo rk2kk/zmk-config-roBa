@@ -105,15 +105,15 @@
     };
 
     // left {
-    //     gesture = <GESTURE_LEFT>;
+    //     pattern = <GESTURE_LEFT>;
     //     bindings = <&kp LEFT>;
     // };
     // right {
     //     gesture = <GESTURE_RIGHT>;
     //     bindings = <&kp RIGHT>;
     // };
-     up {
-        gesture = <GESTURE_UP>;
+     la_up {
+        pattern = <GESTURE_UP>;
         bindings = <&kp LA(UP)>;
         };
     // down {
