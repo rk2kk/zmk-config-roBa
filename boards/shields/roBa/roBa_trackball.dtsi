@@ -58,7 +58,7 @@
     compatible = "zmk,input-listener";
     status = "disabled";
     device = <&trackball_split>;
-    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_INVERT_Y)>,
+    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>,
                    <&zip_keybind_keys>;
 
     };

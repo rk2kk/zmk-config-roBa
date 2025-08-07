@@ -124,7 +124,7 @@
 
 &trackball_listener {
     compatible = "zmk,input-listener";
-    input-processors = <&zip_mouse_gesture  &zip_report_rate_limit 15>;
+    input-processors = <&zip_mouse_gesture  &zip_report_rate_limit 15 &invert_y>;
 
     auto-mouse-layer {
         layers = <DEFAULT MOUSE>;
