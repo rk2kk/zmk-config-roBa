@@ -112,10 +112,12 @@
     //     gesture = <GESTURE_RIGHT>;
     //     bindings = <&kp RIGHT>;
     // };
-     la_up {
+
+    la_up {
         pattern = <GESTURE_UP>;
         bindings = <&kp LA(UP)>;
-        };
+    };
+
     // down {
     //     gesture = <GESTURE_DOWN>;
     //     bindings = <&kp DOWN>;
@@ -385,7 +387,8 @@
                 <&macro_param_1to1 &mo MACRO_PLACEHOLDER>,
                 <&macro_tap>,
                 <&kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL &kt_off LEFT_ALT &kt_off LCTRL>;
- //遅延対策
+
+            //遅延対策
         };
 
         /omit-if-no-ref/
@@ -716,8 +719,6 @@
     keymap {
         compatible = "zmk,keymap";
 
-
-
         home_layer {
             bindings = <
 &mt LWIN Q                        &kp W         &kp E         &kp R                  &kp T                                                                           &kp Y                 &kp U  &kp I      &kp O    &kp P
@@ -821,7 +822,7 @@
 
         CONFIGURATION {
             bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                        &none     &none  &out OUT_TOG  &sys_reset  &bootloader
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                        &none     &none  &out OUT_TOG  &sys_reset  &trans
 &sys_reset    &bootloader   &none         &none         &none         &trans      &ind_con  &ind_bat  &none  &none         &none       &none
 &none         &none         &none         &none         &none         &none       &none     &none     &none  &none         &none       &td_bt_clear
 &none         &none         &none         &none         &none         &none       &none     &none                                      &td_bt_clear_all
