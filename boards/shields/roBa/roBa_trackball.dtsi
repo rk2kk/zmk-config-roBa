@@ -36,7 +36,6 @@
         evt-type = <INPUT_EV_REL>;
 	    x-input-code = <INPUT_REL_X>;
 	    y-input-code = <INPUT_REL_Y>;
-　　　　 polling-rate-hz = <125>;
         force-awake;
     };
 };
