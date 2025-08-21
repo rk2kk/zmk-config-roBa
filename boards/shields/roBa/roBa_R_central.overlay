@@ -41,10 +41,12 @@
     status = "okay";
 };
 
-&trackball_split { 
-    status = "okay";
-};
 
-&trackball_listener {
-    status = "okay";
-   };
+/ {
+    trackball_listener: trackball_listener {
+    compatible = "zmk,input-listener";
+    device = <&trackball>;
+    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>,
+                       <&zip_keybind_keys>;
+    };
+  };
