@@ -715,14 +715,6 @@
             tap-ms = <20>;
         };
 
-        mouse_filter: mouse_filter {
-            compatible = "zmk,input-transform";
-            #input-transform-cells = <2>;
-            transform = <0x01 0x01>; // 単純なスケール変換
-            max-delta-x = <30>;      //  最大移動量を制限
-            max-delta-y = <30>;
-        };
-
         
     };
 
