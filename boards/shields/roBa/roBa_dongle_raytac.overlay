@@ -22,5 +22,5 @@
 };
 
 &trackball_listener {
-    status = "okay";  
-    };
+    status = "okay";
+   };
