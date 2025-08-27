@@ -24,3 +24,7 @@
 &trackball_listener {
     status = "okay";
    };
+
+&usb0 {
+    status = "okay";
+};
