@@ -73,5 +73,10 @@ manifest:
       remote: badjeff
       revision: main
       path: modules/zmk-input-processor-report-rate-limit
+          # https://github.com/kot149/zmk-layout-shift
+    - name: zmk-layout-shift
+      remote: kot149
+      revision: v1
+      path: modules/zmk-layout-shift
   self:
     path: config
