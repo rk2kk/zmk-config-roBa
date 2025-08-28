@@ -38,7 +38,7 @@ manifest:
     #   path: modules/zmk-pmw3610-driver-badjeff
     
     # https://github.com/kot149/zmk-pmw3610-driver-badjeff/tree/swap-invert-reg
-    - name: zmk-pmw3610-driver
+     - name: zmk-pmw3610-driver
       remote: kot149
       revision: swap-invert-reg
       path: modules/zmk-pmw3610-driver-badjeff
