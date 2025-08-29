@@ -13,8 +13,8 @@ config SHIELD_ROBA_DONGLE_RAYTAC
 config SHIELD_ROBA_L_PERIPHERAL
     def_bool $(shields_list_contains,roBa_L_peripheral)
 
-config SHIELD_ROBA_R
-    def_bool $(shields_list_contains,roBa_R)
+config SHIELD_ROBA_R_PERIPHERAL
+    def_bool $(shields_list_contains,roBa_R_peripheral)
 
 config SHIELD_ROBA_R_CENTRAL
     def_bool $(shields_list_contains,roBa_R_central)
