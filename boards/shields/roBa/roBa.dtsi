@@ -4,24 +4,17 @@
 #include <physical_layouts.dtsi>
 #include <input/processors.dtsi>
 
-########################################
-# ルートノード設定
-########################################
+
 / {
     chosen {
-        zmk,physical-layout = &default_layout;  /* 使用する物理レイアウト */
+        zmk,physical-layout = &default_layout;
     };
 
-    ########################################
-    # デフォルトレイアウト定義
-    ########################################
     default_layout: default_layout {
         compatible = "zmk,physical-layout";
         display-name = "Default";
-        transform = <&default_transform>;
-
-        /* キー物理属性の定義 (w=幅, h=高さ, x,y=位置, rot=回転, rx, ry=補正) */
-                keys  //                     w   h    x    y     rot    rx    ry
+        transform = <&default_transform>; 
+                keys  
             = <&key_physical_attrs 100 100    0   37       0     0     0>
             , <&key_physical_attrs 100 100  100   12       0     0     0>
             , <&key_physical_attrs 100 100  200    0       0     0     0>
@@ -68,9 +61,6 @@
             ;
     };
 
-    ########################################
-    # マトリックス変換設定
-    ########################################
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <11>;
@@ -84,26 +74,19 @@
         >;
     };
 
-    ########################################
-    # キースキャン設定
-    ########################################
+
     kscan0: kscan {
         wakeup-source;
         label = "KSCAN";
-        diode-direction = "col2row";  /* ダイオード方向 */
+        diode-direction = "col2row";  
     };
 
-    ########################################
-    # トラックボールリスナー
-    ########################################
+
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
-        status = "disabled";  /* 初期は無効化 */
+        status = "disabled"; 
     };
 
-    ########################################
-    # エンコーダ設定
-    ########################################
     left_encoder: encoder_left {
         status = "disabled";
     };
@@ -112,19 +95,14 @@
         status = "disabled";
     };
 
-    ########################################
-    # センサー設定
-    ########################################
     sensors: sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&left_encoder &right_encoder>;
-        triggers-per-rotation = <10>;  /* 1回転あたりのトリガー数 */
+        triggers-per-rotation = <10>;  
     };
 };
 
-########################################
-# SPI デバイス設定
-########################################
+
 &spi0 {
     status = "disabled";
 

@@ -2,35 +2,35 @@
 #include "roBa_trackball.dtsi"
 
 ########################################
-# ルートノード設定
+# Root Node Configuration
 ########################################
 / {
     chosen {
-        zmk,kscan = &kscan0;  /* 使用するキースキャンデバイスを指定 */
+        zmk,kscan = &kscan0;  /* Specify the keyscan device to use */
     };
 };
 
 ########################################
-# デフォルト変換設定
+# Default Transform Configuration
 ########################################
 &default_transform {
-    col-offset = <6>;  /* 列オフセットを6に設定 */
+    col-offset = <6>;  /* Set column offset to 6 */
 };
 
 ########################################
-# キーマトリックス設定 (GPIO)
+# Key Matrix Configuration (GPIO)
 ########################################
 &kscan0 {
     compatible = "zmk,kscan-gpio-matrix";
 
-    /* 行 (Row) GPIO設定 */
+    /* Row GPIOs */
     row-gpios = 
         <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
         <&xiao_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
         <&xiao_d 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
         <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
 
-    /* 列 (Column) GPIO設定 */
+    /* Column GPIOs */
     col-gpios = 
         <&xiao_d 10 GPIO_ACTIVE_HIGH>,
         <&xiao_d 9  GPIO_ACTIVE_HIGH>,
@@ -40,26 +40,26 @@
 };
 
 ########################################
-# シリアル設定
+# Serial Configuration
 ########################################
 &xiao_serial {
-    status = "disabled";  /* シリアル無効化 */
+    status = "disabled";  /* Disable serial */
 };
 
 ########################################
-# SPI設定
+# SPI Configuration
 ########################################
 &spi0 {
-    status = "okay";  /* SPIデバイス有効化 */
+    status = "okay";  /* Enable SPI device */
 };
 
 ########################################
-# トラックボール設定
+# Trackball Configuration
 ########################################
 &trackball {
-    status = "okay";  /* トラックボール有効化 */
+    status = "okay";  /* Enable trackball */
 };
 
 &trackball_split {
-    status = "okay";  /* スプリットトラックボール有効化 */
+    status = "okay";  /* Enable split trackball */
 };

@@ -25,60 +25,53 @@
     };
 };
 
-########################################
-# SPI デバイス設定
-########################################
+
 &spi0 {
-    status = "disabled";                  /* SPI無効化 */
+    status = "disabled";                  
     compatible = "nordic,nrf-spim";
-    pinctrl-0 = <&spi0_default>;          /* 通常動作用ピン設定 */
-    pinctrl-1 = <&spi0_sleep>;            /* スリープ用ピン設定 */
+    pinctrl-0 = <&spi0_default>;          
+    pinctrl-1 = <&spi0_sleep>;            
     pinctrl-names = "default", "sleep";
-    cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>; /* チップセレクト GPIO */
+    cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>; 
 
     ########################################
     # トラックボール (PMW3610) 設定
     ########################################
     trackball: trackball@0 {
-        status = "disabled";               /* 初期は無効化 */
+        status = "disabled";               
         compatible = "pixart,pmw3610";
         reg = <0>;
-        spi-max-frequency = <2000000>;     /* 2 MHz */
+        spi-max-frequency = <2000000>;    
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        evt-type = <INPUT_EV_REL>;         /* 相対移動入力 */
+        evt-type = <INPUT_EV_REL>;        
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
-        force-awake;                        /* 強制ウェイク */
+        force-awake;                       
     };
 };
 
-########################################
-# ルートノード設定
-########################################
+
+
 / {
-    ########################################
-    # スプリット入力設定
-    ########################################
+
     split_inputs {
         #address-cells = <1>;
         #size-cells = <0>;
 
         trackball_split: trackball_split@0 {
-            device = <&trackball>;          /* 元トラックボールデバイスを指定 */
+            device = <&trackball>;          
             compatible = "zmk,input-split";
             reg = <0>;
         };
     };
 
-    ########################################
-    # トラックボールリスナー設定
-    ########################################
+ 
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
-        status = "disabled";               /* 初期は無効化 */
-        device = <&trackball_split>;       /* スプリットデバイスを参照 */
+        status = "disabled";               
+        device = <&trackball_split>;       
         input-processors = 
-            <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>,  /* XYスワップ */
-            <&zip_keybind_keys>;                             /* キーバインド処理 */
+            <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>, 
+            <&zip_keybind_keys>;
     };
 };
