@@ -1,65 +1,84 @@
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <input/processors/zmk-input-processor-keybind.dtsi>
 
+########################################
+# ピン制御設定 (SPI)
+########################################
 &pinctrl {
+    /* SPI 通常動作用 */
     spi0_default: spi0_default {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
-                <NRF_PSEL(SPIM_MOSI, 0, 4)>,
-                <NRF_PSEL(SPIM_MISO, 0, 4)>;
+                    <NRF_PSEL(SPIM_MOSI, 0, 4)>,
+                    <NRF_PSEL(SPIM_MISO, 0, 4)>;
         };
     };
 
+    /* SPI スリープ動作用 */
     spi0_sleep: spi0_sleep {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
-                <NRF_PSEL(SPIM_MOSI, 0, 4)>,
-                <NRF_PSEL(SPIM_MISO, 0, 4)>;
-            low-power-enable;
+                    <NRF_PSEL(SPIM_MOSI, 0, 4)>,
+                    <NRF_PSEL(SPIM_MISO, 0, 4)>;
+            low-power-enable;  /* 低消費電力モードを有効化 */
         };
     };
 };
-&spi0 {
-    status = "disabled";
-    compatible = "nordic,nrf-spim";
-    pinctrl-0 = <&spi0_default>;
-    pinctrl-1 = <&spi0_sleep>;
-    pinctrl-names = "default", "sleep";
-    cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
 
+########################################
+# SPI デバイス設定
+########################################
+&spi0 {
+    status = "disabled";                  /* SPI無効化 */
+    compatible = "nordic,nrf-spim";
+    pinctrl-0 = <&spi0_default>;          /* 通常動作用ピン設定 */
+    pinctrl-1 = <&spi0_sleep>;            /* スリープ用ピン設定 */
+    pinctrl-names = "default", "sleep";
+    cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>; /* チップセレクト GPIO */
+
+    ########################################
+    # トラックボール (PMW3610) 設定
+    ########################################
     trackball: trackball@0 {
-        status = "disabled";
+        status = "disabled";               /* 初期は無効化 */
         compatible = "pixart,pmw3610";
         reg = <0>;
-        spi-max-frequency = <2000000>;
+        spi-max-frequency = <2000000>;     /* 2 MHz */
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        evt-type = <INPUT_EV_REL>;
-	    x-input-code = <INPUT_REL_X>;
-	    y-input-code = <INPUT_REL_Y>;
-        force-awake;
+        evt-type = <INPUT_EV_REL>;         /* 相対移動入力 */
+        x-input-code = <INPUT_REL_X>;
+        y-input-code = <INPUT_REL_Y>;
+        force-awake;                        /* 強制ウェイク */
     };
 };
 
-
-
+########################################
+# ルートノード設定
+########################################
 / {
+    ########################################
+    # スプリット入力設定
+    ########################################
     split_inputs {
         #address-cells = <1>;
         #size-cells = <0>;
 
         trackball_split: trackball_split@0 {
-            device = <&trackball>;
+            device = <&trackball>;          /* 元トラックボールデバイスを指定 */
             compatible = "zmk,input-split";
             reg = <0>;
         };
     };
 
+    ########################################
+    # トラックボールリスナー設定
+    ########################################
     trackball_listener: trackball_listener {
-    compatible = "zmk,input-listener";
-    status = "disabled";
-    device = <&trackball_split>;
-    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>,
-                   <&zip_keybind_keys>;
-
+        compatible = "zmk,input-listener";
+        status = "disabled";               /* 初期は無効化 */
+        device = <&trackball_split>;       /* スプリットデバイスを参照 */
+        input-processors = 
+            <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>,  /* XYスワップ */
+            <&zip_keybind_keys>;                             /* キーバインド処理 */
     };
-  };
+};
