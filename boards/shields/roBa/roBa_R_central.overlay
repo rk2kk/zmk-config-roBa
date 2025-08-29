@@ -1,36 +1,26 @@
 #include "roBa.dtsi"
 #include "roBa_trackball.dtsi"
 
-########################################
-# ルートノード設定
-########################################
-/ {
+/
+{
     chosen {
-        zmk,kscan = &kscan0;  /* 使用するキースキャンデバイスを指定 */
+        zmk,kscan = &kscan0;
     };
 };
 
-########################################
-# デフォルト変換設定
-########################################
 &default_transform {
-    col-offset = <6>;  /* 列オフセットを6に設定 */
+    col-offset = <6>;
 };
 
-########################################
-# キーマトリックス設定 (GPIO)
-########################################
 &kscan0 {
     compatible = "zmk,kscan-gpio-matrix";
 
-    /* 行 (Row) GPIO設定 */
     row-gpios = 
         <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
         <&xiao_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
         <&xiao_d 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
         <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
 
-    /* 列 (Column) GPIO設定 */
     col-gpios = 
         <&xiao_d 10 GPIO_ACTIVE_HIGH>,
         <&xiao_d 9  GPIO_ACTIVE_HIGH>,
@@ -39,31 +29,22 @@
         <&gpio0 10 GPIO_ACTIVE_HIGH>;
 };
 
-########################################
-# シリアル設定
-########################################
 &xiao_serial {
-    status = "disabled";  /* シリアル無効化 */
+    status = "disabled";
 };
 
-########################################
-# SPI設定
-########################################
 &spi0 {
-    status = "okay";  /* SPIデバイス有効化 */
+    status = "okay";
 };
 
-########################################
-# トラックボール設定
-########################################
 &trackball {
-    status = "okay";  /* トラックボール有効化 */
+    status = "okay";
 };
 
 &trackball_listener {
-    status = "okay";          /* トラックボールリスナー有効化 */
-    device = <&trackball>;    /* 入力デバイスをトラックボールに指定 */
+    status = "okay";
+    device = <&trackball>;
     input-processors = 
-        <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>,  /* XY軸をスワップ */
-        <&zip_keybind_keys>;                             /* キーバインド処理 */
+        <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>,
+        <&zip_keybind_keys>;
 };

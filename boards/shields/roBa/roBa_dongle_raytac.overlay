@@ -1,34 +1,23 @@
 #include "roBa.dtsi"
 #include "roBa_trackball.dtsi"
 
-########################################
-# デフォルトレイアウト設定
-########################################
 &default_layout {
-    transform = <&default_transform>;  /* レイアウト変換を指定 */
+    transform = <&default_transform>;
 };
 
-########################################
-# ルートノード設定
-########################################
-/ {
+/
+{
     chosen {
-        zmk,kscan = &mock_kscan;           /* キースキャンにモックを使用 */
-        zmk,physical-layout = &default_layout; /* デフォルト物理レイアウトを指定 */
+        zmk,kscan = &mock_kscan;
+        zmk,physical-layout = &default_layout;
     };
 
-    /* モックキースキャン設定 */
     mock_kscan: mock_kscan_0 {
         compatible = "zmk,kscan-mock";
-        columns = <0>;  /* 列数 */
-        rows = <0>;     /* 行数 */
-        events = <0>;   /* 発火イベント数 */
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
     };
 };
 
-########################################
-# トラックボール設定
-########################################
 &trackball_listener {
-    status = "okay";  /* トラックボールを有効化 */
-};

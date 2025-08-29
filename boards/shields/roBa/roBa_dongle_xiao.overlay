@@ -1,44 +1,31 @@
 #include "roBa.dtsi"
 #include "roBa_trackball.dtsi"
 
-########################################
-# デフォルトレイアウト設定
-########################################
 &default_layout {
-    transform = <&default_transform>;  /* レイアウト変換を指定 */
+    transform = <&default_transform>;
 };
 
-########################################
-# ルートノード設定
-########################################
-/ {
+/
+{
     chosen {
-        zmk,kscan = &mock_kscan;           /* キースキャンにモックを使用 */
-        zephyr,display = &oled;            /* OLEDディスプレイを指定 */
-        zmk,physical-layout = &default_layout; /* デフォルト物理レイアウトを指定 */
+        zmk,kscan = &mock_kscan;
+        zephyr,display = &oled;
+        zmk,physical-layout = &default_layout;
     };
 
-    /* モックキースキャン設定 */
     mock_kscan: mock_kscan_0 {
         compatible = "zmk,kscan-mock";
-        columns = <0>;  /* 列数 */
-        rows = <0>;     /* 行数 */
-        events = <0>;   /* 発火イベント数 */
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
     };
 };
 
-########################################
-# トラックボール設定
-########################################
 &trackball_listener {
-    status = "okay";  /* トラックボールを有効化 */
+    status = "okay";
 };
 
-########################################
-# ピン制御設定 (I2C)
-########################################
 &pinctrl {
-    /* I2C 通常動作用 */
     i2c0_default: i2c0_default {
         group1 {
             psels = <NRF_PSEL(TWIM_SDA, 0, 10)>,
@@ -46,7 +33,6 @@
         };
     };
 
-    /* I2C スリープ動作用 */
     i2c0_sleep: i2c0_sleep {
         group1 {
             psels = <NRF_PSEL(TWIM_SDA, 0, 10)>,
@@ -56,25 +42,18 @@
     };
 };
 
-########################################
-# シリアル設定
-########################################
 &xiao_serial {
-    status = "disabled";  /* シリアル無効化 */
+    status = "disabled";
 };
 
-########################################
-# I2C設定
-########################################
 &xiao_i2c {
     status = "okay";
     compatible = "nordic,nrf-twi";
     pinctrl-0 = <&i2c0_default>;
     pinctrl-1 = <&i2c0_sleep>;
     pinctrl-names = "default", "sleep";
-    clock-frequency = <100000>;  /* 100kHz */
+    clock-frequency = <100000>;
 
-    /* OLED ディスプレイ設定 */
     oled: ssd1306@3c {
         compatible = "sinowealth,sh1106";
         reg = <0x3c>;

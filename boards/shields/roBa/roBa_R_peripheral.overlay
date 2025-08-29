@@ -1,36 +1,26 @@
 #include "roBa.dtsi"
 #include "roBa_trackball.dtsi"
 
-########################################
-# Root Node Configuration
-########################################
-/ {
+/
+{
     chosen {
-        zmk,kscan = &kscan0;  /* Specify the keyscan device to use */
+        zmk,kscan = &kscan0;
     };
 };
 
-########################################
-# Default Transform Configuration
-########################################
 &default_transform {
-    col-offset = <6>;  /* Set column offset to 6 */
+    col-offset = <6>;
 };
 
-########################################
-# Key Matrix Configuration (GPIO)
-########################################
 &kscan0 {
     compatible = "zmk,kscan-gpio-matrix";
 
-    /* Row GPIOs */
     row-gpios = 
         <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
         <&xiao_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
         <&xiao_d 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
         <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
 
-    /* Column GPIOs */
     col-gpios = 
         <&xiao_d 10 GPIO_ACTIVE_HIGH>,
         <&xiao_d 9  GPIO_ACTIVE_HIGH>,
@@ -39,27 +29,18 @@
         <&gpio0 10 GPIO_ACTIVE_HIGH>;
 };
 
-########################################
-# Serial Configuration
-########################################
 &xiao_serial {
-    status = "disabled";  /* Disable serial */
+    status = "disabled";
 };
 
-########################################
-# SPI Configuration
-########################################
 &spi0 {
-    status = "okay";  /* Enable SPI device */
+    status = "okay";
 };
 
-########################################
-# Trackball Configuration
-########################################
 &trackball {
-    status = "okay";  /* Enable trackball */
+    status = "okay";
 };
 
 &trackball_split {
-    status = "okay";  /* Enable split trackball */
+    status = "okay";
 };

@@ -1,37 +1,27 @@
 #include "roBa.dtsi"
 #include "roBa_trackball.dtsi"
 
-########################################
-# ルートノード設定
-########################################
-/ {
+/
+{
     chosen {
-        zmk,kscan = &kscan0;  /* 使用するキースキャンデバイスを指定 */
+        zmk,kscan = &kscan0;
     };
 };
 
-########################################
-# デフォルト変換設定
-########################################
 &default_transform {
-    col-offset = <0>;  /* 列オフセットを0に設定 */
+    col-offset = <0>;
 };
 
-########################################
-# キーマトリックス設定 (GPIO)
-########################################
 &kscan0 {
     compatible = "zmk,kscan-gpio-matrix";
 
-    /* 行 (Row) GPIO設定 */
-    row-gpios = 
+    row-gpios =
         <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
         <&xiao_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
         <&xiao_d 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
         <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
 
-    /* 列 (Column) GPIO設定 */
-    col-gpios = 
+    col-gpios =
         <&xiao_d 10 GPIO_ACTIVE_HIGH>,
         <&xiao_d 9  GPIO_ACTIVE_HIGH>,
         <&xiao_d 8  GPIO_ACTIVE_HIGH>,
@@ -40,27 +30,18 @@
         <&gpio0 9  GPIO_ACTIVE_HIGH>;
 };
 
-########################################
-# 左側ロータリーエンコーダ (EC11)
-########################################
 &left_encoder {
     compatible = "alps,ec11";
-    a-gpios = <&xiao_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;  /* A相入力 */
-    b-gpios = <&xiao_d 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;  /* B相入力 */
-    steps = <24>;  /* 1回転あたりのステップ数 */
-    status = "okay";  /* デバイス有効化 */
+    a-gpios = <&xiao_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    b-gpios = <&xiao_d 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    steps = <24>;
+    status = "okay";
 };
 
-########################################
-# トラックボール設定
-########################################
 &trackball_listener {
-    status = "okay";  /* トラックボールを有効化 */
+    status = "okay";
 };
 
-########################################
-# シリアル設定
-########################################
 &xiao_serial {
-    status = "disabled";  /* シリアル無効化 */
+    status = "disabled";
 };

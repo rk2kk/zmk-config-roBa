@@ -1,24 +1,18 @@
 #include "roBa.dtsi"
 #include "roBa_trackball.dtsi"
 
-########################################
-# デフォルトレイアウト設定
-########################################
 &default_layout {
     transform = <&default_transform>;
 };
 
-########################################
-# ルートノード設定
-########################################
-/ {
+/
+{
     chosen {
-        zmk,kscan = &mock_kscan;          /* キースキャンにモックを使用 */
-        zmk,physical-layout = &default_layout; /* 物理レイアウト指定 */
-        zephyr,display = &oled;           /* OLEDディスプレイ指定 */
+        zmk,kscan = &mock_kscan;
+        zmk,physical-layout = &default_layout;
+        zephyr,display = &oled;
     };
 
-    /* キースキャンモック設定 */
     mock_kscan: mock_kscan_0 {
         compatible = "zmk,kscan-mock";
         columns = <0>;
@@ -27,18 +21,11 @@
     };
 };
 
-########################################
-# トラックボール設定
-########################################
 &trackball_listener {
     status = "okay";
 };
 
-########################################
-# ピン制御設定 (I2C)
-########################################
 &pinctrl {
-    /* I2C 通常動作用 */
     i2c0_default: i2c0_default {
         group1 {
             psels = <NRF_PSEL(TWIM_SDA, 0, 10)>,
@@ -46,7 +33,6 @@
         };
     };
 
-    /* I2C スリープ動作用 */
     i2c0_sleep: i2c0_sleep {
         group1 {
             psels = <NRF_PSEL(TWIM_SDA, 0, 10)>,
@@ -56,25 +42,18 @@
     };
 };
 
-########################################
-# シリアル設定
-########################################
 &xiao_serial {
-    status = "disabled"; /* シリアル無効化 */
+    status = "disabled";
 };
 
-########################################
-# I2C 設定
-########################################
 &xiao_i2c {
     status = "okay";
     compatible = "nordic,nrf-twi";
     pinctrl-0 = <&i2c0_default>;
     pinctrl-1 = <&i2c0_sleep>;
     pinctrl-names = "default", "sleep";
-    clock-frequency = <100000>; /* 100kHz */
+    clock-frequency = <100000>;
 
-    /* OLED ディスプレイ設定 */
     oled: ssd1306@3c {
         compatible = "sinowealth,sh1106";
         reg = <0x3c>;
@@ -88,5 +67,3 @@
         com-invdir;
         inversion-on;
         prechargep = <0x22>;
-    };
-};
