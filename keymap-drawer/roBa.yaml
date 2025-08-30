@@ -43,7 +43,7 @@ layers:
   - {t: '&kp_exit_AML INTERNATIONAL_4', h: '&mo_exit_AML 2'}
   - BACKSPACE
   - {t: '&kp_exit_AML ENTER', h: '&mo_exit_AML 1'}
-  - '&kp_exit_AML RIGHT_SHIFT'
+  - RIGHT SHIFT
   '1':
   - '1'
   - '2'
@@ -142,7 +142,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&mouse_gesture'
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -155,7 +155,6 @@ layers:
   - '&mkp MB3'
   - '&mkp MB2'
   - {t: ▽, type: trans}
-  - LEFT SHIFT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -164,6 +163,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - '&mo_exit_AML'
   - '&mkp MB4'
   - '&mkp MB5'
   - '&mouse_gesture'
@@ -492,17 +492,17 @@ layers:
   - {t: BT, h: '4'}
   - ''
   - ''
+  - OUT BLE
+  - OUT USB
   - OUT TOG
   - '&sys_reset'
   - '&bootloader'
-  - '&sys_reset'
-  - '&bootloader'
   - ''
   - ''
   - ''
-  - {t: ▽, type: trans}
-  - '&ind_con'
-  - '&ind_bat'
+  - ''
+  - ''
+  - ''
   - ''
   - ''
   - ''
