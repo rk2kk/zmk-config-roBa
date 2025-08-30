@@ -2,20 +2,81 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: badjeff
+      url-base: https://github.com/badjeff
+    - name: ssbb
+      url-base: https://github.com/ssbb
+    - name: caksoylar 
+      url-base: https://github.com/caksoylar  
+    - name: englmaxi
+      url-base: https://github.com/englmaxi
     - name: kot149
       url-base: https://github.com/kot149
-    - name: caksoylar
-      url-base: https://github.com/caksoylar  
+      #dongle
+    - name: rschenk
+      url-base: https://github.com/rschenk
+    - name: venator
+      url-base: https://github.com/venator
+    - name: rk2kk
+      url-base: https://github.com/rk2kk
+    - name: zettaface
+      url-base: https://github.com/zettaface
+    - name: te9no
+      url-base: https://github.com/te9no
+      
   projects:
+    # https://github.com/zmkfirmware/zmk
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: zmk-pmw3610-driver
+      
+    # # https://github.com/badjeff/zmk-pmw3610-driver
+    # - name: zmk-pmw3610-driver
+    #   remote: badjeff
+    #   revision: main
+    #   path: modules/zmk-pmw3610-driver-badjeff
+    
+    # https://github.com/kot149/zmk-pmw3610-driver-badjeff/tree/swap-invert-reg
+    - name: zmk-pmw3610-driver-badjeff
       remote: kot149
-      revision: feature/ball-action
+      revision: swap-invert-reg
+      path: modules/zmk-pmw3610-driver-badjeff
+    # https://github.com/ssbb/zmk-listeners
+    - name: zmk-listeners
+      remote: ssbb
+      revision: v1
+      path: modules/zmk-listeners
+    # https://github.com/caksoylar/zmk-rgbled-widget
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: main
+      path: modules/zmk-rgbled-widget
+    # https://github.com/kot149/zmk-mouse-gesture
+    - name: zmk-mouse-gesture
+      remote: kot149
+      revision: v1
+      path: modules/zmk-mouse-gesture
+    # https://github.com/kot149/zmk-layout-shift
+    - name: zmk-dongle-display
+      remote: englmaxi
+      revision: main
+    - name: zmk-component-raytac-dongle
+      remote: venator
+      revision: main
+    - name: zmk-input-processor-keybind
+      remote: zettaface
+      revision: main
+      path:  modules/zmk-input-processor-keybind-zettaface
+    # https://github.com/badjeff/zmk-input-processor-report-rate-limit
+    - name: zmk-input-processor-report-rate-limit
+      remote: badjeff
+      revision: main
+      path: modules/zmk-input-processor-report-rate-limit
+          # https://github.com/kot149/zmk-layout-shift
+    - name: zmk-layout-shift
+      remote: kot149
+      revision: v1
+      path: modules/zmk-layout-shift
   self:
     path: config

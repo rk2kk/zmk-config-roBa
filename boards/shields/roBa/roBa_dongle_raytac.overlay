@@ -1,0 +1,26 @@
+#include "roBa.dtsi"
+#include "roBa_trackball.dtsi"
+
+&default_layout {
+    transform = <&default_transform>;
+};
+
+
+/ {
+    chosen {
+        zmk,kscan = &mock_kscan;
+        zmk,physical-layout = &default_layout;
+    };
+
+    mock_kscan: mock_kscan_0 {
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
+    };
+
+};
+
+&trackball_listener {
+    status = "okay";
+   };
