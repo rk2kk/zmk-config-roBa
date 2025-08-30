@@ -5,8 +5,8 @@
     transform = <&default_transform>;
 };
 
-/
-{
+
+/ {
     chosen {
         zmk,kscan = &mock_kscan;
         zmk,physical-layout = &default_layout;
@@ -18,6 +18,9 @@
         rows = <0>;
         events = <0>;
     };
+
 };
 
 &trackball_listener {
+    status = "okay";
+   };
