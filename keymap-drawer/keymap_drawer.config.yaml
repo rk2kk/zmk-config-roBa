@@ -67,9 +67,10 @@ parse_config:
     '&msc SCRL_LEFT': "Scroll ←"
     '&msc SCRL_RIGHT': "Scroll →"
 
-    '&mkp LCLK': "Left Click"
-    '&mkp RCLK': "Right Click"
+    '&mkp LCLK': "$$mdi:mouse-left-click-outline$$"
+    '&mkp RCLK': "$$mdi:mouse-right-click-outline$$"
     '&mkp MCLK': "Middle Click"
+    '&mkp MB3': "Middle Click"
     '&mkp MB4': "Back Click"
     '&mkp MB5': "Forward Click"
 
@@ -87,6 +88,16 @@ parse_config:
     combo_lock:   {draw_separate: true}
     combo_indbat: {align: top, o: 0.25}
     combo_indcon: {align: top}
+    combo_escape: "$$mdi:keyboard-esc$$"
+    combo_tab: "$$mdi:keyboard-tab$$"
+    combo_space: "$$mdi:keyboard-space$$"
+    combo_enter: "$$mdi:keyboard-return$$"
+    combo_backspace: "$$mdi:backspace-outline$$"
+    combo_delete: "$$mdi:backspace-reverse-outline$$"
+    combo_shift: "$$mdi:apple-keyboard-shift$$"
+    combo_ctrl: "$$mdi:apple-keyboard-control$$"
+    combo_alt: "ALT"
+    combo_gui: "$$mdi:microsoft-windows$$"
 
   zmk_keycode_map:
     LC(BSPC): "$$mdi:backspace$$"
@@ -171,13 +182,15 @@ parse_config:
     PSCRN: "$$mdi:monitor-screenshot$$"
     PAUSE_BREAK: "Pause Break"
     
+    C_PREV: "⏮"
+    C_NEXT: "⏭"
+    C_PLAY_PAUSE: "⏯"
+    C_MUTE: "🔇"
+    C_VOLUME_UP: "🔊"
+    C_VOLUME_DOWN: "🔉"
     C_PP: "$$mdi:play-pause$$"
-    C_NEXT: "$$mdi:skip-forward$$"
-    C_PREV: "$$mdi:skip-backward$$"
+ 
     
-    C_MUTE: "$$mdi:volume-mute$$"
-    C_VOL_UP: "$$mdi:volume-plus$$"
-    C_VOL_DN: "$$mdi:volume-minus$$"
     
     C_BRI_UP: "$$phosphor:bold/sun$$"
     C_BRI_DN: "$$phosphor:bold/sun-dim$$"
@@ -271,3 +284,44 @@ parse_config:
     NON_US_HASH: "#"
     NUHS: "#"
     TILDE2: "~"
+
+    '&lt_exit_AML 6 MINUS' :
+      tap: "-"
+      hold: "6"
+      type: tsym_by_sym
+    '&lt_exit_AML 5 SEMICOLON' : 
+      tap: ":" 
+      hold: "5"
+      type: tsym_by_sym
+    '&mt_exit_AML_on_tap LEFT_SHIFT Z' :
+      tap: "Z"
+      hold: "$$mdi:apple-keyboard-shift$$"
+      type: tsym_by_sym  
+    '&lt_exit_alttab 8 B' : 
+      tap: "B" 
+      hold: "8"
+      type: tsym_by_sym
+    '&lt_exit_alttab 7 EQUAL': 
+      tap: "=" 
+      hold: "7"
+      type: tsym_by_sym
+    '&lt_exit_AML 4 SLASH' : 
+      tap: "/" 
+      hold: "4"
+      type: tsym_by_sym
+    '&lt 5 INTERNATIONAL_5': 
+      tap: "mu-henkan" 
+      hold: "5"
+      type: tsym_by_sym
+    '&lt_exit_AML 4 SPACE': 
+      tap: "$$mdi:keyboard-space$$" 
+      hold: "4"
+      type: tsym_by_sym
+    '&lt_exit_AML 2 INTERNATIONAL_4': 
+      tap: "henkan" 
+      hold: "2"
+      type: tsym_by_sym
+    '&lt_exit_AML 1 ENTER': 
+      tap: "$$mdi:keyboard-return$$"
+      hold: "1"
+      type: tsym_by_sym
