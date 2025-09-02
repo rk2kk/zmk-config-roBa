@@ -151,7 +151,8 @@ parse_config:
     
     LALT: "ALT"
     LEFTALT: "ALT"
-    
+    LEFT_ALT: "ALT"
+
     SPACE: "$$mdi:keyboard-space$$"
     ESC: "$$mdi:keyboard-esc$$"
 
@@ -181,6 +182,7 @@ parse_config:
     LGUI: "$$mdi:microsoft-windows$$"
     RGUI: "$$mdi:microsoft-windows$$"
     LWIN: "$$mdi:microsoft-windows$$"
+    LEFT_WIN: "$$mdi:microsoft-windows$$"
 
 
     TAB: "$$mdi:keyboard-tab$$"
@@ -301,3 +303,19 @@ parse_config:
 
     INTERNATIONAL_5 : "mu-henkan"
     INTERNATIONAL_4 : "henkan"
+
+
+    LS(NUMBER_1) : "!"
+    LS(NUMBER_2) : """
+    LS(NUMBER_3) : "#"
+    LS(NUMBER_4) : "$" 
+    LS(N5)       : "%" 
+    LS(NUMBER_6) : "&"
+    LS(NUMBER_7) : "'"
+    LS(NUMBER_8) : "("
+    LS(NUMBER_9) : ")"
+    LS(N0): ""
+    LS(MINUS) : "~"
+    LS(EQUAL) : "|"
+    LS(INT3): "|"
+    LS(INTERNATIONAL_1): "_"
