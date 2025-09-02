@@ -76,21 +76,19 @@ parse_config:
 
     # ▼▼ ここに正規表現マッピングを移動（※ raw_binding_map の中） ▼▼
     # &lt_exit_AML NUM KEY → {t: "KEY", h: "NUM"}
+    # ▼▼ ここから正規表現 ▼▼
     "/&lt_exit_AML\\s+([0-9]+)\\s+([^\\s]+)/":
       t: "\\2"
       h: "\\1"
 
-    # &lt NUM KEY → {t: "KEY", h: "NUM"}
     "/&lt\\s+([0-9]+)\\s+([^\\s]+)/":
       t: "\\2"
       h: "\\1"
 
-    # &mt_exit_AML_on_tap HOLD TAP → {t: "TAP", h: "HOLD"}
     "/&mt_exit_AML_on_tap\\s+([^\\s]+)\\s+([^\\s]+)/":
       t: "\\2"
       h: "\\1"
 
-    # &mt_exit_AML HOLD TAP → {t: "TAP", h: "HOLD"}
     "/&mt_exit_AML\\s+([^\\s]+)\\s+([^\\s]+)/":
       t: "\\2"
       h: "\\1"
