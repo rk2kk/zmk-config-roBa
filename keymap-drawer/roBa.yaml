@@ -11,7 +11,7 @@ layers:
   - I
   - O
   - P
-  - {t: A, h: LCTRL}
+  - {t: A, h: '$$mdi:apple-keyboard-control$$'}
   - S
   - D
   - F
@@ -23,27 +23,27 @@ layers:
   - K
   - L
   - {t: '&kp_exit_AML SEMICOLON', h: '&mo_exit_AML 5'}
-  - {t: '&kp_exit_AML Z', h: LEFT SHIFT}
-  - {t: X, h: Ctl+X}
-  - {t: C, h: Ctl+C}
-  - {t: V, h: Ctl+V}
+  - {t: Z, h: '$$mdi:apple-keyboard-shift$$', type: text_with_symbol}
+  - {t: X, h: '$$mdi:content-cut$$'}
+  - {t: C, h: '$$mdi:content-copy$$'}
+  - {t: V, h: '$$mdi:content-paste$$'}
   - {t: B, h: '&mo_exit_alttab 8'}
   - {t: '=', h: '&mo_exit_alttab 7'}
-  - DEL
+  - $$mdi:backspace-reverse-outline$$
   - N
   - M
   - ','
   - .
   - {t: '&kp_exit_AML SLASH', h: '&mo_exit_AML 4'}
-  - LCTRL
+  - $$mdi:apple-keyboard-control$$
   - LEFT WIN
   - LEFT ALT
   - {t: INTERNATIONAL 5, h: '5'}
   - {t: '&kp_exit_AML SPACE', h: '&mo_exit_AML 4'}
   - {t: '&kp_exit_AML INTERNATIONAL_4', h: '&mo_exit_AML 2'}
-  - BACKSPACE
+  - $$mdi:backspace-outline$$
   - {t: '&kp_exit_AML ENTER', h: '&mo_exit_AML 1'}
-  - RIGHT SHIFT
+  - $$mdi:apple-keyboard-shift$$
   '1':
   - '1'
   - '2'
@@ -111,7 +111,7 @@ layers:
   - KP 5
   - KP 6
   - Sft+'
-  - {t: KP 0, h: LEFT SHIFT}
+  - {t: KP 0, h: '$$mdi:apple-keyboard-shift$$'}
   - KP 1
   - KP 2
   - KP 3
@@ -131,7 +131,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LEFT SHIFT
+  - $$mdi:apple-keyboard-shift$$
   '3':
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -164,8 +164,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '&mo_exit_AML'
-  - '&mkp MB4'
-  - '&mkp MB5'
+  - Back Click
+  - Forward Click
   - '&mouse_gesture'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -178,9 +178,9 @@ layers:
   - {t: ▽, type: trans}
   '4':
   - ESCAPE
-  - Ctl+Sft+TAB
+  - $$mdi:arrow-left-bold-box$$
   - UP ARROW
-  - Ctl+TAB
+  - $$mdi:arrow-right-bold-box$$
   - {t: ▽, type: trans}
   - Ctl+Gui+LEFT ARROW
   - Gui+UP ARROW
@@ -200,9 +200,9 @@ layers:
   - ''''
   - '#'
   - Ctl+Z
-  - Ctl+X
-  - Ctl+C
-  - Ctl+V
+  - $$mdi:content-cut$$
+  - $$mdi:content-copy$$
+  - $$mdi:content-paste$$
   - Ctl+B
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -219,22 +219,22 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - RIGHT SHIFT
+  - $$mdi:apple-keyboard-shift$$
   '5':
-  - {t: BT, h: '1'}
-  - {t: BT, h: '2'}
-  - {t: BT, h: '3'}
-  - {t: BT, h: '4'}
+  - {t: '$$mdi:bluetooth-connect$$', s: '1', type: text_with_symbol}
+  - {t: '$$mdi:bluetooth-connect$$', s: '2', type: text_with_symbol}
+  - {t: '$$mdi:bluetooth-connect$$', s: '3', type: text_with_symbol}
+  - {t: '$$mdi:bluetooth-connect$$', s: '4', type: text_with_symbol}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: BT, h: '0'}
+  - {t: '$$mdi:bluetooth-connect$$', s: '0', type: text_with_symbol}
   - {t: ▽, type: trans}
   - Alt+[
   - {t: ▽, type: trans}
-  - Sft+Alt+TAB
+  - Sft+Alt+$$mdi:keyboard-tab$$
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -252,9 +252,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&mkp MB4'
-  - '&mkp MB5'
-  - '&td_bt_clear'
+  - Back Click
+  - Forward Click
+  - {t: '$$mdi:bluetooth$$', s: '$$mdi:close-thick$$', type: text_with_symbol}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -263,7 +263,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&td_bt_clear_all'
+  - {t: '$$mdi:bluetooth$$', s: CLEAR ALL, type: text_with_symbol}
   Function:
   - F1
   - F2
@@ -275,10 +275,10 @@ layers:
   - F8
   - F9
   - F10
-  - Ctl+A
+  - $$mdi:select-all$$
   - Ctl+S
   - Ctl+D
-  - Ctl+F
+  - $$mdi:text-search$$
   - Ctl+G
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -288,9 +288,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Ctl+Z
-  - Ctl+X
-  - Ctl+C
-  - Ctl+V
+  - $$mdi:content-cut$$
+  - $$mdi:content-copy$$
+  - $$mdi:content-paste$$
   - Ctl+B
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -353,7 +353,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   alt_tab:
-  - TAB
+  - $$mdi:keyboard-tab$$
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -362,7 +362,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - TAB
+  - $$mdi:keyboard-tab$$
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -374,7 +374,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - Alt+TAB
+  - Alt+$$mdi:keyboard-tab$$
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -397,7 +397,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   ctrl_tab:
-  - TAB
+  - $$mdi:keyboard-tab$$
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -406,7 +406,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - TAB
+  - $$mdi:keyboard-tab$$
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -418,7 +418,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - Alt+TAB
+  - Alt+$$mdi:keyboard-tab$$
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -446,9 +446,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - PREV
+  - $$mdi:skip-backward$$
   - PLAY PAUSE
-  - NEXT
+  - $$mdi:skip-forward$$
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -459,7 +459,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - VOLUME DOWN
-  - MUTE
+  - $$mdi:volume-mute$$
   - VOLUME UP
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -485,21 +485,18 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   CONFIGURATION:
-  - {t: BT, h: '0'}
-  - {t: BT, h: '1'}
-  - {t: BT, h: '2'}
-  - {t: BT, h: '3'}
-  - {t: BT, h: '4'}
+  - {t: '$$mdi:bluetooth-connect$$', s: '0', type: text_with_symbol}
+  - {t: '$$mdi:bluetooth-connect$$', s: '1', type: text_with_symbol}
+  - {t: '$$mdi:bluetooth-connect$$', s: '2', type: text_with_symbol}
+  - {t: '$$mdi:bluetooth-connect$$', s: '3', type: text_with_symbol}
+  - {t: '$$mdi:bluetooth-connect$$', s: '4', type: text_with_symbol}
   - ''
   - ''
-  - OUT BLE
-  - OUT USB
-  - OUT TOG
-  - '&sys_reset'
-  - '&bootloader'
-  - ''
-  - ''
-  - ''
+  - $$mdi:bluetooth$$
+  - $$mdi:usb$$
+  - {t: '$$mdi:toggle-switch$$', h: '$$mdi:bluetooth$$', s: '$$mdi:usb$$', type: toggle}
+  - Reset
+  - Boot
   - ''
   - ''
   - ''
@@ -518,7 +515,10 @@ layers:
   - ''
   - ''
   - ''
-  - '&td_bt_clear'
+  - ''
+  - ''
+  - ''
+  - {t: '$$mdi:bluetooth$$', s: '$$mdi:close-thick$$', type: text_with_symbol}
   - ''
   - ''
   - ''
@@ -527,12 +527,12 @@ layers:
   - ''
   - ''
   - ''
-  - '&td_bt_clear_all'
+  - {t: '$$mdi:bluetooth$$', s: CLEAR ALL, type: text_with_symbol}
 combos:
 - p: [11, 12]
-  k: TAB
+  k: $$mdi:keyboard-tab$$
 - p: [12, 13]
-  k: Sft+TAB
+  k: $$mdi:keyboard-tab-reverse$$
 - p: [10, 11]
   k: '&td_ZenkakuHankaku'
 - p: [20, 21]
