@@ -76,26 +76,23 @@ parse_config:
 
     # ▼▼ ここに正規表現マッピングを移動（※ raw_binding_map の中） ▼▼
     '&lt_exit_AML\s+([0-9]+)\s+([^\s]+)':
-      tap: "\\2"
-      hold: "\\1"
-      type: tsym_by_sym
+      t: "\\2"
+      h: "\\1"
 
-    # シンプルな &lt 形式も
+    # lt: &lt NUM KEY → {t: "KEY", h: "NUM"}
     '&lt\s+([0-9]+)\s+([^\s]+)':
-      tap: "\\2"
-      hold: "\\1"
-      type: tsym_by_sym
+      t: "\\2"
+      h: "\\1"
 
-    # mt 系
+    # mt_exit_AML_on_tap: &mt_exit_AML_on_tap HOLD TAP → {t: "TAP", h: "HOLD"}
     '&mt_exit_AML_on_tap\s+([^\s]+)\s+([^\s]+)':
-      tap: "\\2"
-      hold: "\\1"
-      type: tsym_by_sym
+      t: "\\2"
+      h: "\\1"
 
+    # mt_exit_AML: &mt_exit_AML HOLD TAP → {t: "TAP", h: "HOLD"}
     '&mt_exit_AML\s+([^\s]+)\s+([^\s]+)':
-      tap: "\\2"
-      hold: "\\1"
-      type: tsym_by_sym
+      t: "\\2"
+      h: "\\1"
     # ▲▲ 正規表現マッピングここまで ▲▲
 
   zmk_combos:
