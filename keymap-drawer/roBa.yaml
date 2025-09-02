@@ -16,7 +16,7 @@ layers:
   - D
   - F
   - G
-  - '&mkp MB3'
+  - Middle Click
   - {t: '&kp_exit_AML MINUS', h: '&mo_exit_AML 6'}
   - H
   - J
@@ -38,7 +38,7 @@ layers:
   - $$mdi:apple-keyboard-control$$
   - LEFT WIN
   - LEFT ALT
-  - {t: INTERNATIONAL 5, h: '5'}
+  - {t: mu-henkan, h: '5'}
   - {t: '&kp_exit_AML SPACE', h: '&mo_exit_AML 4'}
   - {t: '&kp_exit_AML INTERNATIONAL_4', h: '&mo_exit_AML 2'}
   - $$mdi:backspace-outline$$
@@ -152,7 +152,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '&mkp MB1'
-  - '&mkp MB3'
+  - Middle Click
   - '&mkp MB2'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -240,7 +240,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '&mkp MB1'
-  - '&mkp MB3'
+  - Middle Click
   - '&mkp MB2'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -446,9 +446,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - $$mdi:skip-backward$$
-  - PLAY PAUSE
-  - $$mdi:skip-forward$$
+  - ⏮
+  - ⏯
+  - ⏭
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -458,9 +458,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - VOLUME DOWN
-  - $$mdi:volume-mute$$
-  - VOLUME UP
+  - 🔉
+  - 🔇
+  - 🔊
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
