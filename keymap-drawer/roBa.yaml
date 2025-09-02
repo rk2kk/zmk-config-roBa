@@ -36,8 +36,8 @@ layers:
   - .
   - {t: '&kp_exit_AML SLASH', h: '&mo_exit_AML 4'}
   - $$mdi:apple-keyboard-control$$
-  - LEFT WIN
-  - LEFT ALT
+  - $$mdi:microsoft-windows$$
+  - ALT
   - {t: mu-henkan, h: '5'}
   - {t: '&kp_exit_AML SPACE', h: '&mo_exit_AML 4'}
   - {t: '&kp_exit_AML INTERNATIONAL_4', h: '&mo_exit_AML 2'}
@@ -116,7 +116,7 @@ layers:
   - KP 2
   - KP 3
   - .
-  - Sft+-
+  - '~'
   - {t: ▽, type: trans}
   - KP 0
   - KP 1
@@ -309,19 +309,19 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   FUNCTION_NUM_1:
-  - Sft+1
-  - Sft+2
-  - Sft+3
-  - Sft+4
-  - Sft+5
-  - Sft+6
-  - Sft+7
-  - Sft+8
-  - Sft+9
+  - '!'
+  - '"'
+  - '#'
+  - $
+  - '%'
+  - '&'
+  - ''''
+  - (
+  - )
   - Sft+0
-  - Sft+-
-  - Sft+=
-  - Sft+INT3
+  - '~'
+  - '|'
+  - '|'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -342,7 +342,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - Sft+INTERNATIONAL 1
+  - _
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -538,7 +538,7 @@ combos:
 - p: [20, 21]
   k: '"'
 - p: [24, 25]
-  k: Sft+-
+  k: '~'
 - p: [0, 1]
   k: ESCAPE
 - p: [38, 37]
