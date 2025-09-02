@@ -74,6 +74,23 @@ parse_config:
     '&mkp MB4': "Back Click"
     '&mkp MB5': "Forward Click"
 
+    # ▼▼ ここに正規表現マッピングを移動（※ raw_binding_map の中） ▼▼
+    '^\&mt_exit_AML_on_tap\s+([A-Z0-9_]+)\s+([A-Z0-9_]+)$':
+      tap: "\\2"
+      hold: "\\1"
+      type: tsym_by_sym
+
+    '^\&mt_exit_AML\s+([A-Z0-9_]+)\s+([A-Z0-9_]+)$':
+      tap: "\\2"
+      hold: "\\1"
+      type: tsym_by_sym
+
+    '^\&lt_exit_AML\s+([0-9]+)\s+([A-Z0-9_]+)$':
+      tap: "\\2"
+      hold: "\\1"
+      type: tsym_by_sym
+    # ▲▲ 正規表現マッピングここまで ▲▲
+
   zmk_combos:
     combo_btclr:  {align: bottom}
     combo_undo:   {align: bottom}
@@ -88,16 +105,7 @@ parse_config:
     combo_lock:   {draw_separate: true}
     combo_indbat: {align: top, o: 0.25}
     combo_indcon: {align: top}
-    combo_escape: "$$mdi:keyboard-esc$$"
-    combo_tab: "$$mdi:keyboard-tab$$"
-    combo_space: "$$mdi:keyboard-space$$"
-    combo_enter: "$$mdi:keyboard-return$$"
-    combo_backspace: "$$mdi:backspace-outline$$"
-    combo_delete: "$$mdi:backspace-reverse-outline$$"
-    combo_shift: "$$mdi:apple-keyboard-shift$$"
-    combo_ctrl: "$$mdi:apple-keyboard-control$$"
-    combo_alt: "ALT"
-    combo_gui: "$$mdi:microsoft-windows$$"
+    # ※ ここはオプション辞書のみ。アイコン等の直接指定は不可のため削除しました
 
   zmk_keycode_map:
     LC(BSPC): "$$mdi:backspace$$"
@@ -190,8 +198,6 @@ parse_config:
     C_VOLUME_DOWN: "🔉"
     C_PP: "$$mdi:play-pause$$"
  
-    
-    
     C_BRI_UP: "$$phosphor:bold/sun$$"
     C_BRI_DN: "$$phosphor:bold/sun-dim$$"
     
@@ -285,24 +291,5 @@ parse_config:
     NUHS: "#"
     TILDE2: "~"
 
-    # &mt_exit_AML_on_tap: tap優先のmt
-    '^\&mt_exit_AML_on_tap\s+([A-Z0-9_]+)\s+([A-Z0-9_]+)$':
-      tap: "\\2"
-      hold: "\\1"
-      type: tsym_by_sym
-
-    # &mt_exit_AML: hold/tapを逆に設定
-    '^\&mt_exit_AML\s+([A-Z0-9_]+)\s+([A-Z0-9_]+)$':
-      tap: "\\2"
-      hold: "\\1"
-      type: tsym_by_sym
-
-    # &lt_exit_AML: layer-tap
-    '^\&lt_exit_AML\s+([0-9]+)\s+([A-Z0-9_]+)$':
-      tap: "\\2"
-      hold: "\\1"
-      type: tsym_by_sym
-      
     INTERNATIONAL_5 : "mu-henkan"
-    INTERNATIONAL_4 :  "henkan"
-
+    INTERNATIONAL_4 : "henkan"
