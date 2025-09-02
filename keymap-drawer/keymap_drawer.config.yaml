@@ -285,43 +285,43 @@ parse_config:
     NUHS: "#"
     TILDE2: "~"
 
-    '&lt_exit_AML 6 MINUS' :
+    '&lt_exit_AML 6 MINUS':
       tap: "-"
       hold: "6"
       type: tsym_by_sym
-    '&lt_exit_AML 5 SEMICOLON' : 
-      tap: ":" 
+    '&lt_exit_AML 5 SEMICOLON':
+      tap: ":"
       hold: "5"
       type: tsym_by_sym
-    '&mt_exit_AML_on_tap LEFT_SHIFT Z' :
+    '&mt_exit_AML_on_tap LEFT_SHIFT Z':
       tap: "Z"
       hold: "$$mdi:apple-keyboard-shift$$"
-      type: tsym_by_sym  
-    '&lt_exit_alttab 8 B' : 
-      tap: "B" 
+      type: tsym_by_sym
+    '&lt_exit_alttab 8 B':
+      tap: "B"
       hold: "8"
       type: tsym_by_sym
-    '&lt_exit_alttab 7 EQUAL': 
-      tap: "=" 
+    '&lt_exit_alttab 7 EQUAL':
+      tap: "="
       hold: "7"
       type: tsym_by_sym
-    '&lt_exit_AML 4 SLASH' : 
-      tap: "/" 
+    '&lt_exit_AML 4 SLASH':
+      tap: "/"
       hold: "4"
       type: tsym_by_sym
-    '&lt 5 INTERNATIONAL_5': 
-      tap: "mu-henkan" 
+    '&lt 5 INTERNATIONAL_5':
+      tap: "mu-henkan"
       hold: "5"
       type: tsym_by_sym
-    '&lt_exit_AML 4 SPACE': 
-      tap: "$$mdi:keyboard-space$$" 
+    '&lt_exit_AML 4 SPACE':
+      tap: "$$mdi:keyboard-space$$"
       hold: "4"
       type: tsym_by_sym
-    '&lt_exit_AML 2 INTERNATIONAL_4': 
-      tap: "henkan" 
+    '&lt_exit_AML 2 INTERNATIONAL_4':
+      tap: "henkan"
       hold: "2"
       type: tsym_by_sym
-    '&lt_exit_AML 1 ENTER': 
+    '&lt_exit_AML 1 ENTER':
       tap: "$$mdi:keyboard-return$$"
       hold: "1"
       type: tsym_by_sym
