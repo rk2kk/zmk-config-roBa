@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: roBa}
 layers:
   home:
-  - {t: Q, h: LWIN}
+  - {t: Q, h: '$$mdi:microsoft-windows$$'}
   - W
   - E
   - R
