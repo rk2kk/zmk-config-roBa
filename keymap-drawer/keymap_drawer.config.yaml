@@ -306,7 +306,7 @@ parse_config:
 
 
     LS(NUMBER_1) : "!"
-    LS(NUMBER_2) : """
+    LS(NUMBER_2) : "\""
     LS(NUMBER_3) : "#"
     LS(NUMBER_4) : "$" 
     LS(N5)       : "%" 
