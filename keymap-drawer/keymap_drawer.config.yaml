@@ -75,23 +75,24 @@ parse_config:
     '&mkp MB5': "Forward Click"
 
     # ▼▼ ここに正規表現マッピングを移動（※ raw_binding_map の中） ▼▼
+    '&lt_exit_AML\s+([0-9]+)\s+([^\s]+)':
+      tap: "\\2"
+      hold: "\\1"
+      type: tsym_by_sym
+
+    # シンプルな &lt 形式も
+    '&lt\s+([0-9]+)\s+([^\s]+)':
+      tap: "\\2"
+      hold: "\\1"
+      type: tsym_by_sym
+
+    # mt 系
     '&mt_exit_AML_on_tap\s+([^\s]+)\s+([^\s]+)':
       tap: "\\2"
       hold: "\\1"
       type: tsym_by_sym
 
     '&mt_exit_AML\s+([^\s]+)\s+([^\s]+)':
-      tap: "\\2"
-      hold: "\\1"
-      type: tsym_by_sym
-
-    '&lt_exit_AML\s+([0-9]+)\s+([^\s]+)':
-      tap: "\\2"
-      hold: "\\1"
-      type: tsym_by_sym
-
-    # （必要ならltの短縮形も）
-    '&lt\s+([0-9]+)\s+([^\s]+)':
       tap: "\\2"
       hold: "\\1"
       type: tsym_by_sym
