@@ -150,6 +150,7 @@ parse_config:
     LG(L): "$$mdi:lock-outline$$"
     
     LALT: "ALT"
+    LEFTALT: "ALT"
     
     SPACE: "$$mdi:keyboard-space$$"
     ESC: "$$mdi:keyboard-esc$$"
@@ -179,7 +180,9 @@ parse_config:
 
     LGUI: "$$mdi:microsoft-windows$$"
     RGUI: "$$mdi:microsoft-windows$$"
-    
+    LWIN: "$$mdi:microsoft-windows$$"
+
+
     TAB: "$$mdi:keyboard-tab$$"
 
     CLCK: "$$mdi:apple-keyboard-caps$$"
