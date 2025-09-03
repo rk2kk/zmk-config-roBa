@@ -1,9 +1,5 @@
 parse_config:
   raw_binding_map:
-    '&mt_exit_AML_on_tap LEFT_SHIFT Z': 
-      tap: "Z"
-      hold: "$$mdi:apple-keyboard-shift$$"
-      type: text_with_symbol
 
     '&sys_reset': "Reset"
     '&bootloader': "Boot"
@@ -94,6 +90,12 @@ parse_config:
       h: "\\1"
     # ▲▲ 正規表現マッピングここまで ▲▲
 
+    '&mt_exit_AML_on_tap LEFT_SHIFT Z': 
+      tap: "Z"
+      hold: "$$mdi:apple-keyboard-shift$$"
+      type: text_with_symbol
+
+      
   zmk_combos:
     combo_btclr:  {align: bottom}
     combo_undo:   {align: bottom}
