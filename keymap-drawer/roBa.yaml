@@ -116,7 +116,7 @@ layers:
   - KP 2
   - KP 3
   - .
-  - '~'
+  - '='
   - {t: ▽, type: trans}
   - KP 0
   - KP 1
@@ -319,8 +319,8 @@ layers:
   - (
   - )
   - Sft+0
+  - '='
   - '~'
-  - '|'
   - '|'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -538,7 +538,7 @@ combos:
 - p: [20, 21]
   k: '"'
 - p: [24, 25]
-  k: '~'
+  k: '='
 - p: [0, 1]
   k: ESCAPE
 - p: [38, 37]
