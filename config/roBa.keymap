@@ -43,7 +43,12 @@
 
 &mkp_input_listener { input-processors = <&zip_temp_layer MOUSE 10000>; };
 
-&trackball { cpi = <700>; };
+&trackball {
+    cpi = <800>;
+    swap-xy;
+    // invert-x;
+    // invert-y;
+};
 
 &zip_temp_layer {
     require-prior-idle-ms = <200>;
@@ -126,7 +131,11 @@
 
 &trackball_listener {
     compatible = "zmk,input-listener";
-    input-processors = <&zip_mouse_gesture  &zip_report_rate_limit 15 >;
+    input-processors = <
+        &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)
+        &zip_mouse_gesture
+        &zip_report_rate_limit 15 
+    >;
 
     auto-mouse-layer {
         layers = <DEFAULT MOUSE>;
@@ -136,11 +145,12 @@
 
     scroller {
         layers = <SCROLL>;
-        input-processors =
-            <&zip_xy_scaler 1 16>,
-            <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            <&zip_xy_to_scroll_mapper>,
-            <&zip_scroll_snap>;
+        input-processors = <
+            &zip_xy_scaler 1 16
+            &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
+            &zip_xy_to_scroll_mapper
+            &zip_scroll_snap
+        >;
 
         process-next;
     };
