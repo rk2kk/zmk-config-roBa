@@ -223,11 +223,12 @@
             compatible = "zmk,input-processor-keybind";
             #input-processor-cells = <0>;
             track_remainders;
-            bindings =
-            　　<&kp UP>,
-                <&kp DOWN>,
-                <&tab_kt_on_to LEFT_ALT ALT_TAB>,
-                <&shift_tab_kt_on_to LEFT_ALT ALT_TAB>;
+            bindings = {
+                         <&kp UP>,
+                         <&kp DOWN>,
+                         <&tab_kt_on_to LEFT_ALT ALT_TAB>,
+                         <&shift_tab_kt_on_to LEFT_ALT ALT_TAB>
+            };
             tick = <80>;
             wait-ms = <0>;
             tap-ms = <10>;
@@ -237,8 +238,12 @@
             compatible = "zmk,input-processor-keybind";
             #input-processor-cells = <0>;
             track_remainders;
-            bindings = <&kp LC(TAB)>, <&kp LC(LS(TAB))>, <&kp LC(TAB)>, <&kp LC(LS(TAB))>;
-
+            bindings = {
+                         <&kp LC(TAB)>,
+                         <&kp LC(LS(TAB))>,
+                         <&kp LC(TAB)>,
+                         <&kp LC(LS(TAB))>
+            };
             tick = <80>;
             wait-ms = <0>;
             tap-ms = <10>;
