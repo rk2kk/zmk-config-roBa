@@ -201,7 +201,7 @@
             compatible = "zmk,input-processor-keybind";
             #input-processor-cells = <0>;
             track_remainders;
-            bindings = <&kp UP>, <&kp DOWN>, <&kp RIGHT>, <&kp LEFT>;
+            bindings = <&kp DOWN>, <&kp UP>, <&kp RIGHT>, <&kp LEFT>;
 
             tick = <40>;
             wait-ms = <0>;
@@ -300,10 +300,6 @@
             key-positions = <0 1>;
         };
 
-        ctrl-tab {
-            bindings = <&mo 8>;
-            key-positions = <38 37>;
-        };
 
         mouse {
             bindings = <&mo 4>;
