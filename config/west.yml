@@ -23,7 +23,6 @@ manifest:
       url-base: https://github.com/zettaface
     - name: te9no
       url-base: https://github.com/te9no
-      manifest:
     - name: prospector
       url-base: https://github.com/t-ogura
       
