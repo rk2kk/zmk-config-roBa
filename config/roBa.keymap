@@ -225,8 +225,8 @@
             track-remainders;
             bindings = <&kp UP
                         &kp DOWN
-                        &tab_kt_on_to LEFT_ALT ALT_TAB
-                        &shift_tab_kt_on_to LEFT_ALT ALT_TAB
+                        &tab_kt_on_to LEFT_ALT alt_tab
+                        &shift_tab_kt_on_to LEFT_ALT alt_tab
                         >;
             tick = <80>;
             wait-ms = <0>;
