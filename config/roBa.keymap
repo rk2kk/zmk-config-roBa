@@ -225,8 +225,8 @@
             track-remainders;
             bindings = <&kp UP
                         &kp DOWN
-                        &tab_kt_on_to LEFT_ALT ALT_TAB
-                        &shift_tab_kt_on_to LEFT_ALT ALT_TAB
+                        &alt_tab_left
+                        &alt_tab_right
                         >;
             tick = <80>;
             wait-ms = <0>;
@@ -250,14 +250,10 @@
     layer_listeners {
         compatible = "zmk,layer-listeners";
 
-         release_alt {
-             layers = <ALT_TAB>;
-             bindings = <&kt_off LEFT_ALT>;
-         };
-        // release_ctrl {
-        //     layers = <CTRLTAB>;
-        //     bindings = <&kt_off LCTRL>;
-        //};
+        release_alt_ctrl: release_alt_ctrl {
+            layers = <ALT_TAB CTRL_TAB>;
+            bindings = <&kt_off LEFT_ALT &kt_off LCTRL>;
+        };
         // AML_indicator {
         //     layers = <MOUSE>;
         //     bindings = <&kp LS(LA(LC(LG(H)))) &kp LS(LA(LC(LG(H))))>;
@@ -486,6 +482,20 @@
             #binding-cells = <0>;
             bindings = <&kp LALT &kp LALT>;
         };
+
+　　　　/omit-if-no-ref/
+        alt_tab_left: alt_tab_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt_on LEFT_ALT &kp TAB>;
+        };
+
+        /omit-if-no-ref/
+        alt_tab_right: alt_tab_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt_on LEFT_ALT &kp LS(TAB)>;
+        };
     };
 
     behaviors {
