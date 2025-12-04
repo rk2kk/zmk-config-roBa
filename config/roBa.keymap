@@ -1,5 +1,5 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
-// #define ZMK_POINTING_DEFAULT_MOVE_VAL 700
+//#define ZMK_POINTING_DEFAULT_MOVE_VAL 700
 
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
@@ -226,7 +226,7 @@
             bindings = <&kp UP
                         &kp DOWN
                         &alt_tab_left
-                        &alt_tab_right
+                        &alt_tab_right
                         >;
             tick = <80>;
             wait-ms = <0>;
