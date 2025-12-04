@@ -587,7 +587,6 @@
         };
 
         /omit-if-no-ref/
-
         alt_tab: alt_tab {
             compatible = "zmk,behavior-macro-two-param";
             #binding-cells = <2>;
