@@ -113,6 +113,11 @@
         bindings = <&kp LG(LC(RIGHT))>;
     };
 
+    reopen_tab {
+        pattern = <GESTURE_UP GESTURE_LEFT>;
+        bindings = <&kp LC(LS(T))>;
+    };
+
     // left {
     //    pattern = <GESTURE_LEFT>;
     //    bindings = <&kp LEFT>;
@@ -184,11 +189,12 @@
         process-next;
     };
 
-    symbol_to_alt_tab {
+    symbol_to_alt_tab_aml {
         layers = <SYMBOL>;
-        input-processors = <&zip_xy_scaler 0 0>;
+        input-processors = <&zip_temp_layer ALT_TAB 10000>;
+        process-next;
     };
-
+    
     prevent-mouse-move {
         layers = <ARROW>, <NUM>, <VOLUME>, <CTRL_TAB>; 
         input-processors = <&zip_xy_scaler 0 1>;
