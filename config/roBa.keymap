@@ -172,13 +172,6 @@
         process-next;
     };
 
-    alt_tab_mode_start: alt_tab_mode_start {
-        input-processors = <&zip_alt_tab>;
-        layers = <SYMBOL>; 
-        bindings = <&to ALT_TAB &kt_on LEFT_ALT>; 
-        process-next;
-    };
-
     alt_tab {
         input-processors = <&zip_alt_tab>;
         layers = <ALT_TAB>;
@@ -265,6 +258,15 @@
             layers = <ALT_TAB CTRL_TAB>;
             bindings = <&kt_off LEFT_ALT &kt_off LCTRL>;
         };
+
+
+        alt_tab_mode_start: alt_tab_mode_start {
+            input-processors = <&zip_alt_tab>;
+            layers = <SYMBOL>; 
+            bindings = <&to ALT_TAB &kt_on LEFT_ALT>; 
+        process-next;
+    };
+
         // AML_indicator {
         //    layers = <MOUSE>;
         //    bindings = <&kp LS(LA(LC(LG(H)))) &kp LS(LA(LC(LG(H))))>;
