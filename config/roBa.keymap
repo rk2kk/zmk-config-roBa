@@ -184,8 +184,14 @@
         process-next;
     };
 
+    symbol_to_alt_tab {
+        layers = <SYMBOL>;
+        input-processors = <&zip_alt_tab>;
+        process-next;
+    };
+
     prevent-mouse-move {
-        layers = <ARROW>, <NUM>, <VOLUME>, <SYMBOL>, <ALT_TAB>, <CTRL_TAB>; 
+        layers = <ARROW>, <NUM>, <VOLUME>, <ALT_TAB>, <CTRL_TAB>; 
         input-processors = <&zip_xy_scaler 0 1>;
     };
 
@@ -254,18 +260,21 @@
     layer_listeners {
         compatible = "zmk,layer-listeners";
 
-        release_alt_ctrl: release_alt_ctrl {
-            layers = <ALT_TAB CTRL_TAB>;
-            bindings = <&kt_off LEFT_ALT &kt_off LCTRL>;
+         release_alt {
+            layers = <ALT_TAB>;
+            bindings = <&kt_on LEFT_ALT &kt_off LEFT_ALT>;
         };
 
+        release_ctrl {
+            layers = <CTRL_TAB>;
+            bindings = <&kt_on LCTRL &kt_off LCTRL>;
+        };
 
         alt_tab_mode_start: alt_tab_mode_start {
-            input-processors = <&zip_alt_tab>;
             layers = <SYMBOL>; 
             bindings = <&to ALT_TAB &kt_on LEFT_ALT>; 
-        process-next;
-    };
+            process-next;
+        };
 
         // AML_indicator {
         //    layers = <MOUSE>;
