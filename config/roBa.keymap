@@ -412,7 +412,6 @@
         };
 
         /omit-if-no-ref/
-
         mo_to_0: mo_to_0 {
             compatible = "zmk,behavior-macro-one-param";
             wait-ms = <0>;
@@ -427,12 +426,10 @@
                 <&macro_param_1to1 &mo MACRO_PLACEHOLDER>,
                 <&macro_tap>,
                 <&to 0>;
-
             label = "MO_to_0";
         };
 
         /omit-if-no-ref/
-
         zoom_in: zoom_in {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
