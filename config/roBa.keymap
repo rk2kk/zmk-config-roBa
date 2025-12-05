@@ -191,7 +191,7 @@
     };
 
     prevent-mouse-move {
-        layers = <ARROW>, <NUM>, <VOLUME>, <CTRL_TAB>; 
+        layers = <ARROW>, <NUM>, <VOLUME>,<SYMBOL>,<ALT_TAB>,<CTRL_TAB>; 
         input-processors = <&zip_xy_scaler 0 1>;
     };
 
@@ -262,7 +262,12 @@
 
          release_alt {
             layers = <ALT_TAB>;
-            bindings = <&kt_on LEFT_ALT &kt_off LEFT_ALT>;
+            bindings = <&kt_on LEFT_ALT &none>;
+        };
+
+        release_alt_off {
+            layers = <ALT_TAB>;
+            bindings = <&none &kt_off LEFT_ALT>;
         };
 
         release_ctrl {
