@@ -28,15 +28,14 @@
 #define MEDIA 10
 #define CONFIG 11
 
-
 &mt {
-    tapping-term-ms = <200>;
+    tapping-term-ms = <150>;
     quick-tap-ms = <250>;
     flavor = "balanced";
 };
 
 &lt {
-    tapping-term-ms = <200>;
+    tapping-term-ms = <150>;
     quick-tap-ms = <250>;
     flavor = "balanced";
 };
@@ -50,6 +49,7 @@
 &trackball {
     cpi = <800>;
     swap-xy;
+    // 修正: 全角スペースを削除
     invert-x;
     invert-y;
 };
@@ -57,6 +57,7 @@
 &zip_temp_layer {
     require-prior-idle-ms = <200>;
     excluded-positions = <
+      //    9 // P
         18 // J
         19 // K
         20 // L
@@ -67,12 +68,15 @@
         32 // ,
         32 // /
         34 // Ctrl
+       // 42
     >;
 };
 
 &zip_mouse_gesture {
     stroke-size = <100>;
     movement-threshold = <10>;
+
+    // enable-eager-mode;
 
     history_back {
         pattern = <GESTURE_RIGHT>;
@@ -109,10 +113,24 @@
         bindings = <&kp LG(LC(RIGHT))>;
     };
 
+    // left {
+    //    pattern = <GESTURE_LEFT>;
+    //    bindings = <&kp LEFT>;
+    // };
+    // right {
+    //    gesture = <GESTURE_RIGHT>;
+    //    bindings = <&kp RIGHT>;
+    // };
+
     la_up {
         pattern = <GESTURE_UP>;
         bindings = <&kp LA(UP)>;
     };
+
+    // down {
+    //    gesture = <GESTURE_DOWN>;
+    //    bindings = <&kp DOWN>;
+    // };
 };
 
 &trackball_listener {
@@ -154,26 +172,16 @@
         process-next;
     };
 
-    // Alt+Tab機能: レイヤー7でトラックボールが動いたらレイヤー8へ移動しAltトグルON
     alt_tab_mode_start: alt_tab_mode_start {
         input-processors = <&zip_alt_tab>;
-        layers = <SYMBOL>; // レイヤー7を監視
+        layers = <SYMBOL>; 
         bindings = <&to ALT_TAB &kt_on LEFT_ALT>; 
         process-next;
     };
 
-    // Ctrl+Tab機能: レイヤー9でトラックボールが動いたらレイヤー8へ移動しCtrlトグルON
-    ctrl_tab_mode_start: ctrl_tab_mode_start {
-        input-processors = <&zip_alt_tab>;
-        layers = <CTRL_TAB>; // レイヤー9を監視
-        bindings = <&to ALT_TAB &kt_on LCTRL>; 
-        process-next;
-    };
-
-    // Alt/Ctrl+Tab処理を実行するレイヤー8 (Altトグル/Ctrlトグルが有効な状態でTab/Shift+Tabを送信)
     alt_tab {
         input-processors = <&zip_alt_tab>;
-        layers = <ALT_TAB>; // レイヤー8
+        layers = <ALT_TAB>;
         process-next;
     };
 
@@ -184,11 +192,10 @@
     };
 
     prevent-mouse-move {
-        // SYMBOL (7) と CTRL_TAB (9) を追加
         layers = <ARROW>, <NUM>, <VOLUME>, <SYMBOL>, <ALT_TAB>, <CTRL_TAB>; 
-
         input-processors = <&zip_xy_scaler 0 1>;
     };
+
 };
 
 / {
@@ -223,15 +230,14 @@
             tap-ms = <10>;
         };
 
-        // Alt/Ctrl+Tab機能で使用する、TabとShift+Tabの送信
         zip_alt_tab: zip_alt_tab {
             compatible = "zmk,input-processor-keybind";
             #input-processor-cells = <0>;
             track-remainders;
             bindings = <&kp UP
                         &kp DOWN
-                        &kp LS(TAB) // 左回転
-                        &kp TAB      // 右回転
+                        &kp TAB
+                        &kp LS(TAB)
                         >;
             tick = <80>;
             wait-ms = <0>;
@@ -242,10 +248,10 @@
             compatible = "zmk,input-processor-keybind";
             #input-processor-cells = <0>;
             track-remainders;
-            bindings = <&kp UP
-                        &kp DOWN
-                        &kp LS(TAB)
-                        &kp TAB>;
+            bindings = <&kp LC(TAB)
+                        &kp LC(LS(TAB))
+                        &kp LC(TAB)
+                        &kp LC(LS(TAB))>;
             tick = <80>;
             wait-ms = <0>;
             tap-ms = <10>;
@@ -256,11 +262,17 @@
         compatible = "zmk,layer-listeners";
 
         release_alt_ctrl: release_alt_ctrl {
-            // Alt/CtrlトグルONの対象レイヤーからの離脱時にAlt/CtrlをOFF
             layers = <ALT_TAB CTRL_TAB>;
             bindings = <&kt_off LEFT_ALT &kt_off LCTRL>;
         };
-        // ...
+        // AML_indicator {
+        //    layers = <MOUSE>;
+        //    bindings = <&kp LS(LA(LC(LG(H)))) &kp LS(LA(LC(LG(H))))>;
+        // };
+        // AML {
+        //    layers = <MOUSE>;
+        //    bindings = <&to MOUSE &none>;
+        // };
     };
 
     combos {
@@ -376,7 +388,6 @@
 
         /omit-if-no-ref/
 
-        // Alt/Ctrlトグルキーを離した際にレイヤー0へ強制復帰し、Alt/CtrlをOFFにする
         mo_exit_alttab: mo_exit_alttab_ctrltab {
             compatible = "zmk,behavior-macro-one-param";
             wait-ms = <0>;
@@ -389,8 +400,7 @@
                 <&macro_pause_for_release>,
                 <&macro_release>,
                 <&macro_param_1to1 &mo MACRO_PLACEHOLDER>,
-                <&macro_tap>,
-                <&to 0>;
+                <&macro_tap>;
         };
 
         /omit-if-no-ref/
@@ -411,7 +421,6 @@
             bindings = <&macro_param_1to1 &to MACRO_PLACEHOLDER &macro_param_2to1 &kp MACRO_PLACEHOLDER>;
         };
 
-        /omit-if-no-ref/
         mo_to_0: mo_to_0 {
             compatible = "zmk,behavior-macro-one-param";
             wait-ms = <0>;
@@ -421,15 +430,17 @@
                 <&macro_press>,
                 <&macro_param_1to1 &mo MACRO_PLACEHOLDER>,
                 <&macro_tap>,
-                <&macro_pause_for-release>,
+                <&macro_pause_for_release>,
                 <&macro_release>,
                 <&macro_param_1to1 &mo MACRO_PLACEHOLDER>,
                 <&macro_tap>,
                 <&to 0>;
+
             label = "MO_to_0";
         };
 
         /omit-if-no-ref/
+
         zoom_in: zoom_in {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -459,8 +470,6 @@
                 <&exit_AML &macro_param_2to1 &sl_250 MACRO_PLACEHOLDER>;
         };
 
-        /omit-if-no-ref/
-
         tab_kt_on_to: tab_kt_on_to {
             compatible = "zmk,behavior-macro-two-param";
             wait-ms = <0>;
@@ -469,8 +478,6 @@
             bindings = <&macro_param_1to1 &kt_on MACRO_PLACEHOLDER &macro_param_2to2 &kp_to TAB MACRO_PLACEHOLDER>;
             label = "tab_kt_on_to";
         };
-
-        /omit-if-no-ref/
 
         shift_tab_kt_on_to: shift_tab_kt_on_to {
             compatible = "zmk,behavior-macro-two-param";
@@ -481,18 +488,27 @@
             label = "shift_tab_kt_on_to";
         };
 
-        /omit-if-no-ref/
-
         alt_clear: alt_clear_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LALT &kp LALT>;
         };
 
+        // 修正: 行頭の全角スペースを削除
         /omit-if-no-ref/
-        // Alt+Tab/Ctrl+Tab機能を実現するため、これらは削除済み
-        // alt_tab_left: alt_tab_left { ... }; 
-        // alt_tab_right: alt_tab_right { ... };
+        alt_tab_left: alt_tab_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt_on LEFT_ALT &kp TAB>;
+        };
+
+        // 修正: 行頭の全角スペースを削除
+        /omit-if-no-ref/
+        alt_tab_right: alt_tab_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt_on LEFT_ALT &kp LS(TAB)>;
+        };
     };
 
     behaviors {
@@ -565,6 +581,9 @@
 
         td_ZenkakuHankaku: td_ZenkakuHankaku {
             compatible = "zmk,behavior-tap-dance";
+
+            // compatible = "zmk,behavior-eager-tap-dance";
+
             #binding-cells = <0>;
             tapping-term-ms = <250>;
             bindings = <&kp LANGUAGE_2>, <&kp LANGUAGE_1>;
@@ -586,8 +605,6 @@
             #binding-cells = <2>;
             bindings = <&macro_param_1to1 &kt_on MACRO_PLACEHOLDER &macro_param_2to1 &kp MACRO_PLACEHOLDER &macro_param_1to1 &sk MACRO_PLACEHOLDER &macro_param_1to1 &kt_off MACRO_PLACEHOLDER>;
         };
-
-        /omit-if-no-ref/
 
         mkp_with_mod: mkp_with_mod {
             compatible = "zmk,behavior-macro-two-param";
@@ -706,8 +723,6 @@
             bindings = <&none>, <&none>, <&bt BT_CLR_ALL>;
         };
 
-        /omit-if-no-ref/
-
         lt_to_0: lt_to_0 {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_to_0";
@@ -718,8 +733,6 @@
             quick-tap-ms = <200>;
             flavor = "balanced";
         };
-
-        /omit-if-no-ref/
 
         scroll_up_down: scroll_up_down {
             compatible = "zmk,behavior-sensor-rotate";
@@ -733,120 +746,113 @@
     keymap {
         compatible = "zmk,keymap";
 
-        0 { // DEFAULT
+        home_layer {
             bindings = <
-// 1行目: カンマ区切り
-&mt LWIN Q, &kp W, &kp E, &kp R, &kp T, &kp Y, &kp U, &kp I, &kp O, &kp P,
-
-// 2行目: カンマ区切り
-&mt LCTRL A, &kp S, &kp D, &kp F, &kp G, &mkp MB3, &lt_exit_AML 6 MINUS, &kp H, &kp J, &kp K, &kp L, &lt_exit_AML 5 SEMICOLON,
-
-// 3行目 (旧423行目付近): カンマ区切りを徹底
-&mt_exit_AML_on_tap LEFT_SHIFT Z, &mt LC(X) X, &mt LC(C) C, &mt LC(V) V, &lt_exit_alttab 9 B, &lt_exit_alttab 7 EQUAL, &kp DEL, &kp N, &kp M, &kp COMMA, &kp DOT, &lt_exit_AML 4 SLASH,
-
-// 4行目 (旧424行目付近): &lt を &lt_exit_AML に修正し、カンマ区切りを徹底
-&kp LCTRL, &kp LEFT_WIN, &kp LEFT_ALT, &lt_exit_AML 5 INTERNATIONAL_5, &lt_exit_AML 4 SPACE, &lt_exit_AML 2 INTERNATIONAL_4, &kp BACKSPACE, &lt_exit_AML 1 ENTER, &kp RIGHT_SHIFT
+&mt LWIN Q                       &kp W          &kp E          &kp R                 &kp T                                               &kp Y                 &kp U                &kp I  &kp O      &kp P
+&mt LCTRL A                      &kp S          &kp D          &kp F                 &kp G                &mkp MB3                       &lt_exit_AML 6 MINUS  &kp H                &kp J  &kp K      &kp L    &lt_exit_AML 5 SEMICOLON
+&mt_exit_AML_on_tap LEFT_SHIFT Z &mt LC(X) X    &mt LC(C) C    &mt LC(V) V           &lt_exit_alttab 9 B  &lt_exit_alttab 7 EQUAL        &kp DEL               &kp N                &kp M  &kp COMMA  &kp DOT  &lt_exit_AML 4 SLASH
+&kp LCTRL                        &kp LEFT_WIN   &kp LEFT_ALT   &lt 5 INTERNATIONAL_5 &lt_exit_AML 4 SPACE &lt_exit_AML 2 INTERNATIONAL_4 &kp BACKSPACE         &lt_exit_AML 1 ENTER                            &kp RIGHT_SHIFT
             >;
 
             sensor-bindings = <&scroll_up_down>;
         };
 
-        1 { // FUNCTION_NUM (変更なし)
+        FUNCTION_NUM {
             bindings = <
-&kp NUMBER_1, &kp NUMBER_2, &kp NUMBER_3, &kp NUMBER_4, &kp N5, &kp NUMBER_6, &kp NUMBER_7, &kp NUMBER_8, &kp NUMBER_9, &kp N0,
-&kp MINUS, &kp EQUAL, &kp INT3, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans,
-&trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans,
-&trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans
+&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5                          &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp N0
+&kp MINUS     &kp EQUAL     &kp INT3      &trans        &trans &trans      &trans &trans        &trans        &trans        &trans        &trans
+&trans        &trans        &trans        &trans        &trans &trans      &trans &trans        &trans        &trans        &trans        &trans
+&trans        &trans        &trans        &trans        &trans &trans      &trans &trans                                                                    &trans
             >;
         };
 
-        2 { // NUM (変更なし)
+        NUM {
             bindings = <
-&kp MINUS, &kp KP_NUMBER_7, &kp KP_NUMBER_8, &kp KP_NUMBER_9, &kp LS(SEMI), &kp MINUS, &kp KP_NUMBER_7, &kp KP_NUMBER_8, &kp KP_NUMBER_9, &kp LS(SEMI),
-&kp SLASH, &kp KP_NUMBER_4, &kp KP_NUMBER_5, &kp KP_NUMBER_6, &kp LS(SQT), &kp KP_NUMLOCK, &trans, &kp SLASH, &kp KP_NUMBER_4, &kp KP_N5, &kp KP_NUMBER_6, &kp LS(SQT),
-&mt LEFT_SHIFT KP_NUMBER_0, &kp KP_NUMBER_1, &kp KP_NUMBER_2, &kp KP_NUMBER_3, &kp PERIOD, &kp LS(MINUS), &trans, &kp KP_NUMBER_0, &kp KP_NUMBER_1, &kp KP_NUMBER_2, &kp KP_NUMBER_3, &kp PERIOD,
-&trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &kp LEFT_SHIFT
+&kp MINUS                     &kp KP_NUMBER_7 &kp KP_NUMBER_8 &kp KP_NUMBER_9 &kp LS(SEMI)                      &kp MINUS    &kp KP_NUMBER_7 &kp KP_NUMBER_8 &kp KP_NUMBER_9 &kp LS(SEMI)
+&kp SLASH                     &kp KP_NUMBER_4 &kp KP_NUMBER_5 &kp KP_NUMBER_6 &kp LS(SQT) &kp KP_NUMLOCK      &trans &kp SLASH     &kp KP_NUMBER_4 &kp KP_N5       &kp KP_NUMBER_6 &kp LS(SQT)
+&mt LEFT_SHIFT KP_NUMBER_0 &kp KP_NUMBER_1 &kp KP_NUMBER_2 &kp KP_NUMBER_3 &kp PERIOD  &kp LS(MINUS)       &trans &kp KP_NUMBER_0 &kp KP_NUMBER_1 &kp KP_NUMBER_2 &kp KP_NUMBER_3 &kp PERIOD
+&trans                        &trans          &trans          &trans          &trans      &trans              &trans &trans                                                                    &kp LEFT_SHIFT
             >;
         };
 
-        3 { // MOUSE (変更なし)
+        MOUSE {
             bindings = <
-&trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans,
-&trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &mkp MB1, &mkp MB3, &mkp MB2, &trans,
-&trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &mo_exit_AML 0, &mkp MB4, &mkp MB5, &mouse_gesture,
-&trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans
+&trans &trans &trans &trans &trans                          &trans &trans      &trans    &trans    &trans
+&trans &trans &trans &trans &trans &trans      &trans &trans &mkp MB1      &mkp MB3  &mkp MB2  &trans
+&trans &trans &trans &trans &trans &trans      &trans &trans &mo_exit_AML 0  &mkp MB4  &mkp MB5  &mouse_gesture
+&trans &trans &trans &trans &trans &trans      &trans &trans                                                                    &trans
             >;
         };
 
-        4 { // ARROW (変更なし)
+        ARROW {
             bindings = <
-&kp ESCAPE, &kp LC(LS(TAB)), &kp UP_ARROW, &kp LC(TAB), &trans, &kp LC(LG(LEFT_ARROW)), &kp LG(UP_ARROW), &kp LC(LG(RIGHT_ARROW)), &kp LEFT_BRACKET, &kp RIGHT_BRACKET,
-&kp HOME, &kp LEFT_ARROW, &kp DOWN_ARROW, &kp RIGHT_ARROW, &kp END, &trans, &trans, &kp LG(LEFT_ARROW), &kp LG(DOWN_ARROW), &kp LG(RIGHT_ARROW), &kp SQT, &kp NUHS,
-&kp LC(Z), &kp LC(X), &kp LC(C), &kp LC(V), &kp LC(B), &trans, &trans, &kp LS(LG(LEFT_ARROW)), &none, &kp LS(LG(RIGHT_ARROW)), &kp LS(RIGHT_ARROW), &kp INT1,
-&trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &kp RIGHT_SHIFT
+&kp ESCAPE &kp LC(LS(TAB)) &kp UP_ARROW  &kp LC(TAB)      &trans                          &kp LC(LG(LEFT_ARROW)) &kp LG(UP_ARROW)    &kp LC(LG(RIGHT_ARROW)) &kp LEFT_BRACKET      &kp RIGHT_BRACKET
+&kp HOME   &kp LEFT_ARROW  &kp DOWN_ARROW &kp RIGHT_ARROW &kp END    &trans      &trans &kp LG(LEFT_ARROW)      &kp LG(DOWN_ARROW)  &kp LG(RIGHT_ARROW)       &kp SQT               &kp NUHS
+&kp LC(Z)  &kp LC(X)       &kp LC(C)       &kp LC(V)       &kp LC(B) &trans      &trans &kp LS(LG(LEFT_ARROW))  &none             &kp LS(LG(RIGHT_ARROW)) &kp LS(RIGHT_ARROW) &kp INT1
+&trans     &trans          &trans          &trans          &trans    &trans      &trans &trans                                                                    &kp RIGHT_SHIFT
             >;
         };
 
-        5 { // SCROLL (変更なし)
+        SCROLL {
             bindings = <
-&bt BT_SEL 1, &bt BT_SEL 2, &bt BT_SEL 3, &bt BT_SEL 4, &trans, &trans, &trans, &trans, &trans, &bt BT_SEL 0,
-&trans, &kp LA(LEFT_BRACKET), &trans, &kp LS(LA(TAB)), &trans, &trans, &trans, &trans, &mkp MB1, &mkp MB3, &mkp MB2, &trans,
-&trans, &none, &none, &none, &trans, &trans, &trans, &trans, &trans, &mkp MB4, &mkp MB5, &td_bt_clear,
-&trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &td_bt_clear_all
+&bt BT_SEL 1  &bt BT_SEL 2          &bt BT_SEL 3  &bt BT_SEL 4     &trans                          &trans &trans  &trans    &trans    &bt BT_SEL 0
+&trans        &kp LA(LEFT_BRACKET)  &trans        &kp LS(LA(TAB))  &trans &trans      &trans &trans &mkp MB1 &mkp MB3  &mkp MB2  &trans
+&trans        &none                 &none         &none            &trans &trans      &trans &trans &trans    &mkp MB4  &mkp MB5  &td_bt_clear
+&trans        &trans                &trans        &trans           &trans &trans      &trans &trans                                 &td_bt_clear_all
             >;
         };
 
-        6 { // VOLUME (変更なし)
+        Function {
             bindings = <
-&kp F1, &kp F2, &kp F3, &kp F4, &kp F5, &kp F6, &kp F7, &kp F8, &kp F9, &kp F10,
-&kp LC(A), &kp LC(S), &kp LC(D), &kp LC(F), &kp LC(G), &trans, &trans, &kp F11, &kp F12, &trans, &trans, &trans,
-&kp LC(Z), &kp LC(X), &kp LC(C), &kp LC(V), &kp LC(B), &trans, &trans, &trans, &trans, &trans, &trans, &trans,
-&trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans
+&kp F1     &kp F2      &kp F3      &kp F4      &kp F5                          &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
+&kp LC(A)  &kp LC(S)   &kp LC(D)   &kp LC(F)   &kp LC(G) &trans      &trans &kp F11 &kp F12 &trans  &trans  &trans
+&kp LC(Z)  &kp LC(X)   &kp LC(C)   &kp LC(V)   &kp LC(B) &trans      &trans &trans  &trans  &trans  &trans  &trans
+&trans     &trans      &trans      &trans      &trans    &trans      &trans &trans                          &trans
             >;
         };
 
-        7 { // SYMBOL (Alt+Tab待機レイヤー: 変更なし)
+        FUNCTION_NUM_1 {
             bindings = <
-&kp NUMBER_1, &kp LS(NUMBER_2), &kp LS(NUMBER_3), &kp LS(NUMBER_4), &kp LS(N5), &kp LS(NUMBER_6), &kp LS(NUMBER_7), &kp LS(NUMBER_8), &kp LS(NUMBER_9), &kp LS(N0),
-&kp LS(MINUS), &kp LS(EQUAL), &kp LS(INT3), &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans,
-&trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &kp LS(INTERNATIONAL_1),
-&trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans
+&kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp LS(N5)                          &kp LS(NUMBER_6)  &kp LS(NUMBER_7)  &kp LS(NUMBER_8)  &kp LS(NUMBER_9)  &kp LS(N0)
+&kp LS(MINUS)     &kp LS(EQUAL)     &kp LS(INT3)      &trans            &trans      &trans      &trans &trans            &trans            &trans            &trans            &trans
+&trans            &trans            &trans            &trans            &trans      &trans      &trans &trans            &trans            &trans            &trans            &kp LS(INTERNATIONAL_1)
+&trans            &trans            &trans            &trans            &trans      &trans      &trans &trans                                                                    &trans
             >;
         };
 
-        8 { // ALT_TAB (Alt/CtrlトグルON後のTab/Shift+Tab実行レイヤー: 変更なし)
+        alt_tab {
             bindings = <
-&kp TAB, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &kp TAB,
-&trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &kp LA(TAB),
-&trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans,
-&trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans
+&kp TAB &trans &trans &trans &trans                          &trans &trans &trans &trans &kp TAB
+&trans  &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &kp LA(TAB)
+&trans  &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans
+&trans  &trans &trans &trans &trans &trans      &trans &trans                          &trans
             >;
         };
 
-        9 { // CTRL_TAB (Ctrl+Tab待機レイヤー: 変更なし)
+        ctrl_tab {
             bindings = <
-&kp TAB, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &kp TAB,
-&trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &kp LA(TAB),
-&trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans,
-&trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans
+&kp TAB &trans &trans &trans &trans                          &trans &trans &trans &trans &kp TAB
+&trans  &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &kp LA(TAB)
+&trans  &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans
+&trans  &trans &trans &trans &trans &trans      &trans &trans                          &trans
             >;
         };
 
-        10 { // MEDIA (変更なし)
+        MEDIA {
             bindings = <
-&trans, &trans, &trans, &trans, &trans, &kp C_PREV, &kp C_PLAY_PAUSE, &kp C_NEXT, &trans, &trans,
-&trans, &trans, &trans, &trans, &trans, &trans, &kp C_VOLUME_DOWN, &kp C_MUTE, &kp C_VOLUME_UP, &trans, &trans,
-&trans, &trans, &trans, &trans, &trans, &trans, &trans, &kp LS(LA(LC(M))), &trans, &trans,
-&trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans
+&trans &trans &trans &trans &trans                          &kp C_PREV           &kp C_PLAY_PAUSE     &kp C_NEXT       &trans &trans
+&trans &trans &trans &trans &trans &trans      &trans &kp C_VOLUME_DOWN    &kp C_MUTE           &kp C_VOLUME_UP  &trans &trans
+&trans &trans &trans &trans &trans &trans      &trans &trans              &kp LS(LA(LC(M)))    &trans           &trans &trans
+&trans &trans &trans &trans &trans &trans      &trans &trans                                                                    &trans
             >;
         };
 
-        11 { // CONFIG (変更なし)
+        CONFIGURATION {
             bindings = <
-&bt BT_SEL 0, &bt BT_SEL 1, &bt BT_SEL 2, &bt BT_SEL 3, &bt BT_SEL 4, &none, &none, &out OUT_BLE, &out OUT_USB, &out OUT_TOG,
-&sys_reset, &bootloader, &none, &none, &none, &none, &none, &none, &none, &none, &none, &none,
-&none, &none, &none, &none, &none, &none, &none, &none, &none, &none, &none, &td_bt_clear,
-&none, &none, &none, &none, &none, &none, &none, &none, &td_bt_clear_all
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                          &none &none &out OUT_BLE &out OUT_USB &out OUT_TOG
+&sys_reset    &bootloader   &none         &none         &none         &none      &none &none &none &none      &none        &none
+&none         &none         &none         &none         &none         &none      &none &none &none &none      &none        &td_bt_clear
+&none         &none         &none         &none         &none         &none      &none &none                                 &td_bt_clear_all
             >;
         };
     };
