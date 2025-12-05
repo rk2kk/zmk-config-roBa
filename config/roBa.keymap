@@ -336,8 +336,6 @@
             bindings = <&tog_off 3>;
         };
 
-        /omit-if-no-ref/
-
         kp_exit_AML: kp_exit_AML {
             compatible = "zmk,behavior-macro-one-param";
             wait-ms = <0>;
@@ -346,7 +344,6 @@
             bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &exit_AML>;
         };
 
-        /omit-if-no-ref/
 
         mod_exit_AML: mod_exit_AML {
             compatible = "zmk,behavior-macro-one-param";
@@ -363,8 +360,6 @@
                 <&macro_param_1to1 &kp MACRO_PLACEHOLDER>;
         };
 
-        /omit-if-no-ref/
-
         mkp_exit_AML: mkp_exit_AML {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
@@ -377,8 +372,6 @@
                 <&macro_tap>,
                 <&sl 10>;
         };
-
-        /omit-if-no-ref/
 
         mo_exit_AML: mo_exit_AML {
             compatible = "zmk,behavior-macro-one-param";
@@ -396,8 +389,6 @@
                 <&macro_tap>;
         };
 
-        /omit-if-no-ref/
-
         mo_exit_alttab: mo_exit_alttab_ctrltab {
             compatible = "zmk,behavior-macro-one-param";
             wait-ms = <0>;
@@ -413,8 +404,6 @@
                 <&to DEFAULT>;
         };
 
-        /omit-if-no-ref/
-
         kp_to: kp_to {
             compatible = "zmk,behavior-macro-two-param";
             wait-ms = <0>;
@@ -422,8 +411,6 @@
             #binding-cells = <2>;
             bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &macro_param_2to1 &to MACRO_PLACEHOLDER>;
         };
-
-        /omit-if-no-ref/
 
         to_kp: to_kp {
             compatible = "zmk,behavior-macro-two-param";
@@ -449,23 +436,17 @@
             label = "MO_to_0";
         };
 
-        /omit-if-no-ref/
-
         zoom_in: zoom_in {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kt_on LCTRL &msc SCRL_UP &kt_off LCTRL>;
         };
 
-        /omit-if-no-ref/
-
         zoom_out: zoom_out {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kt_on LCTRL &msc SCRL_DOWN &kt_off LCTRL>;
         };
-
-        /omit-if-no-ref/
 
         eager_tap_dance: eager_tap_dance {
             compatible = "zmk,behavior-macro-two-param";
@@ -480,45 +461,6 @@
                 <&exit_AML &macro_param_2to1 &sl_250 MACRO_PLACEHOLDER>;
         };
 
-        tab_kt_on_to: tab_kt_on_to {
-            compatible = "zmk,behavior-macro-two-param";
-            wait-ms = <0>;
-            tap-ms = <0>;
-            #binding-cells = <2>;
-            bindings = <&macro_param_1to1 &kt_on MACRO_PLACEHOLDER &macro_param_2to2 &kp_to TAB MACRO_PLACEHOLDER>;
-            label = "tab_kt_on_to";
-        };
-
-        shift_tab_kt_on_to: shift_tab_kt_on_to {
-            compatible = "zmk,behavior-macro-two-param";
-            wait-ms = <0>;
-            tap-ms = <0>;
-            #binding-cells = <2>;
-            bindings = <&macro_param_1to1 &kt_on MACRO_PLACEHOLDER &macro_param_2to2 &kp_to LS(TAB) MACRO_PLACEHOLDER>;
-            label = "shift_tab_kt_on_to";
-        };
-
-        alt_clear: alt_clear_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LALT &kp LALT>;
-        };
-
-        // 修正: 行頭の全角スペースを削除
-        /omit-if-no-ref/
-        alt_tab_left: alt_tab_left {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kt_on LEFT_ALT &kp TAB>;
-        };
-
-        // 修正: 行頭の全角スペースを削除
-        /omit-if-no-ref/
-        alt_tab_right: alt_tab_right {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kt_on LEFT_ALT &kp LS(TAB)>;
-        };
     };
 
     behaviors {
@@ -558,8 +500,6 @@
             toggle-mode = "off";
         };
 
-        /omit-if-no-ref/
-
         td_right_click: td_right_click {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -567,8 +507,6 @@
 
             tapping-term-ms = <250>;
         };
-
-        /omit-if-no-ref/
 
         td_colon: td_colon {
             compatible = "zmk,behavior-tap-dance";
@@ -607,13 +545,6 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&td_ZenkakuHankaku &exit_AML>;
-        };
-
-        /omit-if-no-ref/
-        alt_tab: alt_tab {
-            compatible = "zmk,behavior-macro-two-param";
-            #binding-cells = <2>;
-            bindings = <&macro_param_1to1 &kt_on MACRO_PLACEHOLDER &macro_param_2to1 &kp MACRO_PLACEHOLDER &macro_param_1to1 &sk MACRO_PLACEHOLDER &macro_param_1to1 &kt_off MACRO_PLACEHOLDER>;
         };
 
         mkp_with_mod: mkp_with_mod {
