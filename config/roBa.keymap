@@ -186,8 +186,7 @@
 
     symbol_to_alt_tab {
         layers = <SYMBOL>;
-        input-processors = <&zip_alt_tab>;
-        process-next;
+        input-processors = <&zip_xy_scaler 0 0>;
     };
 
     prevent-mouse-move {
@@ -268,6 +267,11 @@
         release_alt_off {
             layers = <ALT_TAB>;
             bindings = <&none &kt_off LEFT_ALT>;
+        };
+
+        symbol_to_alt_tab_listener: symbol_to_alt_tab_listener {
+            layers = <SYMBOL>;
+            bindings = <&to ALT_TAB &none>;
         };
 
         release_ctrl {
@@ -417,6 +421,14 @@
             compatible = "zmk,behavior-macro-two-param";
             #binding-cells = <2>;
             bindings = <&macro_param_1to1 &to MACRO_PLACEHOLDER &macro_param_2to1 &kp MACRO_PLACEHOLDER>;
+        };
+
+        symbol_tab_to_alt_tab: symbol_tab_to_alt_tab {
+            compatible = "zmk,behavior-macro-one-param";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <1>;
+            bindings = <&macro_param_1to1 &kp_to TAB MACRO_PLACEHOLDER>;
         };
 
         mo_to_0: mo_to_0 {
