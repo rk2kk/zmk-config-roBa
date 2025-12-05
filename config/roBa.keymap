@@ -113,11 +113,6 @@
         bindings = <&kp LG(LC(RIGHT))>;
     };
 
-    reopen_tab {
-        pattern = <GESTURE_UP GESTURE_LEFT>;
-        bindings = <&kp LC(LS(T))>;
-    };
-
     // left {
     //    pattern = <GESTURE_LEFT>;
     //    bindings = <&kp LEFT>;
@@ -141,8 +136,7 @@
 &trackball_listener {
     compatible = "zmk,input-listener";
     input-processors = <
-        &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)
-        &zip_mouse_gesture
+        &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT) 
         &zip_report_rate_limit 15 
     >;
 
@@ -198,6 +192,12 @@
     prevent-mouse-move {
         layers = <ARROW>, <NUM>, <VOLUME>, <CTRL_TAB>; 
         input-processors = <&zip_xy_scaler 0 1>;
+    };
+
+    config_gesture {
+        layers = <CONFIG>;
+        input-processors = <&zip_mouse_gesture>;
+        process-next;
     };
 
 };
@@ -756,7 +756,7 @@
         SCROLL {
             bindings = <
 &bt BT_SEL 1  &bt BT_SEL 2          &bt BT_SEL 3  &bt BT_SEL 4     &trans                          &trans &trans  &trans    &trans    &bt BT_SEL 0
-&trans        &kp LA(LEFT_BRACKET)  &trans        &kp LS(LA(TAB))  &trans &trans      &trans &trans &mkp MB1 &mkp MB3  &mkp MB2  &trans
+&mo 11        &kp LA(LEFT_BRACKET)  &trans        &kp LS(LA(TAB))  &trans &trans      &trans &trans &mkp MB1 &mkp MB3  &mkp MB2  &trans
 &trans        &none                 &none         &none            &trans &trans      &trans &trans &trans    &mkp MB4  &mkp MB5  &td_bt_clear
 &trans        &trans                &trans        &trans           &trans &trans      &trans &trans                                 &td_bt_clear_all
             >;
