@@ -272,8 +272,7 @@
 
         alt_tab_mode_start: alt_tab_mode_start {
             layers = <SYMBOL>; 
-            bindings = <&to ALT_TAB &kt_on LEFT_ALT>; 
-            process-next;
+            bindings = <&to ALT_TAB>; 
         };
 
         // AML_indicator {
