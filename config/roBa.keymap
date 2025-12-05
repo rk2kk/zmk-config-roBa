@@ -270,10 +270,6 @@
             bindings = <&kt_on LCTRL &kt_off LCTRL>;
         };
 
-        alt_tab_mode_start: alt_tab_mode_start {
-            layers = <SYMBOL>; 
-            bindings = <&to ALT_TAB>; 
-        };
 
         // AML_indicator {
         //    layers = <MOUSE>;
