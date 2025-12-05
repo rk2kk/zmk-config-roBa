@@ -270,11 +270,6 @@
             bindings = <&kp LEFT_ALT &kp LEFT_ALT>;
         };
 
-        symbol_to_alt_tab_listener: symbol_to_alt_tab_listener {
-            layers = <SYMBOL>;
-            bindings = <&to ALT_TAB &none>;
-        };
-
         release_ctrl {
             layers = <CTRL_TAB>;
             bindings = <&kt_on LCTRL &kt_off LCTRL>;
