@@ -267,12 +267,12 @@
 
         release_alt_on_symbol: release_alt_on_symbol {
             layers = <SYMBOL>;
-            bindings = <&alt_off>;
+            bindings = <&kt_off LEFT_ALT>;
         };
 
         release_alt_on_default: release_alt_on_default {
             layers = <DEFAULT>;
-            bindings = <&alt_off>;
+            bindings = <&kt_off LEFT_ALT>;
         };
 
         release_ctrl {
@@ -282,7 +282,7 @@
 
         hold_alt_on_alt_tab: hold_alt_on_alt_tab {
             layers = <ALT_TAB>;
-            bindings = <&alt_on>;
+            bindings = <&kt_on LEFT_ALT>;
         };
 
 
