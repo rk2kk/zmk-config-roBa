@@ -265,11 +265,6 @@
     layer_listeners {
         compatible = "zmk,layer-listeners";
 
-         hold_alt_on_alt_tab: hold_alt_on_alt_tab {
-            layers = <ALT_TAB>;
-            bindings = <&alt_on>;
-        };
-
         release_alt_on_symbol: release_alt_on_symbol {
             layers = <SYMBOL>;
             bindings = <&alt_off>;
@@ -283,6 +278,11 @@
         release_ctrl {
             layers = <CTRL_TAB>;
             bindings = <&kt_on LCTRL &kt_off LCTRL>;
+        };
+
+        hold_alt_on_alt_tab: hold_alt_on_alt_tab {
+            layers = <ALT_TAB>;
+            bindings = <&alt_on>;
         };
 
 
