@@ -67,6 +67,7 @@
         32 // ,
         32 // /
         34 // Ctrl
+        27
        // 42
     >;
 };
@@ -147,7 +148,7 @@
 
     symbol_to_alt_tab_aml {
         layers = <SYMBOL>;
-        input-processors = <&zip_temp_layer_alt_tab ALT_TAB 5000>;
+        input-processors = <&zip_temp_layer ALT_TAB 5000>;
         process-next;
     };
 
@@ -258,12 +259,6 @@
             tick = <80>;
             wait-ms = <0>;
             tap-ms = <10>;
-        };
-
-        zip_temp_layer_alt_tab: zip_temp_layer_alt_tab {
-            compatible = "zmk,input-processor-temp-layer";
-            #input-processor-cells = <2>;
-            require-prior-idle-ms = <0>;
         };
     };
 
