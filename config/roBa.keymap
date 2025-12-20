@@ -65,7 +65,7 @@
         30 // M
         31 // .
         32 // ,
-        32 // /
+        33 // /
         34 // Ctrl
         27
        // 42
@@ -179,7 +179,7 @@
 
     alt_tab {
         input-processors = <&zip_alt_tab>;
-        layers = <ALT_TAB>;
+        layers = <ALT_TAB SYMBOL>;
         process-next;
     };
 
