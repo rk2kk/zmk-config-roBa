@@ -273,6 +273,7 @@
         release_alt_on_default: release_alt_on_default {
             layers = <DEFAULT>;
             bindings = <&kt_off LEFT_ALT>;
+            bindings = <&alt_off>;
         };
 
         release_ctrl {
@@ -283,6 +284,7 @@
         hold_alt_on_alt_tab: hold_alt_on_alt_tab {
             layers = <ALT_TAB>;
             bindings = <&kt_on LEFT_ALT>;
+            bindings = <&alt_on>;
         };
 
 
