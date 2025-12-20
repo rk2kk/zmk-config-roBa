@@ -4,6 +4,10 @@
 #include <physical_layouts.dtsi>
 #include <input/processors.dtsi>
 
+&uicr {
+    nfct-pins-as-gpios;
+};
+
 / {
     chosen {
         zmk,physical-layout = &default_layout;
