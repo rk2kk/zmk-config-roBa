@@ -118,6 +118,12 @@
         process-next;
     };
 
+    mkp_input_listener {
+        layers = <DEFAULT>;
+        input-processors = <&zip_temp_layer_main MOUSE 10000>;
+        process-next;
+    };
+
     symbol_to_alt_tab_aml {
         layers = <SYMBOL>;
         input-processors = <&zip_temp_layer ALT_TAB 5000>;
@@ -251,8 +257,6 @@
     };
 
     layer_listeners {
-        mkp_input_listener { input-processors = <&zip_temp_layer_main MOUSE 10000>; };
-
         compatible = "zmk,layer-listeners";
 
         release_alt_on_default: release_alt_on_default {
