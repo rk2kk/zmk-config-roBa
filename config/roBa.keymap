@@ -265,10 +265,10 @@
     layer_listeners {
         compatible = "zmk,layer-listeners";
 
-        release_alt_on_default: release_alt_on_default {
-            layers = <DEFAULT>;
-            bindings = <&alt_off>;
-        };
+        // release_alt_on_default: release_alt_on_default {
+        //     layers = <DEFAULT>;
+        //     bindings = <&alt_off>;
+        // };
 
         release_ctrl {
             layers = <CTRL_TAB>;
