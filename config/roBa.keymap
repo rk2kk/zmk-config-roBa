@@ -265,10 +265,10 @@
     layer_listeners {
         compatible = "zmk,layer-listeners";
 
-        release_alt_on_default: release_alt_on_default {
-            layers = <DEFAULT>;
-            bindings = <&alt_off>;
-        };
+        // release_alt_on_default: release_alt_on_default {
+        //     layers = <DEFAULT>;
+        //     bindings = <&alt_off>;
+        // };
 
         release_ctrl {
             layers = <CTRL_TAB>;
@@ -494,13 +494,13 @@
         alt_on: alt_on {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kt_on LEFT_ALT>;
+            bindings = <&macro_press &kp LEFT_ALT>;
         };
 
         alt_off: alt_off {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kt_off LEFT_ALT>;
+            bindings = <&macro_release &kp LEFT_ALT>;
         };
 
     };
