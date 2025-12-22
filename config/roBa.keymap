@@ -262,6 +262,7 @@
 
         zip_temp_layer_mouse: zip_temp_layer_mouse {
             compatible = "zmk,input-processor-temp-layer";
+            #input-processor-cells = <2>;
             require-prior-idle-ms = <0>;
             excluded-positions = <
                 18 19 20 21 22 30 31 32 33 34
