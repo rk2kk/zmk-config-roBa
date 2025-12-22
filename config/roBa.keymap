@@ -55,20 +55,8 @@
 
 &zip_temp_layer {
     require-prior-idle-ms = <0>;
-    excluded-positions = <
-      //    9 // P
-        18 // J
-        19 // K
-        20 // L
-        21 // ;
-        22 // Z
-        30 // M
-        31 // .
-        32 // ,
-        33 // /
-        34 // Ctrl
-       // 42
-    >;
+    /* J, K, L, ;, Z, M, ., ,, /, Ctrl */
+    excluded-positions = <18 19 20 21 22 30 31 32 33 34>;
 };
 
 &zip_mouse_gesture {
@@ -264,10 +252,8 @@
             compatible = "zmk,input-processor-temp-layer";
             #input-processor-cells = <2>;
             require-prior-idle-ms = <0>;
-            excluded-positions = <
-                18 19 20 21 22 30 31 32 33 34
-                27 // EQUAL key excluded for mouse layer
-            >;
+            /* J, K, L, ;, Z, M, ., ,, /, Ctrl, EQUAL */
+            excluded-positions = <18 19 20 21 22 30 31 32 33 34 27>;
         };
     };
 
