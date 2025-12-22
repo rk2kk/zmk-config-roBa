@@ -54,7 +54,7 @@
 };
 
 &zip_temp_layer {
-    require-prior-idle-ms = <200>;
+    require-prior-idle-ms = <0>;
     excluded-positions = <
       //    9 // P
         18 // J
@@ -179,7 +179,7 @@
 
     alt_tab {
         input-processors = <&zip_alt_tab>;
-        layers = <ALT_TAB SYMBOL>;
+        layers = <ALT_TAB>;
         process-next;
     };
 
@@ -265,10 +265,10 @@
     layer_listeners {
         compatible = "zmk,layer-listeners";
 
-        // release_alt_on_default: release_alt_on_default {
-        //     layers = <DEFAULT>;
-        //     bindings = <&alt_off>;
-        // };
+        release_alt_on_default: release_alt_on_default {
+            layers = <DEFAULT>;
+            bindings = <&alt_off>;
+        };
 
         release_ctrl {
             layers = <CTRL_TAB>;
