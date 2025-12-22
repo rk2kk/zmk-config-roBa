@@ -44,6 +44,34 @@
 
 &sl { release-after-ms = <1000>; };
 
+&mkp_input_listener { input-processors = <&zip_temp_layer MOUSE 10000>; };
+
+&trackball {
+    cpi = <800>;
+    swap-xy;
+    invert-x;
+    invert-y;
+};
+
+&zip_temp_layer {
+    require-prior-idle-ms = <200>;
+    excluded-positions = <
+      //    9 // P
+        18 // J
+        19 // K
+        20 // L
+        21 // ;
+        22 // Z
+        30 // M
+        31 // .
+        32 // ,
+        33 // /
+        34 // Ctrl
+        //27
+       // 42
+    >;
+};
+
 &zip_mouse_gesture {
     stroke-size = <100>;
     movement-threshold = <10>;
@@ -114,13 +142,7 @@
 
     auto-mouse-layer {
         layers = <DEFAULT MOUSE>;
-        input-processors = <&zip_temp_layer_mouse MOUSE 5000>;
-        process-next;
-    };
-
-    mkp_input_listener {
-        layers = <DEFAULT>;
-        input-processors = <&zip_temp_layer_main MOUSE 10000>;
+        input-processors = <&zip_temp_layer MOUSE 5000>;
         process-next;
     };
 
@@ -182,14 +204,6 @@
 
 / {
     input_processors {
-        zip_temp_layer_main: zip_temp_layer {
-            compatible = "zmk,input-processor-temp-layer";
-            #input-processor-cells = <2>;
-            require-prior-idle-ms = <0>;
-            /* J, K, L, ;, Z, M, ., ,, /, Ctrl */
-            excluded-positions = <18 19 20 21 22 30 31 32 33 34>;
-        };
-
         wheel_x_scaler: wheel_x_scaler {
             compatible = "zmk,input-processor-scaler";
             #input-processor-cells = <2>;
@@ -245,14 +259,6 @@
             tick = <80>;
             wait-ms = <0>;
             tap-ms = <10>;
-        };
-
-        zip_temp_layer_mouse: zip_temp_layer_mouse {
-            compatible = "zmk,input-processor-temp-layer";
-            #input-processor-cells = <2>;
-            require-prior-idle-ms = <0>;
-            /* J, K, L, ;, Z, M, ., ,, /, Ctrl, EQUAL */
-            excluded-positions = <18 19 20 21 22 30 31 32 33 34 27>;
         };
     };
 
