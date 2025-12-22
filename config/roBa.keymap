@@ -176,7 +176,7 @@
 
 / {
     input_processors {
-        zip_temp_layer: zip_temp_layer {
+        zip_temp_layer_main: zip_temp_layer {
             compatible = "zmk,input-processor-temp-layer";
             #input-processor-cells = <2>;
             require-prior-idle-ms = <0>;
@@ -251,7 +251,7 @@
     };
 
     layer_listeners {
-        mkp_input_listener { input-processors = <&zip_temp_layer MOUSE 10000>; };
+        mkp_input_listener { input-processors = <&zip_temp_layer_main MOUSE 10000>; };
 
         compatible = "zmk,layer-listeners";
 
