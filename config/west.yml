@@ -87,7 +87,7 @@ manifest:
       path: modules/zmk-scroll-snap
     - name: prospector-zmk-module
       remote: prospector
-      revision: /core/zephyr-4-1  # Use specific version tag
+      revision: core/zephyr-4-1  # Use specific version tag
       path: modules/prospector-zmk-module
 
   self:
