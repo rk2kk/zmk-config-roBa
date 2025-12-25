@@ -140,15 +140,15 @@
         &zip_report_rate_limit 15 
     >;
 
-    auto-mouse-layer {
-        layers = <DEFAULT MOUSE>;
-        input-processors = <&zip_temp_layer MOUSE 5000>;
-        process-next;
-    };
-
     symbol_to_alt_tab_aml {
         layers = <SYMBOL>;
         input-processors = <&zip_temp_layer_alt_tab ALT_TAB 5000>;
+        process-next;
+    };
+
+    auto-mouse-layer {
+        layers = <DEFAULT MOUSE>;
+        input-processors = <&zip_temp_layer MOUSE 5000>;
         process-next;
     };
 
