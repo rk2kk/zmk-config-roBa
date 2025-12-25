@@ -24,7 +24,7 @@ manifest:
     - name: te9no
       url-base: https://github.com/te9no
     - name: prospector
-      url-base: https://github.com/carrefinho
+      url-base: https://github.com/t-ogura
       
   projects:
     # https://github.com/zmkfirmware/zmk
@@ -87,7 +87,7 @@ manifest:
       path: modules/zmk-scroll-snap
     - name: prospector-zmk-module
       remote: prospector
-      revision: core/zephyr-4-1  # Use specific version tag
+      revision: feature/v1.1.1-safety-fix
       path: modules/prospector-zmk-module
 
   self:
