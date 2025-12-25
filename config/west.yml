@@ -24,7 +24,7 @@ manifest:
     - name: te9no
       url-base: https://github.com/te9no
     - name: prospector
-      url-base: https://github.com/t-ogura
+      url-base: https://github.com/carrefinho
       
   projects:
     # https://github.com/zmkfirmware/zmk
