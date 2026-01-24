@@ -185,12 +185,12 @@
 
     symbol_to_alt_tab_aml {
         layers = <SYMBOL>;
-        input-processors = <&zip_temp_layer ALT_TAB 10000>;
+        input-processors = <&zip_temp_layer ALT_TAB 0>;
         process-next;
     };
     
     prevent-mouse-move {
-        layers = <ARROW>, <NUM>, <VOLUME>, <CTRL_TAB>, <ALT_TAB>; 
+        layers = <ARROW>, <NUM>, <VOLUME>, <CTRL_TAB>, <ALT_TAB>, <SYMBOL>; 
         input-processors = <&zip_xy_scaler 0 1>;
     };
 
