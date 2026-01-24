@@ -802,7 +802,7 @@
 &trans &trans &trans &trans &trans                          &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &kp EQUAL   &trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &trans      &trans &trans                          &trans
+&trans &trans &trans &trans &trans &trans      &trans &trans                          &kp LA(TAB)
             >;
         };
 
