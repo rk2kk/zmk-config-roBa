@@ -267,7 +267,7 @@
 
          hold_alt_on_alt_tab: hold_alt_on_alt_tab {
             layers = <ALT_TAB>;
-            bindings = <&kp LEFT_ALT &kp LEFT_ALT>;
+            bindings = <&kt_on LEFT_ALT &kt_off LEFT_ALT>;
         };
 
         release_ctrl {
@@ -775,7 +775,7 @@
 &kp TAB &trans &trans &trans &trans                          &trans &trans &trans &trans &kp TAB
 &trans  &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &kp LA(TAB)
 &trans  &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans
-&trans  &trans &trans &trans &trans &trans      &trans &trans                          &trans
+&trans  &trans &trans &trans &trans &trans      &trans &trans                          &kp LA(TAB)
             >;
         };
 
@@ -802,7 +802,7 @@
 &trans &trans &trans &trans &trans                          &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &kp EQUAL   &trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &trans      &trans &trans                          &kp LA(TAB)
+&trans &trans &trans &trans &trans &trans      &trans &trans                          &trans
             >;
         };
 
