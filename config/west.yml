@@ -30,7 +30,7 @@ manifest:
     # https://github.com/zmkfirmware/zmk
     - name: zmk
       remote: zmkfirmware
-      revision: v3.0.0
+      revision: main
       import: app/west.yml
       
      # https://github.com/badjeff/zmk-pmw3610-driver
