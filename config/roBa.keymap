@@ -147,7 +147,7 @@
     };
 
     auto-alt-tab-layer {
-        layers = <SYMBOL ALT_TAB>;
+        layers = <ALT_TAB>;
         input-processors = <&zip_temp_layer ALT_TAB 0>;
         process-next;
     };
