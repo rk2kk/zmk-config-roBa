@@ -50,14 +50,11 @@ include:
     
   - board: xiao_ble
     shield: roBa_L_peripheral rgbled_adapter
-    cmake-args: -DCONFIG_WARN_ON_CONFIG_ERROR=n
     artifact-name: 2_roBa_L_peripheral
 
  # reset   
   - board: xiao_ble
     shield: settings_reset
-    cmake-args: -DCONFIG_WARN_ON_CONFIG_ERROR=n
-
 
 #  - board: raytac_mdbt50q_rx
 #    shield: settings_reset
