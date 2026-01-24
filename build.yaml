@@ -55,6 +55,5 @@ include:
  # reset   
   - board: xiao_ble
     shield: settings_reset
-
 #  - board: raytac_mdbt50q_rx
 #    shield: settings_reset
