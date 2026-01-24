@@ -30,7 +30,7 @@ manifest:
     # https://github.com/zmkfirmware/zmk
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      revision: v3.0.0
       import: app/west.yml
       
      # https://github.com/badjeff/zmk-pmw3610-driver
@@ -87,7 +87,7 @@ manifest:
       path: modules/zmk-scroll-snap
     - name: prospector-zmk-module
       remote: prospector
-      revision: main  # Use specific version tag
+      revision: v2.1.0  # Use v2.1.0 for ZMK 3.0+ (Zephyr 3.6.x+)
       path: modules/prospector-zmk-module
 
   self:
