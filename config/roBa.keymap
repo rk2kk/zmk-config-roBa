@@ -191,7 +191,7 @@
     };
     
     prevent-mouse-move {
-        layers = <ARROW>, <NUM>, <VOLUME>, <CTRL_TAB>, <ALT_TAB>, <SYMBOL>; 
+        layers = <ARROW>, <NUM>, <VOLUME>, <CTRL_TAB>, <ALT_TAB>; 
         input-processors = <&zip_xy_scaler 0 1>;
     };
 
