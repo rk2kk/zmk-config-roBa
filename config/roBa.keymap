@@ -148,7 +148,7 @@
     };
 
     auto-alt-tab-layer {
-        layers = <ALT_TAB>;
+        layers = <SYMBOL ALT_TAB>;
         input-processors = <&zip_temp_layer ALT_TAB 0>;
         process-next;
     };
@@ -187,12 +187,6 @@
     ctrl_tab {
         input-processors = <&zip_ctrl_tab>;
         layers = <CTRL_TAB>;
-        process-next;
-    };
-
-    symbol_to_alt_tab_aml {
-        layers = <SYMBOL>;
-        input-processors = <&zip_temp_layer ALT_TAB 0>;
         process-next;
     };
     
