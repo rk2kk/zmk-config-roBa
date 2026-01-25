@@ -155,7 +155,7 @@
 
     symbol_alt_tab {
         layers = <SYMBOL>;
-        input-processors = <&zip_temp_layer ALT_TAB 0>;
+        input-processors = <&zip_alt_tab>;
         process-next;
     };
 
