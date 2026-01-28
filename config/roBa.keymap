@@ -48,10 +48,10 @@
 
 &trackball {
     cpi = <800>;
-    // swap-xy;
-    // // 修正: 全角スペースを削除
-    // invert-x;
-    // invert-y;
+    swap-xy;
+    // 修正: 全角スペースを削除
+    invert-x;
+    invert-y;
 };
 
 &zip_temp_layer {
