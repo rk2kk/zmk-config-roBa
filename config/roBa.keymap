@@ -149,7 +149,7 @@
 
     symbol_alt_tab {
         layers = <SYMBOL>;
-        input-processors = <&zip_temp_layer ALT_TAB 0>;
+        input-processors = <&zip_alt_tab>;
         process-next;
     };
 
@@ -266,8 +266,8 @@
     layer_listeners {
         compatible = "zmk,layer-listeners";
 
-         hold_alt_on_alt_tab: hold_alt_on_alt_tab {
-            layers = <ALT_TAB>;
+         hold_alt_on_symbol: hold_alt_on_symbol {
+            layers = <SYMBOL>;
             bindings = <&kt_on LEFT_ALT &kt_off LEFT_ALT>;
         };
 
