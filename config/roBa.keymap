@@ -149,7 +149,7 @@
 
     symbol_alt_tab {
         layers = <SYMBOL>;
-        input-processors = <&zip_alt_tab>;
+        input-processors = <&zip_temp_layer ALT_TAB 0>;
         process-next;
     };
 
@@ -266,14 +266,19 @@
     layer_listeners {
         compatible = "zmk,layer-listeners";
 
-         hold_alt_on_symbol: hold_alt_on_symbol {
-            layers = <SYMBOL>;
+         hold_alt_on_alt_tab: hold_alt_on_alt_tab {
+            layers = <ALT_TAB>;
             bindings = <&kt_on LEFT_ALT &kt_off LEFT_ALT>;
         };
 
         release_ctrl {
             layers = <CTRL_TAB>;
             bindings = <&kt_on LCTRL &kt_off LCTRL>;
+        };
+
+        reset_on_symbol_exit: reset_on_symbol_exit {
+            layers = <SYMBOL>;
+            bindings = <&none &to DEFAULT>;
         };
 
 
