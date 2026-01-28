@@ -48,10 +48,10 @@
 
 &trackball {
     cpi = <800>;
-    swap-xy;
-    // 修正: 全角スペースを削除
-    invert-x;
-    invert-y;
+    // swap-xy;
+    // // 修正: 全角スペースを削除
+    // invert-x;
+    // invert-y;
 };
 
 &zip_temp_layer {
@@ -137,7 +137,7 @@
 &trackball_listener {
     compatible = "zmk,input-listener";
     input-processors = <
-        &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT) 
+        &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT) 
         &zip_report_rate_limit 15 
     >;
 
