@@ -379,10 +379,10 @@
             #binding-cells = <1>;
             bindings =
                 <&macro_press>,
-                <&macro_param_1to1 &mo MACRO_PLACEHOLDER>,
+                <&macro_param_1to1 &tog MACRO_PLACEHOLDER>,
                 <&macro_pause_for_release>,
-                <&macro_release>,
-                <&to 0>;
+                <&to 0>,
+                <&macro_release>;
 
             label = "MO_to_0";
         };
