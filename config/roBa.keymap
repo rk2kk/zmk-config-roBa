@@ -142,8 +142,13 @@
     >;
 
     auto-mouse-layer {
-        layers = <DEFAULT MOUSE>;
+        layers = <DEFAULT>;
         input-processors = <&zip_temp_layer MOUSE 10000>;
+        process-next;
+    };
+
+    mouse-layer {
+        layers = <MOUSE>;
         process-next;
     };
 
@@ -154,7 +159,7 @@
     };
 
     layer7_alt_tab {
-        layers = <7>;
+        layers = <FUNCTION_NUM_1>;
         input-processors = <&zip_temp_layer ALT_TAB 0>;
         process-next;
     };
