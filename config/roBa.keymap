@@ -284,7 +284,7 @@
 
         release_ctrl {
             layers = <CTRL_TAB>;
-            bindings = <&kt_on LCTRL &kt_off LCTRL>;
+            bindings = <&kt_on LCTRL>, <&kt_off LCTRL>;
         };
 
 
