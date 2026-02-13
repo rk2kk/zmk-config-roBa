@@ -277,15 +277,15 @@
     layer_listeners {
         compatible = "zmk,layer-listeners";
 
-         hold_alt_on_alt_tab: hold_alt_on_alt_tab {
-            layers = <ALT_TAB>;
-            bindings = <&kp LEFT_ALT>, <&kt_off LEFT_ALT>;
-        };
+        // hold_alt_on_alt_tab: hold_alt_on_alt_tab {
+        //    layers = <ALT_TAB>;
+        //    bindings = <&kp LEFT_ALT>, <&kt_off LEFT_ALT>;
+        //};
 
-        release_ctrl {
-            layers = <CTRL_TAB>;
-            bindings = <&kt_on LCTRL>, <&kt_off LCTRL>;
-        };
+        //release_ctrl {
+       //     layers = <CTRL_TAB>;
+       //     bindings = <&kt_on LCTRL>, <&kt_off LCTRL>;
+       // };
 
 
         // AML_indicator {
@@ -335,6 +335,16 @@
         mouse {
             bindings = <&mo 4>;
             key-positions = <13 14>;
+        };
+
+        alt_tab_combo {
+            bindings = <&lt_to_0 8 LEFT_ALT>;
+            key-positions = <4 39>;
+        };
+
+         ctrl_tab_combo {
+            bindings = <&lt_to_0 9 LEFT_ALT>;
+            key-positions = <17 39>;
         };
     };
 
