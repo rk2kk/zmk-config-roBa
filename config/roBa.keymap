@@ -152,18 +152,6 @@
         process-next;
     };
 
-    symbol_alt_tab {
-        layers = <SYMBOL>;
-        input-processors = <&zip_temp_layer ALT_TAB 0>;
-        process-next;
-    };
-
-    layer7_alt_tab {
-        layers = <FUNCTION_NUM_1>;
-        input-processors = <&zip_temp_layer ALT_TAB 0>;
-        process-next;
-    };
-
     scroller {
         layers = <SCROLL>;
         input-processors = <
