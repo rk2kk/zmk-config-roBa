@@ -265,25 +265,15 @@
     layer_listeners {
         compatible = "zmk,layer-listeners";
 
-        // hold_alt_on_alt_tab: hold_alt_on_alt_tab {
-        //    layers = <ALT_TAB>;
-        //    bindings = <&kp LEFT_ALT>, <&kt_off LEFT_ALT>;
-        //};
+        hold_alt_on_alt_tab: hold_alt_on_alt_tab {
+            layers = <ALT_TAB>;
+            bindings = <&kt_on LEFT_ALT>, <&kt_off LEFT_ALT>;
+        };
 
-        //release_ctrl {
-       //     layers = <CTRL_TAB>;
-       //     bindings = <&kt_on LCTRL>, <&kt_off LCTRL>;
-       // };
-
-
-        // AML_indicator {
-        //    layers = <MOUSE>;
-        //    bindings = <&kp LS(LA(LC(LG(H)))) &kp LS(LA(LC(LG(H))))>;
-        // };
-        // AML {
-        //    layers = <MOUSE>;
-        //    bindings = <&to MOUSE &none>;
-        // };
+        release_ctrl {
+            layers = <CTRL_TAB>;
+            bindings = <&kt_on LCTRL>, <&kt_off LCTRL>;
+        };
     };
 
     combos {
