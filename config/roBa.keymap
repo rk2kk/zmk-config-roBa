@@ -257,7 +257,8 @@
             compatible = "zmk,input-processor-keybind";
             #input-processor-cells = <0>;
             track-remainders;
-            bindings = <
+            bindings =
+                <
 &kp LC(TAB)
                         &kp LC(LS(TAB))
                         &kp LC(TAB)
@@ -333,7 +334,7 @@
 
         alt {
             bindings = <&lt_to_0 8 LEFT_ALT>;
-            key-positions = <4 39>;
+            key-positions = <4 39 14>;
         };
     };
 
