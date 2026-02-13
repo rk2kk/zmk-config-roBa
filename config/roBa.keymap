@@ -4,8 +4,8 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
-#include <behaviors/rgbled_widget.dtsi>
-#include <input/processors/report_rate_limit.dtsi>
+// #include <behaviors/rgbled_widget.dtsi>
+// #include <input/processors/report_rate_limit.dtsi>
 #include <layout_shift_kp_override.dtsi>
 #include <mouse-gesture.dtsi>
 #include <scroll-snap.dtsi>
@@ -138,7 +138,7 @@
     compatible = "zmk,input-listener";
     input-processors = <
         &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT) 
-        &zip_report_rate_limit 15 
+       // &zip_report_rate_limit 15 
     >;
 
     auto-mouse-layer {
