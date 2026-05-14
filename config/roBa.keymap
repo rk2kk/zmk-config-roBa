@@ -180,17 +180,17 @@
     alt_tab {
         input-processors = <&zip_alt_tab>;
         layers = <ALT_TAB>, <SYMBOL>;
-        process-next;
     };
 
     ctrl_tab {
         input-processors = <&zip_ctrl_tab>;
+        process-next;
         layers = <CTRL_TAB>;
         process-next;
     };
     
     prevent-mouse-move {
-        layers = <ARROW>, <NUM>, <VOLUME>, <CTRL_TAB>, <ALT_TAB>; 
+        layers = <ARROW>, <NUM>, <VOLUME>, <CTRL_TAB>, <ALT_TAB>,<SYMBOL>; 
         input-processors = <&zip_xy_scaler 0 1>;
     };
 
