@@ -267,7 +267,7 @@
 
         hold_alt_on_alt_tab: hold_alt_on_alt_tab {
             layers = <ALT_TAB>;
-            bindings = <&kt_on LEFT_ALT>, <&kt_off LEFT_ALT>;
+            bindings = <&kt_on LEFT_ALT>, <&kt_off LEFT_ALT>, <&tog_off 7>;
         };
 
         release_ctrl {
