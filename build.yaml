@@ -39,7 +39,7 @@ include:
 #    artifact-name: 1_roBa_R_peripheral
 
   - board: xiao_ble//zmk
-    shield: roBa_R_central
+    shield: roBa_R_central rgbled_adapter
     snippet: studio-rpc-usb-uart
     artifact-name: 2_roBa_R_central
 
@@ -49,7 +49,7 @@ include:
 #    artifact-name: 1_roBa_L_central
     
   - board: xiao_ble//zmk
-    shield: roBa_L_peripheral 
+    shield: roBa_L_peripheral rgbled_adapter
     artifact-name: 2_roBa_L_peripheral
 
  # reset   
