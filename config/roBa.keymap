@@ -179,7 +179,7 @@
 
     alt_tab {
         input-processors = <&zip_alt_tab>;
-        layers = <ALT_TAB>;
+        layers = <ALT_TAB>, <SYMBOL>;
         process-next;
     };
 
@@ -273,6 +273,11 @@
         release_ctrl {
             layers = <CTRL_TAB>;
             bindings = <&kt_on LCTRL>, <&kt_off LCTRL>;
+        };
+
+        hold_alt_on_symbol: hold_alt_on_symbol {
+            layers = <SYMBOL>;
+            bindings = <&kt_on LEFT_ALT>, <&kt_off LEFT_ALT>;
         };
     };
 
