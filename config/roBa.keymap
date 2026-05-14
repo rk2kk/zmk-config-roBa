@@ -22,7 +22,7 @@
 #define ARROW 4
 #define SCROLL 5
 #define VOLUME 6
-#define SYMBOL 7
+#define FUNCTION 7
 #define ALT_TAB 8
 #define CTRL_TAB 9
 #define MEDIA 10
@@ -179,7 +179,7 @@
 
     alt_tab {
         input-processors = <&zip_alt_tab>;
-        layers = <ALT_TAB>, <SYMBOL>;
+        layers = <ALT_TAB>, <FUNCTION>;
     };
 
     ctrl_tab {
@@ -273,11 +273,6 @@
         release_ctrl {
             layers = <CTRL_TAB>;
             bindings = <&kt_on LCTRL>, <&kt_off LCTRL>;
-        };
-
-        hold_alt_on_symbol: hold_alt_on_symbol {
-            layers = <SYMBOL>;
-            bindings = <&kt_on LEFT_ALT>, <&kt_off LEFT_ALT>;
         };
     };
 
@@ -554,7 +549,7 @@
             >;
         };
 
-        Function {
+        FUNCTION {
             bindings = <
 &kp F1     &kp F2      &kp F3      &kp F4      &kp F5                          &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
 &kp LC(A)  &kp LC(S)   &kp LC(D)   &kp LC(F)   &kp LC(G) &trans      &trans &kp F11 &kp F12 &trans  &trans  &trans
