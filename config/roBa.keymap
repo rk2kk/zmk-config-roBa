@@ -194,11 +194,11 @@
         input-processors = <&zip_xy_scaler 0 1>;
     };
 
-    config_gesture {
+    /* config_gesture {
         layers = <CONFIG>;
         input-processors = <&zip_mouse_gesture>;
         process-next;
-    };
+    }; */
 
 };
 
