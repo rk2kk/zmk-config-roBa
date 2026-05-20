@@ -263,7 +263,7 @@
 &kp LC(TAB)
                         &kp LC(LS(TAB))
                         &kp LC(TAB)
-                        &kp LC(LS(TAB)
+                        &kp LC(LS(TAB))
             >;
 
             tick = <80>;
