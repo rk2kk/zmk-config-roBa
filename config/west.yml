@@ -10,6 +10,8 @@ manifest:
       url-base: https://github.com/caksoylar  
     - name: englmaxi
       url-base: https://github.com/englmaxi
+    - name: minhe7735
+      url-base: https://github.com/minhe7735
     - name: kot149
       url-base: https://github.com/kot149
       #dongle
@@ -60,6 +62,10 @@ manifest:
       revision: v1
       path: modules/zmk-mouse-gesture
     # https://github.com/kot149/zmk-layout-shift
+        # https://github.com/minhe7735/zmk-trackball-gestures-module
+    - name: zmk-trackball-gestures-module
+      remote: minhe7735
+      revision: master
     - name: zmk-dongle-display
       remote: englmaxi
       revision: main

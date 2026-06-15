@@ -16,6 +16,8 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/trackball_gestures.h>
+#include <behaviors/gesture.dtsi>
 
 #define DEFAULT 0
 #define FUNCTION_NUM 1
@@ -61,7 +63,14 @@
 &zip_temp_layer {
     require-prior-idle-ms = <200>;
     excluded-positions = <
-      //    9 // P
+        1   //Q
+        2   //W
+        //10 // P
+        11  //A
+        12  //S
+        13  //D
+        14  //F
+        
         18 // J
         19 // K
         20 // L
@@ -73,7 +82,7 @@
         32 // ,
         32 // /
         34 // Ctrl
-       // 42
+        // 42
     >;
 };
 
@@ -142,7 +151,8 @@
     compatible = "zmk,input-listener";
     input-processors = <
         &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT) 
-       // &zip_report_rate_limit 15 
+        &gesture_processor
+        &zip_report_rate_limit 15 
     >;
 
     auto-mouse-layer {
@@ -531,10 +541,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans          &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1        &mkp MB3  &mkp MB2  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mo_exit_AML 0  &mkp MB4  &mkp MB5  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                      &trans
+&trans  &gesture GESTURE_PINCH2  &trans  &trans  &trans                                                                         &trans  &trans          &trans    &trans    &trans
+&trans  &gesture GESTURE_SWIPE2  &gesture GESTURE_SWIPE3  &gesture GESTURE_SWIPE4  &gesture GESTURE_SWIPE5  &trans      &trans  &trans  &mkp MB1        &mkp MB3  &mkp MB2  &trans
+&trans  &trans                   &trans                   &trans                   &trans                   &trans      &trans  &trans  &mo_exit_AML 0  &mkp MB4  &mkp MB5  &trans
+&trans  &trans                   &trans                   &trans                   &trans                   &trans      &trans  &trans                                      &trans
             >;
         };
 
