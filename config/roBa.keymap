@@ -6,7 +6,7 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 
-#include <behaviors/rgbled_widget.dtsi>
+
 #include <input/processors/report_rate_limit.dtsi>
 
 #include <layout_shift_kp_override.dtsi>
