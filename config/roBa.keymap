@@ -11,6 +11,7 @@
 
 #include <layout_shift_kp_override.dtsi>
 
+#include <mouse-gesture.dtsi>
 #include <scroll-snap.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
