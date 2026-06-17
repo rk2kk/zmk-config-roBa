@@ -301,15 +301,7 @@
             key-positions = <13 14>;
         };
 
-        alt_tab_combo {
-            bindings = <&lt_to_0 8 LEFT_ALT>;
-            key-positions = <4 39>;
-        };
 
-        ctrl_tab_combo {
-            bindings = <&lt_to_0 9 LEFT_ALT>;
-            key-positions = <17 39>;
-        };
     };
 
     macros {
