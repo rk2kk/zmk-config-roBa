@@ -6,11 +6,11 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 
-// #include <behaviors/rgbled_widget.dtsi>
+#include <behaviors/rgbled_widget.dtsi>
 #include <input/processors/report_rate_limit.dtsi>
 
 #include <layout_shift_kp_override.dtsi>
-#include <mouse-gesture.dtsi>
+
 #include <scroll-snap.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -30,7 +30,6 @@
 #define ALT_TAB 8
 #define CTRL_TAB 9
 #define MEDIA 10
-#define CONFIG 11
 
 &mt {
     tapping-term-ms = <150>;
