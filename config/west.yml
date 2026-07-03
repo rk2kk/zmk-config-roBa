@@ -6,8 +6,8 @@ manifest:
       url-base: https://github.com/badjeff
     - name: ssbb
       url-base: https://github.com/ssbb
-    - name: caksoylar 
-      url-base: https://github.com/caksoylar  
+    - name: caksoylar
+      url-base: https://github.com/caksoylar
     - name: englmaxi
       url-base: https://github.com/englmaxi
     - name: minhe7735
@@ -50,7 +50,6 @@ manifest:
     - name: zmk-listeners
       remote: ssbb
       revision: v1
-      path:
     # https://github.com/caksoylar/zmk-rgbled-widget
     - name: zmk-rgbled-widget
       remote: caksoylar
@@ -75,7 +74,7 @@ manifest:
     - name: zmk-input-processor-keybind
       remote: zettaface
       revision: main
-      path:  modules/zmk-input-processor-keybind-zettaface
+      path: modules/zmk-input-processor-keybind-zettaface
     # https://github.com/badjeff/zmk-input-processor-report-rate-limit
     - name: zmk-input-processor-report-rate-limit
       remote: badjeff
