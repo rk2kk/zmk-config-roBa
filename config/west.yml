@@ -46,50 +46,67 @@ manifest:
     #  remote: kot149
     #  revision: swap-invert-reg
     #  path: modules/zmk-pmw3610-driver-badjeff
+
     # https://github.com/ssbb/zmk-listeners
     - name: zmk-listeners
       remote: ssbb
       revision: v1
+
+   # https://github.com/caksoylar/zmk-smart-toggle.git
+    - name: zmk-smart-toggle
+      remote: caksoylar
+      revision: v0.3-branch
+      path: modules/zmk-smart-toggle
+
     # https://github.com/caksoylar/zmk-rgbled-widget
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: main
       path: modules/zmk-rgbled-widget
+
     # https://github.com/kot149/zmk-mouse-gesture
     - name: zmk-mouse-gesture
       remote: kot149
       revision: v1
       path: modules/zmk-mouse-gesture
+
     # https://github.com/kot149/zmk-layout-shift
         # https://github.com/minhe7735/zmk-trackball-gestures-module
     - name: zmk-trackball-gestures-module
       remote: minhe7735
       revision: master
+
     - name: zmk-dongle-display
       remote: englmaxi
       revision: main
+
     - name: zmk-component-raytac-dongle
       remote: venator
       revision: main
+
     - name: zmk-input-processor-keybind
       remote: zettaface
       revision: main
       path: modules/zmk-input-processor-keybind-zettaface
+
     # https://github.com/badjeff/zmk-input-processor-report-rate-limit
     - name: zmk-input-processor-report-rate-limit
       remote: badjeff
       revision: main
       path: modules/zmk-input-processor-report-rate-limit
           # https://github.com/kot149/zmk-layout-shift
+
     - name: zmk-layout-shift
       remote: kot149
       revision: v1
       path: modules/zmk-layout-shift
     # https://github.com/kot149/zmk-scroll-snap
+
     - name: zmk-scroll-snap
       remote: kot149
       revision: v1
       path: modules/zmk-scroll-snap
+
     - name: prospector-zmk-module
       remote: prospector
       revision: v2.1.0  # Use v2.1.0 for ZMK 3.0+ (Zephyr 3.6.x+)
