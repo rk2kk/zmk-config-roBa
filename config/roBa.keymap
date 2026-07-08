@@ -207,6 +207,12 @@
         process-next;
     };
 
+        alt_tab {
+        input-processors = <&zip_alt_tab>;
+        layers = <SYMBOL>;
+        process-next;
+    };
+
     prevent-mouse-move {
         layers = <ARROW>, <NUM>, <VOLUME>, <CTRL_TAB>, <ALT_TAB>;
 
@@ -242,6 +248,23 @@
             bindings = <&none>, <&none>, <&kp C_VOLUME_UP>, <&kp C_VOLUME_DOWN>;
 
             tick = <40>;
+            wait-ms = <0>;
+            tap-ms = <10>;
+        };
+
+        zip_alt_tab: zip_alt_tab {
+            compatible = "zmk,input-processor-keybind";
+            #input-processor-cells = <0>;
+            track-remainders;
+            bindings =
+                <
+                        &kp down
+                        &kp up
+                        &alttab
+                        &altshifttab
+            >;
+
+            tick = <80>;
             wait-ms = <0>;
             tap-ms = <10>;
         };
@@ -426,7 +449,7 @@
         alttab: alttab {
             compatible = "zmk,behavior-smart-toggle";
             #binding-cells = <0>;
-            bindings = <&mokp 5 LALT>, <&kp TAB>;
+            bindings = <&mokp 7 LALT>, <&kp TAB>;
             ignored-key-positions = <
                 (POS_L_1_START)
                 (POS_R_1_END)
@@ -441,6 +464,12 @@
                 (POS_R_2_START + 3)
                 (POS_R_2_START + 4)
             >;
+        };
+
+         altshifttab: altshifttab {
+            compatible = "zmk,behavior-smart-toggle";
+            #binding-cells = <0>;
+            bindings = <&mokp 7 LALT>, <&kp LS(TAB)>;
         };
 
         /omit-if-no-ref/
