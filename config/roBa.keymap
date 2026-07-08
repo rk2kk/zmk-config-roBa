@@ -258,8 +258,8 @@
             track-remainders;
             bindings =
                 <
-                        &kp down
-                        &kp up
+                        &kp DOWN
+                        &kp UP
                         &alttab
                         &altshifttab
             >;
@@ -293,7 +293,7 @@
         //release_ctrl {
         //   layers = <CTRL_TAB>;
         //  bindings = <&kt_on LCTRL>, <&kt_off LCTRL>;
-        };
+        //};
     };
 
     combos {
