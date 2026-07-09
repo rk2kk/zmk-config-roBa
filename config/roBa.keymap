@@ -493,8 +493,9 @@
                 (POS_R_2_START + 3)
                 (POS_R_2_START + 4)
             >;
+           };  
 
-        ctrlshifttab: ctrlshittab {
+        ctrlshifttab: ctrlshifttab {
             compatible = "zmk,behavior-smart-toggle";
             #binding-cells = <0>;
             bindings = <&mokp 9 LCTRL>, <&kp LS(TAB)>;
