@@ -326,11 +326,6 @@
             key-positions = <24 25>;
         };
 
-        esc_combo {
-            bindings = <&kp ESCAPE>;
-            key-positions = <0 1>;
-        };
-
          shift_middle_click {
             bindings = <&mkp_with_mod LEFT_SHIFT MCLK>;
             key-positions = <19 20>;
