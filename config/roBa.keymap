@@ -87,7 +87,7 @@
         (POS_R_1_START + 4) // L
         (POS_R_1_START + 5) // ;
         (POS_R_2_START + 3) // ,
-        (POS_R_2_START + 4) // .
+        (POS_R_2_START + 4) // ,
         (POS_L_2_START) // Z
     
     >;
