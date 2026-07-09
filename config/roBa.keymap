@@ -941,8 +941,8 @@
 
         MOUSE {
             bindings = <
-&alttab   &trans  &trans  &trans  &trans                    &trans     &trans          &trans    &ctrltab  &alttab 
-&ctrltab  &trans  &trans  &trans  &trans   &trans   &trans  &trans     &mkp MB1        &mkp MB3  &mkp MB2  &trans
+&trans    &trans  &trans  &trans  &trans                    &trans     &trans          &trans    &trans    &trans   
+&trans    &trans  &trans  &trans  &trans   &trans   &trans  &trans     &mkp MB1        &mkp MB3  &mkp MB2  &trans
 &trans    &trans  &trans  &trans  &trans   &trans   &trans  &trans     &mo_exit_AML 0  &mkp MB4  &mkp MB5  &trans
 &trans    &trans  &trans  &trans  &trans   &trans   &trans  &trans                                         &trans
             >;
@@ -986,17 +986,17 @@
 
         alt_tab {
             bindings = <
-&kp TAB  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &kp TAB
-&trans   &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &kp LA(TAB)
-&trans   &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans   &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &kp LA(TAB)
+&alt_tab  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &altshifttab
+&trans    &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &kp LA(TAB)
+&trans    &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans    &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &kp LA(TAB)
             >;
         };
 
         ctrl_tab {
             bindings = <
-&kp TAB  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &kp TAB
-&trans   &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &kp LA(TAB)
+&ctrltab &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &ctrlshifttab
+&trans   &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans   &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans   &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
