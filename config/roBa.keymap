@@ -311,10 +311,10 @@
             key-positions = <12 13>;
         };
 
-        zenkaku {
-            bindings = <&td_ZenkakuHankaku>;
-            key-positions = <10 11>;
-        };
+        //zenkaku {
+        //    bindings = <&td_ZenkakuHankaku>;
+        //    key-positions = <10 11>;
+        //};
 
         double_quotation {
             bindings = <&kp DOUBLE_QUOTES>;
