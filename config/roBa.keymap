@@ -382,7 +382,7 @@
             bindings = <&tog_off 7>;
         };
 
-        /omit-if-no-ref/
+        
 
         kp_exit_AML: kp_exit_AML {
             compatible = "zmk,behavior-macro-one-param";
@@ -392,7 +392,7 @@
             bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &exit_AML>;
         };
 
-        /omit-if-no-ref/
+       
 
         mod_exit_AML: mod_exit_AML {
             compatible = "zmk,behavior-macro-one-param";
