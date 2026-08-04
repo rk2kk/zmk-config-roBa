@@ -656,23 +656,7 @@
 
         /omit-if-no-ref/
 
-        alt_tab: alt_tab {
-            compatible = "zmk,behavior-macro-two-param";
-            #binding-cells = <2>;
-            bindings = <&macro_param_1to1 &kt_on MACRO_PLACEHOLDER &macro_param_2to1 &kp MACRO_PLACEHOLDER &macro_param_1to1 &sk MACRO_PLACEHOLDER &macro_param_1to1 &kt_off MACRO_PLACEHOLDER>;
-        };
 
-        /omit-if-no-ref/
-
-        windows_sleep: windows_sleep {
-            compatible = "zmk,behavior-macro";
-            wait-ms = <200>;
-            tap-ms = <100>;
-            #binding-cells = <0>;
-            bindings = <&kp LG(X) &kp U &kp S>;
-        };
-
-        /omit-if-no-ref/
 
         screensot_save: screensot_save {
             compatible = "zmk,behavior-macro";
