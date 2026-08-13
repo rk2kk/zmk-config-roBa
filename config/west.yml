@@ -39,7 +39,7 @@ manifest:
 
     - name: zmk
       remote: cormoran
-      revision: main+dya
+      revision: v0.3+custom-studio-protocol
       import:
       file: app/west.yml
 
