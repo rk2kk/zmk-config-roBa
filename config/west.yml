@@ -91,8 +91,8 @@ manifest:
       
      # https://github.com/badjeff/zmk-pmw3610-driver
     - name: zmk-pmw3610-driver
-           remote: badjeff
-           revision: main
+      remote: badjeff
+      revision: main
       path: modules/zmk-pmw3610-driver-badjeff
     
     # https://github.com/kot149/zmk-pmw3610-driver-badjeff/tree/swap-invert-reg
