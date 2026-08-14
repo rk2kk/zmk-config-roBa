@@ -1,4 +1,7 @@
 manifest:
+  defaults:
+    remote: cormoran
+    revision: main
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
@@ -36,6 +39,8 @@ manifest:
     #  remote: zmkfirmware
     #  revision: main
     #  import: app/west.yml
+    - name: zmk-west-commands
+      import: true
 
     - name: zmk
       import:
