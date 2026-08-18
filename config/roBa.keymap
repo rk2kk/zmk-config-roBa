@@ -16,6 +16,10 @@
 #include <dt-bindings/zmk/trackball_gestures.h>
 #include <behaviors/gesture.dtsi>
 
+#include <behaviors/runtime_macro.dtsi>
+#include <behaviors/runtime-input-processor.dtsi>
+#include <behaviors/runtime-sensor-rotate.dtsi>
+
 #define DEFAULT 0
 #define FUNCTION_NUM 1
 #define NUM 2

@@ -8,6 +8,11 @@
     nfct-pins-as-gpios;
 };
 
+// Studio RPC and debug logging provide their own USB CDC devices when needed.
+&board_cdc_acm_uart {
+	status = "disabled";
+};
+
 / {
     chosen {
         zmk,physical-layout = &default_layout;
