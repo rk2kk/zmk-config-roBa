@@ -1,7 +1,5 @@
 #include <physical_layouts.dtsi>
-#include <behaviors/animation_trigger.dtsi>
 #include <dt-bindings/input/input-event-codes.h>
-#include <dt-bindings/led/led.h>
 
 #include <input/processors.dtsi>
 #include <input/processors/runtime-input-processor.dtsi>
