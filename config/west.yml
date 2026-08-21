@@ -69,7 +69,7 @@ manifest:
           - openthread
           - edtt
           - trusted-firmware-m
-    - name: zmk-driver-pmw3610-with-custom-studio-rpc
+  #  - name: zmk-driver-pmw3610-with-custom-studio-rpc
     - name: zmk-feature-os-detection
     - name: zmk-feature-default-layer
       revision: codex/custom-rpc-rewrite
@@ -95,17 +95,13 @@ manifest:
     - name: zmk-feature-watchdog
     - name: zmk-feature-fast-keymap
       
-     # https://github.com/badjeff/zmk-pmw3610-driver
-    #- name: zmk-pmw3610-driver
-    #  remote: badjeff
-    #  revision: main
-    #  path: modules/zmk-pmw3610-driver-badjeff
+    # https://github.com/badjeff/zmk-pmw3610-driver
+    - name: zmk-pmw3610-driver
+      remote: badjeff
+      revision: main
+      path: modules/zmk-pmw3610-driver-badjeff
     
-    # https://github.com/kot149/zmk-pmw3610-driver-badjeff/tree/swap-invert-reg
-    #- name: zmk-pmw3610-driver-badjeff
-    #  remote: kot149
-    #  revision: swap-invert-reg
-    #  path: modules/zmk-pmw3610-driver-badjeff
+ 
 
     # https://github.com/ssbb/zmk-listeners
     - name: zmk-listeners
