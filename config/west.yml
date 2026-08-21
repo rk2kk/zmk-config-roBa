@@ -32,6 +32,8 @@ manifest:
       url-base: https://github.com/t-ogura    
     - name: cormoran
       url-base: https://github.com/cormoran
+    - name: 4mplelab
+      url-base: https://github.com/4mplelab
       
   projects:
     # https://github.com/zmkfirmware/zmk
@@ -167,6 +169,10 @@ manifest:
       remote: prospector
       revision: v2.1.0  # Use v2.1.0 for ZMK 3.0+ (Zephyr 3.6.x+)
       path: modules/prospector-zmk-module
+
+    - name: zmk-feature-charge-indicator
+      remote: 4mplelab
+      revision: main
 
   self:
     path: config
