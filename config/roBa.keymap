@@ -97,6 +97,7 @@
     >;
 };
 
+/*
 &zip_mouse_gesture {
     stroke-size = <150>;
     enable-eager-mode;
@@ -154,6 +155,7 @@
     //     bindings = <&kp DOWN>;
     // };
 };
+*/
 
 &zip_scroll_snap {
     require-n-samples = <8>;
@@ -167,7 +169,7 @@
     compatible = "zmk,input-listener";
     input-processors = <
         &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT) 
-        &gesture_processor
+        // &gesture_processor
         &zip_report_rate_limit 15 
     >;
 
@@ -896,14 +898,14 @@
 
         /omit-if-no-ref/
 
-        td_rclick_close_tab_mouse_gesture: td_rclick_close_tab_mouse_gesture {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            bindings = <&mouse_gesture>, <&td_rclick_close_tab>;
+        // td_rclick_close_tab_mouse_gesture: td_rclick_close_tab_mouse_gesture {
+        //     compatible = "zmk,behavior-hold-tap";
+        //     #binding-cells = <2>;
+        //     bindings = <&mouse_gesture>, <&td_rclick_close_tab>;
 
-            tapping-term-ms = <150>;
-            flavor = "balanced";
-        };
+        //     tapping-term-ms = <150>;
+        //     flavor = "balanced";
+        // };
     };
 
     keymap {
