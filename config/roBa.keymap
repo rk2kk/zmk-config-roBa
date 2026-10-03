@@ -77,9 +77,6 @@
 
 &trackball {
     cpi = <800>;
-    swap-xy;
-    invert-x;
-    invert-y;
 };
 
 &zip_temp_layer {
