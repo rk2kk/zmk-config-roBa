@@ -5,7 +5,6 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <input/processors/report_rate_limit.dtsi>
-#include <layout_shift_kp_override.dtsi>
 
 #include <mouse-gesture.dtsi>
 #include <scroll-snap.dtsi>
