@@ -108,8 +108,8 @@
         &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT) 
         &zip_report_rate_limit 15
         &mouse_runtime_input_processor
-        &scroll_runtime_input_processor> 
-    >;
+        &scroll_runtime_input_processor
+        >;
 
     auto-mouse-layer {
         layers = <DEFAULT>;
