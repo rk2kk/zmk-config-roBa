@@ -92,7 +92,7 @@ manifest:
     - name: zmk-feature-zephyr-setting-expose
     - name: zmk-feature-device-info
     - name: zmk-feature-kscan-diagnostics
-    #- name: zmk-feature-watchdog
+    - name: zmk-feature-watchdog
     - name: zmk-feature-fast-keymap
       
     # https://github.com/ssbb/zmk-listeners
