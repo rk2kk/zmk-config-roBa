@@ -17,7 +17,7 @@
 
 #include <behaviors/runtime_macro.dtsi>
 #include <behaviors/runtime-input-processor.dtsi>
-#include <behaviors/runtime-sensor-rotate.dtsi>
+
 
 #define DEFAULT 0
 #define FUNCTION_NUM 1
