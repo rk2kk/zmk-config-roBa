@@ -94,7 +94,7 @@ manifest:
     - name: zmk-feature-kscan-diagnostics
     - name: zmk-feature-watchdog
     - name: zmk-feature-fast-keymap
-      
+    - name: zmk-behavior-runtime-sensor-rotate
     # https://github.com/ssbb/zmk-listeners
     - name: zmk-listeners
       remote: ssbb
