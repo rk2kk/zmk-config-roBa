@@ -1,21 +1,24 @@
 name: "Draw Keymap"
-name: Draw ZMK keymaps
+
 on:
-  workflow_dispatch: # can be triggered manually
-  push: # automatically run on changes to following paths
+  workflow_dispatch:
+  push:
     paths:
+      - ".github/workflows/keymap_drawer.yml"
       - "config/*.keymap"
       - "config/*.json"
-      - "keymap_drawer.config.yaml"
+      - "keymap-drawer/keymap_drawer.config.yaml"
 
 jobs:
   draw:
-    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@cd716e07453ad3b8fc10f905d3a0eebc61dd9450
+    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@f9cf9d3677368a7fb1dc505c51b8156fafa66fe2
     permissions:
-      contents: write # allow workflow to commit to the repo
+      contents: write
     with:
-      keymap_patterns: "config/*.keymap" # path to the keymaps to parse
-      config_path: "keymap_drawer.config.yaml" # config file, ignored if not exists
-      output_folder: "keymap-drawer" # path to save produced SVG and keymap YAML files
-      parse_args: "" # map of extra args to pass to `keymap parse`, e.g. "corne:'-l Def Lwr Rse' cradio:''"
-      draw_args: "-j config/roBa.json --keys-only"
+      commit_message: "[Draw] ${{ github.event.head_commit.message || 'Update keymap drawing' }}"
+      amend_commit: false
+      keymap_patterns: "config/*.keymap"
+      json_path: "config"
+      config_path: "keymap-drawer/keymap_drawer.config.yaml"
+      output_folder: "keymap-drawer"
+      destination: "both"
