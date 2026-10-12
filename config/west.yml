@@ -157,7 +157,7 @@ manifest:
 
     - name: prospector-zmk-module
       remote: prospector
-      revision: v2.1.0  # Use v2.1.0 for ZMK 3.0+ (Zephyr 3.6.x+)
+      revision: v2.2.2
       path: modules/prospector-zmk-module
 
     - name: zmk-feature-charge-indicator
