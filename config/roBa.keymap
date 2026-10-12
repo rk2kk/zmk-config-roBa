@@ -25,7 +25,6 @@
 #define SCROLL 5
 #define VOLUME 6
 #define SYMBOL 7
-#define CTRL_TAB 1
 #define POS_L_0_START 0                     //Q
 #define POS_L_1_START 10                    //A
 #define POS_L_2_START 22                    //Y
@@ -150,8 +149,7 @@
     };
 
     prevent-mouse-move {
-        layers = <NUM>, <ARROW>, <VOLUME>, <SYMBOL>, <ALT_TAB>, <CTRL_TAB>;
-
+        layers = <NUM>, <ARROW>, <VOLUME>, <SYMBOL>, <FUNCTION_NUM>;
         input-processors = <&zip_xy_scaler 0 1>;
     };
 };
