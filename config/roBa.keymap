@@ -1,5 +1,4 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
-
 //#define ZMK_POINTING_DEFAULT_MOVE_VAL 700
 
 #include <input/processors.dtsi>
@@ -17,31 +16,43 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-#define DEFAULT 0
-#define FUNCTION_NUM 1
-#define NUM 2
-#define MOUSE 3
-#define ARROW 4
-#define SCROLL 5
-#define VOLUME 6
-#define SYMBOL 7
-#define POS_L_0_START 0                     //Q
-#define POS_L_1_START 10                    //A
-#define POS_L_2_START 22                    //Y
-#define POS_L_3_START 34                    //left ctrl
-#define POS_R_0_START (POS_L_0_START + 5)   //Y
-#define POS_R_1_START (POS_L_1_START + 6)   //Fn
-#define POS_R_2_START (POS_L_2_START + 6)   //DEL
-#define POS_R_3_START (POS_L_3_START + 6)   //BACKSPACE
-#define POS_L_0_END (POS_R_0_START - 1)     //T
-#define POS_L_1_END (POS_R_1_START - 1)     //encoder click
-#define POS_L_2_END (POS_R_2_START - 1)     //maru
-#define POS_L_3_END (POS_R_3_START - 1)     //henkan
-#define POS_R_0_END (POS_L_1_START - 1)     //P
-#define POS_R_1_END (POS_L_2_START - 1)     //+
-#define POS_R_2_END (POS_L_3_START - 1)     //?
-#define POS_R_3_END (POS_L_3_START + 2)     //SHIT
+// =========================================================
+// Layer indices (keymap 内の並び順と一致させること)
+// 注意: これらは cpp マクロなので、ノード名には同名を使わない
+//       (数字に置換されてしまう)。ノード名は小文字 + display-name。
+// =========================================================
+#define DEFAULT      0  // home_layer
+#define FUNCTION_NUM 1  // 数字 1-0 / trackball: ctrl-tab
+#define NUM          2  // テンキー / trackball: arrows
+#define MOUSE        3  // マウスボタン (auto mouse layer)
+#define ARROW        4  // 矢印・ウィンドウ操作 / trackball: arrows
+#define SCROLL       5  // BT 切替・マウスボタン / trackball: scroll
+#define VOLUME       6  // keymap 上の node 名は function (F1-F12) / trackball: volume
+#define SYMBOL       7  // keymap 上の node 名は function_num_1 (Shift+数字) / trackball: alt-tab
 
+// =========================================================
+// Key positions
+// =========================================================
+#define POS_L_0_START 0                     // Q
+#define POS_L_1_START 10                    // A
+#define POS_L_2_START 22                    // Z
+#define POS_L_3_START 34                    // left ctrl
+#define POS_R_0_START (POS_L_0_START + 5)   // Y
+#define POS_R_1_START (POS_L_1_START + 6)   // Fn
+#define POS_R_2_START (POS_L_2_START + 6)   // DEL
+#define POS_R_3_START (POS_L_3_START + 6)   // BACKSPACE
+#define POS_L_0_END (POS_R_0_START - 1)     // T
+#define POS_L_1_END (POS_R_1_START - 1)     // encoder click
+#define POS_L_2_END (POS_R_2_START - 1)     // maru
+#define POS_L_3_END (POS_R_3_START - 1)     // henkan
+#define POS_R_0_END (POS_L_1_START - 1)     // P
+#define POS_R_1_END (POS_L_2_START - 1)     // ;(lt SCROLL)
+#define POS_R_2_END (POS_L_3_START - 1)     // /(lt ARROW)
+#define POS_R_3_END (POS_L_3_START + 8)     // RIGHT SHIFT
+
+// =========================================================
+// Behavior tuning
+// =========================================================
 &mt {
     tapping-term-ms = <150>;
     quick-tap-ms = <250>;
@@ -62,10 +73,9 @@
 
 &tog { /delete-property/ locking; };
 
-&sk { release-after-ms = <700>; };
-
-&sl { release-after-ms = <1000>; };
-
+// =========================================================
+// Trackball / Auto mouse layer
+// =========================================================
 &mkp_input_listener { input-processors = <&zip_temp_layer MOUSE 10000>; };
 
 &trackball { cpi = <800>; };
@@ -78,8 +88,8 @@
         (POS_R_1_START + 4) // L
         (POS_R_1_START + 5) // ;
         (POS_R_2_START + 3) // ,
-        (POS_R_2_START + 4) // ,
-        (POS_L_2_START) // Z
+        (POS_R_2_START + 4) // .
+        (POS_L_2_START)     // Z
     >;
 };
 
@@ -94,7 +104,7 @@
 &trackball_listener {
     compatible = "zmk,input-listener";
     input-processors = <
-        &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT) 
+        &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)
         &zip_report_rate_limit 15
         &mouse_runtime_input_processor
     >;
@@ -155,21 +165,22 @@
 };
 
 / {
+    // =====================================================
+    // Input processors
+    // =====================================================
     input_processors {
         wheel_x_scaler: wheel_x_scaler {
             compatible = "zmk,input-processor-scaler";
             #input-processor-cells = <2>;
             type = <INPUT_EV_REL>;
             codes = <INPUT_REL_HWHEEL>;
-            track-remainders;
         };
 
         zip_arrows: zip_arrows {
             compatible = "zmk,input-processor-keybind";
             #input-processor-cells = <0>;
-            track_remainders;
             bindings = <&kp DOWN>, <&kp UP>, <&kp RIGHT>, <&kp LEFT>;
-
+            track-remainders;
             tick = <40>;
             wait-ms = <0>;
             tap-ms = <10>;
@@ -178,9 +189,8 @@
         zip_volume: zip_volume {
             compatible = "zmk,input-processor-keybind";
             #input-processor-cells = <0>;
-            track_remainders;
             bindings = <&none>, <&none>, <&kp C_VOLUME_UP>, <&kp C_VOLUME_DOWN>;
-
+            track-remainders;
             tick = <40>;
             wait-ms = <0>;
             tap-ms = <10>;
@@ -189,12 +199,11 @@
         zip_alt_tab: zip_alt_tab {
             compatible = "zmk,input-processor-keybind";
             #input-processor-cells = <0>;
-            track-remainders;
             bindings = <
-                        &kp DOWN
-                        &kp UP
-                        &alttab
-                        &altshifttab
+                &kp DOWN
+                &kp UP
+                &alttab
+                &altshifttab
             >;
 
             tick = <80>;
@@ -205,12 +214,11 @@
         zip_ctrl_tab: zip_ctrl_tab {
             compatible = "zmk,input-processor-keybind";
             #input-processor-cells = <0>;
-            track-remainders;
             bindings = <
-                        &none
-                        &none
-                        &ctrltab
-                        &ctrlshifttab
+                &none
+                &none
+                &ctrltab
+                &ctrlshifttab
             >;
 
             tick = <80>;
@@ -219,86 +227,90 @@
         };
     };
 
-
-
+    // =====================================================
+    // Combos (key-positions は home_layer 基準)
+    // =====================================================
     combos {
         compatible = "zmk,combos";
 
-        tab {
+        tab {                       // S + D
             bindings = <&kp TAB>;
             key-positions = <11 12>;
         };
 
-        shift_tab {
+        shift_tab {                 // D + F
             bindings = <&kp LS(TAB)>;
             key-positions = <12 13>;
         };
 
-        zenkaku {
+        zenkaku {                   // A + S
             bindings = <&td_ZenkakuHankaku>;
-            key-positions = <10 22>;
+            key-positions = <10 11>;
         };
 
-        double_quotation {
+        double_quotation {          // L + ;
             bindings = <&kp DOUBLE_QUOTES>;
             key-positions = <20 21>;
         };
 
-        eq {
+        eq {                        // X + C
             bindings = <&kp LS(MINUS)>;
             key-positions = <24 25>;
         };
 
-        shift_middle_click {
+        shift_middle_click {        // K + L (SYMBOL layer)
             bindings = <&mkp_with_mod LEFT_SHIFT MCLK>;
             key-positions = <19 20>;
-            layers = <7>;
+            layers = <SYMBOL>;
         };
 
-        Escape {
+        Escape {                    // Q + W
             bindings = <&kp ESCAPE>;
             key-positions = <0 1>;
-            layers = <0>;
+            layers = <DEFAULT>;
             require-prior-idle-ms = <300>;
         };
 
-        caps_word {
+        caps_word {                 // Z + /
             bindings = <&caps_word>;
             key-positions = <22 33>;
-            layers = <0>;
+            layers = <DEFAULT>;
             require-prior-idle-ms = <300>;
         };
 
-        dot_slash_backslash {
+        dot_slash_backslash {       // / + .
             bindings = <&kp BACKSLASH>;
             key-positions = <33 32>;
-            layers = <0>;
+            layers = <DEFAULT>;
         };
 
-        Ctrl_A {
+        Ctrl_A {                    // A + S
             bindings = <&kp LC(A)>;
             key-positions = <10 11>;
-            layers = <0>;
+            layers = <DEFAULT>;
             require-prior-idle-ms = <300>;
         };
 
-        Ctrl_Z {
+        Ctrl_Z {                    // X + Z
             bindings = <&kp LC(Z)>;
             key-positions = <23 22>;
-            layers = <0>;
+            layers = <DEFAULT>;
             require-prior-idle-ms = <300>;
         };
     };
 
+    // =====================================================
+    // Macros
+    // =====================================================
     macros {
+        // --- Auto mouse layer (AML) を抜ける系 ---
         /omit-if-no-ref/
-
         exit_AML: exit_AML {
             compatible = "zmk,behavior-macro";
             wait-ms = <0>;
             tap-ms = <0>;
             #binding-cells = <0>;
-            bindings = <&tog_off 3>;
+            bindings = <&tog_off MOUSE>;
         };
 
         kp_exit_AML: kp_exit_AML {
@@ -325,7 +337,6 @@
         };
 
         /omit-if-no-ref/
-
         mkp_exit_AML: mkp_exit_AML {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
@@ -336,11 +347,10 @@
                 <&macro_release>,
                 <&macro_param_1to1 &mkp MACRO_PLACEHOLDER>,
                 <&macro_tap>,
-                <&sl 7>;
+                <&sl SYMBOL>;
         };
 
         /omit-if-no-ref/
-
         mo_exit_AML: mo_exit_AML {
             compatible = "zmk,behavior-macro-one-param";
             wait-ms = <0>;
@@ -357,12 +367,12 @@
                 <&macro_tap>;
         };
 
+        // --- alt-tab / ctrl-tab ---
         /omit-if-no-ref/
-
         alttab: alttab {
             compatible = "zmk,behavior-smart-toggle";
             #binding-cells = <0>;
-            bindings = <&mokp 7 LALT>, <&kp TAB>;
+            bindings = <&mokp SYMBOL LALT>, <&kp TAB>;
 
             ignored-key-positions = <
                 (POS_L_1_START)
@@ -383,15 +393,14 @@
         altshifttab: altshifttab {
             compatible = "zmk,behavior-smart-toggle";
             #binding-cells = <0>;
-            bindings = <&mokp 7 LALT>, <&kp LS(TAB)>;
+            bindings = <&mokp SYMBOL LALT>, <&kp LS(TAB)>;
         };
 
         /omit-if-no-ref/
-
         ctrltab: ctrltab {
             compatible = "zmk,behavior-smart-toggle";
             #binding-cells = <0>;
-            bindings = <&mokp 9 LCTRL>, <&kp TAB>;
+            bindings = <&mokp  FUNCTION_NUM LCTRL>, <&kp TAB>;
 
             ignored-key-positions = <
                 (POS_L_0_START)
@@ -414,11 +423,11 @@
         ctrlshifttab: ctrlshifttab {
             compatible = "zmk,behavior-smart-toggle";
             #binding-cells = <0>;
-            bindings = <&mokp 9 LCTRL>, <&kp LS(TAB)>;
+            bindings = <&mokp  FUNCTION_NUM LCTRL>, <&kp LS(TAB)>;
         };
 
+        // --- 汎用マクロ ---
         /omit-if-no-ref/
-
         mokp: mokp {
             compatible = "zmk,behavior-macro-two-param";
             wait-ms = <0>;
@@ -433,7 +442,6 @@
         };
 
         /omit-if-no-ref/
-
         kp_to: kp_to {
             compatible = "zmk,behavior-macro-two-param";
             wait-ms = <0>;
@@ -443,7 +451,6 @@
         };
 
         /omit-if-no-ref/
-
         to_kp: to_kp {
             compatible = "zmk,behavior-macro-two-param";
             #binding-cells = <2>;
@@ -451,7 +458,6 @@
         };
 
         /omit-if-no-ref/
-
         zoom_in: zoom_in {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -459,7 +465,6 @@
         };
 
         /omit-if-no-ref/
-
         zoom_out: zoom_out {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -467,7 +472,6 @@
         };
 
         /omit-if-no-ref/
-
         etd: eager_tap_dance {
             compatible = "zmk,behavior-macro-two-param";
             #binding-cells = <2>;
@@ -490,9 +494,12 @@
         };
     };
 
+    // =====================================================
+    // Behaviors
+    // =====================================================
     behaviors {
+        // --- toggle ---
         /omit-if-no-ref/
-
         tog_on: toggle_layer_on {
             compatible = "zmk,behavior-toggle-layer";
             #binding-cells = <1>;
@@ -501,7 +508,6 @@
         };
 
         /omit-if-no-ref/
-
         tog_off: toggle_layer_off {
             compatible = "zmk,behavior-toggle-layer";
             #binding-cells = <1>;
@@ -510,7 +516,6 @@
         };
 
         /omit-if-no-ref/
-
         kt_on: key_toggle_on_only {
             compatible = "zmk,behavior-key-toggle";
             #binding-cells = <1>;
@@ -519,7 +524,6 @@
         };
 
         /omit-if-no-ref/
-
         kt_off: key_toggle_off_only {
             compatible = "zmk,behavior-key-toggle";
             #binding-cells = <1>;
@@ -527,8 +531,8 @@
             toggle-mode = "off";
         };
 
+        // --- tap dance ---
         /omit-if-no-ref/
-
         td_colon: td_colon {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -538,7 +542,6 @@
         };
 
         /omit-if-no-ref/
-
         td_q_escape: td_q_escape {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -547,19 +550,15 @@
         };
 
         /omit-if-no-ref/
-
         td_ZenkakuHankaku: td_ZenkakuHankaku {
             compatible = "zmk,behavior-tap-dance";
-
             // compatible = "zmk,behavior-eager-tap-dance";
-
             #binding-cells = <0>;
             tapping-term-ms = <250>;
             bindings = <&kp LANGUAGE_2>, <&kp LANGUAGE_1>;
         };
 
         /omit-if-no-ref/
-
         td_ZenkakuHankaku_exit_AML: td_ZenkakuHankaku_exit_AML {
             wait-ms = <0>;
             tap-ms = <0>;
@@ -569,7 +568,60 @@
         };
 
         /omit-if-no-ref/
+        td_alt_f4: td_alt_f4 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp F4>, <&kp LA(F4)>;
 
+            tapping-term-ms = <250>;
+        };
+
+        /omit-if-no-ref/
+        td_bt_clear: td_bt_clear {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&none>, <&none>, <&bt BT_CLR>;
+
+            tapping-term-ms = <250>;
+        };
+
+        /omit-if-no-ref/
+        td_bt_clear_all: td_bt_clear_all {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&none>, <&none>, <&bt BT_CLR_ALL>;
+        };
+
+        /omit-if-no-ref/
+        td_copy_paste: td_copy_paste {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp_exit_AML LC(C)>, <&kp_exit_AML LC(V)>;
+
+            tapping-term-ms = <250>;
+        };
+
+        /omit-if-no-ref/
+        td_reset: td_reset {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&none>, <&sys_reset>;
+
+            tapping-term-ms = <300>;
+        };
+
+        /omit-if-no-ref/
+        td_rclick_close_tab: td_rclick_close_tab {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&mkp RCLK>, <&kp LC(W)>;
+
+            tapping-term-ms = <250>;
+        };
+
+        // --- macro 系 ---
+        /omit-if-no-ref/
         alt_tab: alt_tab {
             compatible = "zmk,behavior-macro-two-param";
             #binding-cells = <2>;
@@ -577,7 +629,6 @@
         };
 
         /omit-if-no-ref/
-
         windows_sleep: windows_sleep {
             compatible = "zmk,behavior-macro";
             wait-ms = <200>;
@@ -587,7 +638,6 @@
         };
 
         /omit-if-no-ref/
-
         screensot_save: screensot_save {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -608,8 +658,8 @@
             label = "MKP_WITH_MOD";
         };
 
+        // --- mod-morph ---
         /omit-if-no-ref/
-
         screenshot_copy: screenshot_copy {
             compatible = "zmk,behavior-mod-morph";
             bindings = <&kp LA(PRINTSCREEN)>, <&kp LA(PRINTSCREEN)>;
@@ -620,7 +670,6 @@
         };
 
         /omit-if-no-ref/
-
         mod_morph_exclamation: mod_morph_exclamation {
             compatible = "zmk,behavior-mod-morph";
             bindings = <&kp COMMA>, <&kp EXCL>;
@@ -630,7 +679,6 @@
         };
 
         /omit-if-no-ref/
-
         mod_morph_question: mod_morph_question {
             compatible = "zmk,behavior-mod-morph";
             bindings = <&kp PERIOD>, <&kp QUESTION>;
@@ -640,7 +688,6 @@
         };
 
         /omit-if-no-ref/
-
         mod_morph_slash: mod_morph_slash {
             compatible = "zmk,behavior-mod-morph";
             bindings = <&kp SLASH>, <&kp BACKSLASH>;
@@ -649,18 +696,8 @@
             mods = <(MOD_LSFT)>;
         };
 
+        // --- hold-tap ---
         /omit-if-no-ref/
-
-        td_alt_f4: td_alt_f4 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings = <&kp F4>, <&kp LA(F4)>;
-
-            tapping-term-ms = <250>;
-        };
-
-        /omit-if-no-ref/
-
         lt_exit_AML: lt_exit_AML {
             compatible = "zmk,behavior-hold-tap";
             bindings = <&mo_exit_AML>, <&kp_exit_AML>;
@@ -672,7 +709,6 @@
         };
 
         /omit-if-no-ref/
-
         lt_exit_AML_on_hold: lt_exit_AML_on_hold {
             compatible = "zmk,behavior-hold-tap";
             bindings = <&mo_exit_AML>, <&kp>;
@@ -684,7 +720,6 @@
         };
 
         /omit-if-no-ref/
-
         mt_exit_AML: mt_exit_AML {
             compatible = "zmk,behavior-hold-tap";
             bindings = <&mod_exit_AML>, <&kp_exit_AML>;
@@ -696,7 +731,6 @@
         };
 
         /omit-if-no-ref/
-
         mt_exit_AML_on_tap: mt_exit_AML_on_tap {
             compatible = "zmk,behavior-hold-tap";
             bindings = <&kp>, <&kp_exit_AML>;
@@ -707,24 +741,7 @@
             quick-tap-ms = <200>;
         };
 
-        /omit-if-no-ref/
-
-        encoder_zoom: encoder_zoom {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&zoom_out>, <&zoom_in>;
-        };
-
-        /omit-if-no-ref/
-
-        encoder_volume: encoder_volume {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&kp C_VOLUME_DOWN>, <&kp C_VOLUME_UP>;
-        };
-
         // /omit-if-no-ref/
-
         lt_zoom_out: lt_zoom_out {
             compatible = "zmk,behavior-hold-tap";
             bindings = <&mo_exit_AML>, <&zoom_out>;
@@ -736,55 +753,6 @@
         };
 
         /omit-if-no-ref/
-
-        sl_250: sl_250 {
-            compatible = "zmk,behavior-sticky-key";
-            bindings = <&mo>;
-            #binding-cells = <1>;
-            release-after-ms = <250>;
-        };
-
-        /omit-if-no-ref/
-
-        td_bt_clear: td_bt_clear {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings = <&none>, <&none>, <&bt BT_CLR>;
-
-            tapping-term-ms = <250>;
-        };
-
-        /omit-if-no-ref/
-
-        td_bt_clear_all: td_bt_clear_all {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <250>;
-            bindings = <&none>, <&none>, <&bt BT_CLR_ALL>;
-        };
-
-        /omit-if-no-ref/
-
-        td_copy_paste: td_copy_paste {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings = <&kp_exit_AML LC(C)>, <&kp_exit_AML LC(V)>;
-
-            tapping-term-ms = <250>;
-        };
-
-        /omit-if-no-ref/
-
-        td_reset: td_reset {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings = <&none>, <&sys_reset>;
-
-            tapping-term-ms = <300>;
-        };
-
-        /omit-if-no-ref/
-
         reset_bootloader: reset_bootloader {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -794,32 +762,50 @@
             flavor = "balanced";
         };
 
+        // --- sticky / encoder ---
         /omit-if-no-ref/
+        sl_250: sl_250 {
+            compatible = "zmk,behavior-sticky-key";
+            bindings = <&mo>;
+            #binding-cells = <1>;
+            release-after-ms = <250>;
+        };
 
-        td_rclick_close_tab: td_rclick_close_tab {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings = <&mkp RCLK>, <&kp LC(W)>;
+        /omit-if-no-ref/
+        encoder_zoom: encoder_zoom {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&zoom_out>, <&zoom_in>;
+        };
 
-            tapping-term-ms = <250>;
+        /omit-if-no-ref/
+        encoder_volume: encoder_volume {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&kp C_VOLUME_DOWN>, <&kp C_VOLUME_UP>;
         };
     };
 
+    // =====================================================
+    // Keymap
+    // =====================================================
     keymap {
         compatible = "zmk,keymap";
 
         home_layer {
+            display-name = "DEFAULT";
             bindings = <
 &mt LGUI Q                        &kp W         &kp E         &kp R        &kp T                                                  &kp Y        &kp U  &kp I      &kp O    &kp P
-&mt LCTRL A                       &kp S         &kp D         &kp F        &kp G        &mkp MB3                   &lt 6 MINUS    &kp H        &kp J  &kp K      &kp L    &lt 5 SEMICOLON
-&mt_exit_AML_on_tap LEFT_SHIFT Z  &mt LC(X) X   &mt LC(C) C   &mt LC(V) V  &lt 1 B      &lt 7 EQUAL                &kp DEL        &kp N        &kp M  &kp COMMA  &kp DOT  &lt 4 SLASH
-&kp LCTRL                         &kp LGUI      &kp LEFT_ALT  &lt 5 INT5   &lt 4 SPACE  &lt 2 INTERNATIONAL_4      &kp BACKSPACE  &lt 1 ENTER                             &kp RIGHT_SHIFT
+&mt LCTRL A                       &kp S         &kp D         &kp F        &kp G                &mkp MB3  &lt VOLUME MINUS         &kp H        &kp J  &kp K      &kp L    &lt SCROLL SEMICOLON
+&mt_exit_AML_on_tap LEFT_SHIFT Z  &mt LC(X) X   &mt LC(C) C   &mt LC(V) V  &lt FUNCTION_NUM B   &lt SYMBOL EQUAL  &kp DEL          &kp N        &kp M  &kp COMMA  &kp DOT  &lt ARROW SLASH
+&kp LCTRL                         &kp LGUI      &kp LEFT_ALT  &lt SCROLL INT5  &lt ARROW SPACE  &lt NUM INTERNATIONAL_4  &kp BACKSPACE  &lt FUNCTION_NUM ENTER           &kp RIGHT_SHIFT
             >;
 
             sensor-bindings = <&scroll_up_down>;
         };
 
-        FUNCTION_NUM {
+        function_num {
+            display-name = "FUNCTION_NUM";
             bindings = <
 &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5                      &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp N0
 &kp MINUS     &kp EQUAL     &kp INT3      &trans        &trans  &trans      &trans  &trans        &trans        &trans        &trans        &trans
@@ -828,7 +814,8 @@
             >;
         };
 
-        NUM {
+        num {
+            display-name = "NUM";
             bindings = <
 &kp MINUS                   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp LS(SEMI)                              &kp MINUS        &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp LS(SEMI)
 &kp SLASH                   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp LS(SQT)   &kp KP_NUMLOCK      &trans  &kp SLASH        &kp KP_NUMBER_4  &kp KP_N5        &kp KP_NUMBER_6  &kp LS(SQT)
@@ -837,16 +824,18 @@
             >;
         };
 
-        MOUSE {
+        mouse {
+            display-name = "MOUSE";
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans          &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1        &mkp MB3  &mkp MB2  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mo_exit_AML 0  &mkp MB4  &mkp MB5  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                      &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans                  &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1                &mkp MB3  &mkp MB2  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mo_exit_AML DEFAULT   &mkp MB4  &mkp MB5  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                              &trans
             >;
         };
 
-        ARROW {
+        arrow {
+            display-name = "ARROW";
             bindings = <
 &kp ESCAPE      &kp LC(LS(TAB))  &kp UP_ARROW    &kp LC(TAB)      &trans                         &kp LC(LG(LEFT_ARROW))  &kp LG(UP_ARROW)    &kp LC(LG(RIGHT_ARROW))  &kp LEFT_BRACKET     &kp RIGHT_BRACKET
 &kp HOME        &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END    &trans      &trans  &kp LG(LEFT_ARROW)      &kp LG(DOWN_ARROW)  &kp LG(RIGHT_ARROW)      &kp SQT              &kp NUHS
@@ -855,7 +844,8 @@
             >;
         };
 
-        SCROLL {
+        scroll {
+            display-name = "SCROLL";
             bindings = <
 &bt BT_SEL 1    &bt BT_SEL 2          &bt BT_SEL 3  &bt BT_SEL 4     &trans                      &trans  &trans    &trans    &trans    &bt BT_SEL 0
 &studio_unlock  &kp LA(LEFT_BRACKET)  &trans        &kp LS(LA(TAB))  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
@@ -864,7 +854,9 @@
             >;
         };
 
-        Function {
+        // layer index 6 (VOLUME)
+        function {
+            display-name = "Function";
             bindings = <
 &kp F1     &kp F2     &kp F3     &kp F4     &kp F5                         &kp F6   &kp F7   &kp F8  &kp F9  &kp F10
 &kp LC(A)  &kp LC(S)  &kp LC(D)  &kp LC(F)  &kp LC(G)  &trans      &trans  &kp F11  &kp F12  &trans  &trans  &trans
@@ -873,7 +865,9 @@
             >;
         };
 
-        FUNCTION_NUM_1 {
+        // layer index 7 (SYMBOL)
+        function_num_1 {
+            display-name = "FUNCTION_NUM_1";
             bindings = <
 &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp LS(N5)                      &kp LS(NUMBER_6)  &kp LS(NUMBER_7)  &kp LS(NUMBER_8)  &kp LS(NUMBER_9)  &kp LS(N0)
 &kp LS(MINUS)     &kp LS(EQUAL)     &kp LS(INT3)      &trans            &trans      &trans      &trans  &kp LC(LS(TAB))   &trans            &trans            &trans            &kp LA(TAB)
@@ -881,7 +875,5 @@
 &trans            &trans            &trans            &trans            &trans      &trans      &trans  &trans                                                                  &trans
             >;
         };
-
-        
     };
 };
