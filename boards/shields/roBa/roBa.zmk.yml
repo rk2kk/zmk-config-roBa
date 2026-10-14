@@ -9,8 +9,10 @@ requires:
 features:
   - keys
   - display
+  - studio
 siblings:
   - zmk_dongle
   - roBa_L_central
   - roBa_L_peripheral
   - roBa_R_peripheral
+  - roBa_R_central
