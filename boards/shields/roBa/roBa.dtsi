@@ -11,9 +11,8 @@
 };
 
 // Studio RPC and debug logging provide their own USB CDC devices when needed.
-// USB デバッグログ取得のため一時的に有効化(zephyr,console 先)]
 &board_cdc_acm_uart {
-	status = "okay";
+	status = "disabled";
 };
 
 / {
