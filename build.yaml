@@ -44,6 +44,12 @@ include:
     artifact-name: 2_roBa_R_central
     cmake-args: -DCONFIG_ZMK_STUDIO=y
 
+# 切り分け用: Studio RPC snippet 無し(NOSTUDIO)。USB HID のみで列挙するか確認するためのビルド
+  - board: xiao_ble//zmk
+    shield: roBa_R_central rgbled_adapter
+    cmake-args: -DCONFIG_ZMK_STUDIO=n -DCONFIG_ZMK_USB=y -DCONFIG_ZMK_USB_LOGGING=n
+    artifact-name: 3_roBa_R_central_nostudio
+
 #  - board: xiao_ble//zmk
 #    shield: roBa_L_central rgbled_adapter
 #    snippet: studio-rpc-usb-uart
