@@ -38,17 +38,12 @@ include:
 #    shield: roBa_R_peripheral rgbled_adapter
 #    artifact-name: 1_roBa_R_peripheral
 
+# 切り分けステップ②: default_layer / OS detection / fast keymap を戻したビルド(PMW3610 は無効のまま)
   - board: xiao_ble//zmk
     shield: roBa_R_central rgbled_adapter
     snippet: studio-rpc-usb-uart
-    artifact-name: 2_roBa_R_central
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
-
-  - board: xiao_ble//zmk
-    shield: roBa_R_central rgbled_adapter
-    snippet: studio-rpc-usb-uart
-    artifact-name: 2_roBa_R_central
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_DEFAULT_LAYER=y -DCONFIG_ZMK_OS_DETECTION=y -DCONFIG_ZMK_SETTINGS_RPC=y -DCONFIG_ZMK_FAST_KEYMAP=n
+    artifact-name: 5_roBa_R_central_step2
 
 # ※ 切り分け結果(2026-10-14):
 #   商品コードーの minimal ビルド(直前)では USB 完全復活したが、
