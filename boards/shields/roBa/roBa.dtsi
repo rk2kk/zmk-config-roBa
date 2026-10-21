@@ -11,9 +11,8 @@
 };
 
 // Studio RPC and debug logging provide their own USB CDC devices when needed.
-// [診断] board CDC を一時有効化(CONFIG_ZMK_USB_LOGGING=y と併用)。診断後は disabled に戻す
 &board_cdc_acm_uart {
-	status = "okay";
+	status = "disabled";
 };
 
 / {

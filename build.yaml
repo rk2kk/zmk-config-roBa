@@ -38,15 +38,12 @@ include:
 #    shield: roBa_R_peripheral rgbled_adapter
 #    artifact-name: 1_roBa_R_peripheral
 
-# 切り分け用ベースライン: 最小構成(minimal)。成功実績あり(f10b09c)。
-# ※ ただし現 conf には STUDIO 依存の設定が多数あるため、cmake-args による
-#   STUDIO=n 化は Kconfig abort の原因になる(既知)。必要時は conf 側 18 行のコメント化とセットで。
-  - board: xiao_ble//zmk
-    shield: roBa_R_central rgbled_adapter
-    snippet: studio-rpc-usb-uart
-    artifact-name: 4_roBa_R_central_minimal
-
-# 通常ビルド: Studio=y + RAM/スタック縮小版(RAM 逼迫が USB 死因のため)。USB 復活確認の対象。
+# 安定運用ビルド(DYA Studio 接続用):
+#   - Studio RPC + cormoran modules + PMW3610 driver(Studio RPC OFF)
+#   - RAM/スタックは縮小値(BLE/INPUT/LOW_PRI/WORKQ 2048, STUDIO_RPC 3072, RX/TX 128)
+# 2026-10-20 時点の確認事項:
+#   - USB HID はこの構成でも Windows で列挙実績あり(minimal 相当で Code 10 状態)
+#   - 詳細な原因はファーム起動早々のクラッシュ疑い(BLE NUS ログは後日診断可)
   - board: xiao_ble//zmk
     shield: roBa_R_central rgbled_adapter
     snippet: studio-rpc-usb-uart
