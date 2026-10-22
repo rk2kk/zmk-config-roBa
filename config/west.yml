@@ -42,13 +42,16 @@ manifest:
     #  revision: main
     #  import: app/west.yml
     - name: zmk-west-commands
+      remote: cormoran
       import: true
     - name: zmk
+      remote: cormoran
       import:
         file: app/west.yml
       clone-depth: 1
       revision: main+dya
     - name: zephyr
+      remote: cormoran
       revision: v4.1.0+zmk-fixes+nrf-half-duplex-uart
       clone-depth: 1
       import:
@@ -157,7 +160,7 @@ manifest:
 
     - name: prospector-zmk-module
       remote: prospector
-      revision: v2.2.2
+      revision: v2.2.3
       path: modules/prospector-zmk-module
 
     - name: zmk-feature-charge-indicator

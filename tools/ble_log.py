@@ -25,6 +25,9 @@ async def stream_via_cached(addr_hex: str) -> bool:
     import time
     import winrt.windows.devices.bluetooth as wbt
     import winrt.windows.storage.streams as streams
+    from winrt.windows.devices.bluetooth.genericattributeprofile import (
+        GattClientCharacteristicConfigurationDescriptorValue,
+    )
 
     addr = int.from_bytes(bytes.fromhex(addr_hex), "big")
     print(f"[ble_log] cached path: from_bluetooth_address_async(0x{addr_hex})")
@@ -49,7 +52,37 @@ async def stream_via_cached(addr_hex: str) -> bool:
         return True  # 接続自体は成功したので他アドレスは試さない
 
     print("[ble_log] NUS service found!")
+    from winrt.windows.devices.bluetooth import BluetoothCacheMode
     chars = (await nus_service.get_characteristics_async()).characteristics
+    print(f"[ble_log]  NUS chars (cached): {[f'{c.uuid}' for c in chars]}")
+    if not any(f"{c.uuid}".lower().startswith("6e400003") for c in chars):
+        # characteristics が空/古い場合 → service を session 張って GPU 再取得
+        print("[ble_log]  refreshing characteristics via service open...")
+        try:
+            nus_service2 = await wbt.BluetoothLEDevice.from_bluetooth_address_async(addr)
+        except Exception:
+            pass
+        try:
+            # GATT セッションで active 接続を維持してから再取得
+            from winrt.windows.devices.bluetooth.genericattributeprofile import GattSession
+            session = await GattSession.from_device_id_async(ble_device.bluetooth_device_id)
+            session.maintain_connection = True
+            await asyncio.sleep(2)
+            fresh = await ble_device.get_gatt_services_with_cache_mode_async(
+                wbt.BluetoothCacheMode.UNCACHED
+            )
+            nus_service3 = next(
+                (s for s in fresh.services if f"{s.uuid}".lower().startswith("6e400001")),
+                None,
+            )
+            if nus_service3 is not None:
+                cres = await nus_service3.get_characteristics_async()
+                if cres.status == 0:
+                    chars = cres.characteristics
+                    print(f"[ble_log]  NUS chars (fresh): {[f'{c.uuid}' for c in chars]}")
+            del session
+        except Exception as e:
+            print(f"[ble_log]  fresh fetch error: {type(e).__name__}: {e}")
     nus_tx = None
     for ch in chars:
         if f"{ch.uuid}".lower().startswith("6e400003"):
@@ -61,19 +94,23 @@ async def stream_via_cached(addr_hex: str) -> bool:
             print(f"    - {ch.uuid}")
         return True
 
+    print("[ble_log] subscribing to NUS notify ...")
     buf = []
     log_path = f"ble_log_{time.strftime('%Y%m%d_%H%M%S')}.txt"
 
     def handler(sender, args):
-        for seg in args.characteristic_changed_data:
-            reader = streams.DataReader.from_buffer(seg.data)
-            data = bytes(reader.read_bytes(reader.unconsumed_buffer_length))
-            text = data.decode("utf-8", "replace")
-            sys.stdout.write(text)
-            sys.stdout.flush()
-            buf.append(text)
+        reader = streams.DataReader.from_buffer(args.characteristic_value)
+        data = bytes(reader.read_bytes(reader.unconsumed_buffer_length))
+        text = data.decode("utf-8", "replace")
+        sys.stdout.write(text)
+        sys.stdout.flush()
+        buf.append(text)
 
-    print("[ble_log] subscribing to NUS notify ...")
+    # winrt の add_value_changed は CCC 書き込みを自動で行わないため明示的に書き込む
+    cccd_result = await nus_tx.write_client_characteristic_configuration_descriptor_async(
+        GattClientCharacteristicConfigurationDescriptorValue.NOTIFY
+    )
+    print(f"[ble_log]  CCC write status: {cccd_result}")
     token = nus_tx.add_value_changed(handler)
     print(f"[ble_log] --- streaming NUS logs (Ctrl+C to stop). saved to {log_path} ---")
     try:
@@ -88,6 +125,7 @@ async def stream_via_cached(addr_hex: str) -> bool:
             pass
         with open(log_path, "a", encoding="utf-8") as f:
             f.write("".join(buf))
+        print(f"[ble_log] saved to {log_path}")
     return True
 
 
