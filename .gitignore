@@ -1,0 +1,17 @@
+# BLE log captures from tools/ble_log.py (diagnostic artifacts, never commit)
+ble_log_*.txt
+
+# Build outputs
+build/
+output/
+
+# Zephyr / west workspace scratch
+.twister/
+sysbuild/
+# Local virtualenv
+.venv/
+venv/
+
+# OS / editor cruft
+Thumbs.db
+.DS_Store
