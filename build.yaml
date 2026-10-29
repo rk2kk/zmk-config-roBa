@@ -60,6 +60,19 @@ include:
     shield: roBa_R_central rgbled_adapter
     artifact-name: usb_nosnippet
 
+# =========================================================
+# USB 認識検証 2 (2026-10-29 追加)
+# usb_nosnippet でも認識せず → Studio 本体(CONFIG_ZMK_STUDIO=y / USB CDC)が
+# 犯人である可能性。
+# docs/usb-issue-analysis.md で「USB が動作した」と記録された minimal 構成を再現:
+#   snippet なし + CONFIG_ZMK_STUDIO=n + CONFIG_USB_CDC_ACM=n + CONFIG_CONSOLE=n
+# ※ Studio は BLE 経由で使う想定(USB 経由 Studio は諦める)
+# =========================================================
+  - board: xiao_ble//zmk
+    shield: roBa_R_central rgbled_adapter
+    cmake-args: -DCONFIG_ZMK_STUDIO=n -DCONFIG_ZMK_USB=y -DCONFIG_USB_CDC_ACM=n -DCONFIG_CONSOLE=n
+    artifact-name: usb_minimal
+
 
 
 
