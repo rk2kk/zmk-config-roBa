@@ -19,3 +19,6 @@ Thumbs.db
 # CI scratch (local verification scripts / build outputs)
 tmp/
 artifacts/
+
+# west workspace marker (local only)
+.west/
