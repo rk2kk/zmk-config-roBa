@@ -53,15 +53,6 @@ jobs:
       - name: Build all targets in ZMK container
         run: bash .github/scripts/build-pi.sh
 
-      - name: Attach firmware to release
-        if: steps.token.outputs.ok == '1'
-        env:
-          GH_TOKEN: ${{ secrets.PUBLIC_REPO_TOKEN }}
-          TARGET_REPO: rk2kk/zmk-config-roBa
-          RELEASE_TAG: ${{ steps.rel.outputs.tag }}
-          CONFIG_SHA: ${{ github.sha }}
-        run: python3 .github/scripts/upload-release.py artifacts
-
       - name: Mirror commit to public repo
         if: steps.token.outputs.ok == '1'
         env:
@@ -81,3 +72,13 @@ jobs:
           GIT_ASKPASS="$askpass" GIT_TERMINAL_PROMPT=0 \
             git push "https://github.com/rk2kk/zmk-config-roBa.git" \
               "HEAD:refs/heads/$BRANCH"
+
+      # Release のタグは公開リポジトリ側のコミットを指す必要があるため、ミラーの後に実行する
+      - name: Attach firmware to release
+        if: steps.token.outputs.ok == '1'
+        env:
+          GH_TOKEN: ${{ secrets.PUBLIC_REPO_TOKEN }}
+          TARGET_REPO: rk2kk/zmk-config-roBa
+          RELEASE_TAG: ${{ steps.rel.outputs.tag }}
+          CONFIG_SHA: ${{ github.sha }}
+        run: python3 .github/scripts/upload-release.py artifacts
