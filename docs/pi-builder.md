@@ -58,7 +58,7 @@ Raspberry Pi 5 のセルフホストランナーで ZMK ファームウェアを
 
 ## 3. ランナー（Raspberry Pi 5）
 
-- ユーザー: `k-rp5`（docker グループ所属）
+- ユーザー: 専用ユーザー（docker グループ所属）
 - 設置先: `~/actions-runner`
 - サービス: `gh-runner.service`（systemd user、linger 有効）
 - ラベル: `self-hosted, linux, arm64, zmk, pi5`
