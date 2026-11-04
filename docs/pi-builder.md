@@ -40,6 +40,16 @@ Raspberry Pi 5 のセルフホストランナーで ZMK ファームウェアを
 ミラーを Release より先に行うのは、Release のタグが公開リポジトリ側に
 存在するコミットを指す必要があるためです。
 
+### keymap 描画とミラー
+
+`Draw Keymap` は private リポジトリで実行し、生成物を自動コミットします。
+このコミットは `GITHUB_TOKEN` による push のため、他のワークフロー
+（`build-pi`）を起動しません。そこで `mirror-public.yml` が
+「Draw Keymap 完了時」と「30分ごと」に main を公開リポジトリへミラーします。
+
+公開リポジトリ側の `Draw Keymap` と `Build firmware (Pi)` は無効化しています
+（ミラーされたコピーでの二重実行・コミット分岐を防ぐため）。
+
 ### 実行条件
 
 - `push`（全ブランチ）、`workflow_dispatch`

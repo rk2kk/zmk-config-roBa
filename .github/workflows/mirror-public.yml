@@ -1,0 +1,53 @@
+name: Mirror to public
+
+# keymap 描画など GITHUB_TOKEN で作られたコミットは push イベントを
+# 発生させないため、完了時と定期実行で公開リポジトリへミラーする。
+on:
+  workflow_run:
+    workflows: ["Draw Keymap"]
+    types: [completed]
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: mirror-public
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  mirror:
+    if: github.repository == 'rk2kk/zmk-config-roBa-private'
+    runs-on: [self-hosted, linux, arm64, zmk]
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Push main to public repo
+        env:
+          MIRROR_TOKEN: ${{ secrets.PUBLIC_REPO_TOKEN }}
+        run: |
+          set -eu
+          if [ -z "${MIRROR_TOKEN:-}" ]; then
+            echo "::warning::PUBLIC_REPO_TOKEN が未設定のためミラーをスキップします"
+            exit 0
+          fi
+          askpass="${RUNNER_TEMP:-/tmp}/askpass.sh"
+          cat > "$askpass" <<'SH'
+          #!/bin/sh
+          case "$1" in
+            *Username*) echo "x-access-token" ;;
+            *) echo "$MIRROR_TOKEN" ;;
+          esac
+          SH
+          chmod +x "$askpass"
+          GIT_ASKPASS="$askpass" GIT_TERMINAL_PROMPT=0 \
+            git push "https://github.com/rk2kk/zmk-config-roBa.git" \
+              "HEAD:refs/heads/main"
