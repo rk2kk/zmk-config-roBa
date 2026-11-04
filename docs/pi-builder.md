@@ -178,6 +178,7 @@ gh run rerun <run-id> -R rk2kk/zmk-config-roBa-private
 
 - 公開リポジトリにセルフホストランナーを登録しない（本構成の前提）
 - 公開リポジトリの既定ワークフロー権限は `read`、PR 実行は不可のまま
+- 公開 `main` には ruleset を設定済み（force push 禁止・削除禁止）
 - Actions はコミット SHA でピン留めする
 - `PUBLIC_REPO_TOKEN` は公開リポジトリのみ・Contents のみに限定する
 - 旧セルフホスト実行のログには Pi のユーザー名とパスが残るため、
