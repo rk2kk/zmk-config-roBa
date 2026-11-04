@@ -15,3 +15,7 @@ venv/
 # OS / editor cruft
 Thumbs.db
 .DS_Store
+
+# CI scratch (local verification scripts / build outputs)
+tmp/
+artifacts/

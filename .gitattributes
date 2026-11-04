@@ -1,0 +1,6 @@
+# Shell scripts must stay LF even on Windows checkouts
+*.sh text eol=lf
+
+# CI scratch
+tmp/
+artifacts/
