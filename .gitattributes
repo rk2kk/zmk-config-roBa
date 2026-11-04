@@ -1,6 +1,6 @@
-# Shell scripts must stay LF even on Windows checkouts
-*.sh text eol=lf
-
-# CI scratch
-tmp/
-artifacts/
+# テキストは LF で保存する（Windows チェックアウトでも壊れないように）
+*.sh   text eol=lf
+*.py   text eol=lf
+*.md   text eol=lf
+*.yml  text eol=lf
+*.yaml text eol=lf
