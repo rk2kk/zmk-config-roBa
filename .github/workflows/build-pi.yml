@@ -1,0 +1,46 @@
+name: Build firmware (self-hosted Pi)
+
+# 自宅の Raspberry Pi 5 ランナーでビルドする。
+# 公開リポジトリのため、PR からは絶対に実行しない（push / 手動のみ）。
+on:
+  workflow_dispatch:
+  push:
+    branches: [dya-studio]
+    paths:
+      - 'config/**'
+      - 'boards/**'
+      - 'build.yaml'
+      - 'zephyr/**'
+      - '.github/workflows/build-pi.yml'
+      - '.github/scripts/build-pi*.sh'
+
+concurrency:
+  group: build-pi
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    # フォーク側のコピーから誤って起動されないための保険
+    if: github.repository == 'rk2kk/zmk-config-roBa'
+    runs-on: [self-hosted, linux, arm64, zmk]
+    timeout-minutes: 90
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+
+      - name: Build all targets in ZMK container
+        run: bash .github/scripts/build-pi.sh
+
+      - name: Upload firmware
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: firmware-pi
+          path: artifacts/*.uf2
+          if-no-files-found: error
+          retention-days: 30
