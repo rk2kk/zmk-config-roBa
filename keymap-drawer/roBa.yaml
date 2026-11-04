@@ -1,6 +1,6 @@
 layout: {zmk_keyboard: roBa}
 layers:
-  home:
+  DEFAULT:
   - {t: Q, h: '$$mdi:microsoft-windows$$'}
   - W
   - E
@@ -17,34 +17,34 @@ layers:
   - F
   - G
   - Middle Click
-  - {t: '&kp_exit_AML MINUS', h: '&mo_exit_AML 6'}
+  - {t: '-', h: Function}
   - H
   - J
   - K
   - L
-  - {t: '&kp_exit_AML SEMICOLON', h: '&mo_exit_AML 5'}
-  - {t: Z, h: '$$mdi:apple-keyboard-shift$$', type: text_with_symbol}
+  - {t: ;, h: SCROLL}
+  - {t: Z, h: '$$mdi:apple-keyboard-shift$$'}
   - {t: X, h: '$$mdi:content-cut$$'}
   - {t: C, h: '$$mdi:content-copy$$'}
   - {t: V, h: '$$mdi:content-paste$$'}
-  - {t: B, h: '&mo_exit_alttab 8'}
-  - {t: '=', h: '&mo_exit_alttab 7'}
+  - {t: B, h: FUNCTION_NUM}
+  - {t: '=', h: FUNCTION_NUM_1}
   - $$mdi:backspace-reverse-outline$$
   - N
   - M
   - ','
   - .
-  - {t: '&kp_exit_AML SLASH', h: '&mo_exit_AML 4'}
+  - {t: /, h: ARROW}
   - $$mdi:apple-keyboard-control$$
   - $$mdi:microsoft-windows$$
   - ALT
-  - {t: mu-henkan, h: '5'}
-  - {t: '&kp_exit_AML SPACE', h: '&mo_exit_AML 4'}
-  - {t: '&kp_exit_AML INTERNATIONAL_4', h: '&mo_exit_AML 2'}
+  - {t: INT5, h: SCROLL}
+  - {t: '$$mdi:keyboard-space$$', h: ARROW}
+  - {t: henkan, h: NUM}
   - $$mdi:backspace-outline$$
-  - {t: '&kp_exit_AML ENTER', h: '&mo_exit_AML 1'}
+  - {t: ENTER, h: FUNCTION_NUM}
   - $$mdi:apple-keyboard-shift$$
-  '1':
+  FUNCTION_NUM:
   - '1'
   - '2'
   - '3'
@@ -71,6 +71,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -87,8 +88,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  '2':
+  NUM:
   - '-'
   - KP 7
   - KP 8
@@ -128,11 +128,11 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - $$mdi:apple-keyboard-shift$$
-  '3':
+  - $$mdi:keyboard-space$$
+  MOUSE:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -166,7 +166,6 @@ layers:
   - '&mo_exit_AML'
   - Back Click
   - Forward Click
-  - '&mouse_gesture'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -176,7 +175,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  '4':
+  - {t: ▽, type: trans}
+  ARROW:
   - ESCAPE
   - $$mdi:arrow-left-bold-box$$
   - UP ARROW
@@ -190,8 +190,8 @@ layers:
   - HOME
   - LEFT ARROW
   - DOWN ARROW
-  - {t: RIGHT ARROW, type: held}
-  - {t: END, type: held}
+  - RIGHT ARROW
+  - END
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Gui+LEFT ARROW
@@ -210,8 +210,8 @@ layers:
   - ''
   - Sft+Gui+RIGHT ARROW
   - Sft+RIGHT ARROW
-  - INT1
-  - {t: ▽, type: trans}
+  - {t: INT1, type: held}
+  - $$mdi:apple-keyboard-shift$$
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -220,18 +220,18 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - $$mdi:apple-keyboard-shift$$
-  '5':
+  SCROLL:
   - {t: '$$mdi:bluetooth-connect$$', s: '1', type: text_with_symbol}
   - {t: '$$mdi:bluetooth-connect$$', s: '2', type: text_with_symbol}
   - {t: '$$mdi:bluetooth-connect$$', s: '3', type: text_with_symbol}
   - {t: '$$mdi:bluetooth-connect$$', s: '4', type: text_with_symbol}
-  - {t: ▽, type: trans}
+  - $$mdi:usb$$
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: '$$mdi:bluetooth-connect$$', s: '0', type: text_with_symbol}
-  - {t: ▽, type: trans}
+  - '&studio_unlock'
   - Alt+[
   - {t: ▽, type: trans}
   - Sft+Alt+$$mdi:keyboard-tab$$
@@ -242,11 +242,11 @@ layers:
   - '&mkp MB1'
   - Middle Click
   - '&mkp MB2'
+  - {type: held}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '1'
-  - '2'
-  - '3'
+  - ''
+  - ''
+  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -258,7 +258,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -281,7 +281,7 @@ layers:
   - $$mdi:text-search$$
   - Ctl+G
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - F11
   - F12
   - {t: ▽, type: trans}
@@ -326,17 +326,17 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - $$mdi:arrow-left-bold-box$$
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Alt+$$mdi:keyboard-tab$$
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -352,182 +352,6 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  alt_tab:
-  - $$mdi:keyboard-tab$$
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - $$mdi:keyboard-tab$$
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - Alt+$$mdi:keyboard-tab$$
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {type: held}
-  - {type: held}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  ctrl_tab:
-  - $$mdi:keyboard-tab$$
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - $$mdi:keyboard-tab$$
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - Alt+$$mdi:keyboard-tab$$
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  MEDIA:
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - ⏮
-  - ⏯
-  - ⏭
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - 🔉
-  - 🔇
-  - 🔊
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - Meh+M
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  CONFIGURATION:
-  - {t: '$$mdi:bluetooth-connect$$', s: '0', type: text_with_symbol}
-  - {t: '$$mdi:bluetooth-connect$$', s: '1', type: text_with_symbol}
-  - {t: '$$mdi:bluetooth-connect$$', s: '2', type: text_with_symbol}
-  - {t: '$$mdi:bluetooth-connect$$', s: '3', type: text_with_symbol}
-  - {t: '$$mdi:bluetooth-connect$$', s: '4', type: text_with_symbol}
-  - ''
-  - ''
-  - $$mdi:bluetooth$$
-  - $$mdi:usb$$
-  - {t: '$$mdi:toggle-switch$$', h: '$$mdi:bluetooth$$', s: '$$mdi:usb$$', type: toggle}
-  - Reset
-  - Boot
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - {t: '$$mdi:bluetooth$$', s: '$$mdi:close-thick$$', type: text_with_symbol}
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - {t: '$$mdi:bluetooth$$', s: CLEAR ALL, type: text_with_symbol}
 combos:
 - p: [11, 12]
   k: $$mdi:keyboard-tab$$
@@ -539,9 +363,21 @@ combos:
   k: '"'
 - p: [24, 25]
   k: '='
+- p: [19, 20]
+  k: '&mkp_with_mod LEFT_SHIFT MCLK'
+  l: [FUNCTION_NUM_1]
 - p: [0, 1]
   k: ESCAPE
-- p: [38, 37]
-  k: alt_tab
-- p: [13, 14]
-  k: '4'
+  l: [DEFAULT]
+- p: [22, 33]
+  k: Caps Word
+  l: [DEFAULT]
+- p: [33, 32]
+  k: \
+  l: [DEFAULT]
+- p: [10, 11]
+  k: $$mdi:select-all$$
+  l: [DEFAULT]
+- p: [23, 22]
+  k: Ctl+Z
+  l: [DEFAULT]
