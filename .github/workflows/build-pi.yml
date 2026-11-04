@@ -1,6 +1,6 @@
 name: Build firmware (self-hosted Pi)
 
-# 自宅の Raspberry Pi 5 ランナーでビルドする。
+# 自宅の Raspberry Pi 5 ランナーでビルドし、成果物を Release に添付する。
 # 公開リポジトリのため、PR からは絶対に実行しない（push / 手動のみ）。
 on:
   workflow_dispatch:
@@ -12,14 +12,15 @@ on:
       - 'build.yaml'
       - 'zephyr/**'
       - '.github/workflows/build-pi.yml'
-      - '.github/scripts/build-pi*.sh'
+      - '.github/scripts/**'
 
 concurrency:
   group: build-pi
   cancel-in-progress: false
 
+# Release へのアップロードにのみ write を使う（ビルド工程には渡さない）
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build:
@@ -37,10 +38,9 @@ jobs:
       - name: Build all targets in ZMK container
         run: bash .github/scripts/build-pi.sh
 
-      - name: Upload firmware
-        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
-        with:
-          name: firmware-pi
-          path: artifacts/*.uf2
-          if-no-files-found: error
-          retention-days: 30
+      - name: Attach firmware to release
+        if: success()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE_TAG: firmware-latest
+        run: python3 .github/scripts/upload-release.py artifacts
