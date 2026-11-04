@@ -1,0 +1,59 @@
+name: Build firmware (Pi)
+
+# private リポジトリ (= 設定の正本) への push で Pi ランナーがビルドする。
+# 成果物は公開リポジトリ rk2kk/zmk-config-roBa の Release に添付する。
+on:
+  workflow_dispatch:
+  push:
+    branches: ['**']
+
+concurrency:
+  group: build-pi-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: [self-hosted, linux, arm64, zmk]
+    timeout-minutes: 90
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Resolve release tag
+        id: rel
+        run: |
+          if [ "$GITHUB_REF_NAME" = "main" ]; then
+            echo "tag=firmware-latest" >> "$GITHUB_OUTPUT"
+          else
+            echo "tag=firmware-$(printf '%s' "$GITHUB_REF_NAME" | tr -c 'A-Za-z0-9._-' '-')" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Check release token
+        id: token
+        env:
+          T: ${{ secrets.PUBLIC_REPO_TOKEN }}
+        run: |
+          if [ -n "$T" ]; then
+            echo "ok=1" >> "$GITHUB_OUTPUT"
+          else
+            echo "ok=" >> "$GITHUB_OUTPUT"
+            echo "::warning::PUBLIC_REPO_TOKEN が未設定のため Release 添付をスキップします"
+          fi
+
+      - name: Build all targets in ZMK container
+        run: bash .github/scripts/build-pi.sh
+
+      - name: Attach firmware to release
+        if: steps.token.outputs.ok == '1'
+        env:
+          GH_TOKEN: ${{ secrets.PUBLIC_REPO_TOKEN }}
+          TARGET_REPO: rk2kk/zmk-config-roBa
+          RELEASE_TAG: ${{ steps.rel.outputs.tag }}
+          CONFIG_SHA: ${{ github.sha }}
+        run: python3 .github/scripts/upload-release.py artifacts
