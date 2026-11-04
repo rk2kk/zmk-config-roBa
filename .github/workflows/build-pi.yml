@@ -1,7 +1,8 @@
 name: Build firmware (Pi)
 
 # private リポジトリ (= 設定の正本) への push で Pi ランナーがビルドする。
-# 成果物は公開リポジトリ rk2kk/zmk-config-roBa の Release に添付する。
+# 成果物は公開リポジトリ rk2kk/zmk-config-roBa の Release に添付し、
+# 成功したコミットを公開リポジトリへミラーする。
 on:
   workflow_dispatch:
   push:
@@ -16,6 +17,8 @@ permissions:
 
 jobs:
   build:
+    # 公開リポジトリへミラーされたコピーでは実行しない
+    if: github.repository == 'rk2kk/zmk-config-roBa-private'
     runs-on: [self-hosted, linux, arm64, zmk]
     timeout-minutes: 90
 
@@ -24,6 +27,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+          fetch-depth: 0
 
       - name: Resolve release tag
         id: rel
@@ -43,7 +47,7 @@ jobs:
             echo "ok=1" >> "$GITHUB_OUTPUT"
           else
             echo "ok=" >> "$GITHUB_OUTPUT"
-            echo "::warning::PUBLIC_REPO_TOKEN が未設定のため Release 添付をスキップします"
+            echo "::warning::PUBLIC_REPO_TOKEN が未設定のため Release 添付とミラーをスキップします"
           fi
 
       - name: Build all targets in ZMK container
@@ -57,3 +61,23 @@ jobs:
           RELEASE_TAG: ${{ steps.rel.outputs.tag }}
           CONFIG_SHA: ${{ github.sha }}
         run: python3 .github/scripts/upload-release.py artifacts
+
+      - name: Mirror commit to public repo
+        if: steps.token.outputs.ok == '1'
+        env:
+          MIRROR_TOKEN: ${{ secrets.PUBLIC_REPO_TOKEN }}
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          set -eu
+          askpass="${RUNNER_TEMP:-/tmp}/askpass.sh"
+          cat > "$askpass" <<'SH'
+          #!/bin/sh
+          case "$1" in
+            *Username*) echo "x-access-token" ;;
+            *) echo "$MIRROR_TOKEN" ;;
+          esac
+          SH
+          chmod +x "$askpass"
+          GIT_ASKPASS="$askpass" GIT_TERMINAL_PROMPT=0 \
+            git push "https://github.com/rk2kk/zmk-config-roBa.git" \
+              "HEAD:refs/heads/$BRANCH"
