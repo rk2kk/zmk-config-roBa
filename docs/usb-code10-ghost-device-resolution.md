@@ -75,7 +75,8 @@ pnputil /remove-device "USB\VID_1D50&PID_615E\<インスタンス ID>"
 ### 4.2 一括ツール (リポジトリ内)
 
 [tools/zmk_device_cleanup.ps1](../tools/zmk_device_cleanup.ps1) — レポート → 削除 (Unknown のみ)。
-専用のダブルクリック実行バッチも生成済み。
+ダブルクリック実行用の [tools/remove_zmk_ghosts.bat](../tools/remove_zmk_ghosts.bat) は
+同スクリプトに昇格付きで委譲するランチャー (削除ロジックは .ps1 側に一本化)。
 
 ```powershell
 # レポートのみ (管理者不要)

@@ -103,7 +103,7 @@ CONFIG_BT_L2CAP_TX_MTU=247
 - `BluetoothLEDevice.connection_status` (1 = connected)
 - `Ethernet-like な 'received += ' イベント登録記法は使えない ⇒ `add_received` 使用
 
-### 4. 現在の状態 (`ble_log_20261022_093826.txt`)
+### 4. 現在の状態 (`logs/ble_log_20261022_093826.txt`)
 
 - GATT 接続+CCC subscribe 成功まで確認済み
 - **300 秒ストリームで 0 パケット**
@@ -121,9 +121,11 @@ CONFIG_BT_L2CAP_TX_MTU=247
 ## スクリプト/ツール
 
 - `tools/ble_log.py`
-  - NUS 接続+CCC 書込み+notify 受信+ファイル保存(`ble_log_YYYYMMDD_HHMMSS.txt`)
+  - NUS 接続+CCC 書込み+notify 受信+ファイル保存(`logs/ble_log_YYYYMMDD_HHMMSS.txt`)
   - 引なしスキャン→ Windows paired アドレス (`ed5b0a3eb599`, `1decb837c99c`) の fallback
   - 引数で任意アドレス指定可能 (`python tools/ble_log.py ed5b0a3eb599`)
+- `tools/ble_log_unpaired.py`: 未ペア (random address) 向け。AQS(DeviceInformation)経由でデバイス取得後に NUS 受信
+- `tools/remove_zmk_ghosts.bat`: ZMK のゴースト USB デバイス削除ランチャー (`zmk_device_cleanup.ps1` のラッパー)
 - `$env:TEMP\nus_retry.py` (セッション内作業用・必須でない)
 - `tools/fix_mojibake.ps1` / `tools/clean_mojibakeLines.ps1`: 文字化け修復系 (UTF-8/CP932 二重変換)
 
