@@ -1,6 +1,17 @@
 # テキストは LF で保存する（Windows チェックアウトでも壊れないように）
-*.sh   text eol=lf
-*.py   text eol=lf
-*.md   text eol=lf
-*.yml  text eol=lf
-*.yaml text eol=lf
+*         text=auto eol=lf
+
+# 既知のテキスト種別（明示）
+*.sh      text eol=lf
+*.py      text eol=lf
+*.md      text eol=lf
+*.yml     text eol=lf
+*.yaml    text eol=lf
+*.json    text eol=lf
+*.keymap  text eol=lf
+*.conf    text eol=lf
+*.overlay text eol=lf
+*.dtsi    text eol=lf
+*.ps1     text eol=lf
+*.svg     text eol=lf
+*.bat     text eol=crlf
