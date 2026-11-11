@@ -6,11 +6,16 @@
 #   3. デバイス一覧から zmk / roBa 名のデバイスを自動選択して NUS notify をストリーム表示
 import asyncio
 import sys
+import time
+from pathlib import Path
 
 from bleak import BleakScanner, BleakClient
 from bleak.exc import BleakDeviceNotFoundError
 
 NUS_TX = "6e400003-b5a3-f393-e0a9-e50e24dcca9e"
+
+# ログ保存先はリポジトリ直下の logs/ に固定 (実行場所に依存しない)
+LOG_DIR = Path(__file__).resolve().parent.parent / "logs"
 
 # Windows にペアリング済みの zmk-t の LE アドレス (BTHLE 表示の 16 進)
 # ※ flash 後にアドレスが変わった場合はここを更新 (nRF Toolbox 等で確認)
@@ -22,7 +27,6 @@ PAIRED_ADDRS = [
 
 async def stream_via_cached(addr_hex: str) -> bool:
     """Windows ペアリング済み (winrt キャッシュ) 経由で NUS ログを受信"""
-    import time
     import winrt.windows.devices.bluetooth as wbt
     import winrt.windows.storage.streams as streams
     from winrt.windows.devices.bluetooth.genericattributeprofile import (
@@ -52,16 +56,11 @@ async def stream_via_cached(addr_hex: str) -> bool:
         return True  # 接続自体は成功したので他アドレスは試さない
 
     print("[ble_log] NUS service found!")
-    from winrt.windows.devices.bluetooth import BluetoothCacheMode
     chars = (await nus_service.get_characteristics_async()).characteristics
     print(f"[ble_log]  NUS chars (cached): {[f'{c.uuid}' for c in chars]}")
     if not any(f"{c.uuid}".lower().startswith("6e400003") for c in chars):
-        # characteristics が空/古い場合 → service を session 張って GPU 再取得
+        # characteristics が空/古い場合 → session 張って UNCACHED で再取得
         print("[ble_log]  refreshing characteristics via service open...")
-        try:
-            nus_service2 = await wbt.BluetoothLEDevice.from_bluetooth_address_async(addr)
-        except Exception:
-            pass
         try:
             # GATT セッションで active 接続を維持してから再取得
             from winrt.windows.devices.bluetooth.genericattributeprofile import GattSession
@@ -96,7 +95,8 @@ async def stream_via_cached(addr_hex: str) -> bool:
 
     print("[ble_log] subscribing to NUS notify ...")
     buf = []
-    log_path = f"ble_log_{time.strftime('%Y%m%d_%H%M%S')}.txt"
+    LOG_DIR.mkdir(exist_ok=True)
+    log_path = LOG_DIR / f"ble_log_{time.strftime('%Y%m%d_%H%M%S')}.txt"
 
     def handler(sender, args):
         reader = streams.DataReader.from_buffer(args.characteristic_value)
@@ -145,8 +145,8 @@ async def main():
         try:
             async with BleakClient(target, timeout=20.0) as cli:
                 print("[ble_log] connected. subscribing to NUS notify ...")
-                import time
-                log_path = f"ble_log_{time.strftime('%Y%m%d_%H%M%S')}.txt"
+                LOG_DIR.mkdir(exist_ok=True)
+                log_path = LOG_DIR / f"ble_log_{time.strftime('%Y%m%d_%H%M%S')}.txt"
                 print(f"[ble_log] --- streaming NUS logs (Ctrl+C to stop). saved to {log_path} ---")
                 buf = []
                 def on_notify(h, data):

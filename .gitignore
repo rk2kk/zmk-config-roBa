@@ -1,4 +1,5 @@
 # BLE log captures from tools/ble_log.py (diagnostic artifacts, never commit)
+logs/
 ble_log_*.txt
 
 # Build outputs
@@ -15,6 +16,10 @@ venv/
 # OS / editor cruft
 Thumbs.db
 .DS_Store
+.vscode/
+
+# Python bytecode
+__pycache__/
 
 # CI scratch (local verification scripts / build outputs)
 tmp/
