@@ -393,8 +393,8 @@ path.combo {
 <use href="#mdi:keyboard-tab-reverse" xlink:href="#mdi:keyboard-tab-reverse" x="161" y="81" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab-reverse"/>
 </g>
 <g class="combo combopos-2">
-<rect rx="6" ry="6" x="42" y="95" width="28" height="26" class="combo"/>
-<text x="56" y="108" class="combo tap"><tspan style="font-size: 64%">&amp;td_Zenkak…</tspan></text>
+<rect rx="6" ry="6" x="14" y="78" width="28" height="26" class="combo"/>
+<text x="28" y="91" class="combo tap"><tspan style="font-size: 64%">&amp;td_Zenkak…</tspan></text>
 </g>
 <g class="combo combopos-3">
 <rect rx="6" ry="6" x="687" y="95" width="28" height="26" class="combo"/>
@@ -613,8 +613,8 @@ path.combo {
 <use href="#mdi:keyboard-tab-reverse" xlink:href="#mdi:keyboard-tab-reverse" x="161" y="81" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab-reverse"/>
 </g>
 <g class="combo combopos-2">
-<rect rx="6" ry="6" x="42" y="95" width="28" height="26" class="combo"/>
-<text x="56" y="108" class="combo tap"><tspan style="font-size: 64%">&amp;td_Zenkak…</tspan></text>
+<rect rx="6" ry="6" x="14" y="78" width="28" height="26" class="combo"/>
+<text x="28" y="91" class="combo tap"><tspan style="font-size: 64%">&amp;td_Zenkak…</tspan></text>
 </g>
 <g class="combo combopos-3">
 <rect rx="6" ry="6" x="687" y="95" width="28" height="26" class="combo"/>
@@ -852,8 +852,8 @@ path.combo {
 <use href="#mdi:keyboard-tab-reverse" xlink:href="#mdi:keyboard-tab-reverse" x="161" y="81" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab-reverse"/>
 </g>
 <g class="combo combopos-2">
-<rect rx="6" ry="6" x="42" y="95" width="28" height="26" class="combo"/>
-<text x="56" y="108" class="combo tap"><tspan style="font-size: 64%">&amp;td_Zenkak…</tspan></text>
+<rect rx="6" ry="6" x="14" y="78" width="28" height="26" class="combo"/>
+<text x="28" y="91" class="combo tap"><tspan style="font-size: 64%">&amp;td_Zenkak…</tspan></text>
 </g>
 <g class="combo combopos-3">
 <rect rx="6" ry="6" x="687" y="95" width="28" height="26" class="combo"/>
@@ -1059,8 +1059,8 @@ path.combo {
 <use href="#mdi:keyboard-tab-reverse" xlink:href="#mdi:keyboard-tab-reverse" x="161" y="81" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab-reverse"/>
 </g>
 <g class="combo combopos-2">
-<rect rx="6" ry="6" x="42" y="95" width="28" height="26" class="combo"/>
-<text x="56" y="108" class="combo tap"><tspan style="font-size: 64%">&amp;td_Zenkak…</tspan></text>
+<rect rx="6" ry="6" x="14" y="78" width="28" height="26" class="combo"/>
+<text x="28" y="91" class="combo tap"><tspan style="font-size: 64%">&amp;td_Zenkak…</tspan></text>
 </g>
 <g class="combo combopos-3">
 <rect rx="6" ry="6" x="687" y="95" width="28" height="26" class="combo"/>
@@ -1281,8 +1281,8 @@ path.combo {
 <use href="#mdi:keyboard-tab-reverse" xlink:href="#mdi:keyboard-tab-reverse" x="161" y="81" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab-reverse"/>
 </g>
 <g class="combo combopos-2">
-<rect rx="6" ry="6" x="42" y="95" width="28" height="26" class="combo"/>
-<text x="56" y="108" class="combo tap"><tspan style="font-size: 64%">&amp;td_Zenkak…</tspan></text>
+<rect rx="6" ry="6" x="14" y="78" width="28" height="26" class="combo"/>
+<text x="28" y="91" class="combo tap"><tspan style="font-size: 64%">&amp;td_Zenkak…</tspan></text>
 </g>
 <g class="combo combopos-3">
 <rect rx="6" ry="6" x="687" y="95" width="28" height="26" class="combo"/>
@@ -1491,8 +1491,8 @@ path.combo {
 <use href="#mdi:keyboard-tab-reverse" xlink:href="#mdi:keyboard-tab-reverse" x="161" y="81" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab-reverse"/>
 </g>
 <g class="combo combopos-2">
-<rect rx="6" ry="6" x="42" y="95" width="28" height="26" class="combo"/>
-<text x="56" y="108" class="combo tap"><tspan style="font-size: 64%">&amp;td_Zenkak…</tspan></text>
+<rect rx="6" ry="6" x="14" y="78" width="28" height="26" class="combo"/>
+<text x="28" y="91" class="combo tap"><tspan style="font-size: 64%">&amp;td_Zenkak…</tspan></text>
 </g>
 <g class="combo combopos-3">
 <rect rx="6" ry="6" x="687" y="95" width="28" height="26" class="combo"/>
@@ -1687,8 +1687,8 @@ path.combo {
 <use href="#mdi:keyboard-tab-reverse" xlink:href="#mdi:keyboard-tab-reverse" x="161" y="81" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab-reverse"/>
 </g>
 <g class="combo combopos-2">
-<rect rx="6" ry="6" x="42" y="95" width="28" height="26" class="combo"/>
-<text x="56" y="108" class="combo tap"><tspan style="font-size: 64%">&amp;td_Zenkak…</tspan></text>
+<rect rx="6" ry="6" x="14" y="78" width="28" height="26" class="combo"/>
+<text x="28" y="91" class="combo tap"><tspan style="font-size: 64%">&amp;td_Zenkak…</tspan></text>
 </g>
 <g class="combo combopos-3">
 <rect rx="6" ry="6" x="687" y="95" width="28" height="26" class="combo"/>
@@ -1883,8 +1883,8 @@ path.combo {
 <use href="#mdi:keyboard-tab-reverse" xlink:href="#mdi:keyboard-tab-reverse" x="161" y="81" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab-reverse"/>
 </g>
 <g class="combo combopos-2">
-<rect rx="6" ry="6" x="42" y="95" width="28" height="26" class="combo"/>
-<text x="56" y="108" class="combo tap"><tspan style="font-size: 64%">&amp;td_Zenkak…</tspan></text>
+<rect rx="6" ry="6" x="14" y="78" width="28" height="26" class="combo"/>
+<text x="28" y="91" class="combo tap"><tspan style="font-size: 64%">&amp;td_Zenkak…</tspan></text>
 </g>
 <g class="combo combopos-3">
 <rect rx="6" ry="6" x="687" y="95" width="28" height="26" class="combo"/>

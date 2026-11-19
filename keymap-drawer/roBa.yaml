@@ -357,7 +357,7 @@ combos:
   k: $$mdi:keyboard-tab$$
 - p: [12, 13]
   k: $$mdi:keyboard-tab-reverse$$
-- p: [10, 11]
+- p: [10, 0]
   k: '&td_ZenkakuHankaku'
 - p: [20, 21]
   k: '"'
