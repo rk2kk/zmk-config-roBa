@@ -244,9 +244,9 @@
             key-positions = <12 13>;
         };
 
-        zenkaku {                   // A + Q (ZMK は同一 key-positions のコンブ重複に非対応のため A+S → A+Q へ)
+        zenkaku {                   // A + S
             bindings = <&td_ZenkakuHankaku>;
-            key-positions = <10 0>;
+            key-positions = <10 11>;
         };
 
         double_quotation {          // L + ;
@@ -285,12 +285,14 @@
             layers = <DEFAULT>;
         };
 
-        Ctrl_A {                    // A + S (zenkaku は A+Q へ分離。同一位置コンブは ZMK 非対応)
-            bindings = <&kp LC(A)>;
-            key-positions = <10 11>;
-            layers = <DEFAULT>;
-            require-prior-idle-ms = <300>;
-        };
+        // Ctrl_A は元々 A+S だったが、zenkaku と同一 key-positions のコンボ重複は
+        // ZMK 非対応のため保留中。別の key-positions を決めてから有効化すること
+        // Ctrl_A {
+        //     bindings = <&kp LC(A)>;
+        //     key-positions = <10 11>;
+        //     layers = <DEFAULT>;
+        //     require-prior-idle-ms = <300>;
+        // };
 
         Ctrl_Z {                    // X + Z
             bindings = <&kp LC(Z)>;
