@@ -8,8 +8,6 @@ bleak や from_bluetooth_address_async は 未ペア random address だと
 """
 import asyncio
 import sys
-import time
-from pathlib import Path
 
 import winrt.windows.devices.bluetooth as wbt
 import winrt.windows.devices.enumeration as denum
@@ -19,29 +17,40 @@ from winrt.windows.devices.bluetooth.genericattributeprofile import (
     GattSession,
 )
 
+from ble_log_util import NusLogCapture, normalize_addr
+
 TARGET_ADDR_HEX = "0a09a1e18132"  # zmk-t1 (R central) latest (scan で確認)
 NUS_TX = "6e400003-b5a3-f393-e0a9-e50e24dcca9e"
 
-# ログ保存先はリポジトリ直下の logs/ に固定 (実行場所に依存しない)
-LOG_DIR = Path(__file__).resolve().parent.parent / "logs"
+# Bluetooth LE AQS: {bb7bb05e...} は BluetoothLEDevices (ProtocolId) の固定値
+AQS_CONNECTABLE_LE = (
+    'System.Devices.Aep.ProtocolId:="{bb7bb05e-5775-4290-b043-6de506b0d31f}" '
+    'AND System.Devices.Aep.IsConnectable:=true'
+)
+DEVICE_ADDRESS_PROP = "System.Devices.Aep.DeviceAddress"
 
 
 async def spawn_device_by_aqs(addr_hex: str):
-    # Bluetooth LE AQS: {bb7bb05e...} は BluetoothLEDevices (ProtocolId) の固定値
-    aqs = (
-        'System.Devices.Aep.ProtocolId:="{bb7bb05e-5775-4290-b043-6de506b0d31f}" '
-        'AND System.Devices.Aep.IsConnectable:=true '
-        f'AND System.Devices.Aep.DeviceAddress:="{addr_hex}"'
+    # DeviceAddress の AQS 書式 (コロン区切り要否) は実装依存のため、プロパティを
+    # 明示取得してクライアント側で正規化比較する
+    infos = await denum.DeviceInformation.find_all_async_aqs_filter_and_additional_properties(
+        AQS_CONNECTABLE_LE, [DEVICE_ADDRESS_PROP]
     )
-    infos = await denum.DeviceInformation.find_all_async(aqs, 0, [])
-    print(f"[aqs] AQS matched: {infos.size}")
-    if infos.size == 0:
-        return None
-    di = infos[0]
-    print(f"[aqs] found: name={di.name!r} id={di.id}")
-    dev = await wbt.BluetoothLEDevice.from_device_id_async(di.id)
-    print(f"[aqs] BluetoothLEDevice: {dev}")
-    return dev
+    print(f"[aqs] connectable LE candidates: {infos.size}")
+    for di in infos:
+        raw = di.properties.get(DEVICE_ADDRESS_PROP)
+        raw = "" if raw is None else str(raw)
+        print(f"[aqs] candidate: name={di.name!r} addr={raw!r}")
+        try:
+            if normalize_addr(raw) != addr_hex:
+                continue
+        except ValueError:
+            continue
+        print(f"[aqs] found: name={di.name!r} id={di.id}")
+        dev = await wbt.BluetoothLEDevice.from_device_id_async(di.id)
+        print(f"[aqs] BluetoothLEDevice: {dev}")
+        return dev
+    return None
 
 
 async def stream_nus(dev):
@@ -68,9 +77,7 @@ async def stream_nus(dev):
         print("[err] NUS TX not found")
         return False
 
-    buf = []
-    LOG_DIR.mkdir(exist_ok=True)
-    log_path = LOG_DIR / f"ble_log_{time.strftime('%Y%m%d_%H%M%S')}.txt"
+    capture = NusLogCapture()
 
     def handler(sender, args):
         val = args.characteristic_value
@@ -80,18 +87,14 @@ async def stream_nus(dev):
             length = val.length
         if length <= 0:
             return
-        data = bytes(reader.read_bytes(length))
-        text = data.decode("utf-8", "replace")
-        sys.stdout.write(text)
-        sys.stdout.flush()
-        buf.append(text)
+        capture.feed(bytes(reader.read_bytes(length)))
 
     cccd = await nus_tx.write_client_characteristic_configuration_descriptor_async(
         GattClientCharacteristicConfigurationDescriptorValue.NOTIFY
     )
     print(f"[cccd] write status: {cccd}")
     token = nus_tx.add_value_changed(handler)
-    print(f"--- streaming NUS logs (Ctrl+C to stop). saved to {log_path} ---")
+    print(f"--- streaming NUS logs (Ctrl+C to stop). saved to {capture.path} ---")
     try:
         while True:
             await asyncio.sleep(1)
@@ -102,16 +105,19 @@ async def stream_nus(dev):
             nus_tx.remove_value_changed(token)
         except Exception:
             pass
-        with open(log_path, "a", encoding="utf-8") as f:
-            f.write("".join(buf))
-        print(f"saved to {log_path}")
+        capture.close()
+        print(f"saved to {capture.path}")
     return True
 
 
 
 async def main():
     if len(sys.argv) > 1:
-        addr = sys.argv[1].replace(":", "").replace("0x", "").lower()
+        try:
+            addr = normalize_addr(sys.argv[1])
+        except ValueError as e:
+            print(f"[err] {e}")
+            sys.exit(2)
     else:
         addr = TARGET_ADDR_HEX
     dev = await spawn_device_by_aqs(addr)

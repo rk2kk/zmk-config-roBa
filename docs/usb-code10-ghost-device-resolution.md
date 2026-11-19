@@ -82,12 +82,17 @@ pnputil /remove-device "USB\VID_1D50&PID_615E\<インスタンス ID>"
 # レポートのみ (管理者不要)
 powershell -ExecutionPolicy Bypass -File tools\zmk_device_cleanup.ps1
 
-# 削除 (管理者)
+# 削除 (管理者) — 既定は Status: Unknown のみ
 powershell -ExecutionPolicy Bypass -File tools\zmk_device_cleanup.ps1 -Apply
+
+# Status: Error (Code 10) のゴーストも削除対象に含める
+powershell -ExecutionPolicy Bypass -File tools\zmk_device_cleanup.ps1 -Apply -IncludeError
 ```
 
-注意: ツールは実行時点で `Status -ne 'Unknown'` (Error/OK) のデバイスをスキップするため、
-`Status: Error` の Composite が残る場合は上記 4.1 の pnputil で直接消すこと。
+注意: 既定の `-Apply` は `Status: Unknown` のゴーストのみ削除する。
+`Status: Error` の Composite(Code 10)も消したい場合は `-IncludeError` を付ける
+([tools/remove_zmk_ghosts.bat](../tools/remove_zmk_ghosts.bat) はこの付与済みで実行する)。
+いずれも削除に失敗する場合は上記 4.1 の pnputil で直接消すこと。
 
 ### 4.3 仕上げ
 

@@ -6,16 +6,13 @@
 #   3. デバイス一覧から zmk / roBa 名のデバイスを自動選択して NUS notify をストリーム表示
 import asyncio
 import sys
-import time
-from pathlib import Path
 
 from bleak import BleakScanner, BleakClient
 from bleak.exc import BleakDeviceNotFoundError
 
-NUS_TX = "6e400003-b5a3-f393-e0a9-e50e24dcca9e"
+from ble_log_util import NusLogCapture, normalize_addr
 
-# ログ保存先はリポジトリ直下の logs/ に固定 (実行場所に依存しない)
-LOG_DIR = Path(__file__).resolve().parent.parent / "logs"
+NUS_TX = "6e400003-b5a3-f393-e0a9-e50e24dcca9e"
 
 # Windows にペアリング済みの zmk-t の LE アドレス (BTHLE 表示の 16 進)
 # ※ flash 後にアドレスが変わった場合はここを更新 (nRF Toolbox 等で確認)
@@ -94,17 +91,11 @@ async def stream_via_cached(addr_hex: str) -> bool:
         return True
 
     print("[ble_log] subscribing to NUS notify ...")
-    buf = []
-    LOG_DIR.mkdir(exist_ok=True)
-    log_path = LOG_DIR / f"ble_log_{time.strftime('%Y%m%d_%H%M%S')}.txt"
+    capture = NusLogCapture()
 
     def handler(sender, args):
         reader = streams.DataReader.from_buffer(args.characteristic_value)
-        data = bytes(reader.read_bytes(reader.unconsumed_buffer_length))
-        text = data.decode("utf-8", "replace")
-        sys.stdout.write(text)
-        sys.stdout.flush()
-        buf.append(text)
+        capture.feed(bytes(reader.read_bytes(reader.unconsumed_buffer_length)))
 
     # winrt の add_value_changed は CCC 書き込みを自動で行わないため明示的に書き込む
     cccd_result = await nus_tx.write_client_characteristic_configuration_descriptor_async(
@@ -112,7 +103,7 @@ async def stream_via_cached(addr_hex: str) -> bool:
     )
     print(f"[ble_log]  CCC write status: {cccd_result}")
     token = nus_tx.add_value_changed(handler)
-    print(f"[ble_log] --- streaming NUS logs (Ctrl+C to stop). saved to {log_path} ---")
+    print(f"[ble_log] --- streaming NUS logs (Ctrl+C to stop). saved to {capture.path} ---")
     try:
         while True:
             await asyncio.sleep(1)
@@ -123,15 +114,19 @@ async def stream_via_cached(addr_hex: str) -> bool:
             nus_tx.remove_value_changed(token)
         except Exception:
             pass
-        with open(log_path, "a", encoding="utf-8") as f:
-            f.write("".join(buf))
-        print(f"[ble_log] saved to {log_path}")
+        capture.close()
+        print(f"[ble_log] saved to {capture.path}")
     return True
 
 
 async def main():
     if len(sys.argv) > 1:
-        await stream_via_cached(sys.argv[1].replace(":", "").replace("0x", "").lower())
+        try:
+            addr_hex = normalize_addr(sys.argv[1])
+        except ValueError as e:
+            print(f"[ble_log] {e}")
+            sys.exit(2)
+        await stream_via_cached(addr_hex)
         return
 
     print("[ble_log] scanning (timeout=15s) ...")
@@ -145,15 +140,11 @@ async def main():
         try:
             async with BleakClient(target, timeout=20.0) as cli:
                 print("[ble_log] connected. subscribing to NUS notify ...")
-                LOG_DIR.mkdir(exist_ok=True)
-                log_path = LOG_DIR / f"ble_log_{time.strftime('%Y%m%d_%H%M%S')}.txt"
-                print(f"[ble_log] --- streaming NUS logs (Ctrl+C to stop). saved to {log_path} ---")
-                buf = []
+                capture = NusLogCapture()
+                print(f"[ble_log] --- streaming NUS logs (Ctrl+C to stop). saved to {capture.path} ---")
+
                 def on_notify(h, data):
-                    text = data.decode("utf-8", "replace")
-                    sys.stdout.write(text)
-                    sys.stdout.flush()
-                    buf.append(text)
+                    capture.feed(data)
                 await cli.start_notify(NUS_TX, on_notify)
                 try:
                     while True:
@@ -161,9 +152,8 @@ async def main():
                 except KeyboardInterrupt:
                     pass
                 finally:
-                    with open(log_path, "a", encoding="utf-8") as f:
-                        f.write("".join(buf))
-                    print(f"[ble_log] saved to {log_path}")
+                    capture.close()
+                    print(f"[ble_log] saved to {capture.path}")
                 return
         except BleakDeviceNotFoundError:
             print(f"[ble_log]  cannot connect to {target.address} (not cached in Windows). trying next...")

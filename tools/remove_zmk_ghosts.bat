@@ -6,7 +6,7 @@ title Remove ZMK Ghost Devices (VID_1D50)
 rem ============================================================
 rem  ZMK ゴーストデバイス削除ランチャー (実体: zmk_device_cleanup.ps1)
 rem  - 管理者権限を自動要求 (UAC)
-rem  - レポート表示後、Status が Unknown のゴーストのみ削除
+rem  - レポート表示後、Status が Unknown / Error のゴーストを削除
 rem  - 接続中 (OK) のデバイスはスキップ (安全)
 rem ============================================================
 
@@ -29,7 +29,7 @@ echo  3. Enter を押すと一覧表示 → 削除を開始します
 echo.
 pause >nul
 
-powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0zmk_device_cleanup.ps1" -Apply
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0zmk_device_cleanup.ps1" -Apply -IncludeError
 
 echo.
 echo ============================================

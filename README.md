@@ -17,6 +17,9 @@ Choose a pattern below
 4. roBa_L_central
    └ roBa_R_peripheral
 
+5. roBa_R_central          ← build.yaml 現行
+   └ roBa_L_peripheral
+
 
 
 <img src="keymap-drawer/roBa.svg" >

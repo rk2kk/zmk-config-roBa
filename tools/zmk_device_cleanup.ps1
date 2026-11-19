@@ -5,6 +5,8 @@
   Targets PnP entries for the ZMK USB VID/PID (VID_1D50&PID_615E).
   - Default mode: report only (no admin needed).
   - -Apply: removes stale entries via pnputil (requires an elevated PowerShell).
+  - -IncludeError: with -Apply, also removes entries whose Status is 'Error'
+    (e.g. the Code 10 ghosts) instead of only Status 'Unknown'.
   - -IncludeBle: additionally lists (and with -Apply removes) Bluetooth LE ghost
     keys under HKLM\SYSTEM\CurrentControlSet\Enum\BTHLE\DEV_* (requires admin;
     registry removal, safer to do while Bluetooth for target device is disconnected).
@@ -14,7 +16,8 @@
 #>
 param(
     [switch]$Apply,
-    [switch]$IncludeBle
+    [switch]$IncludeBle,
+    [switch]$IncludeError
 )
 
 $ErrorActionPreference = 'Continue'
@@ -46,11 +49,14 @@ if ($Apply) {
     }
 
     Write-Host ""
-    Write-Host "== Removing stale entries (Status Unknown only) ==" -ForegroundColor Yellow
+    # 既定: Status Unknown のみ。-IncludeError で Status Error (Code 10 等) も対象に含める
+    $targetStatuses = @('Unknown')
+    if ($IncludeError) { $targetStatuses += 'Error' }
+    Write-Host ("== Removing stale entries (Status: {0}) ==" -f ($targetStatuses -join '/')) -ForegroundColor Yellow
     $removed = 0; $failed = 0
     foreach ($d in $devices) {
-        if ($d.Status -ne 'Unknown') {
-            Write-Host ("  SKIP (currently connected): {0}" -f $d.InstanceId)
+        if ($targetStatuses -notcontains $d.Status) {
+            Write-Host ("  SKIP (Status {1}, not a removal target): {0}" -f $d.InstanceId, $d.Status)
             continue
         }
         Write-Host ("  Removing: {0}" -f $d.InstanceId)
@@ -98,5 +104,6 @@ Write-Host ""
 if (-not $Apply) {
     Write-Host "Report-only mode. To remove stale entries, run in an ELEVATED PowerShell:"
     Write-Host ("  powershell -ExecutionPolicy Bypass -File `"{0}`" -Apply" -f $PSCommandPath)
+    Write-Host ("Add -IncludeError to also remove Status 'Error' ghosts (e.g. Code 10).")
     Write-Host ("Add -IncludeBle to also clean Bluetooth LE ghost registry keys (advanced).")
 }
