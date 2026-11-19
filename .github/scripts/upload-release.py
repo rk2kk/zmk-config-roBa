@@ -2,7 +2,7 @@
 """ビルド成果物 (uf2) を GitHub Releases に添付する。
 
 - TARGET_REPO（既定: GITHUB_REPOSITORY）の RELEASE_TAG を作成または更新する
-- 一時名でアップロードしてから旧アセットを置き換える（失敗時に欠落させない）
+- 一時名 → 旧アセット退避 → 正式名 の順で置換する（失敗時に正式名のアセットを欠落させない）
 - タグは常にビルド対象のコミットを指すように force 更新する
 
 必要な環境変数: GH_TOKEN, GITHUB_REPOSITORY
@@ -85,7 +85,9 @@ def main() -> int:
     if status == 200:
         release_id = release["id"]
         print(f"release 更新: {TAG} (id={release_id})")
-        request("PATCH", f"{API}/releases/{release_id}", {"body": body})
+        bstatus, _ = request("PATCH", f"{API}/releases/{release_id}", {"body": body})
+        if bstatus != 200:
+            print(f"警告: release 本文の更新に失敗 ({bstatus})", file=sys.stderr)
     elif status == 404:
         print(f"release 作成: {TAG}")
         status, release = request(
@@ -121,8 +123,11 @@ def main() -> int:
 
     for path in files:
         name = os.path.basename(path)
-        # 先に一時名でアップロードし、成功してから旧アセットを置き換える
-        temp_name = f"{name}.{RUN_ID or os.getpid()}.{ATTEMPT}.tmp"
+        # 失敗時に正式名のアセットを欠落させない順序で置換する:
+        #   tmp アップロード → 旧アセットを退避名へ rename → tmp を正式名へ rename → 退避分を削除
+        run_tag = RUN_ID or str(os.getpid())
+        temp_name = f"{name}.{run_tag}.{ATTEMPT}.tmp"
+        backup_name = f"{name}.{run_tag}.{ATTEMPT}.old"
         url = f"{UPLOADS}/releases/{release_id}/assets?name={urllib.parse.quote(temp_name)}"
         status, result = upload(url, path)
         if status not in (200, 201):
@@ -130,18 +135,35 @@ def main() -> int:
             return 1
         new_id = result["id"]
 
+        backup_id = None
         old_id = existing.get(name)
         if old_id:
-            dstatus, _ = request("DELETE", f"{API}/releases/assets/{old_id}")
-            if dstatus not in (200, 204):
-                print(f"警告: 旧 {name} の削除に失敗 ({dstatus})", file=sys.stderr)
+            bstatus, _ = request(
+                "PATCH", f"{API}/releases/assets/{old_id}", {"name": backup_name}
+            )
+            if bstatus == 200:
+                backup_id = old_id
+            else:
+                print(f"警告: 旧 {name} の退避 rename に失敗 ({bstatus})", file=sys.stderr)
 
         rstatus, _ = request(
             "PATCH", f"{API}/releases/assets/{new_id}", {"name": name}
         )
         if rstatus != 200:
             print(f"エラー: {name} のリネームに失敗 ({rstatus})", file=sys.stderr)
+            # tmp を残さず削除し、退避した旧アセットがあれば正式名へ戻す
+            request("DELETE", f"{API}/releases/assets/{new_id}")
+            if backup_id:
+                request("PATCH", f"{API}/releases/assets/{backup_id}", {"name": name})
             return 1
+
+        if backup_id:
+            dstatus, _ = request("DELETE", f"{API}/releases/assets/{backup_id}")
+            if dstatus not in (200, 204):
+                print(
+                    f"警告: 旧 {name} ({backup_name}) の削除に失敗 ({dstatus})",
+                    file=sys.stderr,
+                )
 
         print(f"添付: {name} ({os.path.getsize(path)} bytes)")
 

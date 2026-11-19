@@ -15,7 +15,9 @@ jobs:
     permissions:
       contents: write
     with:
-      commit_message: "[Draw] ${{ github.event.head_commit.message || 'Update keymap drawing' }}"
+      # コミットメッセージを素通しすると多行/引用符で壊れ得る、かつ受け手側シェルへの
+      # 注入入口になるため固定文字列にする
+      commit_message: "[Draw] Update keymap drawing"
       amend_commit: false
       keymap_patterns: "config/*.keymap"
       json_path: "config"

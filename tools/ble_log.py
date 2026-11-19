@@ -8,7 +8,7 @@ import asyncio
 import sys
 
 from bleak import BleakScanner, BleakClient
-from bleak.exc import BleakDeviceNotFoundError
+from bleak.exc import BleakDeviceNotFoundError, BleakError
 
 from ble_log_util import NusLogCapture, normalize_addr
 
@@ -40,6 +40,10 @@ async def stream_via_cached(addr_hex: str) -> bool:
     print(f"[ble_log]  device: {ble_device.name}")
 
     svc_result = await ble_device.get_gatt_services_async()
+    if svc_result.status != 0:
+        # 一時的な GATT 失敗で「NUS 無し」と誤診断しないため、ステータスを明示して次アドレスへ回す
+        print(f"[ble_log]  get_gatt_services failed (status={svc_result.status}) -> not conclusive.")
+        return False
     nus_service = None
     for svc in svc_result.services:
         if f"{svc.uuid}".lower().startswith("6e400001"):
@@ -53,7 +57,11 @@ async def stream_via_cached(addr_hex: str) -> bool:
         return True  # 接続自体は成功したので他アドレスは試さない
 
     print("[ble_log] NUS service found!")
-    chars = (await nus_service.get_characteristics_async()).characteristics
+    cres = await nus_service.get_characteristics_async()
+    if cres.status != 0:
+        print(f"[ble_log]  get_characteristics failed (status={cres.status}) -> not conclusive.")
+        return False
+    chars = cres.characteristics
     print(f"[ble_log]  NUS chars (cached): {[f'{c.uuid}' for c in chars]}")
     if not any(f"{c.uuid}".lower().startswith("6e400003") for c in chars):
         # characteristics が空/古い場合 → session 張って UNCACHED で再取得
@@ -76,7 +84,7 @@ async def stream_via_cached(addr_hex: str) -> bool:
                 if cres.status == 0:
                     chars = cres.characteristics
                     print(f"[ble_log]  NUS chars (fresh): {[f'{c.uuid}' for c in chars]}")
-            del session
+            # session は stream 終了までローカル参照で保持し、active 接続を維持する (GC 解除を避ける)
         except Exception as e:
             print(f"[ble_log]  fresh fetch error: {type(e).__name__}: {e}")
     nus_tx = None
@@ -130,7 +138,11 @@ async def main():
         return
 
     print("[ble_log] scanning (timeout=15s) ...")
-    devs = await BleakScanner.discover(timeout=15.0)
+    try:
+        devs = await BleakScanner.discover(timeout=15.0)
+    except (BleakError, OSError, asyncio.TimeoutError) as e:
+        print(f"[ble_log]  scan failed ({type(e).__name__}: {e}) -> fallback to paired devices ...")
+        devs = []
     for d in sorted(devs, key=lambda x: (x.name or "")):
         if (d.name or "").lower().find("zmk") >= 0 or (d.name or "").lower().find("roba") >= 0:
             print(f"  MATCH: {d.address} {d.name}")
@@ -155,8 +167,8 @@ async def main():
                     capture.close()
                     print(f"[ble_log] saved to {capture.path}")
                 return
-        except BleakDeviceNotFoundError:
-            print(f"[ble_log]  cannot connect to {target.address} (not cached in Windows). trying next...")
+        except (BleakDeviceNotFoundError, BleakError, OSError, asyncio.TimeoutError) as e:
+            print(f"[ble_log]  cannot connect to {target.address} ({type(e).__name__}: {e}). trying next...")
 
     print("[ble_log] scan-path failed. Falling back to Windows paired (cached) devices ...")
     for a in PAIRED_ADDRS:

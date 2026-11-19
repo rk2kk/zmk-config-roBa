@@ -38,13 +38,19 @@ class NusLogCapture:
         self._file = open(self.path, "ab")
 
     def feed(self, data) -> None:
+        if self._file.closed:
+            return
         data = bytes(data)
         text = self._decoder.decode(data)
         if text:
             sys.stdout.write(text)
             sys.stdout.flush()
-        self._file.write(data)
-        self._file.flush()
+        try:
+            self._file.write(data)
+            self._file.flush()
+        except ValueError:
+            # close() との競合 (WinRT ハンドラのスレッドから呼ばれる場合がある)
+            pass
 
     def close(self) -> None:
         try:

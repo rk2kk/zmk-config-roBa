@@ -6,12 +6,12 @@ title Remove ZMK Ghost Devices (VID_1D50)
 rem ============================================================
 rem  ZMK ゴーストデバイス削除ランチャー (実体: zmk_device_cleanup.ps1)
 rem  - 管理者権限を自動要求 (UAC)
-rem  - レポート表示後、Status が Unknown / Error のゴーストを削除
+rem  - レポート表示後、Status が Unknown / Error / Degraded のゴーストを削除
 rem  - 接続中 (OK) のデバイスはスキップ (安全)
 rem ============================================================
 
-rem ---------- 管理者チェック & 自己昇格 ----------
-net session >nul 2>&1
+rem ---------- 管理者チェック & 自己昇格 (fltmc は管理者のみ成功するため判定が確実) ----------
+fltmc >nul 2>&1
 if %errorlevel% neq 0 (
     echo 管理者権限が必要です。昇格します...
     powershell -NoProfile -Command "Start-Process -FilePath '%~f0' -Verb RunAs"
@@ -30,13 +30,17 @@ echo.
 pause >nul
 
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0zmk_device_cleanup.ps1" -Apply -IncludeError
+set "cleanup_exit=%errorlevel%"
 
 echo.
 echo ============================================
-echo   完了しました
+echo   処理が終了しました (終了コード: %cleanup_exit%)
 echo ============================================
+if not "%cleanup_exit%"=="0" (
+    echo   [警告] クリーンアップが完了していない可能性があります。上記ログを確認してください。
+)
 echo   PC を再起動してからキーボードを接続してください。
 echo   再起動後、DYA Studio を開き直して接続を試してください。
 echo.
 pause
-endlocal
+endlocal & exit /b %cleanup_exit%

@@ -90,7 +90,8 @@ powershell -ExecutionPolicy Bypass -File tools\zmk_device_cleanup.ps1 -Apply -In
 ```
 
 注意: 既定の `-Apply` は `Status: Unknown` のゴーストのみ削除する。
-`Status: Error` の Composite(Code 10)も消したい場合は `-IncludeError` を付ける
+`Status: Error` の Composite(Code 10)や `Status: Degraded` も消したい場合は
+`-IncludeError` を付ける(旧バッチ相当: OK 以外すべてが対象)
 ([tools/remove_zmk_ghosts.bat](../tools/remove_zmk_ghosts.bat) はこの付与済みで実行する)。
 いずれも削除に失敗する場合は上記 4.1 の pnputil で直接消すこと。
 

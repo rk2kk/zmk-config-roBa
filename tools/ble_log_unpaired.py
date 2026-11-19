@@ -63,12 +63,19 @@ async def stream_nus(dev):
     await asyncio.sleep(2)
 
     res = await dev.get_gatt_services_async()
+    if res.status != 0:
+        # 一時的な GATT 失敗で「NUS 無し」と誤診断しないため、ステータスを明示する
+        print(f"[err] get_gatt_services failed (status={res.status}) -> not conclusive")
+        return False
     nus_tx = None
     for svc in res.services:
         print(f"[svc] {svc.uuid}")
         if not f"{svc.uuid}".lower().startswith("6e400001"):
             continue
         cres = await svc.get_characteristics_async()
+        if cres.status != 0:
+            print(f"[err] get_characteristics failed (status={cres.status}) -> not conclusive")
+            continue
         for ch in cres.characteristics:
             print(f"[chr] {ch.uuid}")
             if f"{ch.uuid}".lower().startswith("6e400003"):

@@ -6,7 +6,8 @@
   - Default mode: report only (no admin needed).
   - -Apply: removes stale entries via pnputil (requires an elevated PowerShell).
   - -IncludeError: with -Apply, also removes entries whose Status is 'Error'
-    (e.g. the Code 10 ghosts) instead of only Status 'Unknown'.
+    (e.g. the Code 10 ghosts) or 'Degraded' instead of only Status 'Unknown'
+    (same scope as the old all-non-OK batch).
   - -IncludeBle: additionally lists (and with -Apply removes) Bluetooth LE ghost
     keys under HKLM\SYSTEM\CurrentControlSet\Enum\BTHLE\DEV_* (requires admin;
     registry removal, safer to do while Bluetooth for target device is disconnected).
@@ -49,9 +50,9 @@ if ($Apply) {
     }
 
     Write-Host ""
-    # 既定: Status Unknown のみ。-IncludeError で Status Error (Code 10 等) も対象に含める
+    # 既定: Status Unknown のみ。-IncludeError で Error / Degraded も含める (旧バッチの -ne 'OK' 同等)
     $targetStatuses = @('Unknown')
-    if ($IncludeError) { $targetStatuses += 'Error' }
+    if ($IncludeError) { $targetStatuses = @('Unknown', 'Error', 'Degraded') }
     Write-Host ("== Removing stale entries (Status: {0}) ==" -f ($targetStatuses -join '/')) -ForegroundColor Yellow
     $removed = 0; $failed = 0
     foreach ($d in $devices) {
@@ -72,8 +73,6 @@ if ($IncludeBle) {
     $keys = @(Get-ChildItem -Path $base -ErrorAction SilentlyContinue)
     Write-Host ""
     Write-Host ("Bluetooth LE enumeration keys (BTHLE\DEV_*): {0}" -f $keys.Count)
-    # Show keys whose child (descriptor) indicates ZMK VID (IMD 1D50 encoding inside key name)
-    $zmkKeys = $keys | Where-Object { $_.PSChildName -match '1D50' -or (Get-ChildItem $_.PSPath -ErrorAction SilentlyContinue | Where-Object { $_.PSChildName -match '1D50' }) }
     # key names look like DEV_<MAC>; device identity lives in subkey (e.g. VID&00011D50_PID&615E)
     Write-Host "Keys mentioning ZMK VID 1D50 / PID 615E anywhere in name or subkeys:"
     $targets = @()
@@ -88,10 +87,6 @@ if ($IncludeBle) {
     if ($targets.Count -eq 0) { Write-Host "  (none found)" }
 
     if ($Apply -and $targets.Count -gt 0) {
-        if (-not $isAdmin) {
-            Write-Warning "Registry removal requires admin; none removed."
-            exit 2
-        }
         foreach ($k in $targets) {
             Write-Host ("  Deleting reg key: {0}" -f $k.Name)
             Remove-Item -Path $k.PSPath -Recurse -Force -ErrorAction Continue
@@ -104,6 +99,6 @@ Write-Host ""
 if (-not $Apply) {
     Write-Host "Report-only mode. To remove stale entries, run in an ELEVATED PowerShell:"
     Write-Host ("  powershell -ExecutionPolicy Bypass -File `"{0}`" -Apply" -f $PSCommandPath)
-    Write-Host ("Add -IncludeError to also remove Status 'Error' ghosts (e.g. Code 10).")
+    Write-Host ("Add -IncludeError to also remove Status 'Error'/'Degraded' ghosts (e.g. Code 10).")
     Write-Host ("Add -IncludeBle to also clean Bluetooth LE ghost registry keys (advanced).")
 }

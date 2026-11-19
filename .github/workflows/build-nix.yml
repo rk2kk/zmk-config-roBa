@@ -8,7 +8,8 @@ on:
 
 jobs:
   build:
-    uses: urob/zmk-actions/.github/workflows/build-user-config.yml@main
+    # SHA ピン留め (docs/pi-builder.md の方針)。更新時は main HEAD の SHA に差し替える
+    uses: urob/zmk-actions/.github/workflows/build-user-config.yml@0c1263c75e851badc17025e7401a88d03b5afd14 # main
     with:
       # Optionally choose the toolchain to use: Zephyr SDK (default) or GNU Arm
       # Embedded ('gnuarmemb'). The latter results in slightly faster builds.
